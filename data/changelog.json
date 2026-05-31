@@ -1,0 +1,11 @@
+[
+  {
+    "timestamp": "2026-05-31T17:06:50.327762+00:00",
+    "type": "signal_change",
+    "category": "orderbook_pressure",
+    "from": "BULLISH",
+    "to": "NEUTRAL",
+    "price": 68.05,
+    "detail": "Imbalance: -0.0788"
+  }
+]

@@ -37,8 +37,14 @@
     .badge { display: inline-flex; align-items: center; gap: 6px; font-size: 10px; padding: 4px 10px; border-radius: 4px; background: var(--bg-3); border: 1px solid var(--border); }
     .badge .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); animation: pulse 2s infinite; }
     @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.3; } }
-    .container { max-width: 1400px; margin: 0 auto; padding: 20px 28px; }
-    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px; margin-bottom: 14px; }
+    .container { max-width: 1600px; margin: 0 auto; padding: 20px 28px; }
+
+    /* Top metric cards — 5-column auto-fit */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 14px; margin-bottom: 14px;
+    }
     .card {
       background: var(--card); border: 1px solid var(--border); border-radius: 8px;
       padding: 18px 20px; transition: border-color 0.2s;
@@ -67,6 +73,66 @@
     @media (max-width: 900px) { .charts-row { grid-template-columns: 1fr; } }
     .chart-card { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 16px 20px; min-height: 380px; }
     .chart-card canvas { max-height: 320px; }
+
+    /* Research Panel extras */
+    .research-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+    .research-cell {
+      background: var(--bg-2); border-radius: 4px; padding: 8px 10px;
+      border: 1px solid var(--border);
+    }
+    .research-cell .lab { font-size: 9px; color: var(--text-d); text-transform: uppercase; }
+    .research-cell .val { font-size: 13px; font-weight: 700; margin-top: 1px; }
+    .change-badge {
+      display: inline-block; padding: 1px 6px; border-radius: 3px; font-size: 9px; font-weight: 600; margin-left: 4px;
+    }
+    .change-badge.pos { background: rgba(0,230,118,0.12); color: var(--accent); }
+    .change-badge.neg { background: rgba(255,82,82,0.12); color: var(--bad); }
+
+    /* Narrative Gauge */
+    .gauge-wrap { display: flex; flex-direction: column; align-items: center; margin: 10px 0 6px; }
+    .gauge-svg { width: 120px; height: 70px; }
+    .gauge-label { font-size: 10px; color: var(--text-d); margin-top: 2px; text-transform: uppercase; letter-spacing: 0.5px; }
+    .narrative-score { font-size: 28px; font-weight: 800; }
+    .mini-bars { margin-top: 8px; }
+    .mini-bar-row { display: flex; align-items: center; gap: 6px; margin: 3px 0; }
+    .mini-bar-label { font-size: 9px; color: var(--text-d); width: 80px; flex-shrink: 0; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; }
+    .mini-bar-track { flex: 1; height: 6px; background: var(--bg-3); border-radius: 3px; overflow: hidden; }
+    .mini-bar-fill { height: 100%; border-radius: 3px; transition: width 0.4s ease; }
+
+    /* Changelog Panel */
+    .changelog-panel {
+      background: var(--card); border: 1px solid var(--border); border-radius: 8px;
+      padding: 18px 20px; margin-bottom: 14px;
+    }
+    .changelog-title {
+      font-size: 10px; text-transform: uppercase; letter-spacing: 0.8px; color: var(--text-d);
+      margin-bottom: 12px; font-weight: 600; display: flex; align-items: center; gap: 8px;
+    }
+    .changelog-title .count { background: var(--bg-3); padding: 2px 8px; border-radius: 3px; font-size: 9px; color: var(--text-d); }
+    .changelog-list {
+      max-height: 340px; overflow-y: auto; scrollbar-width: thin; scrollbar-color: #1a2535 transparent;
+    }
+    .changelog-list::-webkit-scrollbar { width: 5px; }
+    .changelog-list::-webkit-scrollbar-thumb { background: #1a2535; border-radius: 3px; }
+    .changelog-entry {
+      display: flex; align-items: flex-start; gap: 10px; padding: 10px 0;
+      border-bottom: 1px solid rgba(26,37,53,0.5); line-height: 1.4;
+    }
+    .changelog-entry:last-child { border-bottom: none; }
+    .cl-icon { font-size: 14px; flex-shrink: 0; margin-top: 1px; }
+    .cl-body { flex: 1; min-width: 0; }
+    .cl-desc { font-size: 12px; color: var(--text); }
+    .cl-meta { font-size: 9px; color: var(--text-d); margin-top: 2px; }
+    .cl-price { font-size: 9px; color: var(--text-d); margin-left: 6px; }
+    .cl-type-signal { border-left: 3px solid var(--warn); padding-left: 10px; }
+    .cl-type-milestone { border-left: 3px solid var(--accent); padding-left: 10px; }
+    .cl-type-default { border-left: 3px solid var(--text-d); padding-left: 10px; }
+    .severity-pos .cl-desc { color: var(--accent); }
+    .severity-neg .cl-desc { color: var(--bad); }
+    .severity-neutral .cl-desc { color: var(--warn); }
+    .changelog-empty { text-align: center; padding: 24px; color: var(--text-d); font-size: 11px; }
+
+    /* AI Panel */
     .ai-panel {
       background: linear-gradient(135deg, #0d0a18 0%, #111a2e 100%);
       border: 1px solid #1a2540; border-radius: 8px; padding: 20px 24px;
@@ -81,6 +147,16 @@
     .ai-content { line-height: 1.7; color: #b0bcc8; font-size: 12px; }
     .ai-content p { margin: 6px 0; padding: 4px 0; }
     .ai-content strong { color: #fff; }
+    .ai-section {
+      margin: 12px 0; padding: 12px 14px; background: rgba(0,0,0,0.2); border-radius: 6px;
+      border-left: 3px solid #3a3a6a;
+    }
+    .ai-section-title {
+      font-size: 10px; text-transform: uppercase; letter-spacing: 0.8px; color: #8888cc;
+      margin-bottom: 6px; font-weight: 700;
+    }
+
+    /* Orderbook */
     .ob-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 8px; }
     .ob-cell {
       background: var(--bg-2); border-radius: 4px; padding: 10px;
@@ -112,13 +188,13 @@
   <header>
     <div>
       <h1>HYPE/USD — INSTITUTIONAL MONITOR</h1>
-      <div class="subtitle">Multi-Factor Analysis via DeepSeek V4 Pro | Auto-updates every 6h</div>
+      <div class="subtitle">Multi-Factor Analysis via DeepSeek V4 Pro | Research: DeFi Llama + Hyperliquid API | Auto-updates every 6h</div>
     </div>
     <div class="badge"><span class="dot"></span>LIVE &mdash; <span id="last-update">Loading...</span></div>
   </header>
 
   <div class="container">
-    <!-- Price + Returns Row -->
+    <!-- Top Metric Cards (5 columns) -->
     <div class="grid">
       <div class="card">
         <div class="card-title">Current Price</div>
@@ -141,6 +217,12 @@
         <div class="card-title">Risk &amp; Value</div>
         <div id="risk-metrics"></div>
       </div>
+      <div class="card" id="research-card">
+        <div class="card-title">Research &amp; Fundamentals</div>
+        <div id="research-content">
+          <div style="color:var(--text-d);font-size:11px;">Awaiting data...</div>
+        </div>
+      </div>
     </div>
 
     <!-- Charts Row -->
@@ -152,6 +234,17 @@
       <div class="chart-card">
         <div class="card-title" style="margin-bottom:12px;">RSI · MACD</div>
         <canvas id="oscillatorChart"></canvas>
+      </div>
+    </div>
+
+    <!-- Changelog / Signal History -->
+    <div class="changelog-panel" id="changelog-panel">
+      <div class="changelog-title">
+        <span>📋 Signal History &amp; Changelog</span>
+        <span class="count" id="cl-count">--</span>
+      </div>
+      <div class="changelog-list" id="changelog-list">
+        <div class="changelog-empty">Loading signal history...</div>
       </div>
     </div>
 
@@ -169,15 +262,14 @@
   </div>
 
   <div class="footer">
-    <div>Built by Bubbles | Data from Hyperliquid API | Analysis: DeepSeek V4 Pro via Ollama</div>
+    <div>Research: DeFi Llama + Hyperliquid API | Signal Tracking: ON</div>
     <div>Next refresh: <span id="next-refresh">--</span> | Auto-refresh: ON</div>
   </div>
 
   <script>
-    // ── Data URL ──
-    // In dev: fetch from ./data/hype_data.json
-    // In prod on Vercel: same path relative to the HTML file
+    // ── Data URLs ──
     const DATA_URL = './data/hype_data.json';
+    const CHANGELOG_URL = './data/changelog.json';
 
     let charts = {};
     let lastData = null;
@@ -186,8 +278,191 @@
     const fmt = n => (n === undefined || n === null || n === 'NaN') ? '--' : Number(n).toFixed(2);
     const fmtPct = (n, decimals=1) => (n === undefined || n === null || n === 'NaN') ? '--' : (n > 0 ? '+' : '') + n.toFixed(decimals) + '%';
     const colorFor = n => n > 0 ? '#00e676' : (n < 0 ? '#ff5252' : '#8899ab');
+    const fmtCompact = n => {
+      if (n === undefined || n === null) return '--';
+      n = Number(n);
+      if (n >= 1e9) return '$' + (n / 1e9).toFixed(2) + 'B';
+      if (n >= 1e6) return '$' + (n / 1e6).toFixed(2) + 'M';
+      if (n >= 1e3) return '$' + (n / 1e3).toFixed(1) + 'K';
+      return '$' + n.toFixed(2);
+    };
 
-    // ── DOM Update ──
+    // ── Narrative gauge color ──
+    const gaugeColor = score => {
+      if (score < 30) return '#ff5252';
+      if (score <= 60) return '#ffab40';
+      return '#00e676';
+    };
+
+    // ── Build Research Panel ──
+    function updateResearch(d) {
+      const r = d.research;
+      const el = document.getElementById('research-content');
+      if (!r || !r.defillama_available) {
+        el.innerHTML = '<div style="color:var(--text-d);font-size:11px;">Research data unavailable (DeFi Llama not synced)</div>';
+        return;
+      }
+
+      const changeBadge = (val) => {
+        if (val === undefined || val === null) return '';
+        const cls = val >= 0 ? 'pos' : 'neg';
+        return '<span class="change-badge ' + cls + '">' + fmtPct(val) + '</span>';
+      };
+
+      // Gauge SVG (semicircle)
+      const score = r.narrative_score || 0;
+      const gColor = gaugeColor(score);
+      const pctAngle = (score / 100) * 180;
+      const rad = (pctAngle - 90) * Math.PI / 180;
+      const cx = 60, cy = 55, gr = 45;
+      const needleX = cx + gr * Math.cos(rad);
+      const needleY = cy + gr * Math.sin(rad);
+      const gaugeSvg = '<svg class="gauge-svg" viewBox="0 0 120 70">' +
+        '<path d="M15,55 A45,45 0 0,1 105,55" fill="none" stroke="#1a2535" stroke-width="8" stroke-linecap="round"/>' +
+        '<path d="M15,55 A45,45 0 0,1 105,55" fill="none" stroke="' + gColor + '" stroke-width="8" stroke-linecap="round" ' +
+          'stroke-dasharray="' + (score / 100 * 141.37) + ' 141.37" opacity="0.7"/>' +
+        '<line x1="' + cx + '" y1="' + cy + '" x2="' + needleX + '" y2="' + needleY + '" stroke="' + gColor + '" stroke-width="2" stroke-linecap="round"/>' +
+        '<circle cx="' + cx + '" cy="' + cy + '" r="3" fill="' + gColor + '"/>' +
+        '</svg>';
+
+      // Mini bars for narrative components
+      const comp = r.narrative_components || {};
+      const compEntries = Object.entries(comp);
+      const miniBars = compEntries.map(([k, v]) => {
+        const val = Number(v) || 0;
+        const normalized = Math.max(-100, Math.min(100, val));
+        const width = Math.abs(normalized);
+        const barColor = normalized >= 0 ? '#00e676' : '#ff5252';
+        const displayVal = typeof v === 'number' ? v.toFixed(1) : (v || '--');
+        return '<div class="mini-bar-row">' +
+          '<span class="mini-bar-label">' + k.replace(/_/g, ' ') + '</span>' +
+          '<div class="mini-bar-track"><div class="mini-bar-fill" style="width:' + width + '%;background:' + barColor + ';"></div></div>' +
+          '<span style="font-size:9px;color:' + barColor + ';width:36px;text-align:right;">' + displayVal + '</span>' +
+          '</div>';
+      }).join('');
+
+      el.innerHTML =
+        '<div class="research-grid">' +
+          '<div class="research-cell"><div class="lab">TVL</div><div class="val">' + fmtCompact(r.tvl) + changeBadge(r.tvl_7d_change_pct) + '</div><div style="font-size:8px;color:var(--text-d);margin-top:1px;">7d ' + fmtPct(r.tvl_7d_change_pct) + ' · 30d ' + fmtPct(r.tvl_30d_change_pct) + '</div></div>' +
+          '<div class="research-cell"><div class="lab">24h Volume</div><div class="val">' + fmtCompact(r.volume_24h) + '</div></div>' +
+          '<div class="research-cell"><div class="lab">Fees (24h)</div><div class="val">' + fmtCompact(r.fees_24h) + '</div></div>' +
+          '<div class="research-cell"><div class="lab">Revenue (24h)</div><div class="val">' + fmtCompact(r.revenue_24h) + '</div></div>' +
+          '<div class="research-cell"><div class="lab">Market Cap</div><div class="val">' + fmtCompact(r.mcap) + '</div></div>' +
+          '<div class="research-cell"><div class="lab">FDV</div><div class="val">' + fmtCompact(r.fdv) + '</div></div>' +
+          '<div class="research-cell"><div class="lab">BTC Price</div><div class="val">$' + fmt(r.btc_price) + '</div></div>' +
+        '</div>' +
+        '<div class="gauge-wrap">' +
+          gaugeSvg +
+          '<div class="narrative-score" style="color:' + gColor + ';">' + (score || '--') + '</div>' +
+          '<div class="gauge-label">' + (r.narrative_label || 'Narrative Score') + '</div>' +
+        '</div>' +
+        '<div class="mini-bars">' + miniBars + '</div>';
+    }
+
+    // ── Build Changelog Panel ──
+    function updateChangelog(entries) {
+      const listEl = document.getElementById('changelog-list');
+      const countEl = document.getElementById('cl-count');
+
+      if (!entries || !Array.isArray(entries) || entries.length === 0) {
+        listEl.innerHTML = '<div class="changelog-empty">No signal history available</div>';
+        countEl.textContent = '0';
+        return;
+      }
+
+      const recent = entries.slice(0, 20);
+      countEl.textContent = Math.min(20, entries.length) + ' / ' + entries.length;
+
+      listEl.innerHTML = recent.map(e => {
+        // Determine icon
+        let icon = '📋';
+        let typeCls = 'cl-type-default';
+        if (e.type === 'signal_flip' || e.type === 'signal_change') { icon = '⚠️'; typeCls = 'cl-type-signal'; }
+        else if (e.type === 'milestone' || e.type === 'milestone_hit') { icon = '🏆'; typeCls = 'cl-type-milestone'; }
+        else if (e.type === 'trend_shift') { icon = '📊'; typeCls = 'cl-type-signal'; }
+        else if (e.type === 'risk_alert') { icon = '🔴'; typeCls = 'cl-type-signal'; }
+
+        // Determine severity coloring
+        let severity = 'neutral';
+        const desc = (e.detail || e.description || '').toLowerCase();
+        const from = (e.from || '').toLowerCase();
+        const to = (e.to || '').toLowerCase();
+        if (to.includes('bull') || to.includes('buy') || to.includes('long') || desc.includes('new high') || desc.includes('breakout') || desc.includes('support') || desc.includes('bounce')) {
+          severity = 'pos';
+        } else if (to.includes('bear') || to.includes('sell') || to.includes('short') || desc.includes('breakdown') || desc.includes('rejection') || desc.includes('resistance')) {
+          severity = 'neg';
+        }
+
+        const severityCls = 'severity-' + severity;
+        const ts = e.timestamp ? new Date(e.timestamp) : null;
+        const timeStr = ts ? ts.toLocaleString('en-SG', { timeZone: 'Asia/Singapore', month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' }) : '';
+        const detail = e.detail || e.description || [e.category, e.from, '→', e.to].filter(Boolean).join(' ');
+        const priceStr = e.price ? '$' + fmt(e.price) : '';
+
+        return '<div class="changelog-entry ' + typeCls + ' ' + severityCls + '">' +
+          '<span class="cl-icon">' + icon + '</span>' +
+          '<div class="cl-body">' +
+            '<div class="cl-desc">' + detail + '</div>' +
+            '<div class="cl-meta">' + timeStr +
+              (priceStr ? '<span class="cl-price">@ ' + priceStr + '</span>' : '') +
+              (e.category ? ' · ' + e.category : '') +
+            '</div>' +
+          '</div>' +
+        '</div>';
+      }).join('');
+    }
+
+    // ── Enhanced AI Panel ──
+    function updateAI(d) {
+      const aiEl = document.getElementById('ai-analysis');
+
+      // Check for expanded analysis sections first
+      const hasExpanded = d.protocol_fundamentals || d.narrative_thesis || d.what_changed;
+
+      if (hasExpanded) {
+        let html = '';
+
+        if (d.protocol_fundamentals) {
+          html += '<div class="ai-section"><div class="ai-section-title">🏗️ Protocol Fundamentals</div><p>' +
+            formatAIContent(d.protocol_fundamentals) + '</p></div>';
+        }
+        if (d.narrative_thesis) {
+          html += '<div class="ai-section"><div class="ai-section-title">🎯 Narrative Thesis</div><p>' +
+            formatAIContent(d.narrative_thesis) + '</p></div>';
+        }
+        if (d.what_changed) {
+          html += '<div class="ai-section"><div class="ai-section-title">🔄 What Changed</div><p>' +
+            formatAIContent(d.what_changed) + '</p></div>';
+        }
+
+        // Still show main analysis if present
+        if (d.ai_analysis && d.ai_analysis.length > 10) {
+          html += '<div class="ai-section"><div class="ai-section-title">📝 Full Analysis</div><p>' +
+            formatAIContent(d.ai_analysis) + '</p></div>';
+        }
+
+        aiEl.innerHTML = html || '<p class="error-state">Analysis sections present but empty.</p>';
+      } else if (d.ai_analysis && d.ai_analysis.length > 10) {
+        aiEl.innerHTML = formatAIContent(d.ai_analysis)
+          .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+          .replace(/\n\n/g, '</p><p>')
+          .replace(/\n/g, ' ')
+          .replace(/^/, '<p>')
+          .replace(/$/, '</p>');
+      } else {
+        aiEl.innerHTML = '<p class="error-state">Analysis unavailable. The model may be down or returned empty output.</p>';
+      }
+    }
+
+    function formatAIContent(text) {
+      if (!text) return '';
+      return text
+        .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+        .replace(/\n\n/g, '</p><p>')
+        .replace(/\n/g, ' ');
+    }
+
+    // ── DOM Update (original cards) ──
     function updateDOM(d) {
       const meta = d.meta;
       const technical = d.technical;
@@ -254,18 +529,11 @@
       ];
       riskEl.innerHTML = rrows.map(r => '<div class="metric-row"><span class="metric-label">' + r[0] + '</span><span class="metric-value">' + r[1] + '</span></div>').join('');
 
-      // AI Analysis
-      const aiEl = document.getElementById('ai-analysis');
-      if (d.ai_analysis && d.ai_analysis.length > 10) {
-        aiEl.innerHTML = d.ai_analysis
-          .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
-          .replace(/\n\n/g, '</p><p>')
-          .replace(/\n/g, ' ')
-          .replace(/^/, '<p>')
-          .replace(/$/, '</p>');
-      } else {
-        aiEl.innerHTML = '<p class="error-state">Analysis unavailable. The model may be down or returned empty output.</p>';
-      }
+      // Research Panel
+      updateResearch(d);
+
+      // AI Analysis (enhanced)
+      updateAI(d);
 
       // Timestamp
       const ts = new Date(meta.timestamp);
@@ -318,7 +586,6 @@
       if (charts.osc) { charts.osc.destroy(); }
       const macdData = ts.macd.map(x => x);
       const macdSig = ts.macd_signal.map(x => x);
-      // Hide empty beginning for MACD
       let validStart = 0;
       for (let i = 0; i < macdData.length; i++) {
         if (macdData[i] !== null && macdData[i] !== undefined) {
@@ -358,7 +625,21 @@
       });
     }
 
-    // ── Fetch ──
+    // ── Load Changelog (separate fetch) ──
+    async function loadChangelog() {
+      try {
+        const resp = await fetch(CHANGELOG_URL + '?t=' + Date.now());
+        if (!resp.ok) throw new Error('HTTP ' + resp.status);
+        const entries = await resp.json();
+        updateChangelog(entries);
+      } catch (e) {
+        console.warn('Changelog load failed:', e.message);
+        document.getElementById('changelog-list').innerHTML =
+          '<div class="changelog-empty">Changelog data not available</div>';
+      }
+    }
+
+    // ── Main Data Load ──
     async function loadData() {
       try {
         const resp = await fetch(DATA_URL + '?t=' + Date.now());
@@ -367,17 +648,29 @@
         lastData = json;
         updateDOM(json);
         updateCharts(json);
+
+        // If hype_data.json has inline changelog, use it as fallback
+        if (json.changelog && Array.isArray(json.changelog) && json.changelog.length > 0) {
+          // Only use if changelog panel still shows loading/empty
+          const listEl = document.getElementById('changelog-list');
+          if (listEl.querySelector('.changelog-empty')) {
+            updateChangelog(json.changelog);
+          }
+        }
       } catch (e) {
         console.error('Load error:', e);
         document.getElementById('ai-analysis').innerHTML = '<p class="error-state">Failed to load data: ' + e.message + '</p>';
-        // If we have cached data, show it
         if (lastData) { updateDOM(lastData); }
       }
     }
 
-    // Initial load + periodic refresh
+    // Initial load
     loadData();
-    setInterval(loadData, 60 * 1000); // every 60s client-side
+    loadChangelog();
+
+    // Periodic refresh
+    setInterval(loadData, 60 * 1000);
+    setInterval(loadChangelog, 5 * 60 * 1000);
   </script>
 </body>
 </html>
