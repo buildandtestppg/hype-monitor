@@ -1,56 +1,56 @@
 {
   "meta": {
-    "timestamp": "2026-05-31T16:04:15.358368+00:00",
+    "timestamp": "2026-05-31T16:19:32.655509+00:00",
     "data_points": 121,
-    "price": 68.681,
-    "mark_price": 68.681,
-    "open_interest": "22766998.5200000033"
+    "price": 68.469,
+    "mark_price": 68.45,
+    "open_interest": "22763372.3599999696"
   },
   "returns": {
     "1d": 0.0,
-    "3d": 6.63,
-    "7d": 12.41,
-    "14d": 43.8,
-    "30d": 66.48,
-    "60d": 95.26,
-    "90d": 119.48
+    "3d": 6.31,
+    "7d": 12.07,
+    "14d": 43.36,
+    "30d": 65.97,
+    "60d": 94.66,
+    "90d": 118.8
   },
   "technical": {
-    "sma7": 63.02,
-    "sma20": 54.06,
-    "sma50": 46.87,
-    "rsi14": 74.3,
-    "rsi7": 78.3,
+    "sma7": 62.99,
+    "sma20": 54.05,
+    "sma50": 46.86,
+    "rsi14": 74.1,
+    "rsi7": 78.0,
     "rsi_signal": "OVERBOUGHT",
-    "macd_line": 6.1414,
-    "macd_signal": 4.8804,
-    "macd_hist": 1.261,
-    "bb_upper": 72.53,
-    "bb_lower": 35.59,
+    "macd_line": 6.1245,
+    "macd_signal": 4.877,
+    "macd_hist": 1.2475,
+    "bb_upper": 72.48,
+    "bb_lower": 35.62,
     "atr14": 5.62,
-    "atr_pct": 8.18,
-    "dist_sma7_pct": 9.0,
-    "dist_sma20_pct": 27.0,
-    "dist_sma50_pct": 46.6,
-    "stop_2x": 57.44,
-    "stop_3x": 51.82,
+    "atr_pct": 8.21,
+    "dist_sma7_pct": 8.7,
+    "dist_sma20_pct": 26.7,
+    "dist_sma50_pct": 46.1,
+    "stop_2x": 57.23,
+    "stop_3x": 51.61,
     "poc": 53.49
   },
   "volume": {
-    "latest_M": 8.62,
-    "avg7d_M": 14.1,
-    "avg30d_M": 11.36,
+    "latest_M": 8.67,
+    "avg7d_M": 14.11,
+    "avg30d_M": 11.37,
     "ratio_7v30": 1.24,
     "poc": 53.49
   },
   "orderbook": {
-    "best_bid": 68.68,
-    "best_ask": 68.681,
+    "best_bid": 68.473,
+    "best_ask": 68.474,
     "spread": 0.001,
     "spread_bps": 0.15,
-    "bid_vol_20": 3046.92,
-    "ask_vol_20": 1097.82,
-    "imbalance": 0.4703,
+    "bid_vol_20": 2213.37,
+    "ask_vol_20": 1253.07,
+    "imbalance": 0.277,
     "pressure": "BULLISH"
   },
   "funding": {
@@ -60,7 +60,7 @@
     "annualized_pct": 1.37
   },
   "correlation": {
-    "btc_30d": -0.842
+    "btc_30d": -0.843
   },
   "timeseries": {
     "dates": [
@@ -307,7 +307,7 @@
       61.52,
       64.408,
       68.291,
-      68.681
+      68.469
     ],
     "volumes": [
       18039354.77,
@@ -430,7 +430,7 @@
       14975038.2,
       22069569.28,
       12223223.46,
-      8619037.0
+      8672835.11
     ],
     "rsi": [
       null,
@@ -553,7 +553,7 @@
       67.9,
       70.7,
       74.0,
-      74.3
+      74.1
     ],
     "sma7": [
       null,
@@ -676,7 +676,7 @@
       59.4,
       60.8,
       62.17,
-      63.02
+      62.99
     ],
     "sma20": [
       null,
@@ -799,7 +799,7 @@
       50.39,
       51.46,
       52.73,
-      54.06
+      54.05
     ],
     "sma50": [
       null,
@@ -922,7 +922,7 @@
       45.3,
       45.8,
       46.34,
-      46.87
+      46.86
     ],
     "bb_upper": [
       null,
@@ -1045,7 +1045,7 @@
       66.53,
       68.32,
       70.62,
-      72.53
+      72.48
     ],
     "bb_lower": [
       null,
@@ -1168,7 +1168,7 @@
       34.24,
       34.6,
       34.83,
-      35.59
+      35.62
     ],
     "macd": [
       null,
@@ -1291,7 +1291,7 @@
       5.0156,
       5.3144,
       5.7977,
-      6.1414
+      6.1245
     ],
     "macd_signal": [
       null,
@@ -1414,8 +1414,8 @@
       3.9926,
       4.257,
       4.5651,
-      4.8804
+      4.877
     ]
   },
-  "ai_analysis": "**TREND:** Bullish \u2014 price sits 27% above the 20-day SMA and has rallied 66% in 30 days, confirming a powerful uptrend.\n**MOMENTUM:** Strong but overbought \u2014 RSI(14) at 74.3 signals exhaustion risk, yet the MACD histogram is still expanding, showing momentum hasn\u2019t peaked.\n**DECOUPLING:** HYPE is heavily decoupled from BTC (30d correlation -0.842), meaning idiosyncratic catalysts (ETF, buybacks) are driving price independently; this insulates it from broad crypto selloffs but introduces rotation risk if BTC suddenly rallies.\n**LIQUIDITY:** Institutional-grade \u2014 orderbook imbalance is bullish, spread is a razor-thin 0.15 bps, and volume, though below its 7-day average, remains in the millions, consistent with accumulation.\n**LEVERS:** Longs are not crowded \u2014 8-hour funding annualizes to just 1.37%, indicating no excessive speculative froth and room for further positioning.\n**VALUE:** Overbought relative to recent price action \u2014 price is near the upper Bollinger Band and 27% above the 20-day SMA, a level that historically precedes mean-reversion pauses.\n**RISK:** A sudden BTC bid could reverse the negative correlation, triggering a sharp rotation out of HYPE and an accelerated correction from overbought levels.\n\n**Book partial profits here and trail stops tightly below $63 (SMA7); wait for an RSI cool-off below 70 before adding new risk.**"
+  "ai_analysis": "**TREND:** Bullish \u2014 price is up 66% in 30 days, holding well above all key moving averages and near the upper Bollinger Band.\n**MOMENTUM:** Strong bullish momentum with MACD line above signal and a rising histogram, but RSI at 74.1 warns of overbought exhaustion risk.\n**DECOUPLING:** HYPE is almost perfectly inversely correlated to BTC (\u20110.843), confirming it\u2019s trading on idiosyncratic catalysts like ETF approval and buyback flows, not broad crypto beta.\n**LIQUIDITY:** Orderbook shows a bullish 0.277 bid/ask imbalance with a 0.15 bps spread, signaling deep institutional liquidity, though current volume is below the 7\u2011day average.\n**LEVERS:** Funding is negligible at 1.37% annualized, indicating no crowded long positioning and ample capacity for fresh leverage.\n**VALUE:** Price is stretched 26.7% above the SMA20 and near the upper Bollinger Band, making it overbought relative to its own short\u2011term trend.\n**RISK:** The #1 risk is a violent mean\u2011reversion snapback from overbought levels, especially if BTC suddenly rallies and breaks the negative correlation, triggering rotation out of HYPE.\n\n**Hold core position, but tighten stops to the 2x ATR level ($57.23) and take partial profits above $70 to lock in gains while maintaining upside exposure.**"
 }

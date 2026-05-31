@@ -9,9 +9,6 @@ Usage:
 import argparse, json, os, sys, time, datetime
 import numpy as np
 import requests
-from dotenv import load_dotenv
-
-load_dotenv(os.path.expanduser("~/.hermes/.env"))
 
 # ── Constants ──
 HL_API = "https://api.hyperliquid.xyz/info"
