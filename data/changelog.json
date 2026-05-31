@@ -7,5 +7,14 @@
     "to": "NEUTRAL",
     "price": 68.05,
     "detail": "Imbalance: -0.0788"
+  },
+  {
+    "timestamp": "2026-05-31T17:08:31.508277+00:00",
+    "type": "signal_change",
+    "category": "orderbook_pressure",
+    "from": "NEUTRAL",
+    "to": "BULLISH",
+    "price": 68.109,
+    "detail": "Imbalance: 0.3945"
   }
 ]
