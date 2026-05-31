@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HYPE/USD — Institutional Monitor (DeepSeek V4 Pro)</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <style>
+    :root {
+      --bg: #080c14;
+      --bg-2: #0a0f18;
+      --bg-3: #111827;
+      --accent: #00e676;
+      --accent-d: #00b248;
+      --accent-glow: rgba(0,230,118,0.12);
+      --text: #e0e6ed;
+      --text-d: #88a0b3;
+      --bad: #ff5252;
+      --warn: #ffab40;
+      --card: #0d111a;
+      --border: #1a2535;
+      --font: 'SF Mono', 'JetBrains Mono', 'Menlo', monospace;
+      --font-ui: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg); color: var(--text); font-family: var(--font);
+      min-height: 100vh; line-height: 1.5; font-size: 13px;
+    }
+    header {
+      background: linear-gradient(135deg, #0a0f18 0%, #111827 100%);
+      border-bottom: 1px solid var(--border); padding: 18px 28px;
+      display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px;
+    }
+    header h1 { font-size: 15px; font-weight: 700; color: #fff; letter-spacing: 0.5px; }
+    header .subtitle { font-size: 10px; color: var(--text-d); margin-top: 2px; }
+    .badge { display: inline-flex; align-items: center; gap: 6px; font-size: 10px; padding: 4px 10px; border-radius: 4px; background: var(--bg-3); border: 1px solid var(--border); }
+    .badge .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); animation: pulse 2s infinite; }
+    @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.3; } }
+    .container { max-width: 1400px; margin: 0 auto; padding: 20px 28px; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px; margin-bottom: 14px; }
+    .card {
+      background: var(--card); border: 1px solid var(--border); border-radius: 8px;
+      padding: 18px 20px; transition: border-color 0.2s;
+    }
+    .card:hover { border-color: #1f2d42; }
+    .card-title { font-size: 10px; text-transform: uppercase; letter-spacing: 0.8px; color: var(--text-d); margin-bottom: 10px; font-weight: 600; }
+    .metric-row { display: flex; align-items: baseline; justify-content: space-between; margin: 6px 0; }
+    .metric-label { color: var(--text-d); font-size: 11px; }
+    .metric-value { font-weight: 700; font-size: 13px; }
+    .metric-sub { font-size: 9px; color: var(--text-d); text-align: right; }
+    .up    { color: var(--accent); }
+    .down  { color: var(--bad); }
+    .warn  { color: var(--warn); }
+    .large { font-size: 24px; font-weight: 700; }
+    .price-box { display: flex; align-items: baseline; gap: 12px; margin-bottom: 8px; }
+    .returns-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 6px; margin-top: 12px; }
+    .ret-pill {
+      background: var(--bg-2); border-radius: 4px; padding: 8px; text-align: center;
+      border: 1px solid var(--border);
+    }
+    .ret-pill .period { font-size: 9px; color: var(--text-d); text-transform: uppercase; }
+    .ret-pill .val { font-size: 14px; font-weight: 700; margin-top: 2px; }
+    .charts-row {
+      display: grid; grid-template-columns: 2fr 1fr; gap: 14px; margin-bottom: 14px;
+    }
+    @media (max-width: 900px) { .charts-row { grid-template-columns: 1fr; } }
+    .chart-card { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 16px 20px; min-height: 380px; }
+    .chart-card canvas { max-height: 320px; }
+    .ai-panel {
+      background: linear-gradient(135deg, #0d0a18 0%, #111a2e 100%);
+      border: 1px solid #1a2540; border-radius: 8px; padding: 20px 24px;
+    }
+    .ai-header {
+      display: flex; align-items: center; gap: 10px; margin-bottom: 14px; padding-bottom: 12px;
+      border-bottom: 1px solid #1a2a40;
+    }
+    .ai-header .icon { width: 32px; height: 32px; border-radius: 6px; background: #1a1a3a; display: flex; align-items: center; justify-content: center; font-size: 14px; }
+    .ai-header h3 { font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: #7c7cff; font-weight: 700; }
+    .ai-header .model-tag { margin-left: auto; font-size: 9px; padding: 3px 8px; background: #1a1a3a; border-radius: 3px; color: #88a0b3; }
+    .ai-content { line-height: 1.7; color: #b0bcc8; font-size: 12px; }
+    .ai-content p { margin: 6px 0; padding: 4px 0; }
+    .ai-content strong { color: #fff; }
+    .ob-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 8px; }
+    .ob-cell {
+      background: var(--bg-2); border-radius: 4px; padding: 10px;
+      border: 1px solid var(--border);
+    }
+    .ob-cell .lab { font-size: 9px; color: var(--text-d); text-transform: uppercase; }
+    .ob-cell .val { font-size: 14px; font-weight: 700; margin-top: 2px; }
+    .footer {
+      border-top: 1px solid var(--border); padding: 16px 28px;
+      font-size: 10px; color: var(--text-d); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px;
+    }
+    .status-ok { color: var(--accent); }
+    .status-warn { color: var(--warn); }
+    .status-bad { color: var(--bad); }
+    .tag {
+      display: inline-block; padding: 2px 8px; border-radius: 3px; font-size: 9px;
+      font-weight: 600; margin-right: 4px;
+    }
+    .tag-green { background: rgba(0,230,118,0.12); color: var(--accent); }
+    .tag-red { background: rgba(255,82,82,0.12); color: var(--bad); }
+    .tag-amber { background: rgba(255,171,64,0.12); color: var(--warn); }
+    .loading { animation: spin 1s linear infinite; display: inline-block; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .hidden { display: none !important; }
+    .error-state { color: var(--bad); text-align: center; padding: 20px; }
+  </style>
+</head>
+<body>
+  <header>
+    <div>
+      <h1>HYPE/USD — INSTITUTIONAL MONITOR</h1>
+      <div class="subtitle">Multi-Factor Analysis via DeepSeek V4 Pro | Auto-updates every 6h</div>
+    </div>
+    <div class="badge"><span class="dot"></span>LIVE &mdash; <span id="last-update">Loading...</span></div>
+  </header>
+
+  <div class="container">
+    <!-- Price + Returns Row -->
+    <div class="grid">
+      <div class="card">
+        <div class="card-title">Current Price</div>
+        <div class="price-box">
+          <span class="large" id="price-display">--</span>
+          <span class="tag tag-green hidden" id="price-badge">Loading</span>
+        </div>
+        <div class="metric-sub" id="price-context"></div>
+        <div class="returns-grid" id="returns-grid"></div>
+      </div>
+      <div class="card">
+        <div class="card-title">Technicals</div>
+        <div id="tech-metrics"></div>
+      </div>
+      <div class="card">
+        <div class="card-title">Orderbook &amp; Flow</div>
+        <div class="ob-grid" id="orderbook-metrics"></div>
+      </div>
+      <div class="card">
+        <div class="card-title">Risk &amp; Value</div>
+        <div id="risk-metrics"></div>
+      </div>
+    </div>
+
+    <!-- Charts Row -->
+    <div class="charts-row">
+      <div class="chart-card">
+        <div class="card-title" style="margin-bottom:12px;">Price · SMA · Bollinger</div>
+        <canvas id="priceChart"></canvas>
+      </div>
+      <div class="chart-card">
+        <div class="card-title" style="margin-bottom:12px;">RSI · MACD</div>
+        <canvas id="oscillatorChart"></canvas>
+      </div>
+    </div>
+
+    <!-- AI Analysis -->
+    <div class="ai-panel" style="margin-bottom:14px;">
+      <div class="ai-header">
+        <div class="icon">AI</div>
+        <h3>DeepSeek V4 Pro Analysis</h3>
+        <span class="model-tag">deepseek-v4-pro:cloud</span>
+      </div>
+      <div class="ai-content" id="ai-analysis">
+        <div class="loading">Fetching fresh analysis...</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div>Built by Bubbles | Data from Hyperliquid API | Analysis: DeepSeek V4 Pro via Ollama</div>
+    <div>Next refresh: <span id="next-refresh">--</span> | Auto-refresh: ON</div>
+  </div>
+
+  <script>
+    // ── Data URL ──
+    // In dev: fetch from ./data/hype_data.json
+    // In prod on Vercel: same path relative to the HTML file
+    const DATA_URL = './data/hype_data.json';
+
+    let charts = {};
+    let lastData = null;
+
+    // ── Format helpers ──
+    const fmt = n => (n === undefined || n === null || n === 'NaN') ? '--' : Number(n).toFixed(2);
+    const fmtPct = (n, decimals=1) => (n === undefined || n === null || n === 'NaN') ? '--' : (n > 0 ? '+' : '') + n.toFixed(decimals) + '%';
+    const colorFor = n => n > 0 ? '#00e676' : (n < 0 ? '#ff5252' : '#8899ab');
+
+    // ── DOM Update ──
+    function updateDOM(d) {
+      const meta = d.meta;
+      const technical = d.technical;
+      const vol = d.volume;
+      const ob = d.orderbook;
+      const funding = d.funding;
+      const corr = d.correlation;
+      const returns = d.returns;
+
+      // Price
+      document.getElementById('price-display').textContent = '$' + fmt(meta.price);
+      const priceBadge = document.getElementById('price-badge');
+      priceBadge.classList.remove('hidden');
+      if (returns['1d'] > 0) { priceBadge.textContent = '+' + returns['1d'] + '%'; priceBadge.className = 'tag tag-green'; }
+      else if (returns['1d'] < 0) { priceBadge.textContent = returns['1d'] + '%'; priceBadge.className = 'tag tag-red'; }
+      else { priceBadge.textContent = 'Flat'; priceBadge.className = 'tag tag-amber'; }
+
+      document.getElementById('price-context').textContent = 'Mark: $' + fmt(meta.mark_price) + ' | OI: ' + meta.open_interest;
+
+      // Returns
+      const retGrid = document.getElementById('returns-grid');
+      retGrid.innerHTML = '';
+      ['1d','3d','7d','14d','30d','60d'].forEach(k => {
+        const v = returns[k];
+        const el = document.createElement('div'); el.className = 'ret-pill';
+        el.innerHTML = '<div class="period">' + k + '</div><div class="val" style="color:' + colorFor(v) + '">' + fmtPct(v) + '</div>';
+        retGrid.appendChild(el);
+      });
+
+      // Technicals
+      const techEl = document.getElementById('tech-metrics');
+      const trows = [
+        ['SMA7', '$' + fmt(technical.sma7), technical.dist_sma7_pct + '%'],
+        ['SMA20', '$' + fmt(technical.sma20), technical.dist_sma20_pct + '%'],
+        ['SMA50', '$' + fmt(technical.sma50), technical.dist_sma50_pct + '%'],
+        ['RSI(14)', technical.rsi14 + ' (' + technical.rsi_signal + ')', ''],
+        ['MACD Hist', fmt(technical.macd_hist), ''],
+        ['ATR 14D', technical.atr14 + ' (' + technical.atr_pct + '%)', ''],
+        ['Vol Regime', technical.atr_pct, ''],
+        ['BTC Corr', corr.btc_30d, ''],
+      ];
+      techEl.innerHTML = trows.map(r => '<div class="metric-row"><span class="metric-label">' + r[0] + '</span><span class="metric-value">' + r[1] + ' <span style="color:' + colorFor(r[2]) + ';font-size:10px;font-weight:400;">' + (r[2] || '') + '</span></span></div>').join('');
+
+      // Orderbook
+      const obEl = document.getElementById('orderbook-metrics');
+      obEl.innerHTML =
+        '<div class="ob-cell"><div class="lab">Best Bid</div><div class="val">$' + fmt(ob.best_bid) + '</div></div>' +
+        '<div class="ob-cell"><div class="lab">Best Ask</div><div class="val">$' + fmt(ob.best_ask) + '</div></div>' +
+        '<div class="ob-cell"><div class="lab">Spread</div><div class="val">' + ob.spread + ' (' + ob.spread_bps + ' bps)</div></div>' +
+        '<div class="ob-cell"><div class="lab">Imbalance</div><div class="val ' + (ob.pressure === 'BULLISH' ? 'up' : (ob.pressure === 'BEARISH' ? 'down' : '')) + '">' + ob.imbalance + ' (' + ob.pressure + ')</div></div>' +
+        '<div class="ob-cell"><div class="lab">Bid Vol (20)</div><div class="val">' + ob.bid_vol_20 + '</div></div>' +
+        '<div class="ob-cell"><div class="lab">Ask Vol (20)</div><div class="val">' + ob.ask_vol_20 + '</div></div>';
+
+      // Risk
+      const riskEl = document.getElementById('risk-metrics');
+      const rrows = [
+        ['2x ATR Stop', '$' + fmt(technical.stop_2x)],
+        ['3x ATR Stop', '$' + fmt(technical.stop_3x)],
+        ['Volume 7D vs 30D', vol.ratio_7v30 + 'x'],
+        ['POC (30D)', '$' + fmt(vol.poc)],
+        ['Funding Avg', funding.avg_8h + '% (8h)'],
+        ['Funding Ann.', funding.annualized_pct + '%'],
+        ['Funding Latest', funding.latest_8h + '%'],
+      ];
+      riskEl.innerHTML = rrows.map(r => '<div class="metric-row"><span class="metric-label">' + r[0] + '</span><span class="metric-value">' + r[1] + '</span></div>').join('');
+
+      // AI Analysis
+      const aiEl = document.getElementById('ai-analysis');
+      if (d.ai_analysis && d.ai_analysis.length > 10) {
+        aiEl.innerHTML = d.ai_analysis
+          .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+          .replace(/\n\n/g, '</p><p>')
+          .replace(/\n/g, ' ')
+          .replace(/^/, '<p>')
+          .replace(/$/, '</p>');
+      } else {
+        aiEl.innerHTML = '<p class="error-state">Analysis unavailable. The model may be down or returned empty output.</p>';
+      }
+
+      // Timestamp
+      const ts = new Date(meta.timestamp);
+      document.getElementById('last-update').textContent = ts.toLocaleString('en-SG', {timeZone: 'Asia/Singapore'});
+
+      // Next refresh
+      const nextTs = new Date(ts.getTime() + 6 * 60 * 60 * 1000);
+      document.getElementById('next-refresh').textContent = nextTs.toLocaleTimeString('en-SG', {timeZone: 'Asia/Singapore', hour: '2-digit', minute: '2-digit'});
+    }
+
+    // ── Update Charts ──
+    function updateCharts(d) {
+      const ts = d.timeseries;
+      const labels = ts.dates;
+      const closes = ts.closes.map(x => x === 'NaN' ? null : x);
+      const sma7 = ts.sma7.map(x => x);
+      const sma20 = ts.sma20.map(x => x);
+      const sma50 = ts.sma50.map(x => x);
+      const bbU = ts.bb_upper.map(x => x);
+      const bbL = ts.bb_lower.map(x => x);
+
+      // Price chart
+      if (charts.price) { charts.price.destroy(); }
+      const ctxP = document.getElementById('priceChart').getContext('2d');
+      charts.price = new Chart(ctxP, {
+        type: 'line',
+        data: {
+          labels,
+          datasets: [
+            { label: 'Price', data: closes, borderColor: '#00e676', backgroundColor: 'transparent', borderWidth: 1.2, pointRadius: 0, tension: 0.1 },
+            { label: 'SMA7', data: sma7, borderColor: '#ffab40', borderWidth: 0.8, pointRadius: 0 },
+            { label: 'SMA20', data: sma20, borderColor: '#e040fb', borderWidth: 0.8, pointRadius: 0 },
+            { label: 'SMA50', data: sma50, borderColor: '#00bcd4', borderWidth: 0.8, pointRadius: 0 },
+            { label: 'BB Upper', data: bbU, borderColor: '#448aff', borderWidth: 0.5, pointRadius: 0, borderDash: [5,5] },
+            { label: 'BB Lower', data: bbL, borderColor: '#448aff', borderWidth: 0.5, pointRadius: 0, borderDash: [5,5] },
+          ]
+        },
+        options: {
+          responsive: true, maintainAspectRatio: false,
+          interaction: { mode: 'index', intersect: false },
+          plugins: { legend: { labels: { color: '#8899ab', font: { size: 10 } } } },
+          scales: {
+            x: { display: true, ticks: { color: '#556677', font: { size: 9 }, maxTicksLimit: 8 } },
+            y: { display: true, ticks: { color: '#556677', font: { size: 9 } } },
+          }
+        }
+      });
+
+      // Oscillator chart
+      if (charts.osc) { charts.osc.destroy(); }
+      const macdData = ts.macd.map(x => x);
+      const macdSig = ts.macd_signal.map(x => x);
+      // Hide empty beginning for MACD
+      let validStart = 0;
+      for (let i = 0; i < macdData.length; i++) {
+        if (macdData[i] !== null && macdData[i] !== undefined) {
+          validStart = i; break;
+        }
+      }
+      const rsiData = ts.rsi.map(x => x);
+      const ctxO = document.getElementById('oscillatorChart').getContext('2d');
+      charts.osc = new Chart(ctxO, {
+        type: 'line',
+        data: {
+          labels,
+          datasets: [
+            { label: 'RSI', data: rsiData, yAxisID: 'y', borderColor: '#e040fb', borderWidth: 1, pointRadius: 0, tension: 0.1 },
+            { label: 'MACD', data: macdData, yAxisID: 'y2', borderColor: '#448aff', borderWidth: 0.8, pointRadius: 0 },
+            { label: 'MACD Sig', data: macdSig, yAxisID: 'y2', borderColor: '#ff6e40', borderWidth: 0.6, pointRadius: 0 },
+          ]
+        },
+        options: {
+          responsive: true, maintainAspectRatio: false,
+          interaction: { mode: 'index', intersect: false },
+          plugins: { legend: { labels: { color: '#8899ab', font: { size: 10 } } } },
+          scales: {
+            x: { display: true, ticks: { color: '#556677', font: { size: 9 }, maxTicksLimit: 6 } },
+            y: {
+              type: 'linear', position: 'left', display: true,
+              ticks: { color: '#e040fb', font: { size: 9 } },
+              min: 10, max: 90,
+            },
+            y2: {
+              type: 'linear', position: 'right', display: true,
+              ticks: { color: '#448aff', font: { size: 9 } },
+              grid: { display: false },
+            },
+          }
+        }
+      });
+    }
+
+    // ── Fetch ──
+    async function loadData() {
+      try {
+        const resp = await fetch(DATA_URL + '?t=' + Date.now());
+        if (!resp.ok) throw new Error('HTTP ' + resp.status);
+        const json = await resp.json();
+        lastData = json;
+        updateDOM(json);
+        updateCharts(json);
+      } catch (e) {
+        console.error('Load error:', e);
+        document.getElementById('ai-analysis').innerHTML = '<p class="error-state">Failed to load data: ' + e.message + '</p>';
+        // If we have cached data, show it
+        if (lastData) { updateDOM(lastData); }
+      }
+    }
+
+    // Initial load + periodic refresh
+    loadData();
+    setInterval(loadData, 60 * 1000); // every 60s client-side
+  </script>
+</body>
+</html>
