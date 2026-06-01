@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HYPE/USD — Institutional Monitor (DeepSeek V4 Pro)</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <style>
+    :root {
+      --bg: #080c14;
+      --bg-2: #0a0f18;
+      --bg-3: #111827;
+      --accent: #00e676;
+      --accent-d: #00b248;
+      --accent-glow: rgba(0,230,118,0.12);
+      --text: #e0e6ed;
+      --text-d: #88a0b3;
+      --bad: #ff5252;
+      --warn: #ffab40;
+      --card: #0d111a;
+      --border: #1a2535;
+      --font: 'SF Mono', 'JetBrains Mono', 'Menlo', monospace;
+      --font-ui: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg); color: var(--text); font-family: var(--font);
+      min-height: 100vh; line-height: 1.5; font-size: 13px;
+    }
+    header {
+      background: linear-gradient(135deg, #0a0f18 0%, #111827 100%);
+      border-bottom: 1px solid var(--border); padding: 18px 28px;
+      display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px;
+    }
+    header h1 { font-size: 15px; font-weight: 700; color: #fff; letter-spacing: 0.5px; }
+    header .subtitle { font-size: 10px; color: var(--text-d); margin-top: 2px; }
+    .badge { display: inline-flex; align-items: center; gap: 6px; font-size: 10px; padding: 4px 10px; border-radius: 4px; background: var(--bg-3); border: 1px solid var(--border); }
+    .badge .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); animation: pulse 2s infinite; }
+    @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.3; } }
+    .container { max-width: 1600px; margin: 0 auto; padding: 20px 28px; }
+
+    /* Top metric cards — 5-column auto-fit */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 14px; margin-bottom: 14px;
+    }
+    .card {
+      background: var(--card); border: 1px solid var(--border); border-radius: 8px;
+      padding: 18px 20px; transition: border-color 0.2s;
+    }
+    .card:hover { border-color: #1f2d42; }
+    .card-title { font-size: 10px; text-transform: uppercase; letter-spacing: 0.8px; color: var(--text-d); margin-bottom: 10px; font-weight: 600; }
+    .metric-row { display: flex; align-items: baseline; justify-content: space-between; margin: 6px 0; }
+    .metric-label { color: var(--text-d); font-size: 11px; }
+    .metric-value { font-weight: 700; font-size: 13px; }
+    .metric-sub { font-size: 9px; color: var(--text-d); text-align: right; }
+    .up    { color: var(--accent); }
+    .down  { color: var(--bad); }
+    .warn  { color: var(--warn); }
+    .large { font-size: 24px; font-weight: 700; }
+    .price-box { display: flex; align-items: baseline; gap: 12px; margin-bottom: 8px; }
+    .returns-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 6px; margin-top: 12px; }
+    .ret-pill {
+      background: var(--bg-2); border-radius: 4px; padding: 8px; text-align: center;
+      border: 1px solid var(--border);
+    }
+    .ret-pill .period { font-size: 9px; color: var(--text-d); text-transform: uppercase; }
+    .ret-pill .val { font-size: 14px; font-weight: 700; margin-top: 2px; }
+    .charts-row {
+      display: grid; grid-template-columns: 2fr 1fr; gap: 14px; margin-bottom: 14px;
+    }
+    @media (max-width: 900px) { .charts-row { grid-template-columns: 1fr; } }
+    .chart-card { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 16px 20px; min-height: 380px; }
+    .chart-card canvas { max-height: 320px; }
+
+    /* Research Panel extras */
+    .research-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+    .research-cell {
+      background: var(--bg-2); border-radius: 4px; padding: 8px 10px;
+      border: 1px solid var(--border);
+    }
+    .research-cell .lab { font-size: 9px; color: var(--text-d); text-transform: uppercase; }
+    .research-cell .val { font-size: 13px; font-weight: 700; margin-top: 1px; }
+    .change-badge {
+      display: inline-block; padding: 1px 6px; border-radius: 3px; font-size: 9px; font-weight: 600; margin-left: 4px;
+    }
+    .change-badge.pos { background: rgba(0,230,118,0.12); color: var(--accent); }
+    .change-badge.neg { background: rgba(255,82,82,0.12); color: var(--bad); }
+
+    /* Narrative Gauge */
+    .gauge-wrap { display: flex; flex-direction: column; align-items: center; margin: 10px 0 6px; }
+    .gauge-svg { width: 120px; height: 70px; }
+    .gauge-label { font-size: 10px; color: var(--text-d); margin-top: 2px; text-transform: uppercase; letter-spacing: 0.5px; }
+    .narrative-score { font-size: 28px; font-weight: 800; }
+    .mini-bars { margin-top: 8px; }
+    .mini-bar-row { display: flex; align-items: center; gap: 6px; margin: 3px 0; }
+    .mini-bar-label { font-size: 9px; color: var(--text-d); width: 80px; flex-shrink: 0; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; }
+    .mini-bar-track { flex: 1; height: 6px; background: var(--bg-3); border-radius: 3px; overflow: hidden; }
+    .mini-bar-fill { height: 100%; border-radius: 3px; transition: width 0.4s ease; }
+
+    /* Changelog Panel */
+    .changelog-panel {
+      background: var(--card); border: 1px solid var(--border); border-radius: 8px;
+      padding: 18px 20px; margin-bottom: 14px;
+    }
+    .changelog-title {
+      font-size: 10px; text-transform: uppercase; letter-spacing: 0.8px; color: var(--text-d);
+      margin-bottom: 12px; font-weight: 600; display: flex; align-items: center; gap: 8px;
+    }
+    .changelog-title .count { background: var(--bg-3); padding: 2px 8px; border-radius: 3px; font-size: 9px; color: var(--text-d); }
+    .changelog-list {
+      max-height: 340px; overflow-y: auto; scrollbar-width: thin; scrollbar-color: #1a2535 transparent;
+    }
+    .changelog-list::-webkit-scrollbar { width: 5px; }
+    .changelog-list::-webkit-scrollbar-thumb { background: #1a2535; border-radius: 3px; }
+    .changelog-entry {
+      display: flex; align-items: flex-start; gap: 10px; padding: 10px 0;
+      border-bottom: 1px solid rgba(26,37,53,0.5); line-height: 1.4;
+    }
+    .changelog-entry:last-child { border-bottom: none; }
+    .cl-icon { font-size: 14px; flex-shrink: 0; margin-top: 1px; }
+    .cl-body { flex: 1; min-width: 0; }
+    .cl-desc { font-size: 12px; color: var(--text); }
+    .cl-meta { font-size: 9px; color: var(--text-d); margin-top: 2px; }
+    .cl-price { font-size: 9px; color: var(--text-d); margin-left: 6px; }
+    .cl-type-signal { border-left: 3px solid var(--warn); padding-left: 10px; }
+    .cl-type-milestone { border-left: 3px solid var(--accent); padding-left: 10px; }
+    .cl-type-default { border-left: 3px solid var(--text-d); padding-left: 10px; }
+    .severity-pos .cl-desc { color: var(--accent); }
+    .severity-neg .cl-desc { color: var(--bad); }
+    .severity-neutral .cl-desc { color: var(--warn); }
+    .changelog-empty { text-align: center; padding: 24px; color: var(--text-d); font-size: 11px; }
+
+    /* AI Panel */
+    .ai-panel {
+      background: linear-gradient(135deg, #0d0a18 0%, #111a2e 100%);
+      border: 1px solid #1a2540; border-radius: 8px; padding: 20px 24px;
+    }
+    .ai-header {
+      display: flex; align-items: center; gap: 10px; margin-bottom: 14px; padding-bottom: 12px;
+      border-bottom: 1px solid #1a2a40;
+    }
+    .ai-header .icon { width: 32px; height: 32px; border-radius: 6px; background: #1a1a3a; display: flex; align-items: center; justify-content: center; font-size: 14px; }
+    .ai-header h3 { font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: #7c7cff; font-weight: 700; }
+    .ai-header .model-tag { margin-left: auto; font-size: 9px; padding: 3px 8px; background: #1a1a3a; border-radius: 3px; color: #88a0b3; }
+    .ai-content { line-height: 1.7; color: #b0bcc8; font-size: 12px; }
+    .ai-content p { margin: 6px 0; padding: 4px 0; }
+    .ai-content strong { color: #fff; }
+    .ai-section {
+      margin: 12px 0; padding: 12px 14px; background: rgba(0,0,0,0.2); border-radius: 6px;
+      border-left: 3px solid #3a3a6a;
+    }
+    .ai-section-title {
+      font-size: 10px; text-transform: uppercase; letter-spacing: 0.8px; color: #8888cc;
+      margin-bottom: 6px; font-weight: 700;
+    }
+
+    /* Orderbook */
+    .ob-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 8px; }
+    .ob-cell {
+      background: var(--bg-2); border-radius: 4px; padding: 10px;
+      border: 1px solid var(--border);
+    }
+    .ob-cell .lab { font-size: 9px; color: var(--text-d); text-transform: uppercase; }
+    .ob-cell .val { font-size: 14px; font-weight: 700; margin-top: 2px; }
+    .footer {
+      border-top: 1px solid var(--border); padding: 16px 28px;
+      font-size: 10px; color: var(--text-d); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px;
+    }
+    .status-ok { color: var(--accent); }
+    .status-warn { color: var(--warn); }
+    .status-bad { color: var(--bad); }
+    .tag {
+      display: inline-block; padding: 2px 8px; border-radius: 3px; font-size: 9px;
+      font-weight: 600; margin-right: 4px;
+    }
+    .tag-green { background: rgba(0,230,118,0.12); color: var(--accent); }
+    .tag-red { background: rgba(255,82,82,0.12); color: var(--bad); }
+    .tag-amber { background: rgba(255,171,64,0.12); color: var(--warn); }
+    .loading { animation: spin 1s linear infinite; display: inline-block; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .hidden { display: none !important; }
+    .error-state { color: var(--bad); text-align: center; padding: 20px; }
+  </style>
+</head>
+<body>
+  <header>
+    <div>
+      <h1>HYPE/USD — INSTITUTIONAL MONITOR</h1>
+      <div class="subtitle">Live Fundamentals · DeepSeek V4 Pro Research · DeFi Llama Fees/Volume/Revenue · Hyperliquid OI · Auto-updates hourly</div>
+    </div>
+    <div class="badge"><span class="dot"></span>LIVE &mdash; <span id="last-update">Loading...</span></div>
+  </header>
+
+  <div class="container">
+    <!-- Top Metric Cards (5 columns) -->
+    <div class="grid">
+      <div class="card">
+        <div class="card-title">Current Price</div>
+        <div class="price-box">
+          <span class="large" id="price-display">--</span>
+          <span class="tag tag-green hidden" id="price-badge">Loading</span>
+        </div>
+        <div class="metric-sub" id="price-context"></div>
+        <div class="returns-grid" id="returns-grid"></div>
+      </div>
+      <div class="card">
+        <div class="card-title">Technicals</div>
+        <div id="tech-metrics"></div>
+      </div>
+      <div class="card">
+        <div class="card-title">Orderbook &amp; Flow</div>
+        <div class="ob-grid" id="orderbook-metrics"></div>
+      </div>
+      <div class="card">
+        <div class="card-title">Risk &amp; Value</div>
+        <div id="risk-metrics"></div>
+      </div>
+      <div class="card" id="research-card">
+        <div class="card-title">Research &amp; Fundamentals</div>
+        <div id="research-content">
+          <div style="color:var(--text-d);font-size:11px;">Awaiting data...</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Charts Row -->
+    <div class="charts-row">
+      <div class="chart-card">
+        <div class="card-title" style="margin-bottom:12px;">Price · SMA · Bollinger</div>
+        <canvas id="priceChart"></canvas>
+      </div>
+      <div class="chart-card">
+        <div class="card-title" style="margin-bottom:12px;">RSI · MACD</div>
+        <canvas id="oscillatorChart"></canvas>
+      </div>
+    </div>
+
+    <!-- Changelog / Signal History -->
+    <div class="changelog-panel" id="changelog-panel">
+      <div class="changelog-title">
+        <span>📋 Signal History &amp; Changelog</span>
+        <span class="count" id="cl-count">--</span>
+      </div>
+      <div class="changelog-list" id="changelog-list">
+        <div class="changelog-empty">Loading signal history...</div>
+      </div>
+    </div>
+
+    <!-- AI Analysis -->
+    <div class="ai-panel" style="margin-bottom:14px;">
+      <div class="ai-header">
+        <div class="icon">AI</div>
+        <h3>DeepSeek V4 Pro Analysis</h3>
+        <span class="model-tag">deepseek-v4-pro:cloud</span>
+      </div>
+      <div class="ai-content" id="ai-analysis">
+        <div class="loading">Fetching fresh analysis...</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div>Research: DeFi Llama + Hyperliquid API | Signal Tracking: ON</div>
+    <div>Next refresh: <span id="next-refresh">--</span> | Auto-refresh: ON</div>
+  </div>
+
+  <script>
+    // ── Data URLs ──
+    const DATA_URL = './data/hype_data.json';
+    const CHANGELOG_URL = './data/changelog.json';
+
+    let charts = {};
+    let lastData = null;
+
+    // ── Format helpers ──
+    const fmt = n => (n === undefined || n === null || n === 'NaN') ? '--' : Number(n).toFixed(2);
+    const fmtPct = (n, decimals=1) => (n === undefined || n === null || n === 'NaN') ? '--' : (n > 0 ? '+' : '') + n.toFixed(decimals) + '%';
+    const colorFor = n => n > 0 ? '#00e676' : (n < 0 ? '#ff5252' : '#8899ab');
+    const fmtCompact = n => {
+      if (n === undefined || n === null) return '--';
+      n = Number(n);
+      if (n >= 1e9) return '$' + (n / 1e9).toFixed(2) + 'B';
+      if (n >= 1e6) return '$' + (n / 1e6).toFixed(2) + 'M';
+      if (n >= 1e3) return '$' + (n / 1e3).toFixed(1) + 'K';
+      return '$' + n.toFixed(2);
+    };
+
+    // ── Narrative gauge color ──
+    const gaugeColor = score => {
+      if (score < 30) return '#ff5252';
+      if (score <= 60) return '#ffab40';
+      return '#00e676';
+    };
+
+    // ── Build Research Panel ──
+    function updateResearch(d) {
+      const r = d.research || {};
+      const el = document.getElementById('research-content');
+
+      // New nested data structure
+      const proto = r.protocol_stats || {};
+      const fees = r.fees || {};
+      const vol = r.volume || {};
+      const perp = r.hype_perp || {};
+      const val = r.valuation || {};
+      const narr = r.narrative_score || {};
+
+      // Check if we have any research data
+      if (!proto.tvl && !fees.fees_24h && !vol.volume_24h) {
+        el.innerHTML = '<div style="color:var(--text-d);font-size:11px;">Research data unavailable (DeFi Llama not synced)</div>';
+        return;
+      }
+
+      const changeBadge = (v) => {
+        if (v === undefined || v === null) return '';
+        const cls = v >= 0 ? 'pos' : 'neg';
+        return '<span class="change-badge ' + cls + '">' + fmtPct(v) + '</span>';
+      };
+
+      // Gauge SVG (semicircle)
+      const score = narr.score || 0;
+      const gColor = gaugeColor(score);
+      const pctAngle = (score / 100) * 180;
+      const rad = (pctAngle - 90) * Math.PI / 180;
+      const cx = 60, cy = 55, gr = 45;
+      const needleX = cx + gr * Math.cos(rad);
+      const needleY = cy + gr * Math.sin(rad);
+      const gaugeSvg = '<svg class="gauge-svg" viewBox="0 0 120 70">' +
+        '<path d="M15,55 A45,45 0 0,1 105,55" fill="none" stroke="#1a2535" stroke-width="8" stroke-linecap="round"/>' +
+        '<path d="M15,55 A45,45 0 0,1 105,55" fill="none" stroke="' + gColor + '" stroke-width="8" stroke-linecap="round" ' +
+          'stroke-dasharray="' + (score / 100 * 141.37) + ' 141.37" opacity="0.7"/>' +
+        '<line x1="' + cx + '" y1="' + cy + '" x2="' + needleX + '" y2="' + needleY + '" stroke="' + gColor + '" stroke-width="2" stroke-linecap="round"/>' +
+        '<circle cx="' + cx + '" cy="' + cy + '" r="3" fill="' + gColor + '"/>' +
+        '</svg>';
+
+      // Mini bars for narrative components
+      const comp = narr.components || {};
+      const compEntries = Object.entries(comp);
+      const miniBars = compEntries.map(([k, v]) => {
+        const bv = Number(v) || 0;
+        const normalized = Math.max(-100, Math.min(100, bv));
+        const width = Math.min(100, Math.abs(normalized));
+        const barColor = normalized >= 0 ? '#00e676' : '#ff5252';
+        const displayVal = typeof v === 'number' ? v.toFixed(1) : (v || '--');
+        return '<div class="mini-bar-row">' +
+          '<span class="mini-bar-label">' + k.replace(/_/g, ' ') + '</span>' +
+          '<div class="mini-bar-track"><div class="mini-bar-fill" style="width:' + width + '%;background:' + barColor + ';"></div></div>' +
+          '<span style="font-size:9px;color:' + barColor + ';width:36px;text-align:right;">' + displayVal + '</span>' +
+          '</div>';
+      }).join('');
+
+      // Build fundamentals grid (3 cols for richer display)
+      let gridCells = '';
+
+      // TVL
+      gridCells += '<div class="research-cell"><div class="lab">TVL</div><div class="val">' +
+        fmtCompact(proto.tvl) + changeBadge(proto.tvl_7d_change_pct) +
+        '</div><div style="font-size:8px;color:var(--text-d);margin-top:1px;">7d ' + fmtPct(proto.tvl_7d_change_pct) + ' · 30d ' + fmtPct(proto.tvl_30d_change_pct) +
+        '</div></div>';
+
+      // Fees 24h
+      const feeSub = fees.fees_7d_avg_daily ? '7d avg: ' + fmtCompact(fees.fees_7d_avg_daily) + '/day' : '';
+      const feeTrend = fees.fees_trend_pct !== undefined && fees.fees_trend_pct !== null ? ' · trend: ' + fmtPct(fees.fees_trend_pct) : '';
+      gridCells += '<div class="research-cell"><div class="lab">Fees (24h)</div><div class="val">' +
+        fmtCompact(fees.fees_24h) +
+        '</div><div style="font-size:8px;color:var(--text-d);margin-top:1px;">' + feeSub + feeTrend +
+        '</div></div>';
+
+      // All-time fees
+      gridCells += '<div class="research-cell"><div class="lab">All-Time Fees</div><div class="val">' +
+        fmtCompact(fees.fees_all_time) +
+        '</div><div style="font-size:8px;color:var(--text-d);margin-top:1px;">30d total: ' + fmtCompact(fees.fees_30d_total) +
+        '</div></div>';
+
+      // DEX Volume 24h
+      const volSub = vol.volume_7d_avg_daily ? '7d avg: ' + fmtCompact(vol.volume_7d_avg_daily) + '/day' : '';
+      const volTrend = vol.volume_trend_pct !== undefined && vol.volume_trend_pct !== null ? ' · trend: ' + fmtPct(vol.volume_trend_pct) : '';
+      gridCells += '<div class="research-cell"><div class="lab">DEX Volume (24h)</div><div class="val">' +
+        fmtCompact(vol.volume_24h) +
+        '</div><div style="font-size:8px;color:var(--text-d);margin-top:1px;">' + volSub + volTrend +
+        '</div></div>';
+
+      // Perp OI + Perp Volume
+      gridCells += '<div class="research-cell"><div class="lab">Perp OI</div><div class="val">' +
+        fmtCompact(perp.oi_usd) +
+        '</div><div style="font-size:8px;color:var(--text-d);margin-top:1px;">' +
+        (perp.oi_tokens ? Number(perp.oi_tokens).toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, ',') + ' HYPE' : '') +
+        '</div></div>';
+
+      gridCells += '<div class="research-cell"><div class="lab">Perp Volume (24h)</div><div class="val">' +
+        fmtCompact(perp.day_notional_vol) +
+        '</div><div style="font-size:8px;color:var(--text-d);margin-top:1px;">' +
+        (perp.price_change_24h_pct ? '24h: ' + fmtPct(perp.price_change_24h_pct) : '') +
+        '</div></div>';
+
+      // Valuation row
+      const mcapTvlStr = val.mcap_tvl_ratio ? 'Mc/TVL: ' + val.mcap_tvl_ratio + 'x' : '';
+      const pfrStr = val.price_to_daily_revenue ? ' · P/Rev: ' + Number(val.price_to_daily_revenue).toLocaleString() + 'x' : '';
+      const oiMcStr = val.oi_to_mcap_pct ? ' · OI/Mc: ' + val.oi_to_mcap_pct + '%' : '';
+
+      // Buyback yield estimate
+      let buybackStr = '';
+      if (fees.fees_24h && proto.mcap) {
+        const annualBuyback = fees.fees_24h * 365 * 0.97;
+        const buybackYield = (annualBuyback / proto.mcap) * 100;
+        buybackStr = ' · 🔄 Buyback: ~' + buybackYield.toFixed(1) + '%/yr';
+      }
+
+      gridCells += '<div class="research-cell"><div class="lab">Market Cap</div><div class="val">' +
+        fmtCompact(proto.mcap) +
+        '</div><div style="font-size:8px;color:var(--text-d);margin-top:1px;">' +
+        (proto.fdv ? 'FDV: ' + fmtCompact(proto.fdv) : '') +
+        '</div></div>';
+
+      gridCells += '<div class="research-cell"><div class="lab">Valuation</div><div class="val" style="font-size:11px;">' +
+        mcapTvlStr + pfrStr + oiMcStr +
+        '</div><div style="font-size:8px;color:var(--text-d);margin-top:1px;">' +
+        buybackStr +
+        '</div></div>';
+
+      // BTC
+      gridCells += '<div class="research-cell"><div class="lab">BTC Price</div><div class="val">$' +
+        fmt(r.btc_price) +
+        '</div><div style="font-size:8px;color:var(--text-d);margin-top:1px;">' +
+        (d.correlation ? '30d ρ: ' + d.correlation.btc_30d : '') +
+        '</div></div>';
+
+      el.innerHTML =
+        '<div class="research-grid" style="grid-template-columns:repeat(3,1fr);">' + gridCells + '</div>' +
+        '<div class="gauge-wrap">' +
+          gaugeSvg +
+          '<div class="narrative-score" style="color:' + gColor + ';">' + (score || '--') + '</div>' +
+          '<div class="gauge-label">' + (narr.label || 'Narrative Score') + '</div>' +
+        '</div>' +
+        '<div class="mini-bars">' + miniBars + '</div>';
+    }
+
+    // ── Build Changelog Panel ──
+    function updateChangelog(entries) {
+      const listEl = document.getElementById('changelog-list');
+      const countEl = document.getElementById('cl-count');
+
+      if (!entries || !Array.isArray(entries) || entries.length === 0) {
+        listEl.innerHTML = '<div class="changelog-empty">No signal history available</div>';
+        countEl.textContent = '0';
+        return;
+      }
+
+      const recent = entries.slice(0, 20);
+      countEl.textContent = Math.min(20, entries.length) + ' / ' + entries.length;
+
+      listEl.innerHTML = recent.map(e => {
+        // Determine icon
+        let icon = '📋';
+        let typeCls = 'cl-type-default';
+        if (e.type === 'signal_flip' || e.type === 'signal_change') { icon = '⚠️'; typeCls = 'cl-type-signal'; }
+        else if (e.type === 'milestone' || e.type === 'milestone_hit') { icon = '🏆'; typeCls = 'cl-type-milestone'; }
+        else if (e.type === 'trend_shift') { icon = '📊'; typeCls = 'cl-type-signal'; }
+        else if (e.type === 'risk_alert') { icon = '🔴'; typeCls = 'cl-type-signal'; }
+
+        // Determine severity coloring
+        let severity = 'neutral';
+        const desc = (e.detail || e.description || '').toLowerCase();
+        const from = (e.from || '').toLowerCase();
+        const to = (e.to || '').toLowerCase();
+        if (to.includes('bull') || to.includes('buy') || to.includes('long') || desc.includes('new high') || desc.includes('breakout') || desc.includes('support') || desc.includes('bounce')) {
+          severity = 'pos';
+        } else if (to.includes('bear') || to.includes('sell') || to.includes('short') || desc.includes('breakdown') || desc.includes('rejection') || desc.includes('resistance')) {
+          severity = 'neg';
+        }
+
+        const severityCls = 'severity-' + severity;
+        const ts = e.timestamp ? new Date(e.timestamp) : null;
+        const timeStr = ts ? ts.toLocaleString('en-SG', { timeZone: 'Asia/Singapore', month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' }) : '';
+        const detail = e.detail || e.description || [e.category, e.from, '→', e.to].filter(Boolean).join(' ');
+        const priceStr = e.price ? '$' + fmt(e.price) : '';
+
+        return '<div class="changelog-entry ' + typeCls + ' ' + severityCls + '">' +
+          '<span class="cl-icon">' + icon + '</span>' +
+          '<div class="cl-body">' +
+            '<div class="cl-desc">' + detail + '</div>' +
+            '<div class="cl-meta">' + timeStr +
+              (priceStr ? '<span class="cl-price">@ ' + priceStr + '</span>' : '') +
+              (e.category ? ' · ' + e.category : '') +
+            '</div>' +
+          '</div>' +
+        '</div>';
+      }).join('');
+    }
+
+    // ── Enhanced AI Panel ──
+    function updateAI(d) {
+      const aiEl = document.getElementById('ai-analysis');
+
+      // Check for expanded analysis sections first
+      const hasExpanded = d.protocol_fundamentals || d.narrative_thesis || d.what_changed;
+
+      if (hasExpanded) {
+        let html = '';
+
+        if (d.protocol_fundamentals) {
+          html += '<div class="ai-section"><div class="ai-section-title">🏗️ Protocol Fundamentals</div><p>' +
+            formatAIContent(d.protocol_fundamentals) + '</p></div>';
+        }
+        if (d.narrative_thesis) {
+          html += '<div class="ai-section"><div class="ai-section-title">🎯 Narrative Thesis</div><p>' +
+            formatAIContent(d.narrative_thesis) + '</p></div>';
+        }
+        if (d.what_changed) {
+          html += '<div class="ai-section"><div class="ai-section-title">🔄 What Changed</div><p>' +
+            formatAIContent(d.what_changed) + '</p></div>';
+        }
+
+        // Still show main analysis if present
+        if (d.ai_analysis && d.ai_analysis.length > 10) {
+          html += '<div class="ai-section"><div class="ai-section-title">📝 Full Analysis</div><p>' +
+            formatAIContent(d.ai_analysis) + '</p></div>';
+        }
+
+        aiEl.innerHTML = html || '<p class="error-state">Analysis sections present but empty.</p>';
+      } else if (d.ai_analysis && d.ai_analysis.length > 10) {
+        aiEl.innerHTML = formatAIContent(d.ai_analysis)
+          .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+          .replace(/\n\n/g, '</p><p>')
+          .replace(/\n/g, ' ')
+          .replace(/^/, '<p>')
+          .replace(/$/, '</p>');
+      } else {
+        aiEl.innerHTML = '<p class="error-state">Analysis unavailable. The model may be down or returned empty output.</p>';
+      }
+    }
+
+    function formatAIContent(text) {
+      if (!text) return '';
+      return text
+        .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+        .replace(/\n\n/g, '</p><p>')
+        .replace(/\n/g, ' ');
+    }
+
+    // ── DOM Update (original cards) ──
+    function updateDOM(d) {
+      const meta = d.meta;
+      const technical = d.technical;
+      const vol = d.volume;
+      const ob = d.orderbook;
+      const funding = d.funding;
+      const corr = d.correlation;
+      const returns = d.returns;
+
+      // Price
+      document.getElementById('price-display').textContent = '$' + fmt(meta.price);
+      const priceBadge = document.getElementById('price-badge');
+      priceBadge.classList.remove('hidden');
+      if (returns['1d'] > 0) { priceBadge.textContent = '+' + returns['1d'] + '%'; priceBadge.className = 'tag tag-green'; }
+      else if (returns['1d'] < 0) { priceBadge.textContent = returns['1d'] + '%'; priceBadge.className = 'tag tag-red'; }
+      else { priceBadge.textContent = 'Flat'; priceBadge.className = 'tag tag-amber'; }
+
+      document.getElementById('price-context').textContent = 'Mark: $' + fmt(meta.mark_price) + ' | OI: ' + meta.open_interest;
+
+      // Returns
+      const retGrid = document.getElementById('returns-grid');
+      retGrid.innerHTML = '';
+      ['1d','3d','7d','14d','30d','60d'].forEach(k => {
+        const v = returns[k];
+        const el = document.createElement('div'); el.className = 'ret-pill';
+        el.innerHTML = '<div class="period">' + k + '</div><div class="val" style="color:' + colorFor(v) + '">' + fmtPct(v) + '</div>';
+        retGrid.appendChild(el);
+      });
+
+      // Technicals
+      const techEl = document.getElementById('tech-metrics');
+      const trows = [
+        ['SMA7', '$' + fmt(technical.sma7), technical.dist_sma7_pct + '%'],
+        ['SMA20', '$' + fmt(technical.sma20), technical.dist_sma20_pct + '%'],
+        ['SMA50', '$' + fmt(technical.sma50), technical.dist_sma50_pct + '%'],
+        ['RSI(14)', technical.rsi14 + ' (' + technical.rsi_signal + ')', ''],
+        ['MACD Hist', fmt(technical.macd_hist), ''],
+        ['ATR 14D', technical.atr14 + ' (' + technical.atr_pct + '%)', ''],
+        ['Vol Regime', technical.atr_pct, ''],
+        ['BTC Corr', corr.btc_30d, ''],
+      ];
+      techEl.innerHTML = trows.map(r => '<div class="metric-row"><span class="metric-label">' + r[0] + '</span><span class="metric-value">' + r[1] + ' <span style="color:' + colorFor(r[2]) + ';font-size:10px;font-weight:400;">' + (r[2] || '') + '</span></span></div>').join('');
+
+      // Orderbook
+      const obEl = document.getElementById('orderbook-metrics');
+      obEl.innerHTML =
+        '<div class="ob-cell"><div class="lab">Best Bid</div><div class="val">$' + fmt(ob.best_bid) + '</div></div>' +
+        '<div class="ob-cell"><div class="lab">Best Ask</div><div class="val">$' + fmt(ob.best_ask) + '</div></div>' +
+        '<div class="ob-cell"><div class="lab">Spread</div><div class="val">' + ob.spread + ' (' + ob.spread_bps + ' bps)</div></div>' +
+        '<div class="ob-cell"><div class="lab">Imbalance</div><div class="val ' + (ob.pressure === 'BULLISH' ? 'up' : (ob.pressure === 'BEARISH' ? 'down' : '')) + '">' + ob.imbalance + ' (' + ob.pressure + ')</div></div>' +
+        '<div class="ob-cell"><div class="lab">Bid Vol (20)</div><div class="val">' + ob.bid_vol_20 + '</div></div>' +
+        '<div class="ob-cell"><div class="lab">Ask Vol (20)</div><div class="val">' + ob.ask_vol_20 + '</div></div>';
+
+      // Risk
+      const riskEl = document.getElementById('risk-metrics');
+      const rrows = [
+        ['2x ATR Stop', '$' + fmt(technical.stop_2x)],
+        ['3x ATR Stop', '$' + fmt(technical.stop_3x)],
+        ['Volume 7D vs 30D', vol.ratio_7v30 + 'x'],
+        ['POC (30D)', '$' + fmt(vol.poc)],
+        ['Funding Avg', funding.avg_8h + '% (8h)'],
+        ['Funding Ann.', funding.annualized_pct + '%'],
+        ['Funding Latest', funding.latest_8h + '%'],
+      ];
+      riskEl.innerHTML = rrows.map(r => '<div class="metric-row"><span class="metric-label">' + r[0] + '</span><span class="metric-value">' + r[1] + '</span></div>').join('');
+
+      // Research Panel
+      updateResearch(d);
+
+      // AI Analysis (enhanced)
+      updateAI(d);
+
+      // Timestamp
+      const ts = new Date(meta.timestamp);
+      document.getElementById('last-update').textContent = ts.toLocaleString('en-SG', {timeZone: 'Asia/Singapore'});
+
+      // Next refresh
+      const nextTs = new Date(ts.getTime() + 60 * 60 * 1000);
+      document.getElementById('next-refresh').textContent = nextTs.toLocaleTimeString('en-SG', {timeZone: 'Asia/Singapore', hour: '2-digit', minute: '2-digit'});
+    }
+
+    // ── Update Charts ──
+    function updateCharts(d) {
+      const ts = d.timeseries;
+      const labels = ts.dates;
+      const closes = ts.closes.map(x => x === 'NaN' ? null : x);
+      const sma7 = ts.sma7.map(x => x);
+      const sma20 = ts.sma20.map(x => x);
+      const sma50 = ts.sma50.map(x => x);
+      const bbU = ts.bb_upper.map(x => x);
+      const bbL = ts.bb_lower.map(x => x);
+
+      // Price chart
+      if (charts.price) { charts.price.destroy(); }
+      const ctxP = document.getElementById('priceChart').getContext('2d');
+      charts.price = new Chart(ctxP, {
+        type: 'line',
+        data: {
+          labels,
+          datasets: [
+            { label: 'Price', data: closes, borderColor: '#00e676', backgroundColor: 'transparent', borderWidth: 1.2, pointRadius: 0, tension: 0.1 },
+            { label: 'SMA7', data: sma7, borderColor: '#ffab40', borderWidth: 0.8, pointRadius: 0 },
+            { label: 'SMA20', data: sma20, borderColor: '#e040fb', borderWidth: 0.8, pointRadius: 0 },
+            { label: 'SMA50', data: sma50, borderColor: '#00bcd4', borderWidth: 0.8, pointRadius: 0 },
+            { label: 'BB Upper', data: bbU, borderColor: '#448aff', borderWidth: 0.5, pointRadius: 0, borderDash: [5,5] },
+            { label: 'BB Lower', data: bbL, borderColor: '#448aff', borderWidth: 0.5, pointRadius: 0, borderDash: [5,5] },
+          ]
+        },
+        options: {
+          responsive: true, maintainAspectRatio: false,
+          interaction: { mode: 'index', intersect: false },
+          plugins: { legend: { labels: { color: '#8899ab', font: { size: 10 } } } },
+          scales: {
+            x: { display: true, ticks: { color: '#556677', font: { size: 9 }, maxTicksLimit: 8 } },
+            y: { display: true, ticks: { color: '#556677', font: { size: 9 } } },
+          }
+        }
+      });
+
+      // Oscillator chart
+      if (charts.osc) { charts.osc.destroy(); }
+      const macdData = ts.macd.map(x => x);
+      const macdSig = ts.macd_signal.map(x => x);
+      let validStart = 0;
+      for (let i = 0; i < macdData.length; i++) {
+        if (macdData[i] !== null && macdData[i] !== undefined) {
+          validStart = i; break;
+        }
+      }
+      const rsiData = ts.rsi.map(x => x);
+      const ctxO = document.getElementById('oscillatorChart').getContext('2d');
+      charts.osc = new Chart(ctxO, {
+        type: 'line',
+        data: {
+          labels,
+          datasets: [
+            { label: 'RSI', data: rsiData, yAxisID: 'y', borderColor: '#e040fb', borderWidth: 1, pointRadius: 0, tension: 0.1 },
+            { label: 'MACD', data: macdData, yAxisID: 'y2', borderColor: '#448aff', borderWidth: 0.8, pointRadius: 0 },
+            { label: 'MACD Sig', data: macdSig, yAxisID: 'y2', borderColor: '#ff6e40', borderWidth: 0.6, pointRadius: 0 },
+          ]
+        },
+        options: {
+          responsive: true, maintainAspectRatio: false,
+          interaction: { mode: 'index', intersect: false },
+          plugins: { legend: { labels: { color: '#8899ab', font: { size: 10 } } } },
+          scales: {
+            x: { display: true, ticks: { color: '#556677', font: { size: 9 }, maxTicksLimit: 6 } },
+            y: {
+              type: 'linear', position: 'left', display: true,
+              ticks: { color: '#e040fb', font: { size: 9 } },
+              min: 10, max: 90,
+            },
+            y2: {
+              type: 'linear', position: 'right', display: true,
+              ticks: { color: '#448aff', font: { size: 9 } },
+              grid: { display: false },
+            },
+          }
+        }
+      });
+    }
+
+    // ── Load Changelog (separate fetch) ──
+    async function loadChangelog() {
+      try {
+        const resp = await fetch(CHANGELOG_URL + '?t=' + Date.now());
+        if (!resp.ok) throw new Error('HTTP ' + resp.status);
+        const entries = await resp.json();
+        updateChangelog(entries);
+      } catch (e) {
+        console.warn('Changelog load failed:', e.message);
+        document.getElementById('changelog-list').innerHTML =
+          '<div class="changelog-empty">Changelog data not available</div>';
+      }
+    }
+
+    // ── Main Data Load ──
+    async function loadData() {
+      try {
+        const resp = await fetch(DATA_URL + '?t=' + Date.now());
+        if (!resp.ok) throw new Error('HTTP ' + resp.status);
+        const json = await resp.json();
+        lastData = json;
+        updateDOM(json);
+        updateCharts(json);
+
+        // If hype_data.json has inline changelog, use it as fallback
+        if (json.changelog && Array.isArray(json.changelog) && json.changelog.length > 0) {
+          // Only use if changelog panel still shows loading/empty
+          const listEl = document.getElementById('changelog-list');
+          if (listEl.querySelector('.changelog-empty')) {
+            updateChangelog(json.changelog);
+          }
+        }
+      } catch (e) {
+        console.error('Load error:', e);
+        document.getElementById('ai-analysis').innerHTML = '<p class="error-state">Failed to load data: ' + e.message + '</p>';
+        if (lastData) { updateDOM(lastData); }
+      }
+    }
+
+    // Initial load
+    loadData();
+    loadChangelog();
+
+    // Periodic refresh
+    setInterval(loadData, 60 * 1000);
+    setInterval(loadChangelog, 5 * 60 * 1000);
+  </script>
+</body>
+</html>
