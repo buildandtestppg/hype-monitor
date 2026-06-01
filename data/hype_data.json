@@ -1,57 +1,57 @@
 {
   "meta": {
-    "timestamp": "2026-06-01T15:23:47.874893+00:00",
+    "timestamp": "2026-06-01T16:01:11.727919+00:00",
     "data_points": 121,
-    "price": 71.613,
-    "mark_price": 71.583,
-    "open_interest": "22345594.040000014"
+    "price": 70.978,
+    "mark_price": 70.996,
+    "open_interest": "22389112.8000000156"
   },
   "returns": {
     "1d": 0.0,
-    "3d": 4.86,
-    "7d": 20.34,
-    "14d": 49.17,
-    "30d": 72.35,
-    "60d": 101.2,
-    "90d": 122.64
+    "3d": 3.93,
+    "7d": 19.27,
+    "14d": 47.85,
+    "30d": 70.82,
+    "60d": 99.42,
+    "90d": 120.66
   },
   "technical": {
-    "sma7": 65.0,
-    "sma20": 55.8,
-    "sma50": 47.55,
-    "rsi14": 75.7,
-    "rsi7": 79.8,
+    "sma7": 64.91,
+    "sma20": 55.76,
+    "sma50": 47.54,
+    "rsi14": 74.3,
+    "rsi7": 77.2,
     "rsi_signal": "OVERBOUGHT",
-    "macd_line": 6.7822,
-    "macd_signal": 5.3037,
-    "macd_hist": 1.4785,
-    "bb_upper": 75.15,
-    "bb_lower": 36.45,
+    "macd_line": 6.7316,
+    "macd_signal": 5.2936,
+    "macd_hist": 1.438,
+    "bb_upper": 75.01,
+    "bb_lower": 36.52,
     "atr14": 6.01,
-    "atr_pct": 8.39,
+    "atr_pct": 8.47,
     "vol_regime": "NORMAL",
-    "dist_sma7_pct": 10.2,
-    "dist_sma20_pct": 28.3,
-    "dist_sma50_pct": 50.6,
-    "stop_2x": 59.59,
-    "stop_3x": 53.58,
-    "poc": 54.8
+    "dist_sma7_pct": 9.3,
+    "dist_sma20_pct": 27.3,
+    "dist_sma50_pct": 49.3,
+    "stop_2x": 58.96,
+    "stop_3x": 52.95,
+    "poc": 54.81
   },
   "volume": {
-    "latest_M": 13.7,
-    "avg7d_M": 15.82,
-    "avg30d_M": 11.97,
-    "ratio_7v30": 1.32,
-    "poc": 54.8
+    "latest_M": 14.47,
+    "avg7d_M": 15.94,
+    "avg30d_M": 11.99,
+    "ratio_7v30": 1.33,
+    "poc": 54.81
   },
   "orderbook": {
-    "best_bid": 71.605,
-    "best_ask": 71.606,
+    "best_bid": 70.949,
+    "best_ask": 70.95,
     "spread": 0.001,
     "spread_bps": 0.14,
-    "bid_vol_20": 2611.35,
-    "ask_vol_20": 7623.61,
-    "imbalance": -0.4897,
+    "bid_vol_20": 1294.58,
+    "ask_vol_20": 7652.24,
+    "imbalance": -0.7106,
     "pressure": "BEARISH"
   },
   "funding": {
@@ -61,8 +61,8 @@
     "annualized_pct": 1.37
   },
   "correlation": {
-    "btc_30d": -0.87,
-    "btc_price": 71192.0
+    "btc_30d": -0.868,
+    "btc_price": 71142.0
   },
   "research": {
     "protocol_stats": {
@@ -82,37 +82,37 @@
       "fees_24h": 3814008,
       "fees_7d_total": 27590988,
       "fees_30d_total": 107349548,
-      "fees_all_time": 1660858486,
-      "fees_7d_avg_daily": 4013634.0,
-      "fees_30d_avg_daily": 3641743.0,
+      "fees_all_time": 1660865977,
+      "fees_7d_avg_daily": 4014698.0,
+      "fees_30d_avg_daily": 3641991.0,
       "fees_trend_pct": 10.2
     },
     "volume": {
       "volume_24h": 426691212,
       "volume_7d_total": 2929651812,
       "volume_30d_total": 9522661891,
-      "volume_7d_avg_daily": 442560927.0,
-      "volume_30d_avg_daily": 329596045.0,
-      "volume_trend_pct": 34.3
+      "volume_7d_avg_daily": 444274548.0,
+      "volume_30d_avg_daily": 329995889.0,
+      "volume_trend_pct": 34.6
     },
-    "btc_price": 71192.0,
+    "btc_price": 71142.0,
     "hype_perp": {
-      "oi_tokens": 22345594.04,
-      "oi_usd": 1600078607.0,
-      "mark_px": 71.606,
-      "prev_day_px": 69.122,
-      "day_notional_vol": 1579563421.0,
-      "day_base_vol": 21977519.53,
-      "funding_rate": 1.32707e-05,
-      "premium": 0.0009504773,
-      "price_change_24h_pct": 3.59
+      "oi_tokens": 22389078.1,
+      "oi_usd": 1588818538.0,
+      "mark_px": 70.964,
+      "prev_day_px": 68.643,
+      "day_notional_vol": 1614568753.0,
+      "day_base_vol": 22455780.2,
+      "funding_rate": 4.15075e-05,
+      "premium": 0.0012683051,
+      "price_change_24h_pct": 3.38
     },
     "valuation": {
       "mcap_tvl_ratio": 2.79,
       "mcap_annualized_fee_ratio": 12.3,
       "annualized_fees_estimate": 1288194576,
       "price_to_daily_revenue": 4168.0,
-      "oi_to_mcap_pct": 10.1
+      "oi_to_mcap_pct": 10.0
     },
     "narrative_score": {
       "score": 89,
@@ -372,7 +372,7 @@
       64.408,
       68.291,
       72.053,
-      71.613
+      70.978
     ],
     "volumes": [
       14526387.26,
@@ -495,7 +495,7 @@
       22069569.28,
       12223223.46,
       16569368.49,
-      13696342.68
+      14470020.26
     ],
     "rsi": [
       null,
@@ -618,7 +618,7 @@
       70.7,
       74.0,
       76.7,
-      75.7
+      74.3
     ],
     "sma7": [
       null,
@@ -741,7 +741,7 @@
       60.8,
       62.17,
       63.5,
-      65.0
+      64.91
     ],
     "sma20": [
       null,
@@ -864,7 +864,7 @@
       51.46,
       52.73,
       54.23,
-      55.8
+      55.76
     ],
     "sma50": [
       null,
@@ -987,7 +987,7 @@
       45.8,
       46.34,
       46.93,
-      47.55
+      47.54
     ],
     "bb_upper": [
       null,
@@ -1110,7 +1110,7 @@
       68.32,
       70.62,
       73.28,
-      75.15
+      75.01
     ],
     "bb_lower": [
       null,
@@ -1233,7 +1233,7 @@
       34.6,
       34.83,
       35.18,
-      36.45
+      36.52
     ],
     "macd": [
       null,
@@ -1356,7 +1356,7 @@
       5.3143,
       5.7977,
       6.4104,
-      6.7822
+      6.7316
     ],
     "macd_signal": [
       null,
@@ -1479,31 +1479,31 @@
       4.2569,
       4.565,
       4.9341,
-      5.3037
+      5.2936
     ]
   },
   "changelog": [],
-  "ai_analysis": "**PROTOCOL FUNDAMENTALS:** Hyperliquid\u2019s TVL surged to $5.7B (+18.6% 30d) with 24h fees of $3.81M, driving a $1.35B annualized buyback (8.5% of market cap) that relentlessly removes supply. Fee revenue is accelerating (+10.2% 30d trend) and all-time fees have surpassed $1.66B, confirming the protocol\u2019s dominance and self-reinforcing growth flywheel.\n\n**VALUATION:** At 2.79x Mcap/TVL and a 4,168x Price/Daily Revenue multiple (11.4x annualized P/S), HYPE trades at a premium to most DeFi peers, pricing in its market leadership and buyback yield. This valuation is stretched but defensible given the 34.3% volume surge and ETF-driven institutional re-rating.\n\n**NARRATIVE THESIS:** The narrative is strengthening (score 89/100) as HIP-3 tokenized stocks, ETF approval, and a16z\u2019s $170M+ accumulation fuse real-world asset traction with a dominant perp DEX story. HYPE is being framed as the blue-chip \u201cAmazon of perps\u201d with a deflationary engine, attracting both retail and institutional flows.\n\n**WHAT CHANGED:** No structural shifts since last check\u2014price and fundamentals are stable\u2014but technicals have become more stretched. RSI(14) crossed 75 into overbought, and the orderbook imbalance flipped bearish (-0.49), hinting at near-term exhaustion despite the unchanged bullish backdrop.\n\n**TREND:** Bullish. Price sits 10.2% above the 7-day SMA and 50.6% above the 50-day SMA, with all key moving averages sloping sharply higher and a 72.35% 30-day rally intact.\n\n**MOMENTUM:** Momentum is extremely strong\u2014MACD histogram is positive and expanding (1.48), and RSI(7) at 79.8 confirms aggressive buying. However, overbought readings suggest the rally is extended and vulnerable to a cooling-off period.\n\n**DECOUPLING:** HYPE\u2019s 30-day BTC correlation of -0.87 signals near-total decoupling; it is trading on its own catalysts, not Bitcoin\u2019s direction. This independence is bullish as it insulates HYPE from BTC pullbacks but also means it won\u2019t automatically ride a BTC breakout.\n\n**LIQUIDITY:** A razor-thin 0.14 bps spread and $13.7M volume indicate deep, efficient markets, but the -0.49 bid/ask imbalance reveals more resting sell orders than buys\u2014likely institutional profit-taking or hedging flows capping immediate upside.\n\n**LEVERS:** Funding is negligible (1.37% annualized) and OI/Mcap is a modest 10.1%, showing longs are not crowded. This leaves ample room for fresh leverage-driven upside without imminent short-squeeze or liquidation cascade risks.\n\n**RISK:** The #1 risk is a sharp mean-reversion correction from overbought levels, with the bearish orderbook potentially triggering a drop to the 2x ATR stop at $59.59 (a 17% decline) if momentum stalls.\n\n**Bold actionable line:** Buy HYPE on a dip to the $65 SMA7 support, with a hard stop at $59.59, targeting new highs above $75 as the buyback engine and institutional narrative overpower short-term overbought signals.",
+  "ai_analysis": "**PROTOCOL FUNDAMENTALS:** Hyperliquid\u2019s TVL is surging to $5.70B (+18.6% 30d) with daily fees averaging $4.01M and trending +10.2%, fueling an aggressive buyback engine that annually retires ~8.5% of market cap ($1.35B). The protocol is clearly growing, with DEX volume up 34.6% and perp open interest at $1.59B, reinforcing its dominant 32\u201344% market share.\n\n**VALUATION:** At 2.79x Mcap/TVL and an annualized P/S of ~11.4x (Price/Daily Revenue 4,168x annualized), HYPE trades at a premium but remains justified by its sector leadership, buyback yield, and triple-digit revenue growth trajectory. It is fairly valued relative to high-growth DeFi peers, not overvalued.\n\n**NARRATIVE THESIS:** The narrative is strengthening sharply (score 89/100) \u2014 ETF approval, tokenized stocks (HIP-3), and a16z\u2019s $170M+ accumulation are creating a powerful institutional-grade story. HYPE is being repriced as the blue-chip perp DEX, decoupling from broad crypto beta.\n\n**WHAT CHANGED:** No major signal flips since last check; the regime remains stable with all metrics holding at elevated levels. The absence of deterioration amid overbought conditions is itself a bullish signal of sustained demand.\n\n**TREND:** Bullish \u2014 price is 49% above the 50-day SMA and 27% above the 20-day, with a clear series of higher highs and higher lows on strong volume.\n\n**MOMENTUM:** Momentum is extremely strong but overbought: RSI(14) at 74.3 and MACD histogram expanding at 1.438. This signals trend acceleration, though a near-term pause or pullback is statistically likely.\n\n**DECOUPLING:** HYPE\u2019s 30-day BTC correlation is -0.868, confirming it is trading on its own fundamentals, not macro crypto moves. This idiosyncratic strength means HYPE can rally even if BTC consolidates.\n\n**LIQUIDITY:** Orderbook shows a bearish bid/ask imbalance (-0.71) but a razor-thin 0.14 bps spread and volume 33% above the 30-day average, indicating deep institutional liquidity. The imbalance suggests tactical profit-taking, not a structural exit.\n\n**LEVERS:** Funding is negligible (1.37% annualized) and OI/Mcap is a modest 10.0%, so longs are not crowded. This leaves ample room for a short squeeze if momentum continues, with no overleveraged positioning to unwind.\n\n**RISK:** The #1 risk is a mean-reversion correction from extreme overbought levels (RSI >74, price 49% above SMA50), potentially triggered by a sudden BTC drop or profit-taking. A 2x ATR stop at $58.96 would be a prudent invalidation level.\n\n**Bold actionable line:** Accumulate HYPE on any dip toward the $64\u2013$65 zone (SMA7) with a stop below $58.96, as the buyback engine and institutional narrative make this a high-conviction core holding for the cycle.",
   "ai_meta": {
     "model": "deepseek-v4-pro:cloud",
-    "timestamp": "2026-06-01T15:24:36.912772+00:00"
+    "timestamp": "2026-06-01T16:01:54.133966+00:00"
   },
   "predictions": {
     "active": {
-      "id": 5,
-      "created_at": "2026-06-01T15:24:36.908611+00:00",
-      "price_at_prediction": 71.613,
+      "id": 6,
+      "created_at": "2026-06-01T16:01:54.129368+00:00",
+      "price_at_prediction": 70.978,
       "pred_6h_direction": "BEARISH",
-      "pred_6h_target": 71.0,
+      "pred_6h_target": 70.5,
       "pred_12h_direction": "BEARISH",
-      "pred_12h_target": 70.5,
+      "pred_12h_target": 69.8,
       "pred_24h_direction": "BEARISH",
-      "pred_24h_target": 69.8,
+      "pred_24h_target": 68.5,
       "confidence": 7,
-      "reasoning": "Overbought RSI, bearish OB, flat daily return suggest pullback."
+      "reasoning": "Overbought RSI, bearish order book, negative BTC correlation suggests pullback."
     },
     "stats": {
-      "total": 3,
+      "total": 4,
       "win_rate_6h": null,
       "win_rate_12h": null,
       "win_rate_24h": null,
@@ -1511,17 +1511,17 @@
       "resolved_12h": 0,
       "resolved_24h": 0,
       "active": {
-        "id": 5,
-        "created_at": "2026-06-01T15:24:36.908611+00:00",
-        "price_at_prediction": 71.613,
+        "id": 6,
+        "created_at": "2026-06-01T16:01:54.129368+00:00",
+        "price_at_prediction": 70.978,
         "pred_6h_direction": "BEARISH",
-        "pred_6h_target": 71.0,
+        "pred_6h_target": 70.5,
         "pred_12h_direction": "BEARISH",
-        "pred_12h_target": 70.5,
+        "pred_12h_target": 69.8,
         "pred_24h_direction": "BEARISH",
-        "pred_24h_target": 69.8,
+        "pred_24h_target": 68.5,
         "confidence": 7,
-        "reasoning": "Overbought RSI, bearish OB, flat daily return suggest pullback.",
+        "reasoning": "Overbought RSI, bearish order book, negative BTC correlation suggests pullback.",
         "resolved_6h": 0,
         "resolved_12h": 0,
         "resolved_24h": 0,
@@ -1533,6 +1533,28 @@
         "resolved_at_24h": null
       },
       "recent": [
+        {
+          "id": 6,
+          "created_at": "2026-06-01T16:01:54.129368+00:00",
+          "price_at_prediction": 70.978,
+          "pred_6h_direction": "BEARISH",
+          "pred_6h_target": 70.5,
+          "pred_12h_direction": "BEARISH",
+          "pred_12h_target": 69.8,
+          "pred_24h_direction": "BEARISH",
+          "pred_24h_target": 68.5,
+          "confidence": 7,
+          "reasoning": "Overbought RSI, bearish order book, negative BTC correlation suggests pullback.",
+          "resolved_6h": 0,
+          "resolved_12h": 0,
+          "resolved_24h": 0,
+          "actual_price_6h": null,
+          "actual_price_12h": null,
+          "actual_price_24h": null,
+          "resolved_at_6h": null,
+          "resolved_at_12h": null,
+          "resolved_at_24h": null
+        },
         {
           "id": 5,
           "created_at": "2026-06-01T15:24:36.908611+00:00",
@@ -1603,6 +1625,28 @@
       "streak": 0
     },
     "recent": [
+      {
+        "id": 6,
+        "created_at": "2026-06-01T16:01:54.129368+00:00",
+        "price_at_prediction": 70.978,
+        "pred_6h_direction": "BEARISH",
+        "pred_6h_target": 70.5,
+        "pred_12h_direction": "BEARISH",
+        "pred_12h_target": 69.8,
+        "pred_24h_direction": "BEARISH",
+        "pred_24h_target": 68.5,
+        "confidence": 7,
+        "reasoning": "Overbought RSI, bearish order book, negative BTC correlation suggests pullback.",
+        "resolved_6h": 0,
+        "resolved_12h": 0,
+        "resolved_24h": 0,
+        "actual_price_6h": null,
+        "actual_price_12h": null,
+        "actual_price_24h": null,
+        "resolved_at_6h": null,
+        "resolved_at_12h": null,
+        "resolved_at_24h": null
+      },
       {
         "id": 5,
         "created_at": "2026-06-01T15:24:36.908611+00:00",
