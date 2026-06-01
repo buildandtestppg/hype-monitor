@@ -673,9 +673,15 @@
         }
         .pred-tf-target {
             font-family: var(--font-mono);
-            font-size: 0.75rem;
+            font-size: 1.1rem;
             color: #fff;
-            font-weight: 600;
+            font-weight: 700;
+            margin: 2px 0;
+        }
+        .pred-tf-pct {
+            font-family: var(--font-mono);
+            font-size: 0.72rem;
+            font-weight: 500;
         }
         .pred-dir-bullish {
             color: var(--green);
@@ -1642,18 +1648,21 @@
                         <div class="pred-timeframes">
                             <div class="pred-tf-card">
                                 <div class="pred-tf-label">6h</div>
-                                <div class="pred-tf-dir">${dirBadge(active.pred_6h_direction)}</div>
-                                <div class="pred-tf-target">${fmtPrice(active.pred_6h_target)} ${pctFrom(active.pred_6h_target, active.price_at_prediction)}</div>
+                                <div class="pred-tf-target">${fmtPrice(active.pred_6h_target)}</div>
+                                <div class="pred-tf-pct">${pctFrom(active.pred_6h_target, active.price_at_prediction)}</div>
+                                <div class="pred-tf-dir" style="margin-top:4px;">${dirBadge(active.pred_6h_direction)}</div>
                             </div>
                             <div class="pred-tf-card">
                                 <div class="pred-tf-label">12h</div>
-                                <div class="pred-tf-dir">${dirBadge(active.pred_12h_direction)}</div>
-                                <div class="pred-tf-target">${fmtPrice(active.pred_12h_target)} ${pctFrom(active.pred_12h_target, active.price_at_prediction)}</div>
+                                <div class="pred-tf-target">${fmtPrice(active.pred_12h_target)}</div>
+                                <div class="pred-tf-pct">${pctFrom(active.pred_12h_target, active.price_at_prediction)}</div>
+                                <div class="pred-tf-dir" style="margin-top:4px;">${dirBadge(active.pred_12h_direction)}</div>
                             </div>
                             <div class="pred-tf-card">
                                 <div class="pred-tf-label">24h</div>
-                                <div class="pred-tf-dir">${dirBadge(active.pred_24h_direction)}</div>
-                                <div class="pred-tf-target">${fmtPrice(active.pred_24h_target)} ${pctFrom(active.pred_24h_target, active.price_at_prediction)}</div>
+                                <div class="pred-tf-target">${fmtPrice(active.pred_24h_target)}</div>
+                                <div class="pred-tf-pct">${pctFrom(active.pred_24h_target, active.price_at_prediction)}</div>
+                                <div class="pred-tf-dir" style="margin-top:4px;">${dirBadge(active.pred_24h_direction)}</div>
                             </div>
                         </div>
                         <div style="margin-top:10px;display:flex;align-items:center;gap:12px;">
