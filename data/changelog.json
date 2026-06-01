@@ -115,5 +115,23 @@
     "to": "72.635",
     "price": 72.635,
     "detail": "New 30-day high: $72.635"
+  },
+  {
+    "timestamp": "2026-06-01T12:00:20.704597+00:00",
+    "type": "signal_change",
+    "category": "orderbook_pressure",
+    "from": "BULLISH",
+    "to": "BEARISH",
+    "price": 73.174,
+    "detail": "Imbalance: -0.3921"
+  },
+  {
+    "timestamp": "2026-06-01T12:00:20.704597+00:00",
+    "type": "price_milestone",
+    "category": "price",
+    "from": "72.635",
+    "to": "73.174",
+    "price": 73.174,
+    "detail": "New 30-day high: $73.174"
   }
 ]
