@@ -178,5 +178,23 @@
     "to": "BEARISH",
     "price": 71.202,
     "detail": "Imbalance: -0.8108"
+  },
+  {
+    "timestamp": "2026-06-01T17:00:28.852485+00:00",
+    "type": "signal_change",
+    "category": "orderbook_pressure",
+    "from": "BEARISH",
+    "to": "BULLISH",
+    "price": 72.309,
+    "detail": "Imbalance: 0.3608"
+  },
+  {
+    "timestamp": "2026-06-01T17:00:28.852485+00:00",
+    "type": "price_milestone",
+    "category": "price",
+    "from": "70.978",
+    "to": "72.309",
+    "price": 72.309,
+    "detail": "New 30-day high: $72.309"
   }
 ]
