@@ -188,7 +188,7 @@
   <header>
     <div>
       <h1>HYPE/USD — INSTITUTIONAL MONITOR</h1>
-      <div class="subtitle">Multi-Factor Analysis via DeepSeek V4 Pro | Research: DeFi Llama + Hyperliquid API | Auto-updates every 6h</div>
+      <div class="subtitle">Live Fundamentals · DeepSeek V4 Pro Research · DeFi Llama Fees/Volume/Revenue · Hyperliquid OI · Auto-updates every 6h</div>
     </div>
     <div class="badge"><span class="dot"></span>LIVE &mdash; <span id="last-update">Loading...</span></div>
   </header>
@@ -296,21 +296,31 @@
 
     // ── Build Research Panel ──
     function updateResearch(d) {
-      const r = d.research;
+      const r = d.research || {};
       const el = document.getElementById('research-content');
-      if (!r || !r.defillama_available) {
+
+      // New nested data structure
+      const proto = r.protocol_stats || {};
+      const fees = r.fees || {};
+      const vol = r.volume || {};
+      const perp = r.hype_perp || {};
+      const val = r.valuation || {};
+      const narr = r.narrative_score || {};
+
+      // Check if we have any research data
+      if (!proto.tvl && !fees.fees_24h && !vol.volume_24h) {
         el.innerHTML = '<div style="color:var(--text-d);font-size:11px;">Research data unavailable (DeFi Llama not synced)</div>';
         return;
       }
 
-      const changeBadge = (val) => {
-        if (val === undefined || val === null) return '';
-        const cls = val >= 0 ? 'pos' : 'neg';
-        return '<span class="change-badge ' + cls + '">' + fmtPct(val) + '</span>';
+      const changeBadge = (v) => {
+        if (v === undefined || v === null) return '';
+        const cls = v >= 0 ? 'pos' : 'neg';
+        return '<span class="change-badge ' + cls + '">' + fmtPct(v) + '</span>';
       };
 
       // Gauge SVG (semicircle)
-      const score = r.narrative_score || 0;
+      const score = narr.score || 0;
       const gColor = gaugeColor(score);
       const pctAngle = (score / 100) * 180;
       const rad = (pctAngle - 90) * Math.PI / 180;
@@ -326,12 +336,12 @@
         '</svg>';
 
       // Mini bars for narrative components
-      const comp = r.narrative_components || {};
+      const comp = narr.components || {};
       const compEntries = Object.entries(comp);
       const miniBars = compEntries.map(([k, v]) => {
-        const val = Number(v) || 0;
-        const normalized = Math.max(-100, Math.min(100, val));
-        const width = Math.abs(normalized);
+        const bv = Number(v) || 0;
+        const normalized = Math.max(-100, Math.min(100, bv));
+        const width = Math.min(100, Math.abs(normalized));
         const barColor = normalized >= 0 ? '#00e676' : '#ff5252';
         const displayVal = typeof v === 'number' ? v.toFixed(1) : (v || '--');
         return '<div class="mini-bar-row">' +
@@ -341,20 +351,88 @@
           '</div>';
       }).join('');
 
+      // Build fundamentals grid (3 cols for richer display)
+      let gridCells = '';
+
+      // TVL
+      gridCells += '<div class="research-cell"><div class="lab">TVL</div><div class="val">' +
+        fmtCompact(proto.tvl) + changeBadge(proto.tvl_7d_change_pct) +
+        '</div><div style="font-size:8px;color:var(--text-d);margin-top:1px;">7d ' + fmtPct(proto.tvl_7d_change_pct) + ' · 30d ' + fmtPct(proto.tvl_30d_change_pct) +
+        '</div></div>';
+
+      // Fees 24h
+      const feeSub = fees.fees_7d_avg_daily ? '7d avg: ' + fmtCompact(fees.fees_7d_avg_daily) + '/day' : '';
+      const feeTrend = fees.fees_trend_pct !== undefined && fees.fees_trend_pct !== null ? ' · trend: ' + fmtPct(fees.fees_trend_pct) : '';
+      gridCells += '<div class="research-cell"><div class="lab">Fees (24h)</div><div class="val">' +
+        fmtCompact(fees.fees_24h) +
+        '</div><div style="font-size:8px;color:var(--text-d);margin-top:1px;">' + feeSub + feeTrend +
+        '</div></div>';
+
+      // All-time fees
+      gridCells += '<div class="research-cell"><div class="lab">All-Time Fees</div><div class="val">' +
+        fmtCompact(fees.fees_all_time) +
+        '</div><div style="font-size:8px;color:var(--text-d);margin-top:1px;">30d total: ' + fmtCompact(fees.fees_30d_total) +
+        '</div></div>';
+
+      // DEX Volume 24h
+      const volSub = vol.volume_7d_avg_daily ? '7d avg: ' + fmtCompact(vol.volume_7d_avg_daily) + '/day' : '';
+      const volTrend = vol.volume_trend_pct !== undefined && vol.volume_trend_pct !== null ? ' · trend: ' + fmtPct(vol.volume_trend_pct) : '';
+      gridCells += '<div class="research-cell"><div class="lab">DEX Volume (24h)</div><div class="val">' +
+        fmtCompact(vol.volume_24h) +
+        '</div><div style="font-size:8px;color:var(--text-d);margin-top:1px;">' + volSub + volTrend +
+        '</div></div>';
+
+      // Perp OI + Perp Volume
+      gridCells += '<div class="research-cell"><div class="lab">Perp OI</div><div class="val">' +
+        fmtCompact(perp.oi_usd) +
+        '</div><div style="font-size:8px;color:var(--text-d);margin-top:1px;">' +
+        (perp.oi_tokens ? Number(perp.oi_tokens).toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, ',') + ' HYPE' : '') +
+        '</div></div>';
+
+      gridCells += '<div class="research-cell"><div class="lab">Perp Volume (24h)</div><div class="val">' +
+        fmtCompact(perp.day_notional_vol) +
+        '</div><div style="font-size:8px;color:var(--text-d);margin-top:1px;">' +
+        (perp.price_change_24h_pct ? '24h: ' + fmtPct(perp.price_change_24h_pct) : '') +
+        '</div></div>';
+
+      // Valuation row
+      const mcapTvlStr = val.mcap_tvl_ratio ? 'Mc/TVL: ' + val.mcap_tvl_ratio + 'x' : '';
+      const pfrStr = val.price_to_daily_revenue ? ' · P/Rev: ' + Number(val.price_to_daily_revenue).toLocaleString() + 'x' : '';
+      const oiMcStr = val.oi_to_mcap_pct ? ' · OI/Mc: ' + val.oi_to_mcap_pct + '%' : '';
+
+      // Buyback yield estimate
+      let buybackStr = '';
+      if (fees.fees_24h && proto.mcap) {
+        const annualBuyback = fees.fees_24h * 365 * 0.97;
+        const buybackYield = (annualBuyback / proto.mcap) * 100;
+        buybackStr = ' · 🔄 Buyback: ~' + buybackYield.toFixed(1) + '%/yr';
+      }
+
+      gridCells += '<div class="research-cell"><div class="lab">Market Cap</div><div class="val">' +
+        fmtCompact(proto.mcap) +
+        '</div><div style="font-size:8px;color:var(--text-d);margin-top:1px;">' +
+        (proto.fdv ? 'FDV: ' + fmtCompact(proto.fdv) : '') +
+        '</div></div>';
+
+      gridCells += '<div class="research-cell"><div class="lab">Valuation</div><div class="val" style="font-size:11px;">' +
+        mcapTvlStr + pfrStr + oiMcStr +
+        '</div><div style="font-size:8px;color:var(--text-d);margin-top:1px;">' +
+        buybackStr +
+        '</div></div>';
+
+      // BTC
+      gridCells += '<div class="research-cell"><div class="lab">BTC Price</div><div class="val">$' +
+        fmt(r.btc_price) +
+        '</div><div style="font-size:8px;color:var(--text-d);margin-top:1px;">' +
+        (d.correlation ? '30d ρ: ' + d.correlation.btc_30d : '') +
+        '</div></div>';
+
       el.innerHTML =
-        '<div class="research-grid">' +
-          '<div class="research-cell"><div class="lab">TVL</div><div class="val">' + fmtCompact(r.tvl) + changeBadge(r.tvl_7d_change_pct) + '</div><div style="font-size:8px;color:var(--text-d);margin-top:1px;">7d ' + fmtPct(r.tvl_7d_change_pct) + ' · 30d ' + fmtPct(r.tvl_30d_change_pct) + '</div></div>' +
-          '<div class="research-cell"><div class="lab">24h Volume</div><div class="val">' + fmtCompact(r.volume_24h) + '</div></div>' +
-          '<div class="research-cell"><div class="lab">Fees (24h)</div><div class="val">' + fmtCompact(r.fees_24h) + '</div></div>' +
-          '<div class="research-cell"><div class="lab">Revenue (24h)</div><div class="val">' + fmtCompact(r.revenue_24h) + '</div></div>' +
-          '<div class="research-cell"><div class="lab">Market Cap</div><div class="val">' + fmtCompact(r.mcap) + '</div></div>' +
-          '<div class="research-cell"><div class="lab">FDV</div><div class="val">' + fmtCompact(r.fdv) + '</div></div>' +
-          '<div class="research-cell"><div class="lab">BTC Price</div><div class="val">$' + fmt(r.btc_price) + '</div></div>' +
-        '</div>' +
+        '<div class="research-grid" style="grid-template-columns:repeat(3,1fr);">' + gridCells + '</div>' +
         '<div class="gauge-wrap">' +
           gaugeSvg +
           '<div class="narrative-score" style="color:' + gColor + ';">' + (score || '--') + '</div>' +
-          '<div class="gauge-label">' + (r.narrative_label || 'Narrative Score') + '</div>' +
+          '<div class="gauge-label">' + (narr.label || 'Narrative Score') + '</div>' +
         '</div>' +
         '<div class="mini-bars">' + miniBars + '</div>';
     }
