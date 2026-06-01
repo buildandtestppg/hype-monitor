@@ -451,6 +451,23 @@
         .ai-card:hover {
             border-color: #2a3550;
         }
+        /* Sentiment accent borders on AI cards */
+        .ai-card {
+            position: relative;
+        }
+        .ai-card::before {
+            content: '';
+            position: absolute;
+            top: 8px; left: 0;
+            width: 3px; height: calc(100% - 16px);
+            border-radius: 0 2px 2px 0;
+            background: transparent;
+            transition: background 0.3s;
+        }
+        .ai-card.sentiment-bull::before { background: var(--green); }
+        .ai-card.sentiment-caut::before { background: var(--amber); }
+        .ai-card.sentiment-risk::before { background: var(--red); }
+        .ai-card.sentiment-neu::before { background: var(--blue); }
         .ai-card-header {
             font-weight: 700;
             font-size: 0.8rem;
@@ -827,7 +844,10 @@
 
         <!-- AI ANALYSIS PANEL -->
         <div class="ai-panel card" id="ai-panel">
-            <div class="card-header"><span class="icon">🧠</span> AI Analysis</div>
+            <div class="card-header" style="display:flex;justify-content:space-between;align-items:center;">
+                <span><span class="icon">🧠</span> AI Analysis</span>
+                <span id="ai-meta" style="font-size:0.65rem;color:var(--text-muted);font-weight:400;">--</span>
+            </div>
             <div class="ai-grid" id="ai-grid"></div>
         </div>
 
@@ -847,8 +867,7 @@
 
         <!-- FOOTER -->
         <div class="footer">
-            Data sources: Hyperliquid API · DEX Screener · Internal Analytics &nbsp;|&nbsp;
-            Refresh: Data every 60s · Changelog every 5min &nbsp;|&nbsp;
+            Data sources: Hyperliquid API · DeFi Llama · DeepSeek V4 Pro · Internal Analytics &nbsp;|&nbsp;
             <span id="footer-timestamp">Generated: --</span>
         </div>
     </div>
@@ -1299,6 +1318,21 @@
                 const arcEndY = cy + r * Math.sin(needleAngle);
                 const largeArc = (needleAngle <= Math.PI / 2) ? 0 : 1;
 
+                // Zone arcs: 0-30 green, 30-50 yellow, 50-70 orange, 70-100 red
+                function arcPath(cx, cy, r, startDeg, endDeg) {
+                    const sa = startDeg * Math.PI / 180;
+                    const ea = endDeg * Math.PI / 180;
+                    return `M ${cx + r * Math.cos(sa)} ${cy + r * Math.sin(sa)} A ${r} ${r} 0 0 1 ${cx + r * Math.cos(ea)} ${cy + r * Math.sin(ea)}`;
+                }
+
+                const zonePaths = [
+                    {d: arcPath(cx, cy, r, 180, 234), color: 'rgba(0,230,118,0.15)'},  // 0-30
+                    {d: arcPath(cx, cy, r, 234, 270), color: 'rgba(255,171,64,0.15)'},  // 30-50
+                    {d: arcPath(cx, cy, r, 270, 306), color: 'rgba(255,145,0,0.15)'},   // 50-70
+                    {d: arcPath(cx, cy, r, 306, 360), color: 'rgba(255,82,82,0.15)'},   // 70-100
+                ];
+                const zoneBg = zonePaths.map(z => `<path d="${z.d}" fill="none" stroke="${z.color}" stroke-width="14" stroke-linecap="round"/>`).join('');
+
                 const svg = `
             <svg viewBox="0 0 200 130" xmlns="http://www.w3.org/2000/svg">
               <defs>
@@ -1310,8 +1344,9 @@
                   <stop offset="100%" stop-color="#ff5252"/>
                 </linearGradient>
               </defs>
+              ${zoneBg}
               <path d="M ${bgStartX} ${bgStartY} A ${r} ${r} 0 0 1 ${bgEndX} ${bgEndY}"
-                    fill="none" stroke="#1a2235" stroke-width="14" stroke-linecap="round"/>
+                    fill="none" stroke="#1a2235" stroke-width="14" stroke-linecap="round" opacity="0.5"/>
               <path d="M ${bgStartX} ${bgStartY} A ${r} ${r} 0 ${largeArc} 1 ${arcEndX} ${arcEndY}"
                     fill="none" stroke="${fillColor}" stroke-width="14" stroke-linecap="round" opacity="0.9"/>
               <line x1="${cx}" y1="${cy}" x2="${cx + (r-20) * Math.cos(needleAngle)}" y2="${cy + (r-20) * Math.sin(needleAngle)}"
@@ -1517,8 +1552,18 @@
                 sections.forEach(sec => {
                     const icon = iconMap[sec.header] || '📝';
                     const contentFormatted = sec.content.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+                    // Sentiment classification
+                    const lowerContent = sec.content.toLowerCase();
+                    const lowerHeader = sec.header.toLowerCase();
+                    let sentimentCls = 'sentiment-neu';
+                    if (lowerHeader.includes('risk')) sentimentCls = 'sentiment-risk';
+                    else if (lowerHeader.includes('bull') || lowerHeader.includes('thesis') || lowerHeader.includes('fundamental')) sentimentCls = 'sentiment-bull';
+                    else if (lowerHeader.includes('caution') || lowerHeader.includes('uncertain')) sentimentCls = 'sentiment-caut';
+                    else if (lowerContent.includes('overbought') || lowerContent.includes('risk') || lowerContent.includes('correction') || lowerContent.includes('pullback') || lowerContent.includes('squeeze') || lowerContent.includes('mean-reversion')) sentimentCls = 'sentiment-risk';
+                    else if (lowerContent.includes('bullish') || lowerContent.includes('strong') || lowerContent.includes('surging') || lowerContent.includes('accelerating')) sentimentCls = 'sentiment-bull';
+                    else if (lowerContent.includes('bearish') || lowerContent.includes('caution') || lowerContent.includes('cooling') || lowerContent.includes('consolidation') || lowerContent.includes('likely')) sentimentCls = 'sentiment-caut';
                     html += `
-            <div class="ai-card">
+            <div class="ai-card ${sentimentCls}">
               <div class="ai-card-header">${icon} ${sec.header}</div>
               <div class="ai-card-body">${contentFormatted}</div>
             </div>`;
@@ -1738,6 +1783,24 @@
             // ──────────────────────────────────────
             // MAIN RENDER
             // ──────────────────────────────────────
+            function renderAiMeta(data) {
+                const meta = data?.ai_meta;
+                if (!meta) return;
+                const model = meta.model || '';
+                const ts = meta.timestamp || '';
+                const el = $('#ai-meta');
+                if (!el) return;
+                let html = '';
+                if (ts) {
+                    const d = new Date(ts);
+                    html += `Analyzed ${d.toLocaleString('en-US', {month:'short', day:'numeric', hour:'2-digit', minute:'2-digit'})}`;
+                }
+                if (model) {
+                    html += ` <span class="model-pill">${model.replace(':cloud',' ☁️').replace(':',' ')}</span>`;
+                }
+                el.innerHTML = html || '—';
+            }
+
             function renderAll(data, changelogData) {
                 if (data) {
                     renderTopStats(data);
@@ -1748,6 +1811,7 @@
                     renderTechDetails(data);
                     renderResearch(data);
                     renderAiAnalysis(data);
+                    renderAiMeta(data);
                     renderPredictions(data);
                     const ts = data?.meta?.timestamp || new Date().toISOString();
                     lastUpdateEl.textContent = 'Last update: ' + fmtTime(ts);
