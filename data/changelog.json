@@ -151,5 +151,14 @@
     "to": "73.932",
     "price": 73.932,
     "detail": "New 30-day high: $73.932"
+  },
+  {
+    "timestamp": "2026-06-01T14:00:55.743914+00:00",
+    "type": "signal_change",
+    "category": "orderbook_pressure",
+    "from": "BULLISH",
+    "to": "BEARISH",
+    "price": 71.937,
+    "detail": "Imbalance: -0.7563"
   }
 ]
