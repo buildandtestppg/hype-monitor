@@ -43,5 +43,23 @@
     "to": "72.72",
     "price": 72.72,
     "detail": "New 30-day high: $72.72"
+  },
+  {
+    "timestamp": "2026-06-01T05:00:08.961462+00:00",
+    "type": "signal_change",
+    "category": "narrative_flip",
+    "from": "BULLISH",
+    "to": "EXTREMELY BULLISH",
+    "price": 73.256,
+    "detail": "Score: 87/100"
+  },
+  {
+    "timestamp": "2026-06-01T05:00:08.961462+00:00",
+    "type": "price_milestone",
+    "category": "price",
+    "from": "72.72",
+    "to": "73.256",
+    "price": 73.256,
+    "detail": "New 30-day high: $73.256"
   }
 ]
