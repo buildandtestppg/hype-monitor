@@ -169,5 +169,14 @@
     "to": "BULLISH",
     "price": 70.834,
     "detail": "Imbalance: 0.1155"
+  },
+  {
+    "timestamp": "2026-06-01T15:00:41.942640+00:00",
+    "type": "signal_change",
+    "category": "orderbook_pressure",
+    "from": "BULLISH",
+    "to": "BEARISH",
+    "price": 71.202,
+    "detail": "Imbalance: -0.8108"
   }
 ]
