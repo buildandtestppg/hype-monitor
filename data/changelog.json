@@ -259,5 +259,14 @@
     "to": "BEARISH",
     "price": 72.571,
     "detail": "Imbalance: -0.2076"
+  },
+  {
+    "timestamp": "2026-06-01T22:00:12.955920+00:00",
+    "type": "price_milestone",
+    "category": "price",
+    "from": "72.571",
+    "to": "73.222",
+    "price": 73.222,
+    "detail": "New 30-day high: $73.222"
   }
 ]
