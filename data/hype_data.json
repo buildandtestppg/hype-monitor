@@ -1,75 +1,75 @@
 {
   "meta": {
-    "timestamp": "2026-06-01T08:00:30.446121+00:00",
+    "timestamp": "2026-06-01T09:01:01.330957+00:00",
     "data_points": 121,
-    "price": 72.406,
-    "mark_price": 72.418,
-    "open_interest": "22432144.7999999896"
+    "price": 72.137,
+    "mark_price": 72.138,
+    "open_interest": "22365387.1800000109"
   },
   "returns": {
     "1d": 0.0,
-    "3d": 6.03,
-    "7d": 21.67,
-    "14d": 50.82,
-    "30d": 74.25,
-    "60d": 103.43,
-    "90d": 125.1
+    "3d": 5.63,
+    "7d": 21.22,
+    "14d": 50.26,
+    "30d": 73.61,
+    "60d": 102.67,
+    "90d": 124.26
   },
   "technical": {
-    "sma7": 65.11,
-    "sma20": 55.84,
+    "sma7": 65.08,
+    "sma20": 55.82,
     "sma50": 47.56,
-    "rsi14": 77.0,
-    "rsi7": 82.0,
+    "rsi14": 76.8,
+    "rsi7": 81.8,
     "rsi_signal": "OVERBOUGHT",
-    "macd_line": 6.8455,
-    "macd_signal": 5.3164,
-    "macd_hist": 1.5291,
-    "bb_upper": 75.32,
-    "bb_lower": 36.35,
+    "macd_line": 6.824,
+    "macd_signal": 5.3121,
+    "macd_hist": 1.512,
+    "bb_upper": 75.26,
+    "bb_lower": 36.39,
     "atr14": 5.88,
-    "atr_pct": 8.12,
+    "atr_pct": 8.15,
     "vol_regime": "NORMAL",
-    "dist_sma7_pct": 11.2,
-    "dist_sma20_pct": 29.7,
-    "dist_sma50_pct": 52.2,
-    "stop_2x": 60.65,
-    "stop_3x": 54.77,
-    "poc": 54.45
+    "dist_sma7_pct": 10.8,
+    "dist_sma20_pct": 29.2,
+    "dist_sma50_pct": 51.7,
+    "stop_2x": 60.38,
+    "stop_3x": 54.5,
+    "poc": 54.46
   },
   "volume": {
-    "latest_M": 6.08,
-    "avg7d_M": 14.74,
-    "avg30d_M": 11.71,
+    "latest_M": 6.52,
+    "avg7d_M": 14.8,
+    "avg30d_M": 11.73,
     "ratio_7v30": 1.26,
-    "poc": 54.45
+    "poc": 54.46
   },
   "orderbook": {
-    "best_bid": 72.415,
-    "best_ask": 72.417,
-    "spread": 0.002,
-    "spread_bps": 0.28,
-    "bid_vol_20": 1826.29,
-    "ask_vol_20": 1774.59,
-    "imbalance": 0.0144,
+    "best_bid": 72.137,
+    "best_ask": 72.138,
+    "spread": 0.001,
+    "spread_bps": 0.14,
+    "bid_vol_20": 2471.52,
+    "ask_vol_20": 2784.13,
+    "imbalance": -0.0595,
     "pressure": "NEUTRAL"
   },
   "funding": {
     "count": 500,
-    "avg_8h": 0.0009,
+    "avg_8h": 0.0008,
     "latest_8h": 0.0013,
     "annualized_pct": 1.37
   },
   "correlation": {
-    "btc_30d": -0.866,
-    "btc_price": 72816.0
+    "btc_30d": -0.865,
+    "btc_price": 72907.0
   },
   "research": {
     "protocol_stats": {
-      "tvl": 5660179426,
-      "tvl_7d_change_pct": 2.37,
-      "tvl_30d_change_pct": 17.76,
-      "mcap": 16371211062.0,
+      "tvl": 5676847541,
+      "tvl_7d_change_pct": 2.67,
+      "tvl_30d_change_pct": 18.11,
+      "mcap": 16145825888.0,
       "fdv": null,
       "gecko_id": "hyperliquid",
       "description": "Hyperliquid is a Layer 1 blockchain best known for perpetual futures and spot trading. Beyond its flagship decentralized exchange (DEX), the ecosystem supports borrowing, lending, RWAs, and a full-fledged EVM.",
@@ -82,43 +82,43 @@
       "fees_24h": 3814008,
       "fees_7d_total": 27590988,
       "fees_30d_total": 107349548,
-      "fees_all_time": 1660829410,
-      "fees_7d_avg_daily": 4009506.0,
-      "fees_30d_avg_daily": 3640780.0,
+      "fees_all_time": 1660831295,
+      "fees_7d_avg_daily": 4009774.0,
+      "fees_30d_avg_daily": 3640842.0,
       "fees_trend_pct": 10.1
     },
     "volume": {
       "volume_24h": 426691212,
       "volume_7d_total": 2929651812,
       "volume_30d_total": 9522661891,
-      "volume_7d_avg_daily": 438772393.0,
-      "volume_30d_avg_daily": 328712053.0,
+      "volume_7d_avg_daily": 438869708.0,
+      "volume_30d_avg_daily": 328734760.0,
       "volume_trend_pct": 33.5
     },
-    "btc_price": 72816.0,
+    "btc_price": 72907.0,
     "hype_perp": {
-      "oi_tokens": 22432076.82,
-      "oi_usd": 1624216954.0,
-      "mark_px": 72.406,
-      "prev_day_px": 69.195,
-      "day_notional_vol": 1289103083.0,
-      "day_base_vol": 18181427.96,
-      "funding_rate": 1.25e-05,
-      "premium": 0.0002100144,
-      "price_change_24h_pct": 4.64
+      "oi_tokens": 22365414.8,
+      "oi_usd": 1613396293.0,
+      "mark_px": 72.138,
+      "prev_day_px": 68.854,
+      "day_notional_vol": 1293258510.0,
+      "day_base_vol": 18220541.28,
+      "funding_rate": 4.00876e-05,
+      "premium": 0.0008033522,
+      "price_change_24h_pct": 4.77
     },
     "valuation": {
-      "mcap_tvl_ratio": 2.89,
-      "mcap_annualized_fee_ratio": 12.7,
+      "mcap_tvl_ratio": 2.84,
+      "mcap_annualized_fee_ratio": 12.5,
       "annualized_fees_estimate": 1288194576,
-      "price_to_daily_revenue": 4292.0,
-      "oi_to_mcap_pct": 9.9
+      "price_to_daily_revenue": 4233.0,
+      "oi_to_mcap_pct": 10.0
     },
     "narrative_score": {
       "score": 88,
       "label": "EXTREMELY BULLISH",
       "components": {
-        "tvl_growth": 3.6,
+        "tvl_growth": 4.0,
         "fee_revenue": 9,
         "volume_trend": 12,
         "rsi_momentum": 5,
@@ -372,7 +372,7 @@
       64.408,
       68.291,
       72.053,
-      72.406
+      72.137
     ],
     "volumes": [
       14526387.26,
@@ -495,7 +495,7 @@
       22069569.28,
       12223223.46,
       16569368.49,
-      6077249.96
+      6521462.24
     ],
     "rsi": [
       null,
@@ -618,7 +618,7 @@
       70.7,
       74.0,
       76.7,
-      77.0
+      76.8
     ],
     "sma7": [
       null,
@@ -741,7 +741,7 @@
       60.8,
       62.17,
       63.5,
-      65.11
+      65.08
     ],
     "sma20": [
       null,
@@ -864,7 +864,7 @@
       51.46,
       52.73,
       54.23,
-      55.84
+      55.82
     ],
     "sma50": [
       null,
@@ -1110,7 +1110,7 @@
       68.32,
       70.62,
       73.28,
-      75.32
+      75.26
     ],
     "bb_lower": [
       null,
@@ -1233,7 +1233,7 @@
       34.6,
       34.83,
       35.18,
-      36.35
+      36.39
     ],
     "macd": [
       null,
@@ -1356,7 +1356,7 @@
       5.3143,
       5.7977,
       6.4104,
-      6.8455
+      6.824
     ],
     "macd_signal": [
       null,
@@ -1479,19 +1479,9 @@
       4.2569,
       4.565,
       4.9341,
-      5.3164
+      5.3121
     ]
   },
-  "changelog": [
-    {
-      "timestamp": "2026-06-01T08:00:30.446121+00:00",
-      "type": "signal_change",
-      "category": "orderbook_pressure",
-      "from": "BULLISH",
-      "to": "NEUTRAL",
-      "price": 72.406,
-      "detail": "Imbalance: 0.0144"
-    }
-  ],
-  "ai_analysis": "**PROTOCOL FUNDAMENTALS:** Hyperliquid\u2019s TVL sits at $5.66B, growing +17.8% over 30 days, while 24h fees of $3.81M push the 7-day average to $4.01M/day\u2014a +10.1% uptrend. The buyback engine directs 97% of fees to HYPE repurchases, implying an annualized buyback of ~$1.35B (8.2% of market cap), creating a powerful structural bid.\n\n**VALUATION:** At a Mcap/TVL of 2.89x and a Price/Daily Revenue multiple of 4,292x, HYPE appears optically expensive relative to current cash flows. However, the 8.2% buyback yield and dominant market share partially justify the premium, pricing in aggressive future growth rather than present revenue.\n\n**NARRATIVE THESIS:** The narrative is strengthening, scoring 88/100 (Extremely Bullish) on the back of ETF approval, HIP-3 tokenized stocks, and confirmed institutional accumulation (a16z $170M+). The market story is shifting from pure perp DEX dominance to a broader \u201con-chain prime brokerage\u201d thesis with real-world asset integration.\n\n**WHAT CHANGED:** Orderbook pressure flipped from Bullish to Neutral, with the bid/ask imbalance cooling to 0.0144. This suggests spot buying aggression has paused, even as the trend remains intact.\n\n**TREND:** Bullish. Price is up +74.25% in 30 days and trades 11.2% above the 7-day SMA, 29.7% above the 20-day, and 52.2% above the 50-day\u2014a textbook uptrend with no structural damage.\n\n**MOMENTUM:** Momentum is extremely strong but overstretched; RSI(14) at 77.0 and RSI(7) at 82.0 signal overbought conditions, while the MACD histogram remains positive at 1.53. This warns of a potential near-term cooling-off period despite the powerful trend.\n\n**DECOUPLING:** HYPE\u2019s 30-day correlation to BTC is -0.866, a near-perfect inverse relationship. This decoupling means HYPE is trading on its own idiosyncratic catalysts (ETF, tokenized stocks) rather than macro crypto beta\u2014a sign of maturing, independent price action.\n\n**LIQUIDITY:** The orderbook shows a neutral imbalance with an ultra-tight 0.28 bps spread, and 7-day average volume is running 26% above the 30-day average, indicating rising interest. This profile suggests a mix of institutional and sophisticated retail flow, with ample liquidity for large blocks.\n\n**LEVERS:** Funding rates are negligible at 1.37% annualized, and OI/Mcap stands at a moderate 9.9%. Longs are not crowded, leaving ample room for fresh leverage to enter without immediate squeeze risk, though a breakout could trigger a short squeeze given the negative funding baseline.\n\n**RISK:** The #1 risk is a sharp mean-reversion correction from overbought technicals\u2014price is 52% above the 50-day SMA and RSI is deep in overbought territory. A swift 15\u201320% pullback to the $60\u2013$65 zone would be historically normal and would not break the uptrend.\n\n**Accumulate HYPE on a pullback to the $60\u2013$65 support band, where structural buybacks and institutional narrative provide a floor; wait for RSI to cool below 70 before adding size to avoid chasing overextended momentum.**"
+  "changelog": [],
+  "ai_analysis": "**PROTOCOL FUNDAMENTALS:** TVL stands at $5.68B (+18.1% 30d), daily fees average $4.01M (7d) with a +10.1% trend, and all-time fees have surpassed $1.66B. The 97% fee-buyback engine generates an estimated $1.35B annual buy pressure (8.4% of market cap), creating relentless structural demand.\n\n**VALUATION:** Mcap/TVL of 2.84x and a Price/Daily Revenue multiple of 4,233x appear elevated, but annualized P/S of ~11.6x is reasonable for a dominant perp DEX with a buyback yield. The premium reflects HYPE\u2019s market leadership and fee-reinvestment moat.\n\n**NARRATIVE THESIS:** The narrative is extremely bullish (88/100), driven by ETF approval speculation, HIP-3 tokenized stocks, and a16z\u2019s $170M+ accumulation. HYPE\u2019s 32\u201344% perp DEX market share cements its story as the category-defining protocol.\n\n**WHAT CHANGED:** No material shifts since last check; all metrics remain stable with strong fee growth, elevated TVL, and persistent overbought momentum. The status quo of aggressive buybacks and institutional inflow continues uninterrupted.\n\n**TREND:** Bullish. Price trades 51.7% above the SMA50 and 29.2% above the SMA20, with a clear uptrend across all timeframes and a 73.6% 30-day surge.\n\n**MOMENTUM:** Momentum is extremely strong (MACD histogram +1.512, line well above signal) but overbought (RSI 76.8). This signals trend strength with a heightened probability of short-term pullbacks or consolidation.\n\n**DECOUPLING:** HYPE is heavily decoupled from BTC (30-day correlation -0.865), proving that token-specific catalysts\u2014buybacks, ETF narrative, institutional flows\u2014are the primary price drivers, not macro crypto beta.\n\n**LIQUIDITY:** Orderbook shows a neutral bid/ask imbalance with an exceptionally tight 0.14 bps spread. Volume runs 26% above the 30-day average, indicating healthy, likely institutional-grade liquidity.\n\n**LEVERS:** Funding is negligible (1.37% annualized) and OI/Mcap is just 10%, showing no crowded longs. This leaves ample capacity for fresh positioning and raises the probability of a short squeeze on any upside breakout.\n\n**RISK:** The #1 risk is a sharp mean-reversion correction from overbought RSI (76.8) and a 51.7% premium to the SMA50, particularly if the negative BTC correlation flips and broader market weakness spills over.\n\n**Accumulate on dips to the $60.38 (2x ATR) support\u2014the $1.35B annual buyback and institutional demand make HYPE a high-conviction long into ETF and tokenized stock catalysts.**"
 }
