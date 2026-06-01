@@ -188,7 +188,7 @@
   <header>
     <div>
       <h1>HYPE/USD — INSTITUTIONAL MONITOR</h1>
-      <div class="subtitle">Live Fundamentals · DeepSeek V4 Pro Research · DeFi Llama Fees/Volume/Revenue · Hyperliquid OI · Auto-updates every 6h</div>
+      <div class="subtitle">Live Fundamentals · DeepSeek V4 Pro Research · DeFi Llama Fees/Volume/Revenue · Hyperliquid OI · Auto-updates hourly</div>
     </div>
     <div class="badge"><span class="dot"></span>LIVE &mdash; <span id="last-update">Loading...</span></div>
   </header>
@@ -618,7 +618,7 @@
       document.getElementById('last-update').textContent = ts.toLocaleString('en-SG', {timeZone: 'Asia/Singapore'});
 
       // Next refresh
-      const nextTs = new Date(ts.getTime() + 6 * 60 * 60 * 1000);
+      const nextTs = new Date(ts.getTime() + 60 * 60 * 1000);
       document.getElementById('next-refresh').textContent = nextTs.toLocaleTimeString('en-SG', {timeZone: 'Asia/Singapore', hour: '2-digit', minute: '2-digit'});
     }
 
