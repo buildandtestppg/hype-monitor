@@ -844,8 +844,8 @@
             // RENDER: TOP STATS
             // ──────────────────────────────────────
             function renderTopStats(data) {
-                const price = data?.price ?? data?.mark_price ?? null;
-                const priceChange24h = data?.research?.hype_perp?.price_change_24h_pct ?? data?.returns?.['1d'] ?? null;
+                const price = data?.meta?.price ?? data?.meta?.mark_price ?? null;
+                const priceChange24h = data?.returns?.['1d'] ?? data?.research?.hype_perp?.price_change_24h_pct ?? null;
                 const rsi14 = data?.technical?.rsi14 ?? null;
                 const rsiSignal = data?.technical?.rsi_signal ?? null;
                 const tvl = data?.research?.protocol_stats?.tvl ?? null;
@@ -910,16 +910,33 @@
                     statNarrativeEl.style.color = '#fff';
                 }
 
-                // Quick Signal
+                // Quick Signal — weighted composite
                 let quickSignal = 'NEUTRAL';
                 let quickSignalClass = 'signal-neutral';
                 if (rsi14 != null && macdLine != null && narrativeScore != null) {
-                    if (rsi14 < 70 && macdLine > 0 && narrativeScore > 60) {
+                    let score = 0;
+                    // Narrative weight (0-40 pts)
+                    if (narrativeScore > 70) score += 40;
+                    else if (narrativeScore > 50) score += 20;
+                    else if (narrativeScore < 30) score -= 40;
+                    // MACD weight (0-30 pts)
+                    if (macdLine > 0) score += 30;
+                    else score -= 20;
+                    // RSI weight (0-30 pts, but overbought isn't automatically bearish)
+                    if (rsi14 > 70) score += 10; // still bullish, just hot
+                    else if (rsi14 > 50) score += 20;
+                    else if (rsi14 < 30) score -= 30;
+                    else score += 5;
+                    
+                    if (score >= 60) {
                         quickSignal = 'BULLISH';
                         quickSignalClass = 'signal-bullish';
-                    } else if (rsi14 > 70 || macdLine < 0) {
+                    } else if (score <= 20) {
                         quickSignal = 'BEARISH';
                         quickSignalClass = 'signal-bearish';
+                    } else {
+                        quickSignal = 'NEUTRAL';
+                        quickSignalClass = 'signal-neutral';
                     }
                 }
                 statSignalEl.innerHTML = '<span class="' + quickSignalClass + '">' + quickSignal + '</span>';
