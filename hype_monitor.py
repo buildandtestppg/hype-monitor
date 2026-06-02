@@ -968,6 +968,7 @@ def build_analysis():
         "bb_lower": round(bb_lower[-1], 2) if not np.isnan(bb_lower[-1]) else None,
         "atr14": atr_val,
         "atr_pct": atr_pct,
+        "vol_regime": vol_regime,
         "dist_sma7_pct": dist_sma7,
         "dist_sma20_pct": dist_sma20,
         "dist_sma50_pct": dist_sma50,
