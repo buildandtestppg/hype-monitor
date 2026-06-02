@@ -2197,7 +2197,7 @@
                     const priceStr = asset === 'BTC' ? '$' + Number(d.price).toLocaleString('en', {maximumFractionDigits: 0}) :
                                      '$' + Number(d.price).toFixed(2);
                     const fmtP = v => v === null || v === undefined ? '--' : (v > 0 ? '+' : '') + v.toFixed(1) + '%';
-                    const colorP = v => v > 0 ? 'var(--green)' : (v < 0 ? 'var(--red)' : 'var(--text-muted)';
+                    const colorP = v => v > 0 ? 'var(--green)' : (v < 0 ? 'var(--red)' : 'var(--text-muted)');
                     return '<tr class="' + (isHype ? 'hype-row' : '') + '">' +
                         '<td class="asset-name" style="color:' + COMP_COLORS[asset] + '">' + asset + badge + '</td>' +
                         '<td>' + priceStr + '</td>' +

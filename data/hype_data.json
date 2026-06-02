@@ -12996,7 +12996,7 @@
     "win_rate_12h": 0.0,
     "win_rate_24h": null,
     "resolved_6h": 13,
-    "resolved_12h": 7,
+    "resolved_12h": 8,
     "resolved_24h": 0,
     "active": {
       "id": 21,
@@ -13131,8 +13131,7 @@
         "resolved_at_12h": null,
         "resolved_at_24h": null
       }
-    ],
-    "streak": 0
+    ]
   },
   "changelog": [
     {
