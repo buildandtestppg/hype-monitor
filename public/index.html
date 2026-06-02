@@ -2328,8 +2328,8 @@
                 const ts = data?.meta?.timestamp;
                 if (!ts || !warningEl) return;
                 const age = Date.now() - new Date(ts).getTime();
-                const thirtyMin = 30 * 60 * 1000;
-                if (age > thirtyMin) {
+                const staleThreshold = 90 * 60 * 1000; // 90 min (cron runs hourly)
+                if (age > staleThreshold) {
                     warningEl.classList.add('visible');
                     const mins = Math.floor(age / 60000);
                     warningEl.querySelector('span:last-child').textContent =
