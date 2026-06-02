@@ -12996,12 +12996,18 @@
   "ai_analysis": "**PROTOCOL FUNDAMENTALS:** TVL surged 19.9% to $5.79B with $2.90M in 24h fees, fueling the 97% fee-buyback engine that constantly retires supply and rewards holders.\n\n**VALUATION:** Mcap/TVL of 2.76 and a Price/Daily Revenue of 5,524x signal a growth premium, but the aggressive buyback and dominant market share justify a premium over standard DeFi multiples.\n\n**NARRATIVE THESIS:** Institutional accumulation (a16z $170M+), ETF approval, and HIP-3 tokenized stocks are transforming HYPE from a pure DEX token into a broad institutional-grade asset, driving retail FOMO.\n\n**WHAT CHANGED:** The ETF greenlight and tokenized equities launch unlocked a new demand vector, accelerating the 30-day 72.91% rally and decoupling the token from macro.\n\n**TREND:** Bullish \u2014 price holds firmly above all key SMAs (SMA50 at $48.15, 50% below), confirming a powerful uptrend on daily and weekly timeframes.\n\n**MOMENTUM:** Strong but stretched \u2014 RSI at 74.8 is overbought, yet the MACD histogram is still expanding, showing no bearish divergence yet.\n\n**DECOUPLING:** HYPE\u2019s 30-day BTC correlation of -0.878 means it\u2019s trading entirely on its own catalyst, insulating it from Bitcoin drawdowns and attracting momentum-chasing capital.\n\n**LIQUIDITY:** Orderbook shows a bearish -0.3276 bid/ask imbalance with more asks, but the 0.14 bps spread and near-average volume suggest efficient, likely institutional-driven execution.\n\n**LEVERS:** Funding is negligible at 1.14% annualized, indicating longs are not crowded and there\u2019s ample room for leveraged positions to build without immediate squeeze risk.\n\n**VALUE:** Overbought \u2014 price sits at the 87th percentile of the Bollinger Bands and 25.6% above the SMA20, leaving little room for error in the short term.\n\n**RISK:** A violent mean-reversion pullback as profit-taking hits the overbought structure, with the first stop at the 2x ATR level of $60.20.\n\n**Buy dips to the SMA7 ($67) with a hard stop at $60, targeting new highs as the ETF narrative and buyback scarcity compound.**",
   "predictions": {
     "total": 32,
-    "win_rate_6h": 47.8,
-    "win_rate_12h": 47.1,
-    "win_rate_24h": 60.0,
-    "resolved_6h": 23,
-    "resolved_12h": 17,
-    "resolved_24h": 5,
+    "win_rate_6h": 52.0,
+    "win_rate_12h": 47.4,
+    "win_rate_24h": 66.7,
+    "dir_accuracy_6h": 52.0,
+    "dir_accuracy_12h": 47.4,
+    "dir_accuracy_24h": 66.7,
+    "target_hit_rate_6h": 4.0,
+    "target_hit_rate_12h": 5.3,
+    "target_hit_rate_24h": 0.0,
+    "resolved_6h": 25,
+    "resolved_12h": 19,
+    "resolved_24h": 6,
     "active": {
       "id": 34,
       "created_at": "2026-06-02T18:01:47.256413+00:00",
@@ -13135,8 +13141,7 @@
         "resolved_at_12h": null,
         "resolved_at_24h": null
       }
-    ],
-    "streak": 0
+    ]
   },
   "changelog": [
     {
