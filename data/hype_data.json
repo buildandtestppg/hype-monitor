@@ -12996,11 +12996,11 @@
   "ai_analysis": "**PROTOCOL FUNDAMENTALS:** TVL surged 20.1% to $5.80B with $2.90M in 24h fees, fueling the aggressive 97% fee-buyback engine that constantly removes supply.\n\n**VALUATION:** Mcap/TVL of 2.77 is reasonable for a dominant DEX, but Price/Daily Revenue of 5,553 signals extreme premium relative to current cash flows.\n\n**NARRATIVE THESIS:** Institutional accumulation (a16z $170M+), ETF approval, and HIP-3 tokenized stocks are driving a supply-squeeze narrative that\u2019s attracting both institutional and retail FOMO.\n\n**WHAT CHANGED:** The ETF approval and a16z\u2019s massive position created a structural re-rating, shifting HYPE from a pure DEX token to an institutional-grade asset.\n\n**TREND:** Bullish \u2014 price holds well above all key SMAs with a 73.93% 30-day surge, confirming a powerful uptrend.\n\n**MOMENTUM:** Strong but overheated \u2014 RSI at 75.7 signals overbought conditions, while the rising MACD histogram shows no momentum exhaustion yet.\n\n**DECOUPLING:** HYPE\u2019s 30-day BTC correlation of -0.891 means it\u2019s trading entirely on its own catalysts, insulating it from broad crypto weakness.\n\n**LIQUIDITY:** Orderbook shows a bearish -0.153 bid/ask imbalance with volume below 7-day average, suggesting near-term distribution, though the 1.65 bps spread remains institutional-grade tight.\n\n**LEVERS:** Funding is negligible at 1.37% annualized, indicating no crowded longs and plenty of capacity for new leverage-driven upside.\n\n**VALUE:** Overbought \u2014 price is near the upper Bollinger Band ($77.44) and 51% above the SMA50, stretching short-term valuation.\n\n**RISK:** The #1 risk is a violent mean-reversion pullback from extreme overbought levels, with the 2x ATR stop at $60.64 a potential magnet.\n\n**Buy dips toward the SMA7 ($67) with a hard stop at $60.64; the buyback engine and institutional catalysts make fading this trend dangerous.**",
   "predictions": {
     "total": 25,
-    "win_rate_6h": 16.7,
+    "win_rate_6h": 15.8,
     "win_rate_12h": 0.0,
     "win_rate_24h": null,
-    "resolved_6h": 18,
-    "resolved_12h": 11,
+    "resolved_6h": 19,
+    "resolved_12h": 12,
     "resolved_24h": 0,
     "active": {
       "id": 27,
@@ -13135,8 +13135,7 @@
         "resolved_at_12h": null,
         "resolved_at_24h": null
       }
-    ],
-    "streak": 0
+    ]
   },
   "changelog": [
     {
