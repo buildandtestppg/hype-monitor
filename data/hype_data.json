@@ -12996,12 +12996,18 @@
   "ai_analysis": "**PROTOCOL FUNDAMENTALS:** TVL surged 19.9% to $5.78B with $2.90M in 24h fees feeding the 97% buyback engine, creating relentless supply absorption that compounds with usage growth.\n\n**VALUATION:** Mcap/TVL of 2.69 and Price/Daily Revenue of 5,367 signal extreme premium pricing; the market is discounting exponential future revenue, leaving zero room for growth disappointments.\n\n**NARRATIVE THESIS:** Institutional accumulation (a16z $170M+), ETF approval, and HIP-3 tokenized stocks fuse DeFi dominance with real-world asset expansion, attracting both crypto-native and traditional capital.\n\n**WHAT CHANGED:** ETF approval unlocked a new demand vector, shifting HYPE from a pure DEX token to a regulated, institutionally accessible asset almost overnight.\n\n**TREND:** Bullish \u2014 price holds well above all major SMAs (20%+ above SMA20) with higher highs intact, confirming a powerful uptrend.\n\n**MOMENTUM:** Strong \u2014 RSI at 67.9 nears overbought but hasn't peaked, while the MACD histogram expands positively above the signal line, supporting continuation.\n\n**DECOUPLING:** HYPE\u2019s 30-day BTC correlation of -0.86 confirms complete decoupling; it\u2019s trading on its own fundamental catalysts, not macro crypto beta.\n\n**LIQUIDITY:** Orderbook imbalance (0.78) and 0.15 bps spread with volume 55% above the 30-day average indicate deep, institutional-grade liquidity absorbing size without slippage.\n\n**LEVERS:** Funding is slightly negative (-1.27% annualized), showing shorts are paying longs \u2014 positioning is far from crowded, leaving room for leveraged longs to build.\n\n**VALUE:** Not yet overbought \u2014 Bollinger %B at 79.8% and RSI below 70 show price is extended but not extreme; a mean-reversion toward SMA20 would be healthy.\n\n**RISK:** The #1 risk is a violent valuation compression if fee growth stalls, given the 5,367x price/revenue multiple leaves no margin for error.\n\n**Hold with a hard stop at $56.58 (2x ATR); add aggressively on a pullback to the SMA20 near $57.40 as the buyback engine and institutional bid provide a structural floor.**",
   "predictions": {
     "total": 36,
-    "win_rate_6h": 48.0,
-    "win_rate_12h": 38.1,
-    "win_rate_24h": 71.4,
-    "resolved_6h": 25,
-    "resolved_12h": 21,
-    "resolved_24h": 7,
+    "win_rate_6h": 53.3,
+    "win_rate_12h": 39.1,
+    "win_rate_24h": 80.0,
+    "dir_accuracy_6h": 53.3,
+    "dir_accuracy_12h": 39.1,
+    "dir_accuracy_24h": 80.0,
+    "target_hit_rate_6h": 13.3,
+    "target_hit_rate_12h": 4.3,
+    "target_hit_rate_24h": 30.0,
+    "resolved_6h": 30,
+    "resolved_12h": 23,
+    "resolved_24h": 10,
     "active": {
       "id": 38,
       "created_at": "2026-06-02T22:02:10.959257+00:00",
@@ -13135,8 +13141,7 @@
         "resolved_at_12h": null,
         "resolved_at_24h": null
       }
-    ],
-    "streak": 0
+    ]
   },
   "changelog": [
     {
