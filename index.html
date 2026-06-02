@@ -7,8 +7,44 @@
     <script src="https://unpkg.com/lightweight-charts@4.2.1/dist/lightweight-charts.standalone.production.js">
     </script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
-    <!-- Discord Embedded App SDK -->
-    <script src="https://discord.com/sdk/discord-iframe.js"></script>
+    <!-- Discord Embedded App SDK (ESM module) -->
+    <script>const DISCORD_CLIENT_ID = '1511322537374781440';</script>
+    <script type="module">
+        // Only load Discord SDK if we're inside a Discord Activity iframe
+        const urlParams = new URLSearchParams(window.location.search);
+        const isDiscordActivity = urlParams.has('frame_id') || urlParams.has('guild_id') || urlParams.has('channel_id');
+        
+        if (isDiscordActivity && typeof DISCORD_CLIENT_ID !== 'undefined') {
+            try {
+                const { DiscordSDK } = await import('https://cdn.jsdelivr.net/npm/@discord/embedded-app-sdk@1.9.0/+esm');
+                const discordSdk = new DiscordSDK(DISCORD_CLIENT_ID);
+                await discordSdk.ready();
+                console.log('[Discord] SDK ready ✅');
+                
+                // Get user
+                const user = await discordSdk.commands.getUser();
+                if (user) {
+                    console.log('[Discord] User:', user.username);
+                    const banner = document.createElement('div');
+                    banner.style.cssText = 'background:linear-gradient(135deg,#5865F2,#7289DA);color:#fff;padding:8px 16px;text-align:center;font-size:13px;font-family:system-ui,sans-serif;display:flex;align-items:center;justify-content:center;gap:8px;position:sticky;top:0;z-index:9999;';
+                    banner.innerHTML = '<span style="font-size:16px">🎮</span><span>Discord Activity · Welcome <strong>@' + user.username + '</strong></span><span style="opacity:0.6">|</span><span style="opacity:0.7">HYPE/USD Monitor</span>';
+                    document.body.insertBefore(banner, document.body.firstChild);
+                }
+
+                // Set rich presence
+                await discordSdk.commands.setActivity({
+                    state: 'Monitoring HYPE/USD',
+                    details: 'Institutional Monitor',
+                    timestamps: { start: Date.now() },
+                });
+                console.log('[Discord] Activity set ✅');
+            } catch (err) {
+                console.warn('[Discord] SDK init failed (non-critical):', err.message);
+            }
+        } else {
+            console.log('[Discord] Standalone mode — no Discord iframe detected');
+        }
+    </script>
     <style>
         :root {
             --bg: #080c14;
@@ -2497,100 +2533,13 @@
             });
 
             // ──────────────────────────────────────
-            // DISCORD ACTIVITY SDK
-            // ──────────────────────────────────────
-            let discordUser = null;
-            let isDiscordActivity = false;
-
-            async function initDiscordSDK() {
-                // Check if running inside Discord iframe
-                const urlParams = new URLSearchParams(window.location.search);
-                const frameId = urlParams.get('frame_id');
-                
-                if (!frameId) {
-                    console.log('[Discord] Not running inside Discord Activity — standalone mode');
-                    return false;
-                }
-
-                isDiscordActivity = true;
-                console.log('[Discord] Activity detected, initializing SDK...');
-
-                try {
-                    // Initialize the Discord SDK
-                    // The discord-iframe.js script auto-detects the iframe context
-                    if (window.DiscordSDK) {
-                        const discordSdk = new window.DiscordSDK(DISCORD_CLIENT_ID);
-                        await discordSdk.ready();
-                        console.log('[Discord] SDK ready');
-
-                        // Get user info
-                        const user = await discordSdk.commands.getUser();
-                        if (user) {
-                            discordUser = user;
-                            console.log('[Discord] User:', user.username);
-                            
-                            // Show welcome banner
-                            showDiscordBanner(user);
-                        }
-
-                        // Set activity state
-                        await discordSdk.commands.setActivity({
-                            state: 'Monitoring HYPE/USD',
-                            details: `Price: $${document.getElementById('price')?.textContent || '--'}`,
-                            timestamps: { start: Date.now() },
-                        });
-
-                        return true;
-                    }
-                } catch (err) {
-                    console.warn('[Discord] SDK init failed (non-critical):', err.message);
-                }
-                return false;
-            }
-
-            function showDiscordBanner(user) {
-                const banner = document.createElement('div');
-                banner.id = 'discord-banner';
-                banner.style.cssText = `
-                    background: linear-gradient(135deg, #5865F2 0%, #7289DA 100%);
-                    color: white;
-                    padding: 8px 16px;
-                    text-align: center;
-                    font-size: 13px;
-                    font-family: system-ui, sans-serif;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    gap: 8px;
-                `;
-                banner.innerHTML = `
-                    <span style="font-size:16px">🎮</span>
-                    <span>Discord Activity · Welcome <strong>@${user.username}</strong></span>
-                    <span style="opacity:0.6">|</span>
-                    <span style="opacity:0.7">HYPE/USD Monitor</span>
-                `;
-                
-                // Insert at top of body
-                document.body.insertBefore(banner, document.body.firstChild);
-            }
-
-            // ──────────────────────────────────────
             // START
             // ──────────────────────────────────────
-            // Try Discord SDK first, then init dashboard
-            (async () => {
-                // DISCORD_CLIENT_ID will be set during deployment
-                // If not set, skip Discord init and run standalone
-                if (typeof DISCORD_CLIENT_ID !== 'undefined') {
-                    await initDiscordSDK();
-                }
-                
-                init().catch(err => {
-                    console.error('Initialization error:', err);
-                    lastUpdateEl.textContent = 'Error loading data';
-                    countdownEl.textContent = 'Next refresh: --:--';
-                });
-            })();
+            init().catch(err => {
+                console.error('Initialization error:', err);
+                lastUpdateEl.textContent = 'Error loading data';
+                countdownEl.textContent = 'Next refresh: --:--';
+            });
         })();
     </script>
 </body>
