@@ -517,19 +517,19 @@ def generate_heuristic_prediction(price, tech, returns):
     
     if bullish:
         direction = "BULLISH"
-        mult_6h = 0.8
-        mult_12h = 1.5
-        mult_24h = 2.5
+        mult_6h = 0.3
+        mult_12h = 0.6
+        mult_24h = 1.0
     elif bearish:
         direction = "BEARISH"
-        mult_6h = -0.8
-        mult_12h = -1.5
-        mult_24h = -2.5
+        mult_6h = -0.3
+        mult_12h = -0.6
+        mult_24h = -1.0
     else:
         direction = "NEUTRAL"
-        mult_6h = 0.3
-        mult_12h = 0.5
-        mult_24h = 0.8
+        mult_6h = 0.1
+        mult_12h = 0.2
+        mult_24h = 0.3
     
     # Build reasoning string
     reasons = []
@@ -595,7 +595,8 @@ Respond ONLY with valid JSON in this exact format:
 }}
 
 Rules:
-- Targets must be realistic: roughly 0.5-1.5× ATR for 6h, 1-2.5× ATR for 12h, 1.5-4× ATR for 24h
+- Targets must be realistic: roughly 0.2-0.5× ATR for 6h, 0.4-0.8× ATR for 12h, 0.8-1.5× ATR for 24h
+- CONSERVATIVE targets — better to hit a small target than miss a big one
 - BULLISH target > current price, BEARISH target < current price
 - Confidence 1-10 scale based on signal alignment
 - In reasoning, explain WHY each target was chosen: cite specific indicator levels (RSI, MACD, ATR, BB, funding) and what they imply about momentum, support/resistance, and timeframe
