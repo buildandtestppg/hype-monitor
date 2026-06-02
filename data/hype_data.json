@@ -12996,11 +12996,11 @@
   "ai_analysis": "**PROTOCOL FUNDAMENTALS:** TVL surged 19.6% in 30 days to $5.77B, daily fees of $2.90M feed an aggressive 97% buyback engine, creating constant deflationary pressure on HYPE supply.\n\n**VALUATION:** Mcap/TVL of 2.75 is reasonable for a dominant DEX, but the Price/Daily Revenue multiple of 5,473 signals extreme premium relative to current cash flows.\n\n**NARRATIVE THESIS:** Institutional accumulation (a16z $170M+), ETF approval, and HIP-3 tokenized stocks are fusing DeFi with traditional finance, driving a retail-follows-smart-money frenzy.\n\n**WHAT CHANGED:** ETF approval and the 30-day TVL acceleration (+19.6%) provided a fresh catalyst, breaking HYPE out of its prior range and igniting the 69% monthly surge.\n\n**TREND:** Bullish \u2014 price holds well above all key SMAs (SMA50 at $48.12, 47% below) with a clear stair-step advance.\n\n**MOMENTUM:** Strong but overheated \u2014 RSI at 71.5 signals overbought, while the MACD histogram remains positive (1.37), indicating no bearish crossover yet.\n\n**DECOUPLING:** HYPE\u2019s 30-day BTC correlation of -0.885 shows it\u2019s trading entirely on its own catalysts, insulating it from broad market chop but raising idiosyncratic risk.\n\n**LIQUIDITY:** Orderbook imbalance (-0.28) is bearish with more asks than bids, and volume (8.27M) is well below the 7-day average, hinting at thinning retail participation.\n\n**LEVERS:** Funding is negligible (1.37% annualized), showing longs are not crowded and the rally isn\u2019t leverage-driven \u2014 a healthy sign for continuation.\n\n**VALUE:** Overbought \u2014 price hugs the upper Bollinger Band ($77.05) and RSI is in overbought territory, suggesting the move has stretched too far, too fast.\n\n**RISK:** A violent mean-reversion correction as profit-takers emerge; the 2x ATR stop at $58.69 is the line in the sand.\n\n**Book partial profits here and set a re-entry bid near the $58\u2013$60 zone (2x ATR), riding the fundamental bid while respecting the overbought technicals.**",
   "predictions": {
     "total": 23,
-    "win_rate_6h": 21.4,
+    "win_rate_6h": 20.0,
     "win_rate_12h": 0.0,
     "win_rate_24h": null,
-    "resolved_6h": 14,
-    "resolved_12h": 9,
+    "resolved_6h": 15,
+    "resolved_12h": 10,
     "resolved_24h": 0,
     "active": {
       "id": 25,
@@ -13135,8 +13135,7 @@
         "resolved_at_12h": null,
         "resolved_at_24h": null
       }
-    ],
-    "streak": 0
+    ]
   },
   "changelog": [
     {
