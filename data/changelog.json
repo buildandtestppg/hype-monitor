@@ -286,5 +286,23 @@
     "to": "74.175",
     "price": 74.175,
     "detail": "New 30-day high: $74.175"
+  },
+  {
+    "timestamp": "2026-06-02T01:00:34.229808+00:00",
+    "type": "signal_change",
+    "category": "fee_trend",
+    "from": "growing",
+    "to": "declining",
+    "price": 74.083,
+    "detail": "Fee trend: -0.3%"
+  },
+  {
+    "timestamp": "2026-06-02T01:00:34.229808+00:00",
+    "type": "price_milestone",
+    "category": "price",
+    "from": "73.483",
+    "to": "74.083",
+    "price": 74.083,
+    "detail": "New 30-day high: $74.083"
   }
 ]
