@@ -120,12 +120,64 @@ def build_comparison_data(hype_closes):
     return comparison
 
 def fetch_defillama_protocol():
-    """Fetch Hyperliquid protocol data from DeFi Llama"""
+    """Fetch Hyperliquid protocol data from DeFi Llama (TVL, metadata)"""
     try:
         r = requests.get("https://api.llama.fi/protocol/hyperliquid", timeout=20)
         return r.json()
     except Exception as e:
-        print(f"  DeFi Llama fetch failed: {e}")
+        print(f"  DeFi Llama protocol fetch failed: {e}")
+        return None
+
+def fetch_defillama_fees():
+    """Fetch fee/revenue data from DeFi Llama summary"""
+    try:
+        r = requests.get("https://api.llama.fi/summary/fees/hyperliquid?dataType=dailyRevenue", timeout=20)
+        data = r.json()
+        return {
+            "fees_24h": data.get("total24h"),
+            "fees_48h": data.get("total48hto24h"),
+            "fees_7d_total": data.get("total7d"),
+            "fees_30d_total": data.get("total30d"),
+            "fees_all_time": data.get("totalAllTime"),
+            "fees_change_1d_pct": data.get("change_1d"),
+        }
+    except Exception as e:
+        print(f"  DeFi Llama fees fetch failed: {e}")
+        return None
+
+def fetch_defillama_volume():
+    """Fetch DEX volume data from DeFi Llama"""
+    try:
+        r = requests.get("https://api.llama.fi/summary/dexs/hyperliquid", timeout=20)
+        data = r.json()
+        return {
+            "dex_vol_24h": data.get("total24h"),
+            "dex_vol_7d_total": data.get("total7d"),
+            "dex_vol_30d_total": data.get("total30d"),
+            "dex_vol_all_time": data.get("totalAllTime"),
+        }
+    except Exception as e:
+        print(f"  DeFi Llama volume fetch failed: {e}")
+        return None
+
+def fetch_coingecko_data():
+    """Fetch FDV, volume, and supply data from CoinGecko"""
+    try:
+        r = requests.get(
+            "https://api.coingecko.com/api/v3/coins/hyperliquid?localization=false",
+            timeout=20
+        )
+        data = r.json()
+        md = data.get("market_data", {})
+        return {
+            "fdv_usd": md.get("fully_diluted_valuation", {}).get("usd"),
+            "total_volume_24h_usd": md.get("total_volume", {}).get("usd"),
+            "circulating_supply": md.get("circulating_supply"),
+            "total_supply": md.get("total_supply"),
+            "max_supply": md.get("max_supply"),
+        }
+    except Exception as e:
+        print(f"  CoinGecko fetch failed: {e}")
         return None
 
 def fetch_btc_price():
@@ -208,6 +260,9 @@ def build_research_data(current_price, ctx, technical, funding_summary, orderboo
     print("[1c/6] Fetching DeFi Llama research...")
 
     dl = fetch_defillama_protocol() or {}
+    fees_dl = fetch_defillama_fees() or {}
+    volume_dl = fetch_defillama_volume() or {}
+    cg = fetch_coingecko_data() or {}
     btc_price = fetch_btc_price()
 
     # Protocol stats
@@ -215,7 +270,10 @@ def build_research_data(current_price, ctx, technical, funding_summary, orderboo
     current_tvl = tvl[-1]["totalLiquidityUSD"] if tvl and isinstance(tvl, list) and len(tvl) > 0 else None
 
     mcap = dl.get("mcap") if dl else None
+    # Use CoinGecko FDV if DeFi Llama doesn't have it
     fdv = dl.get("fdv") if dl else None
+    if fdv is None and cg.get("fdv_usd"):
+        fdv = cg.get("fdv_usd")
     gecko_id = dl.get("gecko_id") if dl else None
 
     # Calculate TVL changes
@@ -224,7 +282,6 @@ def build_research_data(current_price, ctx, technical, funding_summary, orderboo
     if tvl and len(tvl) >= 2:
         try:
             current_tvl_val = tvl[-1].get("totalLiquidityUSD", 0)
-            # Find 7d and 30d ago entries
             now = datetime.datetime.now(datetime.timezone.utc)
             tvl_7d = None
             tvl_30d = None
@@ -244,46 +301,22 @@ def build_research_data(current_price, ctx, technical, funding_summary, orderboo
         except Exception:
             pass
 
-    # Fees from DeFi Llama
-    fees_data = dl.get("fees", []) if dl else []
-    revenue_data = dl.get("revenue", []) if dl else []
-    volume_data = dl.get("dexs", []) if dl else []  # DEX volume
+    # Use DeFi Llama summary endpoints for fees/volume (correct data)
+    fees_24h = fees_dl.get("fees_24h")
+    fees_48h = fees_dl.get("fees_48h")
+    fees_7d_total = fees_dl.get("fees_7d_total")
+    fees_30d_total = fees_dl.get("fees_30d_total")
+    fees_all_time = fees_dl.get("fees_all_time")
+    fees_change_1d = fees_dl.get("fees_change_1d_pct")
 
-    # Get latest fee/revenue entries
-    def latest_metric(data_list, days=1):
-        if not data_list or not isinstance(data_list, list):
-            return None, None, None
-        try:
-            # data_list is [{date, fees}, ...]
-            total = sum(d.get("fees", d.get("revenue", d.get("volume", 0))) or 0 for d in data_list[-days:])
-            latest = data_list[-1].get("fees", data_list[-1].get("revenue", data_list[-1].get("volume", 0))) if data_list else 0
-            prev = data_list[-days-1].get("fees", data_list[-days-1].get("revenue", data_list[-days-1].get("volume", 0))) if len(data_list) > days else None
-            return total, latest, prev
-        except Exception:
-            return None, None, None
+    dex_vol_24h = volume_dl.get("dex_vol_24h")
+    dex_vol_7d_total = volume_dl.get("dex_vol_7d_total")
+    dex_vol_30d_total = volume_dl.get("dex_vol_30d_total")
+    dex_vol_all_time = volume_dl.get("dex_vol_all_time")
 
-    fees_1d_total, fees_latest, fees_prev = latest_metric(fees_data, 1)
-    fees_7d_total, _, _ = latest_metric(fees_data, 7)
-    fees_30d_total, _, _ = latest_metric(fees_data, 30)
-
-    vol_1d_total, vol_latest, vol_prev = latest_metric(volume_data, 1)
-    vol_7d_total, _, _ = latest_metric(volume_data, 7)
-    vol_30d_total, _, _ = latest_metric(volume_data, 30)
-
-    fees_trend = None
-    if fees_latest and fees_prev and fees_prev > 0:
-        fees_trend = round(((fees_latest - fees_prev) / fees_prev) * 100, 1)
-    vol_trend = None
-    if vol_latest and vol_prev and vol_prev > 0:
-        vol_trend = round(((vol_latest - vol_prev) / vol_prev) * 100, 1)
-
-    # All-time fees (from protocol totalFees if available)
-    all_time_fees = dl.get("totalFees") if dl else None
-    if all_time_fees is None and fees_data:
-        try:
-            all_time_fees = sum(d.get("fees", 0) or 0 for d in fees_data)
-        except Exception:
-            pass
+    # Calculate trends from change_1d
+    fees_trend = fees_change_1d
+    vol_trend = None  # DeFi Llama DEX endpoint doesn't give change_1d
 
     # HYPE perp data from Hyperliquid context
     hype_perp = {}
@@ -314,7 +347,7 @@ def build_research_data(current_price, ctx, technical, funding_summary, orderboo
     # Valuation ratios
     mcap_val = mcap if mcap else None
     tvl_val = current_tvl if current_tvl else None
-    fees_24h_val = fees_latest if fees_latest else None
+    fees_24h_val = fees_24h if fees_24h else None
     oi_usd_val = hype_perp.get("oi_usd")
 
     valuation = {}
@@ -348,21 +381,21 @@ def build_research_data(current_price, ctx, technical, funding_summary, orderboo
     }
 
     fees_section = {
-        "fees_24h": round(fees_latest) if fees_latest else None,
+        "fees_24h": round(fees_24h) if fees_24h else None,
         "fees_7d_total": round(fees_7d_total) if fees_7d_total else None,
         "fees_30d_total": round(fees_30d_total) if fees_30d_total else None,
-        "fees_all_time": round(all_time_fees) if all_time_fees else None,
+        "fees_all_time": round(fees_all_time) if fees_all_time else None,
         "fees_7d_avg_daily": round(fees_7d_total / 7, 1) if fees_7d_total else None,
         "fees_30d_avg_daily": round(fees_30d_total / 30, 1) if fees_30d_total else None,
         "fees_trend_pct": fees_trend,
     }
 
     volume_section = {
-        "volume_24h": round(vol_latest) if vol_latest else None,
-        "volume_7d_total": round(vol_7d_total) if vol_7d_total else None,
-        "volume_30d_total": round(vol_30d_total) if vol_30d_total else None,
-        "volume_7d_avg_daily": round(vol_7d_total / 7, 1) if vol_7d_total else None,
-        "volume_30d_avg_daily": round(vol_30d_total / 30, 1) if vol_30d_total else None,
+        "volume_24h": round(dex_vol_24h) if dex_vol_24h else None,
+        "volume_7d_total": round(dex_vol_7d_total) if dex_vol_7d_total else None,
+        "volume_30d_total": round(dex_vol_30d_total) if dex_vol_30d_total else None,
+        "volume_7d_avg_daily": round(dex_vol_7d_total / 7, 1) if dex_vol_7d_total else None,
+        "volume_30d_avg_daily": round(dex_vol_30d_total / 30, 1) if dex_vol_30d_total else None,
         "volume_trend_pct": vol_trend,
     }
 
