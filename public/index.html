@@ -1427,7 +1427,9 @@
             // ──────────────────────────────────────
             async function fetchData() {
                 try {
-                    const resp = await fetch('./data/hype_data.json?t=' + Date.now());
+                    // Fetch from raw.githubusercontent.com for real-time updates
+                    // (bypasses GitHub Pages 10-min CDN cache)
+                    const resp = await fetch('https://raw.githubusercontent.com/buildandtestppg/hype-monitor/gh-pages/data/hype_data.json?t=' + Date.now());
                     if (!resp.ok) throw new Error('HTTP ' + resp.status);
                     const data = await resp.json();
                     lastDataFetchTime = new Date();
@@ -1440,7 +1442,7 @@
 
             async function fetchChangelog() {
                 try {
-                    const resp = await fetch('./data/changelog.json?t=' + Date.now());
+                    const resp = await fetch('https://raw.githubusercontent.com/buildandtestppg/hype-monitor/gh-pages/data/changelog.json?t=' + Date.now());
                     if (!resp.ok) throw new Error('HTTP ' + resp.status);
                     return await resp.json();
                 } catch (err) {
