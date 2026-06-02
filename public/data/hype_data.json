@@ -12996,12 +12996,18 @@
   "ai_analysis": "**PROTOCOL FUNDAMENTALS:** TVL surged 20.5% to $5.82B with $2.90M in 24h fees, fueling the aggressive 97% fee-buyback engine that constantly removes supply from the market.\n\n**VALUATION:** At 5545x daily revenue and 2.76x TVL, HYPE is optically overvalued, but the buyback-driven supply sink and explosive growth partially justify the premium.\n\n**NARRATIVE THESIS:** Institutional accumulation (a16z $170M+), ETF approval, and HIP-3 tokenized stocks are transforming HYPE from a DEX token into a broad real-world asset play, attracting both retail and institutional flows.\n\n**WHAT CHANGED:** The ETF approval and a16z\u2019s massive investment marked a decisive shift from pure perp DEX narrative to a regulated, institutionally backed financial infrastructure asset.\n\n**TREND:** Bullish \u2014 price is 71.7% higher over 30 days, holding well above all key moving averages with higher highs and higher lows intact.\n\n**MOMENTUM:** Strong but overheated; RSI at 73.6 signals overbought conditions, while the widening MACD histogram confirms accelerating upside momentum.\n\n**DECOUPLING:** HYPE\u2019s 30-day BTC correlation of -0.874 shows it\u2019s moving entirely on its own fundamentals, insulating it from broad market selloffs but also removing a macro tailwind.\n\n**LIQUIDITY:** Tight 0.14 bps spread and neutral orderbook imbalance with volume near 7-day average suggest healthy, likely institutional-grade liquidity rather than retail froth.\n\n**LEVERS:** Funding is slightly negative (-0.26% annualized), indicating shorts are paying longs \u2014 leverage is not crowded, and positioning remains surprisingly clean.\n\n**VALUE:** Overbought; price sits 86% inside the Bollinger Bands and 49% above the 50-day SMA, a level that historically precedes mean-reversion pauses.\n\n**RISK:** A violent mean-reversion pullback is the #1 risk, with price extended $23.6 above its 20-day SMA and RSI flashing exhaustion \u2014 profit-taking could trigger a rapid drop toward the $59.69 stop level.\n\n**Take partial profits here and trail a hard stop at $59.69 (2x ATR); re-enter only on a healthy pullback to the $57\u2013$60 zone.**",
   "predictions": {
     "total": 30,
-    "win_rate_6h": 47.6,
-    "win_rate_12h": 30.8,
-    "win_rate_24h": 66.7,
-    "resolved_6h": 21,
-    "resolved_12h": 13,
-    "resolved_24h": 3,
+    "win_rate_6h": 52.2,
+    "win_rate_12h": 40.0,
+    "win_rate_24h": 50.0,
+    "dir_accuracy_6h": 52.2,
+    "dir_accuracy_12h": 40.0,
+    "dir_accuracy_24h": 50.0,
+    "target_hit_rate_6h": 4.3,
+    "target_hit_rate_12h": 6.7,
+    "target_hit_rate_24h": 0.0,
+    "resolved_6h": 23,
+    "resolved_12h": 15,
+    "resolved_24h": 4,
     "active": {
       "id": 32,
       "created_at": "2026-06-02T16:01:24.237177+00:00",
@@ -13135,8 +13141,7 @@
         "resolved_at_12h": null,
         "resolved_at_24h": null
       }
-    ],
-    "streak": 0
+    ]
   },
   "changelog": [
     {
