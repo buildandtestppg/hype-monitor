@@ -1500,6 +1500,26 @@
                 // Update data
                 loadChartData(data);
 
+                // Set initial OHLCV to last candle
+                (function setInitialOHLC() {
+                    const tf = activeTimeframe || '1d';
+                    const allCandles = data?.candles;
+                    let c = [];
+                    if (allCandles && typeof allCandles === 'object') {
+                        const keyMap = { '1h': '1h', '4h': '4h', '1d': '1d', '1w': '1d' };
+                        c = allCandles[keyMap[tf] || '1d'] || [];
+                    }
+                    if (c.length > 0 && c[c.length - 1].open != null) {
+                        const last = c[c.length - 1];
+                        const fmt = v => v != null ? '$' + Number(v).toFixed(3) : '--';
+                        document.getElementById('ohlc-o').textContent = fmt(last.open);
+                        document.getElementById('ohlc-h').textContent = fmt(last.high);
+                        document.getElementById('ohlc-l').textContent = fmt(last.low);
+                        document.getElementById('ohlc-c').textContent = fmt(last.close);
+                        document.getElementById('ohlc-v').textContent = last.volume != null ? (last.volume/1e6).toFixed(2) + 'M' : '--';
+                    }
+                })();
+
                 // Resize to fit
                 tvChart.applyOptions({ width: container.clientWidth });
                 tvChart.timeScale().fitContent();
