@@ -505,6 +505,60 @@ def calc_narrative_score(tvl_7d, tvl_30d, fees_trend, vol_trend, rsi, macd_hist,
 
 # ── Prediction System ──
 
+def generate_heuristic_prediction(price, tech, returns):
+    """Generate a simple heuristic prediction when the LLM fails"""
+    atr = tech.get('atr14', price * 0.05)
+    rsi = tech.get('rsi14', 50)
+    macd_hist = tech.get('macd_hist', 0)
+    
+    # Determine direction based on MACD + RSI
+    bullish = macd_hist > 0 and rsi < 80
+    bearish = macd_hist < 0 and rsi > 20
+    
+    if bullish:
+        direction = "BULLISH"
+        mult_6h = 0.8
+        mult_12h = 1.5
+        mult_24h = 2.5
+    elif bearish:
+        direction = "BEARISH"
+        mult_6h = -0.8
+        mult_12h = -1.5
+        mult_24h = -2.5
+    else:
+        direction = "NEUTRAL"
+        mult_6h = 0.3
+        mult_12h = 0.5
+        mult_24h = 0.8
+    
+    # Build reasoning string
+    reasons = []
+    if macd_hist > 0:
+        reasons.append(f"MACD hist +{macd_hist:.2f} bullish")
+    elif macd_hist < 0:
+        reasons.append(f"MACD hist {macd_hist:.2f} bearish")
+    
+    if rsi > 70:
+        reasons.append(f"RSI {rsi} overbought caps upside")
+    elif rsi < 30:
+        reasons.append(f"RSI {rsi} oversold supports bounce")
+    else:
+        reasons.append(f"RSI {rsi} neutral")
+    
+    reasons.append(f"ATR ${atr:.2f} guides targets")
+    
+    return {
+        "pred_6h_direction": direction,
+        "pred_6h_target": round(price + mult_6h * atr, 2),
+        "pred_12h_direction": direction,
+        "pred_12h_target": round(price + mult_12h * atr, 2),
+        "pred_24h_direction": direction,
+        "pred_24h_target": round(price + mult_24h * atr, 2),
+        "confidence": 5,
+        "reasoning": "; ".join(reasons) + " (heuristic fallback — LLM unavailable)"
+    }
+
+
 def generate_predictions(data):
     """Generate AI predictions and store to SQLite DB"""
     print("[4/6] Generating predictions...")
@@ -521,10 +575,12 @@ Current price: ${price}
 RSI(14): {rsi}
 Narrative score: {narrative.get('score', 'N/A')}/100 ({narrative.get('label', 'N/A')})
 Orderbook imbalance: {ob['imbalance']} ({ob['pressure']})
-MACD hist: {tech['macd_hist']}
+MACD hist: {tech['macd_hist']} (line: {tech['macd_line']}, signal: {tech['macd_signal']})
 Returns: 1d {returns['1d']}%, 7d {returns['7d']}%, 30d {returns['30d']}%
 ATR(14): {tech['atr14']} (${tech['atr_pct']}%)
 BB upper: ${tech['bb_upper']}, lower: ${tech['bb_lower']}
+Funding (8h): {tech.get('funding_8h', 'N/A')}
+Volume regime: {tech.get('vol_regime', 'N/A')}
 
 Respond ONLY with valid JSON in this exact format:
 {{
@@ -535,33 +591,65 @@ Respond ONLY with valid JSON in this exact format:
   "pred_24h_direction": "BULLISH|BEARISH",
   "pred_24h_target": float,
   "confidence": int (1-10),
-  "reasoning": "short string"
+  "reasoning": "string"
 }}
 
 Rules:
-- Targets must be realistic given ATR and current price
+- Targets must be realistic: roughly 0.5-1.5× ATR for 6h, 1-2.5× ATR for 12h, 1.5-4× ATR for 24h
 - BULLISH target > current price, BEARISH target < current price
-- Confidence 1-10 scale
-- Keep reasoning under 200 characters"""
+- Confidence 1-10 scale based on signal alignment
+- In reasoning, explain WHY each target was chosen: cite specific indicator levels (RSI, MACD, ATR, BB, funding) and what they imply about momentum, support/resistance, and timeframe
+- Keep reasoning to 1-2 sentences per timeframe (under 300 chars total)"""
 
     try:
         resp = requests.post(OLLAMA_URL, json={
             "model": PREDICTION_MODEL,
             "messages": [{"role": "user", "content": prompt}],
             "stream": False,
-            "options": {"num_predict": 800, "temperature": 0.2}
+            "options": {"num_predict": 1200, "temperature": 0.2}
         }, timeout=120)
         result = resp.json()
         content = result.get("message", {}).get("content", "")
+        
+        if not content:
+            print(f"  Empty response from model, result keys: {list(result.keys())}")
+            print(f"  Message object: {result.get('message', {})}")
+            # Fall back to a simple heuristic prediction
+            pred = generate_heuristic_prediction(price, tech, returns)
+        else:
+            # Extract JSON from response — be more robust
+            json_str = content.strip()
+            
+            # Remove markdown code fences
+            if "```json" in json_str:
+                parts = json_str.split("```json")
+                for part in parts[1:]:
+                    fence_end = part.find("```")
+                    if fence_end != -1:
+                        candidate = part[:fence_end].strip()
+                        if candidate.startswith("{") and candidate.endswith("}"):
+                            json_str = candidate
+                            break
+            elif "```" in json_str:
+                parts = json_str.split("```")
+                for part in parts[1:]:
+                    if part.strip().startswith("{") and part.strip().endswith("}"):
+                        json_str = part.strip()
+                        break
+            
+            # Try to find JSON directly if no fences
+            if not json_str.startswith("{"):
+                start = content.find("{")
+                end = content.rfind("}")
+                if start != -1 and end != -1 and end > start:
+                    json_str = content[start:end+1]
 
-        # Extract JSON from response
-        json_str = content
-        if "```json" in content:
-            json_str = content.split("```json")[1].split("```")[0].strip()
-        elif "```" in content:
-            json_str = content.split("```")[1].split("```")[0].strip()
-
-        pred = json.loads(json_str)
+            if not json_str or not json_str.startswith("{"):
+                print(f"  Could not extract JSON, using heuristic fallback")
+                pred = generate_heuristic_prediction(price, tech, returns)
+            else:
+                pred = json.loads(json_str)
+                print(f"  Parsed: 6h={pred.get('pred_6h_target')} 12h={pred.get('pred_12h_target')} 24h={pred.get('pred_24h_target')} reason={pred.get('reasoning', '')[:60]}")
 
         # Validate and store
         db_path = os.path.expanduser("~/Projects/hype-monitor/data/predictions.db")

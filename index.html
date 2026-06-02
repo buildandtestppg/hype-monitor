@@ -769,6 +769,13 @@
             color: var(--text-secondary);
             pointer-events: none;
         }
+        @media (max-width: 500px) {
+            .chart-ohlc-bar {
+                gap: 8px;
+                font-size: 0.6rem;
+                left: 6px;
+            }
+        }
         .chart-ohlc-bar .ohlc-val {
             color: #fff;
             font-weight: 600;
@@ -970,6 +977,146 @@
         }
         .pred-table tr:hover td {
             background: rgba(255,255,255,0.015);
+        }
+
+        /* ─── MOBILE RESPONSIVENESS ─── */
+        @media (max-width: 768px) {
+            /* Header */
+            .header {
+                flex-direction: column;
+                gap: 8px;
+                align-items: flex-start;
+            }
+            .header-title {
+                font-size: 0.85rem;
+            }
+            .header-right {
+                width: 100%;
+                justify-content: space-between;
+            }
+            /* Top stats: 3→2 cols */
+            .top-stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            /* Hero chart */
+            .chart-hero {
+                height: 340px;
+            }
+            .chart-ohlc-bar {
+                gap: 8px;
+                font-size: 0.6rem;
+            }
+            /* Overlay toggles */
+            .overlay-toggles {
+                gap: 4px;
+            }
+            .overlay-toggles .toggle-item {
+                font-size: 0.6rem;
+                padding: 2px 6px;
+            }
+            /* Main grid already 1-col at 768px ✓ */
+            /* Tech details */
+            .tech-details {
+                grid-template-columns: 1fr;
+            }
+            /* AI grid */
+            .ai-grid {
+                grid-template-columns: 1fr;
+            }
+            .ai-meta {
+                flex-direction: column;
+                gap: 4px;
+            }
+            /* Comparison table */
+            .comp-table {
+                font-size: 0.65rem;
+            }
+            .comp-table th, .comp-table td {
+                padding: 5px 6px;
+            }
+            /* Predictions */
+            .pred-active-card {
+                padding: 10px;
+            }
+            .pred-stats-bar {
+                gap: 4px;
+            }
+            .pred-stat-item {
+                min-width: 60px;
+                padding: 6px 4px;
+            }
+            .pred-stat-val {
+                font-size: 0.85rem;
+            }
+            /* Changelog */
+            .changelog-scroll {
+                max-height: 200px;
+            }
+        }
+        @media (max-width: 500px) {
+            /* Very small screens */
+            .top-stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .stat-label {
+                font-size: 0.55rem;
+            }
+            .stat-val {
+                font-size: 0.85rem;
+            }
+            .chart-hero {
+                height: 280px;
+            }
+            .chart-body {
+                height: 240px;
+            }
+            .tf-selector {
+                gap: 4px;
+            }
+            .tf-btn {
+                font-size: 0.6rem;
+                padding: 3px 8px;
+            }
+            .returns-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            .return-pill {
+                font-size: 0.65rem;
+                padding: 5px 4px;
+            }
+            .tech-row {
+                font-size: 0.68rem;
+            }
+            .tech-row .tech-val {
+                font-size: 0.72rem;
+            }
+            .comp-table {
+                font-size: 0.58rem;
+            }
+            .comp-table th, .comp-table td {
+                padding: 4px 3px;
+            }
+            .comp-chart-wrap {
+                height: 180px;
+            }
+            .card {
+                padding: 10px;
+            }
+            .card-header {
+                font-size: 0.68rem;
+            }
+        }
+        @media (max-width: 380px) {
+            .top-stats {
+                grid-template-columns: 1fr 1fr;
+            }
+            .chart-ohlc-bar {
+                gap: 5px;
+                font-size: 0.55rem;
+            }
+            .overlay-toggles {
+                flex-wrap: wrap;
+            }
         }
     </style>
 </head>
