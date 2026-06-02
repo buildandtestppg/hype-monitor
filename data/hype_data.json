@@ -1,66 +1,66 @@
 {
   "meta": {
-    "timestamp": "2026-06-02T02:00:10.684635+00:00",
+    "timestamp": "2026-06-02T03:00:42.239970+00:00",
     "data_points": 121,
-    "price": 72.895,
-    "mark_price": 72.879,
-    "open_interest": "21947301.5599999912"
+    "price": 74.936,
+    "mark_price": 74.936,
+    "open_interest": "21959464.8599999696"
   },
   "returns": {
     "1d": 0.0,
-    "3d": 1.17,
-    "7d": 26.51,
-    "14d": 32.93,
-    "30d": 74.34,
-    "60d": 100.49,
-    "90d": 138.74
+    "3d": 4.0,
+    "7d": 30.06,
+    "14d": 36.65,
+    "30d": 79.22,
+    "60d": 106.1,
+    "90d": 145.43
   },
   "technical": {
-    "sma7": 67.2,
-    "sma20": 57.6,
-    "sma50": 48.16,
-    "rsi14": 76.1,
-    "rsi7": 79.9,
+    "sma7": 67.49,
+    "sma20": 57.7,
+    "sma50": 48.2,
+    "rsi14": 78.6,
+    "rsi7": 84.3,
     "rsi_signal": "OVERBOUGHT",
-    "macd_line": 7.2198,
-    "macd_signal": 5.712,
-    "macd_hist": 1.5078,
-    "bb_upper": 77.48,
-    "bb_lower": 37.72,
-    "atr14": 5.83,
-    "atr_pct": 8.0,
-    "dist_sma7_pct": 8.5,
-    "dist_sma20_pct": 26.6,
-    "dist_sma50_pct": 51.4,
-    "stop_2x": 61.24,
-    "stop_3x": 55.4,
-    "poc": 55.51
+    "macd_line": 7.3826,
+    "macd_signal": 5.7445,
+    "macd_hist": 1.638,
+    "bb_upper": 77.93,
+    "bb_lower": 37.47,
+    "atr14": 5.84,
+    "atr_pct": 7.79,
+    "dist_sma7_pct": 11.0,
+    "dist_sma20_pct": 29.9,
+    "dist_sma50_pct": 55.5,
+    "stop_2x": 63.26,
+    "stop_3x": 57.42,
+    "poc": 55.57
   },
   "volume": {
-    "latest_M": 1.88,
-    "avg7d_M": 14.71,
-    "avg30d_M": 12.23,
-    "ratio_7v30": 1.2,
-    "poc": 55.51
+    "latest_M": 2.82,
+    "avg7d_M": 14.84,
+    "avg30d_M": 12.26,
+    "ratio_7v30": 1.21,
+    "poc": 55.57
   },
   "orderbook": {
-    "best_bid": 72.895,
-    "best_ask": 72.91,
-    "spread": 0.015,
-    "spread_bps": 2.06,
-    "bid_vol_20": 2448.1,
-    "ask_vol_20": 1543.45,
-    "imbalance": 0.2266,
+    "best_bid": 74.938,
+    "best_ask": 74.946,
+    "spread": 0.008,
+    "spread_bps": 1.07,
+    "bid_vol_20": 5646.91,
+    "ask_vol_20": 3240.24,
+    "imbalance": 0.2708,
     "pressure": "BULLISH"
   },
   "funding": {
     "count": 500,
     "avg_8h": 0.0008,
-    "latest_8h": 0.0013,
-    "annualized_pct": 1.37
+    "latest_8h": 0.0011,
+    "annualized_pct": 1.21
   },
   "correlation": {
-    "btc_30d": -0.894
+    "btc_30d": -0.897
   },
   "timeseries": {
     "dates": [
@@ -307,7 +307,7 @@
       68.291,
       72.053,
       73.582,
-      72.895
+      74.936
     ],
     "volumes": [
       21133051.16,
@@ -430,7 +430,7 @@
       12223223.46,
       16569368.49,
       22434915.59,
-      1878140.25
+      2821203.77
     ],
     "rsi": [
       null,
@@ -553,7 +553,7 @@
       74.0,
       76.7,
       77.7,
-      76.1
+      78.6
     ],
     "sma7": [
       null,
@@ -676,7 +676,7 @@
       62.17,
       63.5,
       65.28,
-      67.2
+      67.49
     ],
     "sma20": [
       null,
@@ -799,7 +799,7 @@
       52.73,
       54.23,
       55.9,
-      57.6
+      57.7
     ],
     "sma50": [
       null,
@@ -922,7 +922,7 @@
       46.34,
       46.93,
       47.59,
-      48.16
+      48.2
     ],
     "bb_upper": [
       null,
@@ -1045,7 +1045,7 @@
       71.09,
       73.77,
       76.09,
-      77.48
+      77.93
     ],
     "bb_lower": [
       null,
@@ -1168,7 +1168,7 @@
       34.37,
       34.68,
       35.7,
-      37.72
+      37.47
     ],
     "macd": [
       null,
@@ -1291,7 +1291,7 @@
       5.7976,
       6.4103,
       6.9392,
-      7.2198
+      7.3826
     ],
     "macd_signal": [
       null,
@@ -1414,19 +1414,11 @@
       4.5649,
       4.934,
       5.335,
-      5.712
+      5.7445
     ]
   },
   "candles": {
     "1h": [
-      {
-        "time": 1777773600,
-        "open": 41.108,
-        "high": 41.191,
-        "low": 40.93,
-        "close": 40.939,
-        "volume": 58145.78
-      },
       {
         "time": 1777777200,
         "open": 40.942,
@@ -7182,10 +7174,18 @@
       {
         "time": 1780365600,
         "open": 72.85,
-        "high": 72.931,
-        "low": 72.83,
-        "close": 72.921,
-        "volume": 1825.73
+        "high": 74.8,
+        "low": 72.72,
+        "close": 74.799,
+        "volume": 918591.75
+      },
+      {
+        "time": 1780369200,
+        "open": 74.8,
+        "high": 74.978,
+        "low": 74.799,
+        "close": 74.942,
+        "volume": 26256.45
       }
     ],
     "4h": [
@@ -11512,10 +11512,10 @@
       {
         "time": 1780358400,
         "open": 73.582,
-        "high": 74.88,
+        "high": 74.978,
         "low": 72.706,
-        "close": 72.916,
-        "volume": 1878213.62
+        "close": 74.942,
+        "volume": 2821232.16
       }
     ],
     "1d": [
@@ -12482,12 +12482,12 @@
       {
         "time": 1780358400,
         "open": 73.582,
-        "high": 74.88,
+        "high": 74.978,
         "low": 72.706,
-        "close": 72.916,
-        "volume": 1878213.62
+        "close": 74.942,
+        "volume": 2821232.16
       }
     ]
   },
-  "ai_analysis": "**TREND:** Bullish \u2014 price is up 74% in 30 days and trading well above all key moving averages (SMA7/20/50).\n**MOMENTUM:** Strong \u2014 RSI(14) at 76.1 signals overbought conditions, but the MACD histogram is positive and expanding, confirming trend strength.\n**DECOUPLING:** HYPE is heavily decoupled from BTC (30D correlation -0.894), meaning it\u2019s trading on its own catalysts (ETF, buybacks, HIP-3) and is insulated from broad crypto swings.\n**LIQUIDITY:** Institutional \u2014 orderbook imbalance is bullish (0.2266) with a razor-thin 2.06 bps spread, yet daily volume (1.88M) is well below weekly/ monthly averages, suggesting quiet accumulation.\n**LEVERS:** Longs are not crowded \u2014 8h funding is negligible (1.37% annualized), indicating low leverage and minimal liquidation cascade risk.\n**VALUE:** Overbought in the short term \u2014 price is near the upper Bollinger Band ($77.48) and 51% above the SMA50, reflecting a parabolic extension.\n**RISK:** The #1 risk is a violent mean-reversion snap given the extreme distance from moving averages and overbought RSI, which could trigger profit-taking down to the 2x ATR stop ($61.24).\n\n**Hold spot with a trailing stop at $61.24; do not chase \u2014 wait for a pullback to the SMA7 ($67.2) or an RSI cooldown below 70 before adding.**"
+  "ai_analysis": "**TREND:** Bullish \u2014 price is up 79% in 30 days and trading well above all key moving averages, confirming a powerful uptrend.\n**MOMENTUM:** Strong but overextended \u2014 RSI at 78.6 signals overbought conditions, while the MACD histogram is still positive and expanding, indicating momentum has not yet peaked.\n**DECOUPLING:** HYPE is completely decoupled from BTC (30D correlation -0.897), moving on its own catalysts like ETF approval and buyback engine, which insulates it from broad crypto selloffs.\n**LIQUIDITY:** Institutional-grade liquidity with a 1.07 bps spread and bullish orderbook imbalance, but current volume (2.82M) is well below the 7D average (14.84M), hinting at fading retail participation.\n**LEVERS:** Funding is negligible at 1.21% annualized, showing no crowding in longs \u2014 leverage is not a headwind.\n**VALUE:** Overbought \u2014 price is 11% above the SMA7 and pressing the upper Bollinger Band, leaving little room for immediate upside without a pullback.\n**RISK:** The #1 risk is a violent mean-reversion snap given the extreme RSI and price trading 55% above the SMA50, amplified by declining volume that suggests weakening trend conviction.\n\n**Book partial profits here and trail a hard stop at the 2x ATR level ($63.26) to protect gains while riding the buyback narrative.**"
 }
