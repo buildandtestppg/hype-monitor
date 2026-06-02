@@ -6,6 +6,7 @@
     <title>HYPE/USD Institutional Monitor</title>
     <script src="https://unpkg.com/lightweight-charts@4.2.1/dist/lightweight-charts.standalone.production.js">
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
     <style>
         :root {
             --bg: #080c14;
@@ -564,6 +565,72 @@
             letter-spacing: 0.03em;
         }
 
+        /* MARKET COMPARISON */
+        .comp-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+            margin-bottom: 14px;
+        }
+        @media (max-width: 900px) {
+            .comp-grid { grid-template-columns: 1fr; }
+        }
+        .comp-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+        }
+        .comp-table th {
+            text-align: left;
+            padding: 8px 10px;
+            color: var(--text-muted);
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            border-bottom: 1px solid var(--border);
+            font-weight: 600;
+        }
+        .comp-table td {
+            padding: 7px 10px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+        }
+        .comp-table tr:hover td {
+            background: rgba(255, 255, 255, 0.02);
+        }
+        .comp-table .asset-name {
+            font-weight: 700;
+            color: #fff;
+        }
+        .comp-table .hype-row td {
+            background: rgba(0, 230, 118, 0.04);
+        }
+        .comp-table .hype-row .asset-name {
+            color: var(--green);
+        }
+        .comp-badge {
+            display: inline-block;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-size: 0.6rem;
+            font-weight: 600;
+            margin-left: 6px;
+        }
+        .comp-badge.outperforms {
+            background: var(--green-bg);
+            color: var(--green);
+        }
+        .comp-badge.underperforms {
+            background: var(--red-bg);
+            color: var(--red);
+        }
+        .comp-chart-container {
+            min-height: 260px;
+        }
+        .comp-chart-container canvas {
+            max-height: 260px;
+        }
+
         /* LOADING */
         .loading-overlay {
             display: flex;
@@ -995,6 +1062,25 @@
                 <span id="ai-meta" style="font-size:0.65rem;color:var(--text-muted);font-weight:400;">--</span>
             </div>
             <div class="ai-grid" id="ai-grid"></div>
+        </div>
+
+        <!-- MARKET COMPARISON -->
+        <div class="comp-grid">
+            <div class="card">
+                <div class="card-header"><span class="icon">📊</span> HYPE vs Top Majors — Performance</div>
+                <table class="comp-table">
+                    <thead>
+                        <tr><th>Asset</th><th>Price</th><th>1D</th><th>7D</th><th>30D</th><th>Corr</th></tr>
+                    </thead>
+                    <tbody id="comp-table-body">
+                        <tr><td colspan="6" style="text-align:center;color:var(--text-muted);">Loading...</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="card comp-chart-container">
+                <div class="card-header"><span class="icon">📈</span> 30D Normalized Performance (%)</div>
+                <canvas id="compChart"></canvas>
+            </div>
         </div>
 
         <!-- PREDICTIONS PANEL -->
@@ -2081,6 +2167,101 @@
                 el.innerHTML = html || '—';
             }
 
+            // RENDER: MARKET COMPARISON
+            const COMP_COLORS = { HYPE: '#00e676', BTC: '#f7931a', ETH: '#627eea', SOL: '#9945ff', BNB: '#f3ba2f', XRP: '#00aae4' };
+            const COMP_ORDER = ['HYPE', 'BTC', 'ETH', 'SOL', 'BNB', 'XRP'];
+            let compChartInstance = null;
+
+            function renderComparison(data) {
+                const comp = data.comparison;
+                if (!comp || !comp.HYPE) return;
+
+                const tbody = $('#comp-table-body');
+                const hype30d = comp.HYPE.returns['30d'];
+
+                // Sort: HYPE first, then by 30d return desc
+                const assets = COMP_ORDER.filter(a => comp[a]).sort((a, b) => {
+                    if (a === 'HYPE') return -1;
+                    if (b === 'HYPE') return 1;
+                    return (comp[b].returns['30d'] || 0) - (comp[a].returns['30d'] || 0);
+                });
+
+                tbody.innerHTML = assets.map(asset => {
+                    const d = comp[asset];
+                    const r = d.returns;
+                    const isHype = asset === 'HYPE';
+                    const outperforms = !isHype && hype30d !== null && r['30d'] !== null && hype30d > r['30d'];
+                    const underperforms = !isHype && hype30d !== null && r['30d'] !== null && hype30d < r['30d'];
+                    const badge = outperforms ? '<span class="comp-badge outperforms">HYPE \u2191</span>' :
+                                  underperforms ? '<span class="comp-badge underperforms">HYPE \u2193</span>' : '';
+                    const priceStr = asset === 'BTC' ? '$' + Number(d.price).toLocaleString('en', {maximumFractionDigits: 0}) :
+                                     '$' + Number(d.price).toFixed(2);
+                    const fmtP = v => v === null || v === undefined ? '--' : (v > 0 ? '+' : '') + v.toFixed(1) + '%';
+                    const colorP = v => v > 0 ? 'var(--green)' : (v < 0 ? 'var(--red)' : 'var(--text-muted)';
+                    return '<tr class="' + (isHype ? 'hype-row' : '') + '">' +
+                        '<td class="asset-name" style="color:' + COMP_COLORS[asset] + '">' + asset + badge + '</td>' +
+                        '<td>' + priceStr + '</td>' +
+                        '<td style="color:' + colorP(r['1d']) + '">' + fmtP(r['1d']) + '</td>' +
+                        '<td style="color:' + colorP(r['7d']) + '">' + fmtP(r['7d']) + '</td>' +
+                        '<td style="color:' + colorP(r['30d']) + '">' + fmtP(r['30d']) + '</td>' +
+                        '<td>' + (d.correlation_hype_30d !== null ? d.correlation_hype_30d.toFixed(2) : '--') + '</td>' +
+                        '</tr>';
+                }).join('');
+
+                // Normalized 30d chart
+                if (compChartInstance) { compChartInstance.destroy(); compChartInstance = null; }
+                const ctx = $('#compChart').getContext('2d');
+                const labels = comp.HYPE.dates_30d || [];
+                const datasets = assets.map(asset => {
+                    const d = comp[asset];
+                    return {
+                        label: asset,
+                        data: d.normalized_30d || [],
+                        borderColor: COMP_COLORS[asset] || '#fff',
+                        borderWidth: asset === 'HYPE' ? 2.5 : 1.2,
+                        pointRadius: 0,
+                        tension: 0.3,
+                        borderDash: asset === 'HYPE' ? [] : [4, 2],
+                    };
+                });
+                compChartInstance = new Chart(ctx, {
+                    type: 'line',
+                    data: { labels, datasets },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        interaction: { mode: 'index', intersect: false },
+                        plugins: {
+                            legend: {
+                                labels: {
+                                    color: '#8899ab',
+                                    font: { size: 10 },
+                                    usePointStyle: true,
+                                    pointStyle: 'line'
+                                }
+                            },
+                            tooltip: {
+                                callbacks: {
+                                    label: ctx => ctx.dataset.label + ': ' + (ctx.parsed.y > 0 ? '+' : '') + ctx.parsed.y.toFixed(1) + '%'
+                                }
+                            }
+                        },
+                        scales: {
+                            x: {
+                                display: true,
+                                ticks: { color: '#5a6780', font: { size: 9 }, maxTicksLimit: 6 },
+                                grid: { color: 'rgba(255,255,255,0.03)' }
+                            },
+                            y: {
+                                display: true,
+                                ticks: { color: '#5a6780', font: { size: 9 }, callback: v => v + '%' },
+                                grid: { color: 'rgba(255,255,255,0.03)' }
+                            },
+                        }
+                    }
+                });
+            }
+
             function renderAll(data, changelogData) {
                 if (data) {
                     renderTopStats(data);
@@ -2093,6 +2274,7 @@
                     renderAiAnalysis(data);
                     renderAiMeta(data);
                     renderPredictions(data);
+                    renderComparison(data);
                     checkStale(data);
                     const ts = data?.meta?.timestamp || new Date().toISOString();
                     lastUpdateEl.textContent = 'Last update: ' + fmtTime(ts);
