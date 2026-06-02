@@ -106,6 +106,18 @@
     @keyframes spin { to { transform: rotate(360deg); } }
     .hidden { display: none !important; }
     .error-state { color: var(--bad); text-align: center; padding: 20px; }
+    .comp-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 14px; }
+    @media (max-width: 900px) { .comp-grid { grid-template-columns: 1fr; } }
+    .comp-table { width: 100%; border-collapse: collapse; font-size: 12px; }
+    .comp-table th { text-align: left; padding: 8px 10px; color: var(--text-d); font-size: 9px; text-transform: uppercase; letter-spacing: 0.5px; border-bottom: 1px solid var(--border); font-weight: 600; }
+    .comp-table td { padding: 7px 10px; border-bottom: 1px solid #111827; }
+    .comp-table tr:hover td { background: #0d111a; }
+    .comp-table .asset-name { font-weight: 700; color: #fff; }
+    .comp-table .hype-row td { background: rgba(0,230,118,0.04); }
+    .comp-table .hype-row .asset-name { color: var(--accent); }
+    .comp-badge { display: inline-block; padding: 2px 6px; border-radius: 3px; font-size: 9px; font-weight: 600; margin-left: 4px; }
+    .comp-badge.outperforms { background: rgba(0,230,118,0.12); color: var(--accent); }
+    .comp-badge.underperforms { background: rgba(255,82,82,0.12); color: var(--bad); }
   </style>
 </head>
 <body>
@@ -152,6 +164,25 @@
       <div class="chart-card">
         <div class="card-title" style="margin-bottom:12px;">RSI · MACD</div>
         <canvas id="oscillatorChart"></canvas>
+      </div>
+    </div>
+
+    <!-- Market Comparison -->
+    <div class="comp-grid">
+      <div class="card">
+        <div class="card-title" style="margin-bottom:12px;">HYPE vs Top Majors — Performance</div>
+        <table class="comp-table">
+          <thead>
+            <tr><th>Asset</th><th>Price</th><th>1D</th><th>7D</th><th>30D</th><th>Corr</th></tr>
+          </thead>
+          <tbody id="comp-table-body">
+            <tr><td colspan="6" style="text-align:center;color:var(--text-d);">Loading...</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="chart-card">
+        <div class="card-title" style="margin-bottom:12px;">30D Normalized Performance</div>
+        <canvas id="compChart"></canvas>
       </div>
     </div>
 
@@ -274,6 +305,9 @@
       // Next refresh
       const nextTs = new Date(ts.getTime() + 6 * 60 * 60 * 1000);
       document.getElementById('next-refresh').textContent = nextTs.toLocaleTimeString('en-SG', {timeZone: 'Asia/Singapore', hour: '2-digit', minute: '2-digit'});
+
+      // Comparison
+      if (d.comparison) { updateComparison(d.comparison); }
     }
 
     // ── Update Charts ──
@@ -353,6 +387,77 @@
               ticks: { color: '#448aff', font: { size: 9 } },
               grid: { display: false },
             },
+          }
+        }
+      });
+    }
+
+    // ── Comparison Table + Chart ──
+    const COMP_COLORS = {
+      HYPE: '#00e676', BTC: '#f7931a', ETH: '#627eea', SOL: '#9945ff', BNB: '#f3ba2f', XRP: '#00aae4'
+    };
+    const COMP_ORDER = ['HYPE', 'BTC', 'ETH', 'SOL', 'BNB', 'XRP'];
+
+    function updateComparison(comp) {
+      const tbody = document.getElementById('comp-table-body');
+      const hype30d = comp.HYPE ? comp.HYPE.returns['30d'] : 0;
+
+      // Sort: HYPE first, then by 30d return desc
+      const assets = COMP_ORDER.filter(a => comp[a]).sort((a, b) => {
+        if (a === 'HYPE') return -1;
+        if (b === 'HYPE') return 1;
+        return (comp[b].returns['30d'] || 0) - (comp[a].returns['30d'] || 0);
+      });
+
+      tbody.innerHTML = assets.map(asset => {
+        const d = comp[asset];
+        const r = d.returns;
+        const isHype = asset === 'HYPE';
+        const outperforms30d = !isHype && hype30d !== null && r['30d'] !== null && hype30d > r['30d'];
+        const underperforms30d = !isHype && hype30d !== null && r['30d'] !== null && hype30d < r['30d'];
+        const badge = outperforms30d ? '<span class="comp-badge outperforms">HYPE ↑</span>' :
+                      underperforms30d ? '<span class="comp-badge underperforms">HYPE ↓</span>' : '';
+        const priceStr = asset === 'BTC' ? '$' + Number(d.price).toLocaleString('en', {minimumFractionDigits:0, maximumFractionDigits:0}) :
+                         '$' + fmt(d.price);
+        return '<tr class="' + (isHype ? 'hype-row' : '') + '">' +
+          '<td class="asset-name" style="color:' + (COMP_COLORS[asset] || '#fff') + '">' + asset + badge + '</td>' +
+          '<td>' + priceStr + '</td>' +
+          '<td style="color:' + colorFor(r['1d']) + '">' + fmtPct(r['1d']) + '</td>' +
+          '<td style="color:' + colorFor(r['7d']) + '">' + fmtPct(r['7d']) + '</td>' +
+          '<td style="color:' + colorFor(r['30d']) + '">' + fmtPct(r['30d']) + '</td>' +
+          '<td>' + (d.correlation_hype_30d !== null ? d.correlation_hype_30d.toFixed(2) : '--') + '</td>' +
+          '</tr>';
+      }).join('');
+
+      // Normalized 30d chart
+      if (charts.comp) { charts.comp.destroy(); }
+      const ctxC = document.getElementById('compChart').getContext('2d');
+      const labels = comp.HYPE ? comp.HYPE.dates_30d : [];
+      const datasets = assets.map(asset => {
+        const d = comp[asset];
+        return {
+          label: asset,
+          data: d.normalized_30d || [],
+          borderColor: COMP_COLORS[asset] || '#fff',
+          borderWidth: asset === 'HYPE' ? 2 : 1.2,
+          pointRadius: 0,
+          tension: 0.3,
+          borderDash: asset === 'HYPE' ? [] : [4, 2],
+        };
+      });
+      charts.comp = new Chart(ctxC, {
+        type: 'line',
+        data: { labels, datasets },
+        options: {
+          responsive: true, maintainAspectRatio: false,
+          interaction: { mode: 'index', intersect: false },
+          plugins: {
+            legend: { labels: { color: '#8899ab', font: { size: 10 }, usePointStyle: true, pointStyle: 'line' } },
+            tooltip: { callbacks: { label: ctx => ctx.dataset.label + ': ' + (ctx.parsed.y > 0 ? '+' : '') + ctx.parsed.y.toFixed(1) + '%' } }
+          },
+          scales: {
+            x: { display: true, ticks: { color: '#556677', font: { size: 9 }, maxTicksLimit: 6 } },
+            y: { display: true, ticks: { color: '#556677', font: { size: 9 }, callback: v => v + '%' } },
           }
         }
       });

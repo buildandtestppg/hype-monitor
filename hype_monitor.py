@@ -50,6 +50,9 @@ def fetch_meta():
             return ctxs[i]
     return None
 
+# ── Comparison assets (top majors) ──
+COMPARISON_ASSETS = ["BTC", "ETH", "SOL", "BNB", "XRP"]
+
 def fetch_btc_candles():
     now_ms = int(time.time() * 1000)
     r = requests.post(HL_API, json={
@@ -57,6 +60,64 @@ def fetch_btc_candles():
         "req": {"coin": "BTC", "interval": "1d", "startTime": now_ms - 90 * 86400 * 1000, "endTime": now_ms}
     }, timeout=15)
     return r.json()
+
+def fetch_asset_candles(coin, days_back=90):
+    """Fetch daily candles for any Hyperliquid-listed asset."""
+    now_ms = int(time.time() * 1000)
+    try:
+        r = requests.post(HL_API, json={
+            "type": "candleSnapshot",
+            "req": {"coin": coin, "interval": "1d", "startTime": now_ms - days_back * 86400 * 1000, "endTime": now_ms}
+        }, timeout=15)
+        data = r.json()
+        if data and len(data) > 0:
+            return data
+    except Exception as e:
+        print(f"  {coin} candle fetch failed: {e}")
+    return None
+
+def build_comparison_data(hype_closes):
+    """Build relative performance comparison of HYPE vs top majors."""
+    print("[1c/6] Fetching comparison assets...")
+    comparison = {}
+    for asset in COMPARISON_ASSETS:
+        candles = fetch_asset_candles(asset)
+        if not candles or len(candles) < 2:
+            print(f"  {asset}: insufficient data, skipping")
+            continue
+        closes = np.array([float(c["c"]) for c in candles])
+        dates = [str(datetime.date.fromtimestamp(c["t"]/1000)) for c in candles]
+
+        # Returns
+        def pct(d, days):
+            if len(d) < days: return None
+            return round(((d[-1] - d[-days]) / d[-days]) * 100, 2)
+
+        asset_returns = {
+            "1d": pct(closes, 1),
+            "7d": pct(closes, 7),
+            "30d": pct(closes, 30),
+        }
+
+        # Correlation with HYPE (30d)
+        min_len = min(len(hype_closes), len(closes))
+        corr_30 = round(np.corrcoef(hype_closes[-30:], closes[-30:])[0,1], 3) if min_len >= 30 else None
+
+        # Normalized performance (base 100 from 30d ago)
+        norm_start = closes[-30] if len(closes) >= 30 else closes[0]
+        norm_days = min(30, len(closes))
+        normalized = [round(((c - norm_start) / norm_start) * 100, 2) for c in closes[-norm_days:]]
+
+        comparison[asset] = {
+            "price": round(closes[-1], 2),
+            "returns": asset_returns,
+            "correlation_hype_30d": corr_30,
+            "normalized_30d": normalized,
+            "dates_30d": dates[-norm_days:] if len(dates) >= norm_days else dates,
+        }
+        print(f"  {asset}: ${closes[-1]:,.2f} | 1d={asset_returns['1d']}% 7d={asset_returns['7d']}% 30d={asset_returns['30d']}% corr={corr_30}")
+
+    return comparison
 
 def fetch_defillama_protocol():
     """Fetch Hyperliquid protocol data from DeFi Llama"""
@@ -761,6 +822,9 @@ def build_analysis():
     btc_closes = np.array([float(c["c"]) for c in btc_daily])
     btc_corr_30 = round(np.corrcoef(closes[-30:], btc_closes[-30:])[0,1], 3) if len(closes) >= 30 and len(btc_closes) >= 30 else None
 
+    # Multi-asset comparison (HYPE vs BTC/ETH/SOL/BNB/XRP)
+    comparison = build_comparison_data(closes)
+
     # Funding
     funding_rates = [float(f.get("rate", f.get("fundingRate", 0))) for f in funding_data]
     funding_dates = [str(datetime.date.fromtimestamp(f["time"]/1000)) for f in funding_data]
@@ -821,6 +885,17 @@ def build_analysis():
         "30d": pct_change(closes, 30),
         "60d": pct_change(closes, 60),
         "90d": pct_change(closes, 90),
+    }
+
+    # Add HYPE self-reference to comparison data
+    hype_norm_start = closes[-30] if len(closes) >= 30 else closes[0]
+    hype_norm_days = min(30, len(closes))
+    comparison["HYPE"] = {
+        "price": round(closes[-1], 2),
+        "returns": {k: returns.get(k) for k in ["1d", "7d", "30d"]},
+        "correlation_hype_30d": 1.0,
+        "normalized_30d": [round(((c - hype_norm_start) / hype_norm_start) * 100, 2) for c in closes[-hype_norm_days:]],
+        "dates_30d": dates[-hype_norm_days:],
     }
 
     # Volume metrics
@@ -923,7 +998,8 @@ def build_analysis():
             "1h": candles_1h,
             "4h": candles_4h,
             "1d": candles_1d,
-        }
+        },
+        "comparison": comparison,
     }
 
 # ── DeepSeek V4 Pro Analysis ──
