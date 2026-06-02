@@ -12996,12 +12996,18 @@
   "ai_analysis": "**PROTOCOL FUNDAMENTALS:** TVL surged 20% in 30 days to $5.79B with $2.9M daily fees; the 97% fee buyback engine relentlessly reduces supply, amplifying price impact from any demand.\n\n**VALUATION:** At 2.78 Mcap/TVL and 5,560x daily revenue, multiples are stretched, pricing in aggressive growth and buyback \u2014 rich but not irrational for a dominant perp DEX.\n\n**NARRATIVE THESIS:** Institutional-grade perp DEX dominance, recent ETF approval, and HIP-3 tokenized stocks have attracted a16z\u2019s $170M+ accumulation, fueling a retail-follows-smart-money frenzy.\n\n**WHAT CHANGED:** ETF approval and a16z\u2019s massive accumulation marked a regime shift, triggering a 69% 30-day rally and decoupling from the broader crypto market.\n\n**TREND:** Bullish \u2014 price holds well above all key SMAs, with SMA50 47% below, confirming a powerful, sustained uptrend.\n\n**MOMENTUM:** MACD is firmly bullish with an expanding histogram, but RSI at 71.7 signals overbought conditions that often precede a short-term pause or pullback.\n\n**DECOUPLING:** HYPE\u2019s 30-day BTC correlation of -0.87 shows it\u2019s trading entirely on its own catalysts, insulating it from macro crypto swings but raising idiosyncratic risk.\n\n**LIQUIDITY:** A 0.28 bps spread and bullish orderbook imbalance (0.398) reflect deep, institutional-grade liquidity, with volume near the 7-day average of $16.68M.\n\n**LEVERS:** Funding is slightly negative (-0.86% annualized), indicating shorts are paying longs \u2014 no crowded longs, and a potential short-squeeze fuel if momentum continues.\n\n**VALUE:** Price near the upper Bollinger Band ($77.07) and RSI >70 confirm overbought conditions; a short-term consolidation or pullback toward SMA7 ($66.91) is probable.\n\n**RISK:** The #1 risk is a violent mean-reversion from overbought levels if the ETF narrative fades, amplified by high daily volatility (8.54% ATR).\n\n**Take partial profits on existing longs, set a tight stop at $58.78 (2x ATR), and re-enter on a pullback to the $66\u2013$67 SMA7 support.**",
   "predictions": {
     "total": 33,
-    "win_rate_6h": 50.0,
-    "win_rate_12h": 44.4,
-    "win_rate_24h": 66.7,
-    "resolved_6h": 24,
-    "resolved_12h": 18,
-    "resolved_24h": 6,
+    "win_rate_6h": 53.8,
+    "win_rate_12h": 47.4,
+    "win_rate_24h": 71.4,
+    "dir_accuracy_6h": 53.8,
+    "dir_accuracy_12h": 47.4,
+    "dir_accuracy_24h": 71.4,
+    "target_hit_rate_6h": 7.7,
+    "target_hit_rate_12h": 5.3,
+    "target_hit_rate_24h": 14.3,
+    "resolved_6h": 26,
+    "resolved_12h": 19,
+    "resolved_24h": 7,
     "active": {
       "id": 35,
       "created_at": "2026-06-02T19:01:17.528569+00:00",
@@ -13135,8 +13141,7 @@
         "resolved_at_12h": null,
         "resolved_at_24h": null
       }
-    ],
-    "streak": 0
+    ]
   },
   "changelog": [
     {
