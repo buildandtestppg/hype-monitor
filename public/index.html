@@ -2121,7 +2121,7 @@
                 }
 
                 const active = preds.active;
-                const stats = preds.stats || {};
+                const stats = preds || {};
                 const recent = preds.recent || [];
                 const currentPrice = data?.meta?.price;
                 let html = '';
