@@ -112,7 +112,7 @@ def calc_bollinger(close, period=20, mult=2):
     sma = calc_sma(close, period)
     std = np.full_like(close, np.nan, dtype=float)
     for i in range(period-1, len(close)):
-        std[i] = np.std(close[i-period+1:i+1])
+        std[i] = np.std(close[i-period+1:i+1], ddof=1)
     upper = sma + mult * std
     lower = sma - mult * std
     return upper, sma, lower
@@ -148,14 +148,14 @@ def build_analysis():
     bb_upper, bb_sma, bb_lower = calc_bollinger(closes)
     macd_line, macd_signal = calc_macd(closes)
 
-    # ATR
+    # ATR (trs[j] = True Range for candle index j+1)
     atr7 = np.full_like(closes, np.nan, dtype=float)
     atr14 = np.full_like(closes, np.nan, dtype=float)
     trs = np.maximum(highs[1:] - lows[1:], np.maximum(np.abs(highs[1:] - closes[:-1]), np.abs(lows[1:] - closes[:-1])))
     for i in range(7, len(closes)):
-        atr7[i] = np.mean(trs[i-6:i])
+        atr7[i] = np.mean(trs[i-7:i])   # 7 elements
     for i in range(14, len(closes)):
-        atr14[i] = np.mean(trs[i-13:i])
+        atr14[i] = np.mean(trs[i-14:i])  # 14 elements
 
     # BTC correlation
     btc_closes = np.array([float(c["c"]) for c in btc_daily])
@@ -181,6 +181,26 @@ def build_analysis():
     spread_bps = round(spread / float(bids[0]["px"]) * 10000, 2) if (bids and float(bids[0]["px"]) > 0) else 0
     best_bid = float(bids[0]["px"]) if bids else 0
     best_ask = float(asks[0]["px"]) if asks else 0
+
+    # Multi-timeframe OHLCV candles for Lightweight Charts
+    print("[1b/6] Fetching multi-timeframe candles...")
+    def build_candle_data(interval, days_back):
+        candles = fetch_candles(interval, days_back)
+        result = []
+        for c in candles:
+            result.append({
+                "time": int(c["t"] // 1000),
+                "open": float(c["o"]),
+                "high": float(c["h"]),
+                "low": float(c["l"]),
+                "close": float(c["c"]),
+                "volume": float(c["v"]),
+            })
+        return result
+
+    candles_1h = build_candle_data("1h", 30)
+    candles_4h = build_candle_data("4h", 90)
+    candles_1d = build_candle_data("1d", 120)
 
     # Current values
     current_price = round(closes[-1], 3)
@@ -279,7 +299,7 @@ def build_analysis():
         },
         "timeseries": {
             "dates": dates,
-            "closes": closes[~np.isnan(closes)].tolist() + ["NaN"] * int(np.sum(np.isnan(closes))),  # hack for JSON
+            "closes": closes.tolist(),
             "volumes": volumes.tolist(),
             "rsi": [round(x, 1) if not np.isnan(x) else None for x in rsi14.tolist()],
             "sma7": [round(x, 2) if not np.isnan(x) else None for x in sma7.tolist()],
@@ -289,10 +309,17 @@ def build_analysis():
             "bb_lower": [round(x, 2) if not np.isnan(x) else None for x in bb_lower.tolist()],
             "macd": [round(x, 4) if not np.isnan(x) else None for x in macd_line.tolist()],
             "macd_signal": [round(x, 4) if not np.isnan(x) else None for x in macd_signal.tolist()],
+        },
+        "candles": {
+            "1h": candles_1h,
+            "4h": candles_4h,
+            "1d": candles_1d,
         }
     }
 
 # ── DeepSeek V4 Pro Analysis ──
+
+# (Helper for time aggregation)
 
 def generate_ai_analysis(data):
     print("[2/6] Generating DeepSeek V4 Pro analysis...")
