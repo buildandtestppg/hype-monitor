@@ -1,0 +1,308 @@
+[
+  {
+    "timestamp": "2026-05-31T17:06:50.327762+00:00",
+    "type": "signal_change",
+    "category": "orderbook_pressure",
+    "from": "BULLISH",
+    "to": "NEUTRAL",
+    "price": 68.05,
+    "detail": "Imbalance: -0.0788"
+  },
+  {
+    "timestamp": "2026-05-31T17:08:31.508277+00:00",
+    "type": "signal_change",
+    "category": "orderbook_pressure",
+    "from": "NEUTRAL",
+    "to": "BULLISH",
+    "price": 68.109,
+    "detail": "Imbalance: 0.3945"
+  },
+  {
+    "timestamp": "2026-05-31T22:19:06.202436+00:00",
+    "type": "signal_change",
+    "category": "orderbook_pressure",
+    "from": "BULLISH",
+    "to": "BEARISH",
+    "price": 71.735,
+    "detail": "Imbalance: -0.1712"
+  },
+  {
+    "timestamp": "2026-05-31T22:19:06.202436+00:00",
+    "type": "price_milestone",
+    "category": "price",
+    "from": "68.109",
+    "to": "71.735",
+    "price": 71.735,
+    "detail": "New 30-day high: $71.735"
+  },
+  {
+    "timestamp": "2026-06-01T01:14:37.545052+00:00",
+    "type": "price_milestone",
+    "category": "price",
+    "from": "71.735",
+    "to": "72.72",
+    "price": 72.72,
+    "detail": "New 30-day high: $72.72"
+  },
+  {
+    "timestamp": "2026-06-01T05:00:08.961462+00:00",
+    "type": "signal_change",
+    "category": "narrative_flip",
+    "from": "BULLISH",
+    "to": "EXTREMELY BULLISH",
+    "price": 73.256,
+    "detail": "Score: 87/100"
+  },
+  {
+    "timestamp": "2026-06-01T05:00:08.961462+00:00",
+    "type": "price_milestone",
+    "category": "price",
+    "from": "72.72",
+    "to": "73.256",
+    "price": 73.256,
+    "detail": "New 30-day high: $73.256"
+  },
+  {
+    "timestamp": "2026-06-01T06:00:32.978904+00:00",
+    "type": "signal_change",
+    "category": "orderbook_pressure",
+    "from": "BEARISH",
+    "to": "BULLISH",
+    "price": 73.551,
+    "detail": "Imbalance: 0.5895"
+  },
+  {
+    "timestamp": "2026-06-01T06:00:32.978904+00:00",
+    "type": "price_milestone",
+    "category": "price",
+    "from": "73.256",
+    "to": "73.551",
+    "price": 73.551,
+    "detail": "New 30-day high: $73.551"
+  },
+  {
+    "timestamp": "2026-06-01T08:00:30.446121+00:00",
+    "type": "signal_change",
+    "category": "orderbook_pressure",
+    "from": "BULLISH",
+    "to": "NEUTRAL",
+    "price": 72.406,
+    "detail": "Imbalance: 0.0144"
+  },
+  {
+    "timestamp": "2026-06-01T10:00:15.370880+00:00",
+    "type": "signal_change",
+    "category": "orderbook_pressure",
+    "from": "NEUTRAL",
+    "to": "BULLISH",
+    "price": 72.515,
+    "detail": "Imbalance: 0.8122"
+  },
+  {
+    "timestamp": "2026-06-01T10:00:15.370880+00:00",
+    "type": "price_milestone",
+    "category": "price",
+    "from": "72.137",
+    "to": "72.515",
+    "price": 72.515,
+    "detail": "New 30-day high: $72.515"
+  },
+  {
+    "timestamp": "2026-06-01T11:00:17.227707+00:00",
+    "type": "price_milestone",
+    "category": "price",
+    "from": "72.515",
+    "to": "72.635",
+    "price": 72.635,
+    "detail": "New 30-day high: $72.635"
+  },
+  {
+    "timestamp": "2026-06-01T12:00:20.704597+00:00",
+    "type": "signal_change",
+    "category": "orderbook_pressure",
+    "from": "BULLISH",
+    "to": "BEARISH",
+    "price": 73.174,
+    "detail": "Imbalance: -0.3921"
+  },
+  {
+    "timestamp": "2026-06-01T12:00:20.704597+00:00",
+    "type": "price_milestone",
+    "category": "price",
+    "from": "72.635",
+    "to": "73.174",
+    "price": 73.174,
+    "detail": "New 30-day high: $73.174"
+  },
+  {
+    "timestamp": "2026-06-01T13:00:52.518639+00:00",
+    "type": "signal_change",
+    "category": "orderbook_pressure",
+    "from": "BEARISH",
+    "to": "BULLISH",
+    "price": 73.932,
+    "detail": "Imbalance: 0.6274"
+  },
+  {
+    "timestamp": "2026-06-01T13:00:52.518639+00:00",
+    "type": "price_milestone",
+    "category": "price",
+    "from": "73.174",
+    "to": "73.932",
+    "price": 73.932,
+    "detail": "New 30-day high: $73.932"
+  },
+  {
+    "timestamp": "2026-06-01T14:00:55.743914+00:00",
+    "type": "signal_change",
+    "category": "orderbook_pressure",
+    "from": "BULLISH",
+    "to": "BEARISH",
+    "price": 71.937,
+    "detail": "Imbalance: -0.7563"
+  },
+  {
+    "timestamp": "2026-06-01T14:15:46.468514+00:00",
+    "type": "signal_change",
+    "category": "orderbook_pressure",
+    "from": "BEARISH",
+    "to": "BULLISH",
+    "price": 70.834,
+    "detail": "Imbalance: 0.1155"
+  },
+  {
+    "timestamp": "2026-06-01T15:00:41.942640+00:00",
+    "type": "signal_change",
+    "category": "orderbook_pressure",
+    "from": "BULLISH",
+    "to": "BEARISH",
+    "price": 71.202,
+    "detail": "Imbalance: -0.8108"
+  },
+  {
+    "timestamp": "2026-06-01T17:00:28.852485+00:00",
+    "type": "signal_change",
+    "category": "orderbook_pressure",
+    "from": "BEARISH",
+    "to": "BULLISH",
+    "price": 72.309,
+    "detail": "Imbalance: 0.3608"
+  },
+  {
+    "timestamp": "2026-06-01T17:00:28.852485+00:00",
+    "type": "price_milestone",
+    "category": "price",
+    "from": "70.978",
+    "to": "72.309",
+    "price": 72.309,
+    "detail": "New 30-day high: $72.309"
+  },
+  {
+    "timestamp": "2026-06-01T18:01:23.826309+00:00",
+    "type": "signal_change",
+    "category": "orderbook_pressure",
+    "from": "BULLISH",
+    "to": "NEUTRAL",
+    "price": 72.989,
+    "detail": "Imbalance: 0.053"
+  },
+  {
+    "timestamp": "2026-06-01T18:01:23.826309+00:00",
+    "type": "price_milestone",
+    "category": "price",
+    "from": "72.309",
+    "to": "72.989",
+    "price": 72.989,
+    "detail": "New 30-day high: $72.989"
+  },
+  {
+    "timestamp": "2026-06-01T19:00:26.281194+00:00",
+    "type": "signal_change",
+    "category": "orderbook_pressure",
+    "from": "NEUTRAL",
+    "to": "BEARISH",
+    "price": 73.371,
+    "detail": "Imbalance: -0.6122"
+  },
+  {
+    "timestamp": "2026-06-01T19:00:26.281194+00:00",
+    "type": "price_milestone",
+    "category": "price",
+    "from": "72.989",
+    "to": "73.371",
+    "price": 73.371,
+    "detail": "New 30-day high: $73.371"
+  },
+  {
+    "timestamp": "2026-06-01T20:00:42.899934+00:00",
+    "type": "signal_change",
+    "category": "orderbook_pressure",
+    "from": "BEARISH",
+    "to": "NEUTRAL",
+    "price": 73.619,
+    "detail": "Imbalance: -0.0271"
+  },
+  {
+    "timestamp": "2026-06-01T20:00:42.899934+00:00",
+    "type": "price_milestone",
+    "category": "price",
+    "from": "73.371",
+    "to": "73.619",
+    "price": 73.619,
+    "detail": "New 30-day high: $73.619"
+  },
+  {
+    "timestamp": "2026-06-01T21:00:16.944674+00:00",
+    "type": "signal_change",
+    "category": "orderbook_pressure",
+    "from": "NEUTRAL",
+    "to": "BEARISH",
+    "price": 72.571,
+    "detail": "Imbalance: -0.2076"
+  },
+  {
+    "timestamp": "2026-06-01T22:00:12.955920+00:00",
+    "type": "price_milestone",
+    "category": "price",
+    "from": "72.571",
+    "to": "73.222",
+    "price": 73.222,
+    "detail": "New 30-day high: $73.222"
+  },
+  {
+    "timestamp": "2026-06-01T23:00:58.020763+00:00",
+    "type": "signal_change",
+    "category": "orderbook_pressure",
+    "from": "BEARISH",
+    "to": "BULLISH",
+    "price": 74.175,
+    "detail": "Imbalance: 0.5804"
+  },
+  {
+    "timestamp": "2026-06-01T23:00:58.020763+00:00",
+    "type": "price_milestone",
+    "category": "price",
+    "from": "73.222",
+    "to": "74.175",
+    "price": 74.175,
+    "detail": "New 30-day high: $74.175"
+  },
+  {
+    "timestamp": "2026-06-02T01:00:34.229808+00:00",
+    "type": "signal_change",
+    "category": "fee_trend",
+    "from": "growing",
+    "to": "declining",
+    "price": 74.083,
+    "detail": "Fee trend: -0.3%"
+  },
+  {
+    "timestamp": "2026-06-02T01:00:34.229808+00:00",
+    "type": "price_milestone",
+    "category": "price",
+    "from": "73.483",
+    "to": "74.083",
+    "price": 74.083,
+    "detail": "New 30-day high: $74.083"
+  }
+]
