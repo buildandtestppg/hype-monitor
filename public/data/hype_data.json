@@ -12996,12 +12996,18 @@
   "ai_analysis": "**PROTOCOL FUNDAMENTALS:** TVL surged 19.6% to $5.77B with $2.90M in 24h fees, fueling the 97% fee-buyback engine that relentlessly reduces circulating supply.\n**VALUATION:** Mcap/TVL of 2.72 is reasonable, but Price/Daily Revenue of 5416x signals the market is pricing in hypergrowth far beyond current cash flows.\n**NARRATIVE THESIS:** Institutional accumulation (a16z $170M+), ETF approval, and HIP-3 tokenized stocks are transforming HYPE from a DEX token into a broad real-world asset play.\n**WHAT CHANGED:** A 67% 30-day moonshot and a -0.87 BTC correlation show HYPE has completely decoupled, now trading on its own idiosyncratic catalysts.\n**TREND:** Bullish \u2014 price holds well above all key SMAs, with SMA50 a distant 45% below, confirming a powerful uptrend.\n**MOMENTUM:** Strong; MACD histogram is positive and expanding, though RSI at 69.9 warns momentum is nearing exhaustion.\n**DECOUPLING:** HYPE is moving inverse to BTC, meaning its rally is self-sustained by fundamentals and narrative, not beta \u2014 a double-edged sword if BTC crashes.\n**LIQUIDITY:** Tight 0.86 bps spread and above-average volume ($19.1M) with a neutral orderbook suggest deep, institutional-grade liquidity.\n**LEVERS:** Funding is essentially flat (-0.5% annualized), indicating no crowded longs and low speculative excess \u2014 a healthy setup.\n**VALUE:** Price is hugging the upper Bollinger Band ($76.9) and 82% above the lower band, flagging short-term overbought conditions.\n**RISK:** A violent mean-reversion snap after a 67% monthly vertical climb, amplified by 8.79% daily ATR, is the immediate threat.\n\n**Take partial profits here and set a hard stop at the 2x ATR level of $57.66 to lock in gains while staying exposed to the dominant trend.**",
   "predictions": {
     "total": 35,
-    "win_rate_6h": 48.0,
-    "win_rate_12h": 42.1,
-    "win_rate_24h": 66.7,
-    "resolved_6h": 25,
-    "resolved_12h": 19,
-    "resolved_24h": 6,
+    "win_rate_6h": 55.2,
+    "win_rate_12h": 42.9,
+    "win_rate_24h": 77.8,
+    "dir_accuracy_6h": 55.2,
+    "dir_accuracy_12h": 42.9,
+    "dir_accuracy_24h": 77.8,
+    "target_hit_rate_6h": 13.8,
+    "target_hit_rate_12h": 4.8,
+    "target_hit_rate_24h": 22.2,
+    "resolved_6h": 29,
+    "resolved_12h": 21,
+    "resolved_24h": 9,
     "active": {
       "id": 37,
       "created_at": "2026-06-02T21:01:27.051780+00:00",
@@ -13135,8 +13141,7 @@
         "resolved_at_12h": null,
         "resolved_at_24h": null
       }
-    ],
-    "streak": 0
+    ]
   },
   "changelog": [
     {
