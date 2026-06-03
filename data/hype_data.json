@@ -12996,13 +12996,16 @@
   "ai_analysis": "**PROTOCOL FUNDAMENTALS:** TVL surged 19.1% to $5.85B with $3.99M in 24h fees, fueling aggressive buyback pressure as 97% of fees are used to repurchase HYPE, creating a constant demand sink.\n**VALUATION:** Mcap/TVL of 2.85 and a Price/Daily Revenue multiple above 4,100x signal a premium valuation, but the buyback engine and dominant market share justify a growth premium for now.\n**NARRATIVE THESIS:** The story is institutional accumulation (a16z $170M+), ETF approval, and HIP-3 tokenized stocks transforming HYPE into a gateway for on-chain equities, driving both retail and institutional FOMO.\n**WHAT CHANGED:** ETF approval and the launch of tokenized stocks (HIP-3) marked a fundamental shift from pure DEX token to a broader financial infrastructure asset.\n**TREND:** Bullish \u2014 price sits 53% above the 50-day SMA and all moving averages slope sharply higher, confirming a strong uptrend.\n**MOMENTUM:** Momentum is powerful with MACD line well above signal and a positive histogram, but RSI at 73.5 warns of overbought conditions that could trigger a short-term pause.\n**DECOUPLING:** HYPE\u2019s 30-day BTC correlation of -0.865 shows it\u2019s trading entirely on its own catalysts, insulating it from broad crypto swings but adding idiosyncratic risk.\n**LIQUIDITY:** A razor-thin 0.13 bps spread and volume near the 7-day average indicate deep, efficient liquidity likely dominated by institutional market makers.\n**LEVERS:** Funding rates are negligible (1.37% annualized), suggesting leveraged longs are not crowded and a liquidation cascade is unlikely.\n**VALUE:** Overbought \u2014 RSI above 70 and price hugging the upper Bollinger Band ($78.8) after a 70% monthly surge signal the asset is extended relative to its recent range.\n**RISK:** The #1 risk is a violent mean-reversion correction; a 2x ATR stop at $62.32 would still represent a 16% drawdown from current levels.\n\n**Hold with a trailing stop at $62.32 (2x ATR) to lock in gains, and consider adding only on a pullback to the $69\u2013$70 SMA7 zone.**",
   "predictions": {
     "total": 19,
-    "win_rate_6h": 75.0,
+    "win_rate_6h": 76.9,
     "win_rate_12h": 37.5,
     "win_rate_24h": 100.0,
-    "target_hit_rate_6h": 25.0,
+    "dir_accuracy_6h": 76.9,
+    "dir_accuracy_12h": 37.5,
+    "dir_accuracy_24h": 100.0,
+    "target_hit_rate_6h": 23.1,
     "target_hit_rate_12h": 12.5,
     "target_hit_rate_24h": 16.7,
-    "resolved_6h": 12,
+    "resolved_6h": 13,
     "resolved_12h": 8,
     "resolved_24h": 6,
     "active": {
@@ -13138,8 +13141,7 @@
         "resolved_at_12h": null,
         "resolved_at_24h": null
       }
-    ],
-    "streak": 0
+    ]
   },
   "changelog": [
     {
