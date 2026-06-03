@@ -12996,12 +12996,18 @@
   "ai_analysis": "**PROTOCOL FUNDAMENTALS:** TVL surged 18% to $5.79B with $2.9M in 24h fees, fueling the aggressive 97% fee buyback engine that constantly removes supply.\n**VALUATION:** Mcap/TVL of 2.68 and Price/Daily Revenue of 5362 signal a premium valuation, but the buyback-driven scarcity partially justifies it.\n**NARRATIVE THESIS:** Institutional accumulation (a16z $170M+), ETF approval, and HIP-3 tokenized stocks are transforming HYPE from a DEX token into a broad institutional-grade asset.\n**WHAT CHANGED:** 24h volume collapsed to $0.82M vs. the 7-day average of $15.85M, indicating a sudden evaporation of trading interest despite the 59% monthly rally.\n**TREND:** Bullish \u2014 price holds well above SMA7, SMA20, and SMA50, with the 30-day surge intact.\n**MOMENTUM:** RSI at 69.3 is neutral but near overbought; MACD histogram remains positive, though momentum may be plateauing.\n**DECOUPLING:** 30-day BTC correlation is -0.856, meaning HYPE is moving entirely on its own catalysts, insulating it from broad crypto swings.\n**LIQUIDITY:** Orderbook spread is razor-thin (0.43 bps) but volume has dried up, suggesting institutional hands are holding while retail flow has vanished.\n**LEVERS:** Funding is negligible (1.37% annualized), showing no crowded longs and little speculative froth.\n**VALUE:** Price is not overbought relative to Bollinger Bands (upper band at $77.81) and RSI, leaving room for continuation if volume returns.\n**RISK:** The volume cliff is the #1 risk \u2014 a low-liquidity environment can trigger violent downside if a large seller emerges.\n\n**Buy dips toward the SMA20 ($58.72) with a hard stop at $58.00; the buyback engine and institutional bid make this a high-conviction trend until volume confirms otherwise.**",
   "predictions": {
     "total": 39,
-    "win_rate_6h": 44.4,
-    "win_rate_12h": 37.5,
-    "win_rate_24h": 71.4,
-    "resolved_6h": 27,
-    "resolved_12h": 24,
-    "resolved_24h": 7,
+    "win_rate_6h": 51.5,
+    "win_rate_12h": 42.3,
+    "win_rate_24h": 84.6,
+    "dir_accuracy_6h": 51.5,
+    "dir_accuracy_12h": 42.3,
+    "dir_accuracy_24h": 84.6,
+    "target_hit_rate_6h": 15.2,
+    "target_hit_rate_12h": 7.7,
+    "target_hit_rate_24h": 46.2,
+    "resolved_6h": 33,
+    "resolved_12h": 26,
+    "resolved_24h": 13,
     "active": {
       "id": 41,
       "created_at": "2026-06-03T01:01:43.206048+00:00",
@@ -13135,8 +13141,7 @@
         "resolved_at_12h": null,
         "resolved_at_24h": null
       }
-    ],
-    "streak": 0
+    ]
   },
   "changelog": [
     {
