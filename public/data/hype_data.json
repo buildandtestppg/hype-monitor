@@ -12996,15 +12996,18 @@
   "ai_analysis": "**PROTOCOL FUNDAMENTALS:** TVL surged 18.4% in 30 days to $5.81B, and $3.99M in daily fees power aggressive buybacks (97% of fees), constantly reducing circulating supply.\n\n**VALUATION:** Mcap/TVL of 2.77 and Price/Daily Revenue of 4035x reflect a premium valuation that prices in hyper-growth, leaving little room for execution missteps.\n\n**NARRATIVE THESIS:** ETF approval, HIP-3 tokenized stocks, and a16z\u2019s $170M+ accumulation are driving an institutional-led repricing of the dominant perp DEX.\n\n**WHAT CHANGED:** The ETF greenlight and tokenized stock rollout are new regulatory and product catalysts that were absent in prior rallies, fundamentally expanding HYPE\u2019s addressable market.\n\n**TREND:** Bullish; price is 51.5% above the 50-day SMA and posted a 68.8% 30-day gain, confirming a powerful uptrend.\n\n**MOMENTUM:** Momentum is robust with a bullish MACD crossover and expanding histogram, though RSI at 72.9 warns of overbought conditions that could trigger short-term pauses.\n\n**DECOUPLING:** HYPE\u2019s 30-day BTC correlation of -0.867 signals complete decoupling, meaning it now trades on its own fundamentals and can rally or correct independently of macro crypto moves.\n\n**LIQUIDITY:** A 0.14 bps spread and bullish orderbook imbalance (0.2941) indicate deep, institutional-grade liquidity, even though latest volume is slightly below the 7-day average.\n\n**LEVERS:** Funding rates are negligible at 1.37% annualized, showing longs are not crowded and leaving ample capacity for leveraged upside without a funding drag.\n\n**VALUE:** Price hugging the upper Bollinger Band and RSI >70 confirm overbought levels, but strong trends often stretch before mean-reverting.\n\n**RISK:** The #1 risk is a sharp mean-reversion correction from overbought territory, amplified by the negative BTC correlation removing any macro hedge.\n\n**Hold spot with a trailing stop at the 2x ATR level ($61.62) to lock in gains, and consider adding on a dip to the SMA20 ($58.93) while the trend remains intact.**",
   "predictions": {
     "total": 14,
-    "win_rate_6h": 62.5,
-    "win_rate_12h": 28.6,
+    "win_rate_6h": 66.7,
+    "win_rate_12h": 37.5,
     "win_rate_24h": 100.0,
-    "target_hit_rate_6h": 12.5,
-    "target_hit_rate_12h": 14.3,
-    "target_hit_rate_24h": 20.0,
-    "resolved_6h": 8,
-    "resolved_12h": 7,
-    "resolved_24h": 5,
+    "dir_accuracy_6h": 66.7,
+    "dir_accuracy_12h": 37.5,
+    "dir_accuracy_24h": 100.0,
+    "target_hit_rate_6h": 22.2,
+    "target_hit_rate_12h": 12.5,
+    "target_hit_rate_24h": 16.7,
+    "resolved_6h": 9,
+    "resolved_12h": 8,
+    "resolved_24h": 6,
     "active": {
       "id": 59,
       "created_at": "2026-06-03T18:01:05.358572+00:00",
@@ -13138,8 +13141,7 @@
         "resolved_at_12h": null,
         "resolved_at_24h": null
       }
-    ],
-    "streak": 0
+    ]
   },
   "changelog": [
     {
