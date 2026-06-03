@@ -12996,13 +12996,16 @@
   "ai_analysis": "**PROTOCOL FUNDAMENTALS:** TVL surged 19.1% to $5.85B with $3.99M in 24h fees, fueling an aggressive 97% fee buyback that constantly reduces circulating supply and supports price.\n\n**VALUATION:** Mcap/TVL at 2.75 and Price/Daily Revenue of 4024x signal extreme overvaluation relative to revenue, though the buyback engine partially justifies a premium.\n\n**NARRATIVE THESIS:** Institutional accumulation (a16z $170M+), ETF approval, and HIP-3 tokenized stocks are driving a dominant perp DEX narrative, attracting both institutional and retail flows.\n\n**WHAT CHANGED:** ETF approval and the HIP-3 tokenized stocks proposal have catalyzed a 70%+ 30-day rally, shifting HYPE from a pure DEX token to a broader financial infrastructure play.\n\n**TREND:** Bullish \u2014 price sits 53% above the 50-day SMA with all moving averages sloping sharply higher.\n\n**MOMENTUM:** Strong but overheated \u2014 RSI at 73.5 signals overbought, while the MACD histogram remains positive and expanding, indicating sustained upside momentum.\n\n**DECOUPLING:** HYPE\u2019s 30-day BTC correlation is -0.869, a stark decoupling that confirms the rally is driven by idiosyncratic catalysts, not broad crypto beta.\n\n**LIQUIDITY:** Orderbook shows a bearish -0.52 bid/ask imbalance with more asks, yet a razor-thin 0.13 bps spread and above-average volume suggest deep, liquid markets dominated by institutional flow.\n\n**LEVERS:** Funding is negligible at 1.37% annualized, indicating longs are not crowded and there\u2019s no excessive leverage buildup.\n\n**VALUE:** Overbought \u2014 price is hugging the upper Bollinger Band and trading 26.7% above the 20-day SMA, leaving little room for immediate extension without a pullback.\n\n**RISK:** A sharp mean-reversion correction fueled by profit-taking, as the bearish orderbook and overbought RSI collide with any narrative fade.\n\n**Take partial profits here, set a hard stop at $62.33 (2x ATR), and wait for a pullback to the $58\u2013$62 zone before re-entering for the next leg.**",
   "predictions": {
     "total": 18,
-    "win_rate_6h": 72.7,
+    "win_rate_6h": 75.0,
     "win_rate_12h": 37.5,
     "win_rate_24h": 100.0,
-    "target_hit_rate_6h": 18.2,
+    "dir_accuracy_6h": 75.0,
+    "dir_accuracy_12h": 37.5,
+    "dir_accuracy_24h": 100.0,
+    "target_hit_rate_6h": 25.0,
     "target_hit_rate_12h": 12.5,
     "target_hit_rate_24h": 16.7,
-    "resolved_6h": 11,
+    "resolved_6h": 12,
     "resolved_12h": 8,
     "resolved_24h": 6,
     "active": {
@@ -13138,8 +13141,7 @@
         "resolved_at_12h": null,
         "resolved_at_24h": null
       }
-    ],
-    "streak": 0
+    ]
   },
   "changelog": [
     {
