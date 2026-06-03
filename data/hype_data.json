@@ -12996,12 +12996,18 @@
   "ai_analysis": "**PROTOCOL FUNDAMENTALS:** TVL surged 17.9% to $5.79B with $2.9M in 24h fees, fueling the aggressive 97% fee-buyback engine that constantly reduces circulating supply.  \n**VALUATION:** Mcap/TVL of 2.66 and Price/Daily Revenue of 5,314 signal a rich premium, pricing in dominant market share and future growth rather than current cash flows.  \n**NARRATIVE THESIS:** Institutional accumulation (a16z $170M+), ETF approval, and HIP-3 tokenized stocks are transforming HYPE from a DEX token into a broad financial infrastructure play.  \n**WHAT CHANGED:** ETF approval and the launch of tokenized equities have shifted the narrative from pure perp DEX to a regulated, multi-asset venue, attracting institutional flows.  \n**TREND:** Bullish \u2014 price holds well above all key SMAs (SMA50 at $48.62, SMA20 at $58.73) with a 59.6% 30-day surge.  \n**MOMENTUM:** Strong \u2014 MACD histogram positive and expanding, though RSI(14) at 69.5 hovers just below overbought, suggesting momentum can persist but is getting stretched.  \n**DECOUPLING:** HYPE\u2019s 30-day BTC correlation of -0.86 confirms a complete decoupling; the token is trading on its own fundamentals, not macro crypto beta.  \n**LIQUIDITY:** A bullish orderbook imbalance (0.1184) and ultra-tight 2.87 bps spread point to deep, likely institutional liquidity, despite the latest volume print showing a lull.  \n**LEVERS:** 8h funding at 0.0008% (1.37% annualized) is negligible \u2014 longs are not crowded, leaving ample room for leveraged upside without a squeeze risk.  \n**VALUE:** Price sits in the upper Bollinger Band range (78.8% B) with RSI near 70, so it\u2019s approaching overbought but not yet at extreme levels that typically trigger sharp reversals.  \n**RISK:** The #1 risk is a violent mean-reversion correction fueled by profit-taking after a 60% monthly run and a valuation disconnect from on-chain revenue.\n\n**Accumulate on dips to the SMA20 ($58.73) with a hard stop at the 3x ATR level ($52.72), targeting a breakout above $77.83 as the ETF and tokenized-stock narrative matures.**",
   "predictions": {
     "total": 38,
-    "win_rate_6h": 46.2,
-    "win_rate_12h": 34.8,
-    "win_rate_24h": 71.4,
-    "resolved_6h": 26,
-    "resolved_12h": 23,
-    "resolved_24h": 7,
+    "win_rate_6h": 53.1,
+    "win_rate_12h": 40.0,
+    "win_rate_24h": 83.3,
+    "dir_accuracy_6h": 53.1,
+    "dir_accuracy_12h": 40.0,
+    "dir_accuracy_24h": 83.3,
+    "target_hit_rate_6h": 15.6,
+    "target_hit_rate_12h": 4.0,
+    "target_hit_rate_24h": 41.7,
+    "resolved_6h": 32,
+    "resolved_12h": 25,
+    "resolved_24h": 12,
     "active": {
       "id": 40,
       "created_at": "2026-06-03T00:01:07.616783+00:00",
@@ -13135,8 +13141,7 @@
         "resolved_at_12h": null,
         "resolved_at_24h": null
       }
-    ],
-    "streak": 0
+    ]
   },
   "changelog": [
     {
