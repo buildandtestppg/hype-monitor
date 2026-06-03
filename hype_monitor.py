@@ -559,9 +559,41 @@ def generate_heuristic_prediction(price, tech, returns):
     }
 
 
+def should_generate_prediction():
+    """Check if enough time has passed since the last prediction.
+    Only generate a new one when the shortest horizon (6h) has elapsed,
+    so predictions don't overlap and accuracy tracking is clean."""
+    db_path = os.path.expanduser("~/Projects/hype-monitor/data/predictions.db")
+    if not os.path.exists(db_path):
+        return True  # No DB yet, first prediction
+
+    with sqlite3.connect(db_path) as conn:
+        row = conn.execute(
+            "SELECT created_at FROM predictions ORDER BY id DESC LIMIT 1"
+        ).fetchone()
+
+    if not row:
+        return True  # No predictions yet
+
+    try:
+        last_created = datetime.datetime.fromisoformat(row[0])
+        elapsed_h = (datetime.datetime.now(datetime.timezone.utc) - last_created).total_seconds() / 3600
+        if elapsed_h < 6:
+            print(f"  Skipping prediction — last one was {elapsed_h:.1f}h ago (need 6h cooldown)")
+            return False
+    except (ValueError, TypeError):
+        pass
+
+    return True
+
+
 def generate_predictions(data):
-    """Generate AI predictions and store to SQLite DB"""
+    """Generate AI predictions and store to SQLite DB.
+    Only creates a new prediction if 6h have passed since the last one."""
     print("[4/6] Generating predictions...")
+
+    if not should_generate_prediction():
+        return None
     price = data["meta"]["price"]
     rsi = data["technical"]["rsi14"]
     narrative = data.get("research", {}).get("narrative_score", {})
