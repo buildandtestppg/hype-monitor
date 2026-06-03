@@ -12996,12 +12996,18 @@
   "ai_analysis": "**PROTOCOL FUNDAMENTALS:** TVL surged 18.6% to $5.82B with $3.99M in 24h fees, fueling the aggressive 97% fee buyback engine that constantly reduces circulating supply.\n\n**VALUATION:** Mcap/TVL of 2.79 and Price/Daily Revenue of 4075x are elevated but arguably justified by Hyperliquid\u2019s dominant perp DEX market share and deflationary tokenomics.\n\n**NARRATIVE THESIS:** Institutional accumulation (a16z $170M+), ETF approval, and HIP-3 tokenized stocks are driving a \u201creal-world asset on-chain\u201d supercycle narrative, attracting both institutional and retail flows.\n\n**WHAT CHANGED:** The ETF approval and the 65.58% 30-day price surge mark a regime shift from a niche DeFi token to an institutionally recognized asset.\n\n**TREND:** Bullish \u2014 price trades well above all key SMAs (SMA50 at $48.67, 48.7% gap) with a clear series of higher highs.\n\n**MOMENTUM:** Strong but overheated \u2014 RSI at 71.8 signals overbought, while the positive MACD histogram (1.17) confirms momentum is still accelerating.\n\n**DECOUPLING:** HYPE\u2019s 30-day BTC correlation of -0.867 shows it is completely decoupled, rallying on its own fundamentals and narrative, insulating it from broad crypto chop.\n\n**LIQUIDITY:** Orderbook spread is razor-thin (0.14 bps) with neutral imbalance, but volume is fading (6.65M vs 16.68M 7-day avg), suggesting retail fatigue and less institutional flow right now.\n\n**LEVERS:** Funding is extremely low (1.37% annualized), indicating longs are not crowded and there is ample room for leverage buildup without a squeeze.\n\n**VALUE:** Overbought \u2014 price is near the upper Bollinger Band ($78.31) with B% at 84.7%, and RSI above 70, signaling a short-term stretched condition.\n\n**RISK:** A sharp mean-reversion pullback from overbought levels if the ETF hype stalls or BTC suddenly dumps, dragging HYPE down despite the low correlation.\n\n**Take partial profits here and set a hard stop at $60.25 (2x ATR); wait for a dip to the SMA20 ($58.86) to reload for the next leg up.**",
   "predictions": {
     "total": 47,
-    "win_rate_6h": 43.3,
-    "win_rate_12h": 40.6,
-    "win_rate_24h": 85.7,
-    "resolved_6h": 30,
-    "resolved_12h": 32,
-    "resolved_24h": 14,
+    "win_rate_6h": 59.5,
+    "win_rate_12h": 47.2,
+    "win_rate_24h": 87.0,
+    "dir_accuracy_6h": 59.5,
+    "dir_accuracy_12h": 47.2,
+    "dir_accuracy_24h": 87.0,
+    "target_hit_rate_6h": 26.2,
+    "target_hit_rate_12h": 8.3,
+    "target_hit_rate_24h": 26.1,
+    "resolved_6h": 42,
+    "resolved_12h": 36,
+    "resolved_24h": 23,
     "active": {
       "id": 49,
       "created_at": "2026-06-03T09:02:11.538070+00:00",
@@ -13135,8 +13141,7 @@
         "resolved_at_12h": null,
         "resolved_at_24h": null
       }
-    ],
-    "streak": 0
+    ]
   },
   "changelog": [
     {
