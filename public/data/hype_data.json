@@ -12996,13 +12996,16 @@
   "ai_analysis": "**PROTOCOL FUNDAMENTALS:** TVL surged 18.7% to $5.83B with $3.99M in 24h fees, fueling an aggressive 97% buyback engine that constantly removes supply from the market.\n\n**VALUATION:** Mcap/TVL of 2.83 and Price/Daily Revenue of 4137x signal a rich premium; the token is pricing in extreme future growth well beyond current cash flows.\n\n**NARRATIVE THESIS:** Institutional accumulation (a16z $170M+), ETF approval, and HIP-3 tokenized stocks are driving a powerful \u201creal-world asset + dominant perp DEX\u201d story that\u2019s attracting both institutional and retail flows.\n\n**WHAT CHANGED:** The ETF approval and visible institutional buying ignited a 67.97% 30-day rally, decoupling the token from broader crypto and validating the standalone thesis.\n\n**TREND:** Bullish \u2014 price sits well above all key SMAs (SMA7, 20, 50) with a clear series of higher highs and higher lows.\n\n**MOMENTUM:** Strong but overheated; RSI at 72.6 signals overbought conditions while the positive MACD histogram confirms robust upward momentum.\n\n**DECOUPLING:** HYPE\u2019s 30-day BTC correlation of -0.863 shows it\u2019s moving entirely on its own catalysts, insulating it from macro crypto weakness and reinforcing idiosyncratic strength.\n\n**LIQUIDITY:** Orderbook shows a bearish bid/ask imbalance (-0.2186) despite a tight 2.59 bps spread, suggesting near-term selling pressure outweighs resting bids; volume is slightly below the 7-day average.\n\n**LEVERS:** Funding is negligible at 1.05% annualized, indicating no crowded longs and leaving room for fresh leverage without immediate liquidation risk.\n\n**VALUE:** Price is stretched above the upper Bollinger Band and 50.8% above the SMA50, confirming an overbought state relative to recent ranges.\n\n**RISK:** The #1 risk is a sharp mean-reversion pullback triggered by overbought RSI and the bearish orderbook, potentially driving price toward the $61.16 (2x ATR) stop level.\n\n**Take partial profits here and wait for a pullback to the $61\u201369 zone before re-entering; the trend is bullish but entry timing is poor.**",
   "predictions": {
     "total": 16,
-    "win_rate_6h": 66.7,
+    "win_rate_6h": 70.0,
     "win_rate_12h": 37.5,
     "win_rate_24h": 100.0,
-    "target_hit_rate_6h": 22.2,
+    "dir_accuracy_6h": 70.0,
+    "dir_accuracy_12h": 37.5,
+    "dir_accuracy_24h": 100.0,
+    "target_hit_rate_6h": 20.0,
     "target_hit_rate_12h": 12.5,
     "target_hit_rate_24h": 16.7,
-    "resolved_6h": 9,
+    "resolved_6h": 10,
     "resolved_12h": 8,
     "resolved_24h": 6,
     "active": {
@@ -13138,8 +13141,7 @@
         "resolved_at_12h": null,
         "resolved_at_24h": null
       }
-    ],
-    "streak": 0
+    ]
   },
   "changelog": [
     {
