@@ -2227,8 +2227,12 @@
                         <span class="pred-stat-label">12h Dir (${stats.resolved_12h || 0})</span>
                     </div>
                     <div class="pred-stat-item">
-                        <span class="pred-stat-val" style="color:${(stats.win_rate_24h||0)>=30?'var(--green)':(stats.win_rate_24h||0)>=15?'var(--amber)':'var(--red)'};">🎯 ${stats.win_rate_24h != null ? stats.win_rate_24h + '%' : '--'}</span>
-                        <span class="pred-stat-label">Target Hit</span>
+                        <span class="pred-stat-val" style="color:${(stats.win_rate_24h||0)>=60?'var(--green)':(stats.win_rate_24h||0)>=40?'var(--amber)':'var(--red)'};">${stats.win_rate_24h != null ? stats.win_rate_24h + '%' : '--'}</span>
+                        <span class="pred-stat-label">24h Dir (${stats.resolved_24h || 0})</span>
+                    </div>
+                    <div class="pred-stat-item">
+                        <span class="pred-stat-val" style="color:${(stats.target_hit_rate_6h||0)>=30?'var(--green)':(stats.target_hit_rate_6h||0)>=15?'var(--amber)':'var(--red)'};">🎯 ${stats.target_hit_rate_6h != null ? stats.target_hit_rate_6h + '%' : '--'}</span>
+                        <span class="pred-stat-label">6h Target Hit</span>
                     </div>
                     <div class="pred-stat-item">
                         <span class="pred-stat-val" style="color:var(--cyan);">🔥 ${stats.streak || 0}</span>

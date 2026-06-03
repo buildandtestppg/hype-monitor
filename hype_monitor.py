@@ -708,8 +708,114 @@ Rules:
         print(f"  Prediction generation failed: {e}")
         return None
 
+def resolve_predictions(current_price=None):
+    """Resolve pending predictions by checking actual price movement.
+    
+    Called before generating new predictions. Fetches current price from
+    Hyperliquid if not provided, then checks all unresolved predictions
+    to see if their 6h/12h/24h horizons have elapsed.
+    
+    Resolution codes:
+        0 = pending (not yet elapsed)
+        1 = direction correct (price moved in predicted direction)
+        2 = target hit (price reached predicted target)
+       -1 = direction wrong
+    """
+    db_path = os.path.expanduser("~/Projects/hype-monitor/data/predictions.db")
+    if not os.path.exists(db_path):
+        return
+
+    # Fetch current price if not provided
+    if current_price is None:
+        try:
+            ctx = fetch_meta()
+            if ctx and ctx.get("markPx"):
+                current_price = float(ctx["markPx"])
+            else:
+                print("  Resolver: could not fetch current price")
+                return
+        except Exception as e:
+            print(f"  Resolver: price fetch failed: {e}")
+            return
+
+    now = datetime.datetime.now(datetime.timezone.utc)
+    resolved_count = 0
+
+    with sqlite3.connect(db_path) as conn:
+        conn.row_factory = sqlite3.Row
+        # Get all predictions with at least one unresolved horizon
+        rows = conn.execute("""
+            SELECT id, created_at, price_at_prediction,
+                   pred_6h_direction, pred_6h_target,
+                   pred_12h_direction, pred_12h_target,
+                   pred_24h_direction, pred_24h_target,
+                   resolved_6h, resolved_12h, resolved_24h
+            FROM predictions
+            WHERE resolved_6h = 0 OR resolved_12h = 0 OR resolved_24h = 0
+        """).fetchall()
+
+        for row in rows:
+            try:
+                created = datetime.datetime.fromisoformat(row["created_at"])
+            except (ValueError, TypeError):
+                continue
+
+            elapsed_h = (now - created).total_seconds() / 3600
+            updates = {}
+
+            for tf, hours in [("6h", 6), ("12h", 12), ("24h", 24)]:
+                if row[f"resolved_{tf}"] != 0:
+                    continue  # already resolved
+                if elapsed_h < hours:
+                    continue  # not enough time has passed
+
+                direction = row[f"pred_{tf}_direction"]
+                target = row[f"pred_{tf}_target"]
+                base_price = row["price_at_prediction"]
+
+                # Determine actual direction
+                if current_price > base_price:
+                    actual_dir = "BULLISH"
+                elif current_price < base_price:
+                    actual_dir = "BEARISH"
+                else:
+                    actual_dir = "NEUTRAL"
+
+                # Check if target was hit
+                target_hit = False
+                if direction == "BULLISH" and current_price >= target:
+                    target_hit = True
+                elif direction == "BEARISH" and current_price <= target:
+                    target_hit = True
+
+                if target_hit:
+                    updates[f"resolved_{tf}"] = 2
+                elif direction == actual_dir:
+                    updates[f"resolved_{tf}"] = 1
+                else:
+                    updates[f"resolved_{tf}"] = -1
+
+                updates[f"actual_price_{tf}"] = current_price
+                updates[f"resolved_at_{tf}"] = now.isoformat()
+
+            if updates:
+                set_clauses = ", ".join(f"{k} = ?" for k in updates)
+                conn.execute(
+                    f"UPDATE predictions SET {set_clauses} WHERE id = ?",
+                    list(updates.values()) + [row["id"]]
+                )
+                resolved_count += 1
+
+        conn.commit()
+
+    if resolved_count > 0:
+        print(f"  Resolved {resolved_count} pending predictions @ ${current_price:.2f}")
+    else:
+        print(f"  No predictions to resolve @ ${current_price:.2f}")
+
+
 def get_prediction_stats():
-    """Read prediction stats from SQLite DB"""
+    """Read prediction stats from SQLite DB with accurate metrics"""
     db_path = os.path.expanduser("~/Projects/hype-monitor/data/predictions.db")
     if not os.path.exists(db_path):
         return None
@@ -719,6 +825,9 @@ def get_prediction_stats():
         "win_rate_6h": None,
         "win_rate_12h": None,
         "win_rate_24h": None,
+        "target_hit_rate_6h": None,
+        "target_hit_rate_12h": None,
+        "target_hit_rate_24h": None,
         "resolved_6h": 0,
         "resolved_12h": 0,
         "resolved_24h": 0,
@@ -731,12 +840,17 @@ def get_prediction_stats():
 
         for tf in ["6h", "12h", "24h"]:
             col = f"resolved_{tf}"
-            wins = conn.execute(f"SELECT COUNT(*) FROM predictions WHERE {col} = 1").fetchone()[0]
+            # Direction accuracy: resolved=1 (correct) or resolved=2 (target hit) = direction correct
+            # resolved=-1 = direction wrong
+            wins = conn.execute(f"SELECT COUNT(*) FROM predictions WHERE {col} IN (1, 2)").fetchone()[0]
             losses = conn.execute(f"SELECT COUNT(*) FROM predictions WHERE {col} = -1").fetchone()[0]
+            target_hits = conn.execute(f"SELECT COUNT(*) FROM predictions WHERE {col} = 2").fetchone()[0]
             resolved = wins + losses
             stats[f"resolved_{tf}"] = resolved
             if resolved > 0:
                 stats[f"win_rate_{tf}"] = round(wins / resolved * 100, 1)
+            if resolved > 0:
+                stats[f"target_hit_rate_{tf}"] = round(target_hits / resolved * 100, 1)
 
         # Active prediction (most recent)
         cursor = conn.execute("SELECT * FROM predictions ORDER BY id DESC LIMIT 1")
@@ -757,7 +871,7 @@ def get_prediction_stats():
         for p in stats["recent"]:
             # Use 6h resolution for streak
             res = p.get("resolved_6h")
-            if res == 1:
+            if res == 1 or res == 2:
                 streak = streak + 1 if streak >= 0 else 1
             elif res == -1:
                 streak = streak - 1 if streak <= 0 else -1
@@ -1243,6 +1357,9 @@ def main():
 
     ai_text = generate_ai_analysis(data)
     write_data(data, ai_text, output_dir)
+
+    # Resolve pending predictions BEFORE generating new ones
+    resolve_predictions(current_price=data["meta"].get("price"))
 
     # Generate and store predictions
     pred = generate_predictions(data)
