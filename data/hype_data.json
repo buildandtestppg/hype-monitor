@@ -12999,6 +12999,9 @@
     "win_rate_6h": 66.7,
     "win_rate_12h": 37.5,
     "win_rate_24h": 100.0,
+    "dir_accuracy_6h": 66.7,
+    "dir_accuracy_12h": 37.5,
+    "dir_accuracy_24h": 100.0,
     "target_hit_rate_6h": 22.2,
     "target_hit_rate_12h": 12.5,
     "target_hit_rate_24h": 16.7,
@@ -13138,8 +13141,7 @@
         "resolved_at_12h": null,
         "resolved_at_24h": null
       }
-    ],
-    "streak": 0
+    ]
   },
   "changelog": [
     {
