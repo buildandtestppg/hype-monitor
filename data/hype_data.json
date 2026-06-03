@@ -12996,12 +12996,18 @@
   "ai_analysis": "**PROTOCOL FUNDAMENTALS:** TVL surged 18.6% to $5.82B with $3.99M in 24h fees, fueling the aggressive 97% fee-buyback engine that constantly removes supply from the market.\n\n**VALUATION:** Mcap/TVL of 2.75 and Price/Daily Revenue of 4008x reflect a premium, growth-stock multiple justified by Hyperliquid\u2019s dominant perp DEX market share and deflationary tokenomics.\n\n**NARRATIVE THESIS:** The story is institutionalization\u2014ETF approval, HIP-3 tokenized stocks, and a16z\u2019s $170M+ accumulation are transforming HYPE from a DEX token into a broad financial infrastructure asset.\n\n**WHAT CHANGED:** The ETF approval and HIP-3 launch unlocked a new institutional demand vector, shifting the narrative from pure perp DEX to regulated, multi-asset trading venue.\n\n**TREND:** Bullish\u2014price holds well above all major SMAs (SMA50 at $48.69, 50% below current) with a 67% 30-day rally confirming a strong uptrend.\n\n**MOMENTUM:** Momentum remains powerful with MACD histogram positive and expanding, but RSI at 72.4 signals overbought conditions that typically precede a pause or pullback.\n\n**DECOUPLING:** HYPE\u2019s 30-day BTC correlation of -0.87 shows complete decoupling; it\u2019s trading on its own catalysts, insulating it from broad crypto weakness but also removing a macro tailwind.\n\n**LIQUIDITY:** Orderbook imbalance is bearish (-0.21) and volume is running at half the 7-day average, suggesting large players are distributing into strength rather than accumulating.\n\n**LEVERS:** Funding is negligible (1.37% annualized), indicating no crowded longs\u2014this removes systemic leverage risk and leaves room for fresh positioning.\n\n**VALUE:** Price is stretched near the upper Bollinger Band ($78.48) with an 86.5% B% reading, confirming an overbought state relative to the recent volatility envelope.\n\n**RISK:** The #1 risk is a sharp mean-reversion correction fueled by overbought technicals, thinning volume, and bearish orderbook depth, especially if BTC weakness eventually spills over.\n\n**Take partial profits now and set a hard stop at $61 (2x ATR) to protect the 67% monthly gain while leaving room for the buyback-driven trend to resume.**",
   "predictions": {
     "total": 49,
-    "win_rate_6h": 45.2,
-    "win_rate_12h": 42.4,
-    "win_rate_24h": 82.4,
-    "resolved_6h": 31,
-    "resolved_12h": 33,
-    "resolved_24h": 17,
+    "win_rate_6h": 60.5,
+    "win_rate_12h": 48.6,
+    "win_rate_24h": 87.5,
+    "dir_accuracy_6h": 60.5,
+    "dir_accuracy_12h": 48.6,
+    "dir_accuracy_24h": 87.5,
+    "target_hit_rate_6h": 25.6,
+    "target_hit_rate_12h": 10.8,
+    "target_hit_rate_24h": 25.0,
+    "resolved_6h": 43,
+    "resolved_12h": 37,
+    "resolved_24h": 24,
     "active": {
       "id": 51,
       "created_at": "2026-06-03T11:01:28.158584+00:00",
@@ -13135,8 +13141,7 @@
         "resolved_at_12h": null,
         "resolved_at_24h": null
       }
-    ],
-    "streak": 0
+    ]
   },
   "changelog": [
     {
