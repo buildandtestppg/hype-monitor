@@ -12996,13 +12996,16 @@
   "ai_analysis": "**PROTOCOL FUNDAMENTALS:** TVL surged 17.1% to $5.87B with $3.5M in 24h fees, fueling an aggressive buyback engine that retires 97% of fee revenue, constantly reducing circulating supply.\n\n**VALUATION:** Mcap/TVL of 2.46 is fair for a dominant DEX, but Price/Daily Revenue of 4115x is stretched, implying the market prices in exponential fee growth from upcoming catalysts.\n\n**NARRATIVE THESIS:** The ETF approval, tokenized stocks (HIP-3), and a16z\u2019s $170M+ accumulation are driving institutional FOMO, positioning HYPE as the blue-chip perp DEX bridging DeFi and traditional finance.\n\n**WHAT CHANGED:** HYPE decoupled violently from BTC (30D correlation -0.82) and consolidated after a 49% monthly surge, signaling the market is now trading on protocol-specific catalysts rather than macro beta.\n\n**TREND:** Bullish, as price holds comfortably above the SMA20 and SMA50 despite a short-term pullback below the SMA7, keeping the medium-term uptrend intact.\n\n**MOMENTUM:** Momentum is constructive with a positive MACD histogram and RSI at 56.8\u2014neither overbought nor oversold, leaving room for continuation.\n\n**DECOUPLING:** HYPE is moving opposite to BTC, meaning it\u2019s insulated from broad crypto selloffs and is being driven by its own fundamental demand, reducing portfolio correlation risk.\n\n**LIQUIDITY:** Orderbook shows a bearish -0.69 bid/ask imbalance, yet a razor-thin 0.93 bps spread and volume 122% above the 7D average suggest deep, likely institutional, liquidity absorbing the ask pressure.\n\n**LEVERS:** Funding is near zero (1.37% annualized), indicating no crowded longs and ample capacity for leveraged positions to pile in without immediate liquidation risk.\n\n**VALUE:** Price sits mid-Bollinger (58% B) and 7.1% above the SMA20, a neutral zone after the rally\u2014neither overbought nor deeply discounted, offering a reset entry point.\n\n**RISK:** The #1 risk is a narrative unwind if ETF inflows disappoint, triggering a sharp correction amplified by the bearish orderbook depth and elevated 10.17% daily volatility.\n\n**Accumulate on pullbacks to the SMA20 near $60, place a hard stop at $51.16 (2x ATR), and target a breakout above $70 toward the $78 upper Bollinger band as institutional flows materialize.**",
   "predictions": {
     "total": 17,
-    "win_rate_6h": 60.0,
+    "win_rate_6h": 54.5,
     "win_rate_12h": 22.2,
     "win_rate_24h": 55.6,
-    "target_hit_rate_6h": 20.0,
+    "dir_accuracy_6h": 54.5,
+    "dir_accuracy_12h": 22.2,
+    "dir_accuracy_24h": 55.6,
+    "target_hit_rate_6h": 18.2,
     "target_hit_rate_12h": 11.1,
     "target_hit_rate_24h": 11.1,
-    "resolved_6h": 10,
+    "resolved_6h": 11,
     "resolved_12h": 9,
     "resolved_24h": 9,
     "active": {
@@ -13138,8 +13141,7 @@
         "resolved_at_12h": null,
         "resolved_at_24h": null
       }
-    ],
-    "streak": 0
+    ]
   },
   "changelog": [
     {
