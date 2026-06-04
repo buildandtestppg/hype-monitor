@@ -12997,13 +12997,16 @@
   "predictions": {
     "total": 23,
     "win_rate_6h": 70.6,
-    "win_rate_12h": 40.0,
+    "win_rate_12h": 45.5,
     "win_rate_24h": 100.0,
+    "dir_accuracy_6h": 70.6,
+    "dir_accuracy_12h": 45.5,
+    "dir_accuracy_24h": 100.0,
     "target_hit_rate_6h": 17.6,
-    "target_hit_rate_12h": 20.0,
+    "target_hit_rate_12h": 18.2,
     "target_hit_rate_24h": 14.3,
     "resolved_6h": 17,
-    "resolved_12h": 10,
+    "resolved_12h": 11,
     "resolved_24h": 7,
     "active": {
       "id": 68,
@@ -13138,8 +13141,7 @@
         "resolved_at_12h": null,
         "resolved_at_24h": null
       }
-    ],
-    "streak": 0
+    ]
   },
   "changelog": [
     {
