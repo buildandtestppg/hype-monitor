@@ -12996,13 +12996,16 @@
   "ai_analysis": "**PROTOCOL FUNDAMENTALS:** TVL surged 16.7% to $5.85B with $3.99M in 24h fees, fueling the aggressive 97% buyback engine that constantly reduces circulating supply and supports price.\n\n**VALUATION:** Mcap/TVL of 2.85 and a Price/Daily Revenue multiple of 4184x (\u224811.5x annualized P/S) are fair for a dominant, high-growth perp DEX with a deflationary token model.\n\n**NARRATIVE THESIS:** Institutional accumulation (a16z $170M+), recent ETF approval, and HIP-3 tokenized stocks are transforming HYPE from a DEX token into a broad institutional-grade asset platform.\n\n**WHAT CHANGED:** The ETF greenlight and launch of tokenized equities mark a structural shift, opening regulated TradFi inflows and expanding HYPE\u2019s utility beyond pure perp trading.\n\n**TREND:** Bullish \u2014 price sits 50.9% above the SMA50 and 23.1% above the SMA20, confirming a powerful, sustained uptrend across all timeframes.\n\n**MOMENTUM:** Momentum is extremely strong with MACD histogram positive and expanding, but RSI at 73.1 signals overbought conditions that typically precede a short-term pause or pullback.\n\n**DECOUPLING:** HYPE\u2019s 30-day BTC correlation of -0.861 shows it is trading entirely on its own catalysts, insulating it from broad crypto selloffs and reinforcing idiosyncratic strength.\n\n**LIQUIDITY:** Orderbook imbalance is bullish (0.4554) with a razor-thin 1.48 bps spread, yet latest volume of 1.0M is well below the 7-day average, hinting at thinning participation and potential exhaustion.\n\n**LEVERS:** Funding rates are negligible (1.37% annualized), indicating no crowded long positioning and leaving ample room for fresh leverage-driven upside.\n\n**VALUE:** Overbought \u2014 price is near the upper Bollinger Band ($80.14) and RSI is elevated, suggesting the asset is extended relative to its recent range and due for mean reversion.\n\n**RISK:** The #1 risk is a sharp technical correction from overbought levels, amplified by declining volume and profit-taking after a 72% monthly surge.\n\n**Take partial profits here, set a hard stop at $62.84 (2x ATR), and wait for a pullback to the SMA20 ($60.48) to reload for the next leg higher.**",
   "predictions": {
     "total": 21,
-    "win_rate_6h": 78.6,
+    "win_rate_6h": 73.3,
     "win_rate_12h": 44.4,
     "win_rate_24h": 100.0,
-    "target_hit_rate_6h": 21.4,
+    "dir_accuracy_6h": 73.3,
+    "dir_accuracy_12h": 44.4,
+    "dir_accuracy_24h": 100.0,
+    "target_hit_rate_6h": 20.0,
     "target_hit_rate_12h": 22.2,
     "target_hit_rate_24h": 14.3,
-    "resolved_6h": 14,
+    "resolved_6h": 15,
     "resolved_12h": 9,
     "resolved_24h": 7,
     "active": {
@@ -13138,8 +13141,7 @@
         "resolved_at_12h": null,
         "resolved_at_24h": null
       }
-    ],
-    "streak": 0
+    ]
   },
   "changelog": [
     {
