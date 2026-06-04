@@ -12996,14 +12996,17 @@
   "ai_analysis": "**PROTOCOL FUNDAMENTALS:** TVL surged 16.9% to $5.86B with $3.5M in 24h fees, and the 97% fee-buyback engine relentlessly reduces circulating supply, amplifying price pressure.\n\n**VALUATION:** Mcap/TVL of 2.8 and Price/Daily Revenue of 4689x are steep, pricing in hypergrowth rather than current cash flows\u2014fair only if volume and fees compound rapidly.\n\n**NARRATIVE THESIS:** Institutional accumulation (a16z $170M+), ETF approval, and HIP-3 tokenized stocks are transforming HYPE from a perp token into a broad on-chain financial ecosystem, attracting both institutional and retail flows.\n\n**WHAT CHANGED:** The 30-day 67.3% rally and BTC correlation flipping to -0.845 mark a structural decoupling driven by idiosyncratic catalysts, not macro beta.\n\n**TREND:** Bullish\u2014price towers above all major SMAs (SMA50 46% below) and the 7-day trend is firmly intact.\n\n**MOMENTUM:** Strong momentum with a positive MACD histogram (1.03) and RSI at 68.7, not yet overbought, leaving room for continuation.\n\n**DECOUPLING:** HYPE is trading entirely on its own fundamentals with a -0.845 BTC correlation, insulating it from broad crypto drawdowns and reinforcing its safe-haven appeal within the sector.\n\n**LIQUIDITY:** Orderbook shows a bearish tilt (-0.19 imbalance) but a razor-thin 2.64 bps spread and below-average volume, suggesting cautious institutional positioning rather than retail mania.\n\n**LEVERS:** Funding is negligible (1.37% annualized), signaling no crowded longs\u2014leverage is light, leaving ample fuel for a squeeze higher.\n\n**VALUE:** With B% mid-range and price 19.5% above SMA20, the asset is extended but not extreme; the rally has reset value zones higher.\n\n**RISK:** The #1 risk is a violent mean-reversion from the 67% 30-day surge, exacerbated by the bearish orderbook, which could trigger a stop cascade below the 2x ATR level at $60.\n\n**Buy dips to $60\u2013$65 with a hard stop at $54; the ETF and buyback engine will propel the next leg above $80.**",
   "predictions": {
     "total": 22,
-    "win_rate_6h": 73.3,
-    "win_rate_12h": 44.4,
+    "win_rate_6h": 68.8,
+    "win_rate_12h": 40.0,
     "win_rate_24h": 100.0,
-    "target_hit_rate_6h": 20.0,
-    "target_hit_rate_12h": 22.2,
+    "dir_accuracy_6h": 68.8,
+    "dir_accuracy_12h": 40.0,
+    "dir_accuracy_24h": 100.0,
+    "target_hit_rate_6h": 18.8,
+    "target_hit_rate_12h": 20.0,
     "target_hit_rate_24h": 14.3,
-    "resolved_6h": 15,
-    "resolved_12h": 9,
+    "resolved_6h": 16,
+    "resolved_12h": 10,
     "resolved_24h": 7,
     "active": {
       "id": 67,
@@ -13138,8 +13141,7 @@
         "resolved_at_12h": null,
         "resolved_at_24h": null
       }
-    ],
-    "streak": 0
+    ]
   },
   "changelog": [
     {
