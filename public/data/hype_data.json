@@ -12996,15 +12996,18 @@
   "ai_analysis": "**PROTOCOL FUNDAMENTALS:** TVL surged 17.1% to $5.87B with $3.5M in 24h fees, fueling an aggressive buyback engine that retires 97% of fee revenue into HYPE, creating constant deflationary pressure.\n**VALUATION:** Mcap/TVL at 2.76 and Price/Daily Revenue of 4625x signal a rich premium, pricing in hyper-growth that leaves little room for execution missteps.\n**NARRATIVE THESIS:** Institutional accumulation led by a16z\u2019s $170M+ position and the ETF approval anchor the story, shifting HYPE from a retail perp DEX play to an institutional-grade tokenized-asset platform.\n**WHAT CHANGED:** The ETF greenlight and HIP-3 tokenized stocks launch transformed the catalyst mix, adding regulatory validation and a new equities vertical beyond pure derivatives.\n**TREND:** Bullish; price trades well above SMA7/20/50 with a 68% 30-day surge, confirming a powerful uptrend.\n**MOMENTUM:** Strong; MACD histogram is expanding positively and RSI at 69.3 holds just below overbought, leaving room for continuation.\n**DECOUPLING:** HYPE\u2019s 30-day BTC correlation of -0.856 shows near-total independence, meaning it moves on its own fundamentals, not macro crypto beta.\n**LIQUIDITY:** Orderbook imbalance is bearish (-0.3365) with volume at 6.81M well below the 7-day average, pointing to thinning retail liquidity despite a tight 0.28 bps spread.\n**LEVERS:** Funding is virtually zero (1.37% annualized), indicating no crowded long positioning and low speculative froth.\n**VALUE:** Price hugs the upper Bollinger Band and RSI nears overbought, making short-term extension likely but not yet at extremes.\n**RISK:** A sharp mean-reversion after the 68% monthly run, amplified by the bearish orderbook and decoupling, could trigger a swift correction if BTC suddenly rallies and capital rotates.\n\n**Buy dips to the $60\u2013$54.5 zone (2x\u20133x ATR) with a stop below $54, targeting a breakout above $80 as institutional inflows and buyback pressure compound.**",
   "predictions": {
     "total": 26,
-    "win_rate_6h": 63.2,
+    "win_rate_6h": 60.0,
     "win_rate_12h": 50.0,
     "win_rate_24h": 100.0,
-    "target_hit_rate_6h": 15.8,
+    "dir_accuracy_6h": 60.0,
+    "dir_accuracy_12h": 50.0,
+    "dir_accuracy_24h": 100.0,
+    "target_hit_rate_6h": 15.0,
     "target_hit_rate_12h": 14.3,
-    "target_hit_rate_24h": 14.3,
-    "resolved_6h": 19,
+    "target_hit_rate_24h": 12.5,
+    "resolved_6h": 20,
     "resolved_12h": 14,
-    "resolved_24h": 7,
+    "resolved_24h": 8,
     "active": {
       "id": 71,
       "created_at": "2026-06-04T06:01:46.651408+00:00",
@@ -13138,8 +13141,7 @@
         "resolved_at_12h": null,
         "resolved_at_24h": null
       }
-    ],
-    "streak": 0
+    ]
   },
   "changelog": [
     {
