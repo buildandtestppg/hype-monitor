@@ -12996,14 +12996,17 @@
   "ai_analysis": "**PROTOCOL FUNDAMENTALS:** TVL jumped 16.4% in 30 days to $5.86B with $4.47M in daily fees, and the 97% fee buyback engine continuously retires supply, fueling a powerful deflationary flywheel.\n\n**VALUATION:** Mcap/TVL of 2.4 and a Price/Daily Revenue of 3,148x price in aggressive growth; the token is richly valued relative to current cash flows, demanding sustained expansion.\n\n**NARRATIVE THESIS:** Institutional accumulation (a16z $170M+), ETF approval, and HIP-3 tokenized stocks are transforming HYPE into a broad financial infrastructure play, pulling in both institutional and retail capital.\n\n**WHAT CHANGED:** A 9.86% weekly pullback from highs has cooled the 44.77% monthly rally, with volume collapsing to 7.46M (well below the 7-day average of 18.81M), signaling a consolidation phase.\n\n**TREND:** Neutral \u2014 price hovers just above the 20-day SMA ($60.97) but well below the 7-day SMA ($69.19), creating a short-term downtrend inside an intact medium-term uptrend above the 50-day SMA.\n\n**MOMENTUM:** Momentum is weak; RSI at 53.5 is neutral and the MACD histogram is negative with the MACD line below its signal line, confirming bearish daily momentum.\n\n**DECOUPLING:** A 30-day BTC correlation of -0.763 shows strong decoupling \u2014 HYPE is trading on its own catalysts, insulating it from broad crypto beta swings.\n\n**LIQUIDITY:** The orderbook is bullish (imbalance 0.1566) with a tight 2.44 bps spread, but low volume relative to averages suggests cautious, likely retail-driven participation rather than heavy institutional flow.\n\n**LEVERS:** Funding is negligible at 0.0008% per 8h, showing no crowded longs; leverage is light, leaving ample room for directional bets if momentum returns.\n\n**VALUE:** At 58% of the Bollinger Bands and after a 10% weekly drop, HYPE is not overbought; it\u2019s near fair value with strong support at the 2x ATR stop of $48.88.\n\n**RISK:** The #1 risk is a loss of the 20-day SMA ($60.97) and the $58.28 Bollinger mid-level, which could trigger a swift drop to the $48.88 stop, especially with declining volume failing to confirm support.\n\n**Accumulate only on a high-volume reclaim of the 7-day SMA ($69.19) or buy a dip into the $48.88\u2013$50 zone with a tight stop; avoid chasing until daily momentum flips bullish.**",
   "predictions": {
     "total": 24,
-    "win_rate_6h": 47.1,
-    "win_rate_12h": 27.3,
+    "win_rate_6h": 44.4,
+    "win_rate_12h": 25.0,
     "win_rate_24h": 55.6,
-    "target_hit_rate_6h": 17.6,
-    "target_hit_rate_12h": 18.2,
+    "dir_accuracy_6h": 44.4,
+    "dir_accuracy_12h": 25.0,
+    "dir_accuracy_24h": 55.6,
+    "target_hit_rate_6h": 16.7,
+    "target_hit_rate_12h": 16.7,
     "target_hit_rate_24h": 11.1,
-    "resolved_6h": 17,
-    "resolved_12h": 11,
+    "resolved_6h": 18,
+    "resolved_12h": 12,
     "resolved_24h": 9,
     "active": {
       "id": 69,
@@ -13138,8 +13141,7 @@
         "resolved_at_12h": null,
         "resolved_at_24h": null
       }
-    ],
-    "streak": 0
+    ]
   },
   "changelog": [
     {
