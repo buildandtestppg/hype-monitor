@@ -12996,13 +12996,16 @@
   "ai_analysis": "**PROTOCOL FUNDAMENTALS:** TVL surged 16.4% in 30 days to $5.86B with $3.5M in daily fees; the 97% fee-buyback engine creates relentless structural bid pressure.\n**VALUATION:** Mcap/TVL of 2.44 and Price/Daily Revenue of 4082x are elevated, pricing in aggressive growth that leaves little room for fee deceleration.\n**NARRATIVE THESIS:** Institutional accumulation (a16z $170M+), ETF approval, and HIP-3 tokenized stocks are transforming HYPE from a perp DEX token into a broad financial infrastructure play.\n**WHAT CHANGED:** ETF approval and tokenized stocks catalyzed a 51% monthly surge, while the 30-day BTC correlation flipped deeply negative at -0.79.\n**TREND:** Bullish structure intact \u2014 price holds 30% above the SMA50, though it\u2019s consolidating below the SMA7 after a sharp run.\n**MOMENTUM:** Momentum is fading; RSI neutral at 57.1 and MACD histogram just negative, indicating the rally is taking a breather.\n**DECOUPLING:** HYPE is strongly decoupled from BTC (correlation -0.79), meaning idiosyncratic catalysts now drive price, reducing systemic beta risk.\n**LIQUIDITY:** Orderbook shows a bullish bid/ask imbalance (0.293) with a razor-thin 0.16 bps spread, but current volume is anemic, suggesting institutional accumulation in size, not retail froth.\n**LEVERS:** Funding is negligible at 1.37% annualized \u2014 longs are not crowded, leaving ample room for leverage-driven upside.\n**VALUE:** Not overbought; Bollinger %B at 58.2 and price mid-range after a pullback offer a reset entry within the broader uptrend.\n**RISK:** The #1 risk is valuation compression if daily fee growth stalls, making the 4082x revenue multiple unsustainable.\n\n**Buy the dip to $61\u2013$62, stop at $52, target $78+ as ETF-driven institutional flows materialize.**",
   "predictions": {
     "total": 18,
-    "win_rate_6h": 54.5,
+    "win_rate_6h": 50.0,
     "win_rate_12h": 22.2,
     "win_rate_24h": 55.6,
-    "target_hit_rate_6h": 18.2,
+    "dir_accuracy_6h": 50.0,
+    "dir_accuracy_12h": 22.2,
+    "dir_accuracy_24h": 55.6,
+    "target_hit_rate_6h": 16.7,
     "target_hit_rate_12h": 11.1,
     "target_hit_rate_24h": 11.1,
-    "resolved_6h": 11,
+    "resolved_6h": 12,
     "resolved_12h": 9,
     "resolved_24h": 9,
     "active": {
@@ -13138,8 +13141,7 @@
         "resolved_at_12h": null,
         "resolved_at_24h": null
       }
-    ],
-    "streak": 0
+    ]
   },
   "changelog": [
     {
