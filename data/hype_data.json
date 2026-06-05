@@ -12996,13 +12996,16 @@
   "ai_analysis": "**PROTOCOL FUNDAMENTALS:** TVL surged 16.3% to $5.85B and daily fees of $3.5M power an aggressive 97% buyback engine, creating constant demand pressure and supply reduction.\n\n**VALUATION:** Mcap/TVL of 2.43 and Price/Daily Revenue of 4065 signal a premium valuation, but the buyback intensity and 50% monthly price surge reflect high growth expectations, keeping it fair-to-rich.\n\n**NARRATIVE THESIS:** The dominant perp DEX with ETF approval and tokenized stocks is attracting institutional flows, with a16z\u2019s $170M+ accumulation validating the \u201con-chain Binance\u201d thesis.\n\n**WHAT CHANGED:** ETF approval and HIP-3 tokenized stocks unlocked a new institutional-grade narrative, shifting HYPE from a pure DEX token to broad financial infrastructure.\n\n**TREND:** Bullish, with price holding above SMA20 and SMA50 despite a short-term pullback from overbought levels after a 50% monthly rally.\n\n**MOMENTUM:** Momentum is fading as the MACD histogram turns negative and RSI cools to neutral (56.4), signaling consolidation after the explosive move.\n\n**DECOUPLING:** HYPE is strongly decoupled from BTC (30D correlation -0.785), proving price action is driven by idiosyncratic catalysts rather than macro crypto sentiment.\n\n**LIQUIDITY:** Orderbook shows a bullish bid/ask imbalance with ultra-tight spreads, but daily volume has collapsed to 0.84M from a 7D average of 17.87M, signaling thin participation and potential illiquidity.\n\n**LEVERS:** Funding is near zero (1.37% annualized), indicating no crowded long positioning and ample room for leveraged upside if volume returns.\n\n**VALUE:** Price sits mid-Bollinger Band (B% 58) and just above SMA20, suggesting fair value after the pullback from overbought conditions.\n\n**RISK:** The #1 risk is a liquidity vacuum\u2014volume has evaporated, making the price vulnerable to sharp, low-participation moves in either direction.\n\n**Accumulate on pullbacks to the SMA20 ($61) with a hard stop below the 2x ATR level ($51.69), targeting a breakout above $70 as volume and narrative momentum return.**",
   "predictions": {
     "total": 19,
-    "win_rate_6h": 50.0,
+    "win_rate_6h": 53.8,
     "win_rate_12h": 22.2,
     "win_rate_24h": 55.6,
-    "target_hit_rate_6h": 16.7,
+    "dir_accuracy_6h": 53.8,
+    "dir_accuracy_12h": 22.2,
+    "dir_accuracy_24h": 55.6,
+    "target_hit_rate_6h": 23.1,
     "target_hit_rate_12h": 11.1,
     "target_hit_rate_24h": 11.1,
-    "resolved_6h": 12,
+    "resolved_6h": 13,
     "resolved_12h": 9,
     "resolved_24h": 9,
     "active": {
@@ -13138,8 +13141,7 @@
         "resolved_at_12h": null,
         "resolved_at_24h": null
       }
-    ],
-    "streak": 0
+    ]
   },
   "changelog": [
     {
