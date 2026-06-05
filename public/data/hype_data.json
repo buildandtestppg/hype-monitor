@@ -1,75 +1,75 @@
 {
   "meta": {
-    "timestamp": "2026-06-05T06:01:21.296898+00:00",
+    "timestamp": "2026-06-05T07:00:21.540167+00:00",
     "data_points": 121,
-    "price": 61.556,
-    "mark_price": 61.567,
-    "open_interest": "20563498.3800000027"
+    "price": 60.829,
+    "mark_price": 60.847,
+    "open_interest": "20483973.0199999996"
   },
   "returns": {
     "1d": 0.0,
-    "3d": -17.46,
-    "7d": -9.86,
-    "14d": 4.86,
-    "30d": 44.77,
-    "60d": 59.45,
-    "90d": 100.6
+    "3d": -18.43,
+    "7d": -10.93,
+    "14d": 3.62,
+    "30d": 43.06,
+    "60d": 57.56,
+    "90d": 98.23
   },
   "technical": {
-    "sma7": 69.19,
-    "sma20": 60.97,
-    "sma50": 49.47,
-    "rsi14": 53.5,
-    "rsi7": 44.1,
+    "sma7": 69.08,
+    "sma20": 60.93,
+    "sma50": 49.45,
+    "rsi14": 52.6,
+    "rsi7": 43.0,
     "rsi_signal": "NEUTRAL",
-    "macd_line": 5.863,
-    "macd_signal": 6.0739,
-    "macd_hist": -0.2109,
-    "bb_upper": 77.55,
-    "bb_lower": 44.39,
-    "atr14": 6.34,
-    "atr_pct": 10.3,
+    "macd_line": 5.805,
+    "macd_signal": 6.0623,
+    "macd_hist": -0.2573,
+    "bb_upper": 77.51,
+    "bb_lower": 44.36,
+    "atr14": 6.47,
+    "atr_pct": 10.64,
     "vol_regime": "EXPANDING",
-    "dist_sma7_pct": -11.0,
-    "dist_sma20_pct": 1.0,
-    "dist_sma50_pct": 24.4,
-    "stop_2x": 48.88,
-    "stop_3x": 42.54,
+    "dist_sma7_pct": -11.9,
+    "dist_sma20_pct": -0.2,
+    "dist_sma50_pct": 23.0,
+    "stop_2x": 47.89,
+    "stop_3x": 41.42,
     "poc": 58.28
   },
   "volume": {
-    "latest_M": 7.46,
-    "avg7d_M": 18.81,
-    "avg30d_M": 14.28,
-    "ratio_7v30": 1.32,
+    "latest_M": 9.6,
+    "avg7d_M": 19.12,
+    "avg30d_M": 14.35,
+    "ratio_7v30": 1.33,
     "poc": 58.28
   },
   "orderbook": {
-    "best_bid": 61.559,
-    "best_ask": 61.574,
-    "spread": 0.015,
-    "spread_bps": 2.44,
-    "bid_vol_20": 3152.55,
-    "ask_vol_20": 2298.88,
-    "imbalance": 0.1566,
-    "pressure": "BULLISH"
+    "best_bid": 60.813,
+    "best_ask": 60.824,
+    "spread": 0.011,
+    "spread_bps": 1.81,
+    "bid_vol_20": 897.21,
+    "ask_vol_20": 2076.35,
+    "imbalance": -0.3965,
+    "pressure": "BEARISH"
   },
   "funding": {
     "count": 500,
     "avg_8h": 0.0008,
-    "latest_8h": -0.0013,
-    "annualized_pct": -1.47
+    "latest_8h": -0.0026,
+    "annualized_pct": -2.82
   },
   "correlation": {
-    "btc_30d": -0.763
+    "btc_30d": -0.756
   },
   "research": {
     "protocol_stats": {
       "tvl": 5859839746,
       "tvl_7d_change_pct": 5.71,
       "tvl_30d_change_pct": 16.45,
-      "mcap": 14080457120.56602,
-      "fdv": 58437024354,
+      "mcap": 13555538365.602934,
+      "fdv": 58205242112,
       "gecko_id": "hyperliquid",
       "description": "Hyperliquid is a Layer 1 blockchain best known for perpetual futures and spot trading. Beyond its flagship decentralized exchange (DEX), the ecosystem supports borrowing, lending, RWAs, and a full-fledged EVM.",
       "twitter": "HyperliquidX",
@@ -94,24 +94,24 @@
       "volume_30d_avg_daily": 192519332.8,
       "volume_trend_pct": null
     },
-    "btc_price": 62174.0,
+    "btc_price": 61915.0,
     "hype_perp": {
-      "oi_tokens": 20563498.38,
-      "oi_usd": 1266032904.76,
-      "mark_px": 61.567,
-      "prev_day_px": 72.537,
-      "day_notional_vol": 2203055198.71,
-      "day_base_vol": 33208110.31,
-      "funding_rate": 5.89157e-05,
-      "premium": 0.0010294189,
-      "price_change_24h_pct": -15.12
+      "oi_tokens": 20483973.02,
+      "oi_usd": 1246388306.35,
+      "mark_px": 60.847,
+      "prev_day_px": 69.648,
+      "day_notional_vol": 2191194157.52,
+      "day_base_vol": 33372113.9,
+      "funding_rate": 0.0001010959,
+      "premium": 0.0,
+      "price_change_24h_pct": -12.64
     },
     "valuation": {
-      "mcap_tvl_ratio": 2.4,
-      "mcap_annualized_fee_ratio": 8.63,
+      "mcap_tvl_ratio": 2.31,
+      "mcap_annualized_fee_ratio": 8.31,
       "annualized_fees_estimate": 1632208825,
-      "price_to_daily_revenue": 3148.72,
-      "oi_to_mcap_pct": 8.99
+      "price_to_daily_revenue": 3031.33,
+      "oi_to_mcap_pct": 9.19
     },
     "narrative_score": {
       "score": 66,
@@ -371,7 +371,7 @@
       69.831,
       74.573,
       64.428,
-      61.556
+      60.829
     ],
     "volumes": [
       25173379.85,
@@ -494,7 +494,7 @@
       21869842.56,
       18572079.19,
       32549511.44,
-      7455303.98
+      9603342.51
     ],
     "rsi": [
       null,
@@ -617,7 +617,7 @@
       69.7,
       73.4,
       57.1,
-      53.5
+      52.6
     ],
     "sma7": [
       null,
@@ -740,7 +740,7 @@
       66.76,
       69.18,
       69.6,
-      69.19
+      69.08
     ],
     "sma20": [
       null,
@@ -863,7 +863,7 @@
       57.45,
       58.97,
       59.98,
-      60.97
+      60.93
     ],
     "sma50": [
       null,
@@ -986,7 +986,7 @@
       48.1,
       48.72,
       49.11,
-      49.47
+      49.45
     ],
     "bb_upper": [
       null,
@@ -1109,7 +1109,7 @@
       76.87,
       78.77,
       78.63,
-      77.55
+      77.51
     ],
     "bb_lower": [
       null,
@@ -1232,7 +1232,7 @@
       38.02,
       39.17,
       41.33,
-      44.39
+      44.36
     ],
     "macd": [
       null,
@@ -1355,7 +1355,7 @@
       6.9758,
       7.3028,
       6.6666,
-      5.863
+      5.805
     ],
     "macd_signal": [
       null,
@@ -1478,19 +1478,11 @@
       5.6637,
       5.9916,
       6.1266,
-      6.0739
+      6.0623
     ]
   },
   "candles": {
     "1h": [
-      {
-        "time": 1778047200,
-        "open": 44.01,
-        "high": 44.328,
-        "low": 43.9,
-        "close": 44.194,
-        "volume": 137733.56
-      },
       {
         "time": 1778050800,
         "open": 44.205,
@@ -7246,10 +7238,18 @@
       {
         "time": 1780639200,
         "open": 61.53,
-        "high": 61.76,
-        "low": 61.471,
-        "close": 61.589,
-        "volume": 42067.11
+        "high": 61.97,
+        "low": 59.131,
+        "close": 60.783,
+        "volume": 2188866.74
+      },
+      {
+        "time": 1780642800,
+        "open": 60.8,
+        "high": 60.871,
+        "low": 60.78,
+        "close": 60.834,
+        "volume": 2308.89
       }
     ],
     "4h": [
@@ -11577,9 +11577,9 @@
         "time": 1780632000,
         "open": 61.741,
         "high": 63.785,
-        "low": 61.0,
-        "close": 61.567,
-        "volume": 2452898.57
+        "low": 59.131,
+        "close": 60.822,
+        "volume": 4601049.84
       }
     ],
     "1d": [
@@ -12547,21 +12547,21 @@
         "time": 1780617600,
         "open": 64.428,
         "high": 66.031,
-        "low": 61.0,
-        "close": 61.563,
-        "volume": 7457688.48
+        "low": 59.131,
+        "close": 60.822,
+        "volume": 9605948.15
       }
     ]
   },
   "comparison": {
     "BTC": {
-      "price": 62204.0,
+      "price": 61908.0,
       "returns": {
         "1d": 0.0,
-        "7d": -15.77,
-        "30d": -22.24
+        "7d": -16.17,
+        "30d": -22.61
       },
-      "correlation_hype_30d": -0.763,
+      "correlation_hype_30d": -0.755,
       "normalized_30d": [
         0.0,
         0.2,
@@ -12592,7 +12592,7 @@
         -16.58,
         -19.84,
         -20.17,
-        -22.24
+        -22.61
       ],
       "dates_30d": [
         "2026-05-07",
@@ -12628,13 +12628,13 @@
       ]
     },
     "ETH": {
-      "price": 1677.8,
+      "price": 1655.0,
       "returns": {
         "1d": 0.0,
-        "7d": -17.01,
-        "30d": -26.75
+        "7d": -18.13,
+        "30d": -27.75
       },
-      "correlation_hype_30d": -0.805,
+      "correlation_hype_30d": -0.793,
       "normalized_30d": [
         0.0,
         0.71,
@@ -12665,7 +12665,7 @@
         -18.84,
         -20.88,
         -22.71,
-        -26.75
+        -27.75
       ],
       "dates_30d": [
         "2026-05-07",
@@ -12701,13 +12701,13 @@
       ]
     },
     "SOL": {
-      "price": 66.03,
+      "price": 65.01,
       "returns": {
         "1d": 0.0,
-        "7d": -20.16,
-        "30d": -25.29
+        "7d": -21.39,
+        "30d": -26.45
       },
-      "correlation_hype_30d": -0.744,
+      "correlation_hype_30d": -0.733,
       "normalized_30d": [
         0.0,
         4.13,
@@ -12738,7 +12738,7 @@
         -16.09,
         -19.0,
         -22.11,
-        -25.29
+        -26.45
       ],
       "dates_30d": [
         "2026-05-07",
@@ -12774,13 +12774,13 @@
       ]
     },
     "BNB": {
-      "price": 583.37,
+      "price": 580.27,
       "returns": {
         "1d": 0.0,
-        "7d": -18.81,
-        "30d": -8.41
+        "7d": -19.24,
+        "30d": -8.9
       },
-      "correlation_hype_30d": 0.008,
+      "correlation_hype_30d": 0.012,
       "normalized_30d": [
         0.0,
         1.98,
@@ -12811,7 +12811,7 @@
         2.09,
         -2.67,
         -5.13,
-        -8.41
+        -8.9
       ],
       "dates_30d": [
         "2026-05-07",
@@ -12850,10 +12850,10 @@
       "price": 1.12,
       "returns": {
         "1d": 0.0,
-        "7d": -16.37,
-        "30d": -19.13
+        "7d": -16.55,
+        "30d": -19.31
       },
-      "correlation_hype_30d": -0.765,
+      "correlation_hype_30d": -0.758,
       "normalized_30d": [
         0.0,
         2.29,
@@ -12884,7 +12884,7 @@
         -12.62,
         -13.37,
         -15.7,
-        -19.13
+        -19.31
       ],
       "dates_30d": [
         "2026-05-07",
@@ -12920,11 +12920,11 @@
       ]
     },
     "HYPE": {
-      "price": 61.56,
+      "price": 60.83,
       "returns": {
         "1d": 0.0,
-        "7d": -9.86,
-        "30d": 44.77
+        "7d": -10.93,
+        "30d": 43.06
       },
       "correlation_hype_30d": 1.0,
       "normalized_30d": [
@@ -12957,7 +12957,7 @@
         64.23,
         75.39,
         51.53,
-        44.77
+        43.06
       ],
       "dates_30d": [
         "2026-05-07",
@@ -12993,20 +12993,20 @@
       ]
     }
   },
-  "ai_analysis": "**PROTOCOL FUNDAMENTALS:** TVL jumped 16.4% in 30 days to $5.86B with $4.47M in daily fees, and the 97% fee buyback engine continuously retires supply, fueling a powerful deflationary flywheel.\n\n**VALUATION:** Mcap/TVL of 2.4 and a Price/Daily Revenue of 3,148x price in aggressive growth; the token is richly valued relative to current cash flows, demanding sustained expansion.\n\n**NARRATIVE THESIS:** Institutional accumulation (a16z $170M+), ETF approval, and HIP-3 tokenized stocks are transforming HYPE into a broad financial infrastructure play, pulling in both institutional and retail capital.\n\n**WHAT CHANGED:** A 9.86% weekly pullback from highs has cooled the 44.77% monthly rally, with volume collapsing to 7.46M (well below the 7-day average of 18.81M), signaling a consolidation phase.\n\n**TREND:** Neutral \u2014 price hovers just above the 20-day SMA ($60.97) but well below the 7-day SMA ($69.19), creating a short-term downtrend inside an intact medium-term uptrend above the 50-day SMA.\n\n**MOMENTUM:** Momentum is weak; RSI at 53.5 is neutral and the MACD histogram is negative with the MACD line below its signal line, confirming bearish daily momentum.\n\n**DECOUPLING:** A 30-day BTC correlation of -0.763 shows strong decoupling \u2014 HYPE is trading on its own catalysts, insulating it from broad crypto beta swings.\n\n**LIQUIDITY:** The orderbook is bullish (imbalance 0.1566) with a tight 2.44 bps spread, but low volume relative to averages suggests cautious, likely retail-driven participation rather than heavy institutional flow.\n\n**LEVERS:** Funding is negligible at 0.0008% per 8h, showing no crowded longs; leverage is light, leaving ample room for directional bets if momentum returns.\n\n**VALUE:** At 58% of the Bollinger Bands and after a 10% weekly drop, HYPE is not overbought; it\u2019s near fair value with strong support at the 2x ATR stop of $48.88.\n\n**RISK:** The #1 risk is a loss of the 20-day SMA ($60.97) and the $58.28 Bollinger mid-level, which could trigger a swift drop to the $48.88 stop, especially with declining volume failing to confirm support.\n\n**Accumulate only on a high-volume reclaim of the 7-day SMA ($69.19) or buy a dip into the $48.88\u2013$50 zone with a tight stop; avoid chasing until daily momentum flips bullish.**",
+  "ai_analysis": "[Analysis unavailable: HTTPConnectionPool(host='localhost', port=11434): Read timed out. (read timeout=300)]",
   "predictions": {
     "total": 24,
-    "win_rate_6h": 44.4,
-    "win_rate_12h": 25.0,
+    "win_rate_6h": 42.1,
+    "win_rate_12h": 30.8,
     "win_rate_24h": 55.6,
-    "dir_accuracy_6h": 44.4,
-    "dir_accuracy_12h": 25.0,
+    "dir_accuracy_6h": 42.1,
+    "dir_accuracy_12h": 30.8,
     "dir_accuracy_24h": 55.6,
-    "target_hit_rate_6h": 16.7,
-    "target_hit_rate_12h": 16.7,
+    "target_hit_rate_6h": 15.8,
+    "target_hit_rate_12h": 23.1,
     "target_hit_rate_24h": 11.1,
-    "resolved_6h": 18,
-    "resolved_12h": 12,
+    "resolved_6h": 19,
+    "resolved_12h": 13,
     "resolved_24h": 9,
     "active": {
       "id": 69,
@@ -13453,6 +13453,6 @@
   ],
   "ai_meta": {
     "model": "deepseek-v4-pro:cloud",
-    "timestamp": "2026-06-05T06:02:28.379799+00:00"
+    "timestamp": "2026-06-05T07:07:21.628280+00:00"
   }
 }
