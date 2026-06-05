@@ -13023,12 +13023,12 @@
       "resolved_6h": -1,
       "resolved_12h": -1,
       "resolved_24h": -1,
-      "actual_price_6h": 61.301,
-      "actual_price_12h": 61.301,
-      "actual_price_24h": 61.301,
-      "resolved_at_6h": "2026-06-05T07:35:13.457044+00:00",
-      "resolved_at_12h": "2026-06-05T07:35:13.457044+00:00",
-      "resolved_at_24h": "2026-06-05T07:35:13.457044+00:00"
+      "actual_price_6h": 59.516,
+      "actual_price_12h": 59.516,
+      "actual_price_24h": 59.516,
+      "resolved_at_6h": "2026-06-05T15:35:16.087566+00:00",
+      "resolved_at_12h": "2026-06-05T15:35:16.087566+00:00",
+      "resolved_at_24h": "2026-06-05T15:35:16.087566+00:00"
     },
     "recent": [
       {
@@ -13046,12 +13046,12 @@
         "resolved_6h": -1,
         "resolved_12h": -1,
         "resolved_24h": -1,
-        "actual_price_6h": 61.301,
-        "actual_price_12h": 61.301,
-        "actual_price_24h": 61.301,
-        "resolved_at_6h": "2026-06-05T07:35:13.457044+00:00",
-        "resolved_at_12h": "2026-06-05T07:35:13.457044+00:00",
-        "resolved_at_24h": "2026-06-05T07:35:13.457044+00:00"
+        "actual_price_6h": 59.516,
+        "actual_price_12h": 59.516,
+        "actual_price_24h": 59.516,
+        "resolved_at_6h": "2026-06-05T15:35:16.087566+00:00",
+        "resolved_at_12h": "2026-06-05T15:35:16.087566+00:00",
+        "resolved_at_24h": "2026-06-05T15:35:16.087566+00:00"
       },
       {
         "id": 46,
@@ -13069,11 +13069,11 @@
         "resolved_12h": -1,
         "resolved_24h": -1,
         "actual_price_6h": 73.022,
-        "actual_price_12h": 61.301,
-        "actual_price_24h": 61.301,
+        "actual_price_12h": 59.516,
+        "actual_price_24h": 59.516,
         "resolved_at_6h": "2026-06-03T12:31:02.179424+00:00",
-        "resolved_at_12h": "2026-06-05T07:35:13.457044+00:00",
-        "resolved_at_24h": "2026-06-05T07:35:13.457044+00:00"
+        "resolved_at_12h": "2026-06-05T15:35:16.087566+00:00",
+        "resolved_at_24h": "2026-06-05T15:35:16.087566+00:00"
       },
       {
         "id": 40,
@@ -13092,10 +13092,10 @@
         "resolved_24h": -1,
         "actual_price_6h": 72.882,
         "actual_price_12h": 73.022,
-        "actual_price_24h": 61.301,
+        "actual_price_24h": 59.516,
         "resolved_at_6h": "2026-06-03T06:01:22.017362+00:00",
         "resolved_at_12h": "2026-06-03T12:31:02.179424+00:00",
-        "resolved_at_24h": "2026-06-05T07:35:13.457044+00:00"
+        "resolved_at_24h": "2026-06-05T15:35:16.087566+00:00"
       },
       {
         "id": 34,
@@ -13114,10 +13114,10 @@
         "resolved_24h": -1,
         "actual_price_6h": 70.314,
         "actual_price_12h": 72.27,
-        "actual_price_24h": 61.301,
+        "actual_price_24h": 59.516,
         "resolved_at_6h": "2026-06-03T00:30:27.661210+00:00",
         "resolved_at_12h": "2026-06-03T06:31:27.961117+00:00",
-        "resolved_at_24h": "2026-06-05T07:35:13.457044+00:00"
+        "resolved_at_24h": "2026-06-05T15:35:16.087566+00:00"
       },
       {
         "id": 27,
