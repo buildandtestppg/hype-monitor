@@ -1,75 +1,75 @@
 {
   "meta": {
-    "timestamp": "2026-06-05T13:00:21.265396+00:00",
+    "timestamp": "2026-06-05T14:00:37.940851+00:00",
     "data_points": 121,
-    "price": 62.644,
-    "mark_price": 62.648,
-    "open_interest": "20914165.799999997"
+    "price": 61.029,
+    "mark_price": 60.988,
+    "open_interest": "20863053.3199999966"
   },
   "returns": {
     "1d": 0.0,
-    "3d": -16.0,
-    "7d": -8.27,
-    "14d": 6.71,
-    "30d": 47.33,
-    "60d": 62.26,
-    "90d": 104.15
+    "3d": -18.16,
+    "7d": -10.63,
+    "14d": 3.96,
+    "30d": 43.53,
+    "60d": 58.08,
+    "90d": 98.88
   },
   "technical": {
-    "sma7": 69.34,
-    "sma20": 61.02,
-    "sma50": 49.49,
-    "rsi14": 54.8,
-    "rsi7": 45.9,
+    "sma7": 69.11,
+    "sma20": 60.94,
+    "sma50": 49.46,
+    "rsi14": 52.9,
+    "rsi7": 43.3,
     "rsi_signal": "NEUTRAL",
-    "macd_line": 5.9498,
-    "macd_signal": 6.0912,
-    "macd_hist": -0.1414,
-    "bb_upper": 77.62,
-    "bb_lower": 44.43,
+    "macd_line": 5.821,
+    "macd_signal": 6.0654,
+    "macd_hist": -0.2445,
+    "bb_upper": 77.52,
+    "bb_lower": 44.37,
     "atr14": 6.48,
-    "atr_pct": 10.34,
+    "atr_pct": 10.62,
     "vol_regime": "EXPANDING",
-    "dist_sma7_pct": -9.7,
-    "dist_sma20_pct": 2.7,
-    "dist_sma50_pct": 26.6,
-    "stop_2x": 49.68,
-    "stop_3x": 43.2,
-    "poc": 58.36
+    "dist_sma7_pct": -11.7,
+    "dist_sma20_pct": 0.1,
+    "dist_sma50_pct": 23.4,
+    "stop_2x": 48.07,
+    "stop_3x": 41.59,
+    "poc": 58.32
   },
   "volume": {
-    "latest_M": 14.52,
-    "avg7d_M": 19.82,
-    "avg30d_M": 14.52,
+    "latest_M": 15.42,
+    "avg7d_M": 19.95,
+    "avg30d_M": 14.55,
     "ratio_7v30": 1.37,
-    "poc": 58.36
+    "poc": 58.32
   },
   "orderbook": {
-    "best_bid": 62.636,
-    "best_ask": 62.641,
+    "best_bid": 61.05,
+    "best_ask": 61.055,
     "spread": 0.005,
-    "spread_bps": 0.8,
-    "bid_vol_20": 1898.65,
-    "ask_vol_20": 4147.09,
-    "imbalance": -0.3719,
-    "pressure": "BEARISH"
+    "spread_bps": 0.82,
+    "bid_vol_20": 2803.21,
+    "ask_vol_20": 1634.91,
+    "imbalance": 0.2632,
+    "pressure": "BULLISH"
   },
   "funding": {
     "count": 500,
     "avg_8h": 0.0008,
-    "latest_8h": 0.0002,
-    "annualized_pct": 0.22
+    "latest_8h": -0.0001,
+    "annualized_pct": -0.14
   },
   "correlation": {
-    "btc_30d": -0.767
+    "btc_30d": -0.746
   },
   "research": {
     "protocol_stats": {
-      "tvl": 5828132039,
-      "tvl_7d_change_pct": 5.14,
-      "tvl_30d_change_pct": 15.82,
-      "mcap": 13726394278.01022,
-      "fdv": 59308591160,
+      "tvl": 5848234150,
+      "tvl_7d_change_pct": 5.5,
+      "tvl_30d_change_pct": 16.22,
+      "mcap": 13913596223.041115,
+      "fdv": 58284124422,
       "gecko_id": "hyperliquid",
       "description": "Hyperliquid is a Layer 1 blockchain best known for perpetual futures and spot trading. Beyond its flagship decentralized exchange (DEX), the ecosystem supports borrowing, lending, RWAs, and a full-fledged EVM.",
       "twitter": "HyperliquidX",
@@ -94,30 +94,30 @@
       "volume_30d_avg_daily": 192519332.8,
       "volume_trend_pct": null
     },
-    "btc_price": 61955.0,
+    "btc_price": 60841.0,
     "hype_perp": {
-      "oi_tokens": 20914165.8,
-      "oi_usd": 1310230659.04,
-      "mark_px": 62.648,
-      "prev_day_px": 67.745,
-      "day_notional_vol": 1711454349.29,
-      "day_base_vol": 26654747.21,
-      "funding_rate": 0.0001015032,
-      "premium": 0.0004168929,
-      "price_change_24h_pct": -7.52
+      "oi_tokens": 20863053.32,
+      "oi_usd": 1272395895.88,
+      "mark_px": 60.988,
+      "prev_day_px": 67.134,
+      "day_notional_vol": 1657717937.83,
+      "day_base_vol": 25905947.98,
+      "funding_rate": 7.77612e-05,
+      "premium": 0.0019098561,
+      "price_change_24h_pct": -9.15
     },
     "valuation": {
-      "mcap_tvl_ratio": 2.36,
-      "mcap_annualized_fee_ratio": 8.41,
+      "mcap_tvl_ratio": 2.38,
+      "mcap_annualized_fee_ratio": 8.52,
       "annualized_fees_estimate": 1632208825,
-      "price_to_daily_revenue": 3069.54,
-      "oi_to_mcap_pct": 9.55
+      "price_to_daily_revenue": 3111.4,
+      "oi_to_mcap_pct": 9.14
     },
     "narrative_score": {
       "score": 66,
       "label": "BULLISH",
       "components": {
-        "tvl_growth": 15.8,
+        "tvl_growth": 16.2,
         "fee_revenue": 20,
         "volume_trend": 0,
         "rsi_momentum": 15,
@@ -371,7 +371,7 @@
       69.831,
       74.573,
       64.428,
-      62.644
+      61.029
     ],
     "volumes": [
       25173379.85,
@@ -494,7 +494,7 @@
       21869842.56,
       18572079.19,
       32549511.44,
-      14518612.75
+      15416264.43
     ],
     "rsi": [
       null,
@@ -617,7 +617,7 @@
       69.7,
       73.4,
       57.1,
-      54.8
+      52.9
     ],
     "sma7": [
       null,
@@ -740,7 +740,7 @@
       66.76,
       69.18,
       69.6,
-      69.34
+      69.11
     ],
     "sma20": [
       null,
@@ -863,7 +863,7 @@
       57.45,
       58.97,
       59.98,
-      61.02
+      60.94
     ],
     "sma50": [
       null,
@@ -986,7 +986,7 @@
       48.1,
       48.72,
       49.11,
-      49.49
+      49.46
     ],
     "bb_upper": [
       null,
@@ -1109,7 +1109,7 @@
       76.87,
       78.77,
       78.63,
-      77.62
+      77.52
     ],
     "bb_lower": [
       null,
@@ -1232,7 +1232,7 @@
       38.02,
       39.17,
       41.33,
-      44.43
+      44.37
     ],
     "macd": [
       null,
@@ -1355,7 +1355,7 @@
       6.9758,
       7.3028,
       6.6666,
-      5.9498
+      5.821
     ],
     "macd_signal": [
       null,
@@ -1478,19 +1478,11 @@
       5.6637,
       5.9916,
       6.1266,
-      6.0912
+      6.0654
     ]
   },
   "candles": {
     "1h": [
-      {
-        "time": 1778072400,
-        "open": 44.345,
-        "high": 44.375,
-        "low": 43.8,
-        "close": 43.862,
-        "volume": 389285.37
-      },
       {
         "time": 1778076000,
         "open": 43.861,
@@ -7246,10 +7238,18 @@
       {
         "time": 1780664400,
         "open": 62.512,
-        "high": 62.726,
-        "low": 62.512,
-        "close": 62.605,
-        "volume": 29249.18
+        "high": 63.011,
+        "low": 60.64,
+        "close": 60.815,
+        "volume": 915853.59
+      },
+      {
+        "time": 1780668000,
+        "open": 60.786,
+        "high": 61.213,
+        "low": 60.767,
+        "close": 61.213,
+        "volume": 13304.61
       }
     ],
     "4h": [
@@ -11576,10 +11576,10 @@
       {
         "time": 1780660800,
         "open": 61.739,
-        "high": 62.726,
-        "low": 61.204,
-        "close": 62.643,
-        "volume": 594573.32
+        "high": 63.011,
+        "low": 60.64,
+        "close": 61.151,
+        "volume": 1494727.48
       }
     ],
     "1d": [
@@ -12548,20 +12548,20 @@
         "open": 64.428,
         "high": 66.031,
         "low": 59.0,
-        "close": 62.605,
-        "volume": 14519755.0
+        "close": 61.225,
+        "volume": 15423060.98
       }
     ]
   },
   "comparison": {
     "BTC": {
-      "price": 61985.0,
+      "price": 60795.0,
       "returns": {
         "1d": 0.0,
-        "7d": -16.07,
-        "30d": -22.51
+        "7d": -17.68,
+        "30d": -24.0
       },
-      "correlation_hype_30d": -0.768,
+      "correlation_hype_30d": -0.746,
       "normalized_30d": [
         0.0,
         0.2,
@@ -12592,7 +12592,7 @@
         -16.58,
         -19.84,
         -20.17,
-        -22.51
+        -24.0
       ],
       "dates_30d": [
         "2026-05-07",
@@ -12628,13 +12628,13 @@
       ]
     },
     "ETH": {
-      "price": 1657.7,
+      "price": 1619.6,
       "returns": {
         "1d": 0.0,
-        "7d": -18.0,
-        "30d": -27.63
+        "7d": -19.89,
+        "30d": -29.29
       },
-      "correlation_hype_30d": -0.806,
+      "correlation_hype_30d": -0.784,
       "normalized_30d": [
         0.0,
         0.71,
@@ -12665,7 +12665,7 @@
         -18.84,
         -20.88,
         -22.71,
-        -27.63
+        -29.29
       ],
       "dates_30d": [
         "2026-05-07",
@@ -12701,13 +12701,13 @@
       ]
     },
     "SOL": {
-      "price": 65.86,
+      "price": 64.59,
       "returns": {
         "1d": 0.0,
-        "7d": -20.36,
-        "30d": -25.48
+        "7d": -21.9,
+        "30d": -26.92
       },
-      "correlation_hype_30d": -0.75,
+      "correlation_hype_30d": -0.732,
       "normalized_30d": [
         0.0,
         4.13,
@@ -12738,7 +12738,7 @@
         -16.09,
         -19.0,
         -22.11,
-        -25.48
+        -26.92
       ],
       "dates_30d": [
         "2026-05-07",
@@ -12774,13 +12774,13 @@
       ]
     },
     "BNB": {
-      "price": 591.64,
+      "price": 583.52,
       "returns": {
         "1d": 0.0,
-        "7d": -17.66,
-        "30d": -7.12
+        "7d": -18.79,
+        "30d": -8.39
       },
-      "correlation_hype_30d": 0.007,
+      "correlation_hype_30d": 0.013,
       "normalized_30d": [
         0.0,
         1.98,
@@ -12811,7 +12811,7 @@
         2.09,
         -2.67,
         -5.13,
-        -7.12
+        -8.39
       ],
       "dates_30d": [
         "2026-05-07",
@@ -12847,13 +12847,13 @@
       ]
     },
     "XRP": {
-      "price": 1.12,
+      "price": 1.1,
       "returns": {
         "1d": 0.0,
-        "7d": -16.37,
-        "30d": -19.13
+        "7d": -17.54,
+        "30d": -20.26
       },
-      "correlation_hype_30d": -0.772,
+      "correlation_hype_30d": -0.752,
       "normalized_30d": [
         0.0,
         2.29,
@@ -12884,7 +12884,7 @@
         -12.62,
         -13.37,
         -15.7,
-        -19.13
+        -20.26
       ],
       "dates_30d": [
         "2026-05-07",
@@ -12920,11 +12920,11 @@
       ]
     },
     "HYPE": {
-      "price": 62.64,
+      "price": 61.03,
       "returns": {
         "1d": 0.0,
-        "7d": -8.27,
-        "30d": 47.33
+        "7d": -10.63,
+        "30d": 43.53
       },
       "correlation_hype_30d": 1.0,
       "normalized_30d": [
@@ -12957,7 +12957,7 @@
         64.23,
         75.39,
         51.53,
-        47.33
+        43.53
       ],
       "dates_30d": [
         "2026-05-07",
@@ -13453,6 +13453,6 @@
   ],
   "ai_meta": {
     "model": "deepseek-v4-pro:cloud",
-    "timestamp": "2026-06-05T13:07:21.355611+00:00"
+    "timestamp": "2026-06-05T14:07:38.000303+00:00"
   }
 }
