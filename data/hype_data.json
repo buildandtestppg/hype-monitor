@@ -1,75 +1,75 @@
 {
   "meta": {
-    "timestamp": "2026-06-05T08:00:51.049128+00:00",
+    "timestamp": "2026-06-05T09:01:36.299866+00:00",
     "data_points": 121,
-    "price": 62.43,
-    "mark_price": 62.506,
-    "open_interest": "20581910.7800000347"
+    "price": 61.363,
+    "mark_price": 61.372,
+    "open_interest": "20663904.9000000022"
   },
   "returns": {
     "1d": 0.0,
-    "3d": -16.28,
-    "7d": -8.58,
-    "14d": 6.35,
-    "30d": 46.83,
-    "60d": 61.71,
-    "90d": 103.45
+    "3d": -17.71,
+    "7d": -10.14,
+    "14d": 4.53,
+    "30d": 44.32,
+    "60d": 58.95,
+    "90d": 99.97
   },
   "technical": {
-    "sma7": 69.31,
-    "sma20": 61.01,
-    "sma50": 49.49,
-    "rsi14": 54.5,
-    "rsi7": 45.5,
+    "sma7": 69.16,
+    "sma20": 60.96,
+    "sma50": 49.46,
+    "rsi14": 53.3,
+    "rsi7": 43.8,
     "rsi_signal": "NEUTRAL",
-    "macd_line": 5.9327,
-    "macd_signal": 6.0878,
-    "macd_hist": -0.1551,
-    "bb_upper": 77.6,
-    "bb_lower": 44.42,
+    "macd_line": 5.8476,
+    "macd_signal": 6.0708,
+    "macd_hist": -0.2232,
+    "bb_upper": 77.54,
+    "bb_lower": 44.38,
     "atr14": 6.48,
-    "atr_pct": 10.38,
+    "atr_pct": 10.56,
     "vol_regime": "EXPANDING",
-    "dist_sma7_pct": -9.9,
-    "dist_sma20_pct": 2.3,
-    "dist_sma50_pct": 26.2,
-    "stop_2x": 49.47,
-    "stop_3x": 42.99,
-    "poc": 58.33
+    "dist_sma7_pct": -11.3,
+    "dist_sma20_pct": 0.7,
+    "dist_sma50_pct": 24.1,
+    "stop_2x": 48.4,
+    "stop_3x": 41.92,
+    "poc": 58.31
   },
   "volume": {
-    "latest_M": 11.75,
-    "avg7d_M": 19.42,
-    "avg30d_M": 14.42,
+    "latest_M": 12.62,
+    "avg7d_M": 19.55,
+    "avg30d_M": 14.45,
     "ratio_7v30": 1.35,
-    "poc": 58.33
+    "poc": 58.31
   },
   "orderbook": {
-    "best_bid": 62.504,
-    "best_ask": 62.505,
+    "best_bid": 61.372,
+    "best_ask": 61.373,
     "spread": 0.001,
     "spread_bps": 0.16,
-    "bid_vol_20": 2129.42,
-    "ask_vol_20": 2934.4,
-    "imbalance": -0.159,
-    "pressure": "BEARISH"
+    "bid_vol_20": 3874.49,
+    "ask_vol_20": 2112.54,
+    "imbalance": 0.2943,
+    "pressure": "BULLISH"
   },
   "funding": {
     "count": 500,
     "avg_8h": 0.0008,
-    "latest_8h": 0.0013,
-    "annualized_pct": 1.37
+    "latest_8h": -0.0004,
+    "annualized_pct": -0.45
   },
   "correlation": {
-    "btc_30d": -0.775
+    "btc_30d": -0.764
   },
   "research": {
     "protocol_stats": {
-      "tvl": 5842290555,
-      "tvl_7d_change_pct": 5.39,
-      "tvl_30d_change_pct": 16.1,
-      "mcap": 13430426934.592234,
-      "fdv": 59324743705,
+      "tvl": 5841230109,
+      "tvl_7d_change_pct": 5.37,
+      "tvl_30d_change_pct": 16.08,
+      "mcap": 13887554543.074022,
+      "fdv": 58474712898,
       "gecko_id": "hyperliquid",
       "description": "Hyperliquid is a Layer 1 blockchain best known for perpetual futures and spot trading. Beyond its flagship decentralized exchange (DEX), the ecosystem supports borrowing, lending, RWAs, and a full-fledged EVM.",
       "twitter": "HyperliquidX",
@@ -94,24 +94,24 @@
       "volume_30d_avg_daily": 192519332.8,
       "volume_trend_pct": null
     },
-    "btc_price": 63041.0,
+    "btc_price": 62483.0,
     "hype_perp": {
-      "oi_tokens": 20581910.78,
-      "oi_usd": 1286492915.21,
-      "mark_px": 62.506,
-      "prev_day_px": 67.792,
-      "day_notional_vol": 2167057384.4,
-      "day_base_vol": 33289605.5,
+      "oi_tokens": 20663904.9,
+      "oi_usd": 1268185171.52,
+      "mark_px": 61.372,
+      "prev_day_px": 68.528,
+      "day_notional_vol": 2082012709.71,
+      "day_base_vol": 32101212.08,
       "funding_rate": 1.25e-05,
-      "premium": 0.0016125413,
-      "price_change_24h_pct": -7.8
+      "premium": 0.0001140715,
+      "price_change_24h_pct": -10.44
     },
     "valuation": {
-      "mcap_tvl_ratio": 2.3,
-      "mcap_annualized_fee_ratio": 8.23,
+      "mcap_tvl_ratio": 2.38,
+      "mcap_annualized_fee_ratio": 8.51,
       "annualized_fees_estimate": 1632208825,
-      "price_to_daily_revenue": 3003.36,
-      "oi_to_mcap_pct": 9.58
+      "price_to_daily_revenue": 3105.58,
+      "oi_to_mcap_pct": 9.13
     },
     "narrative_score": {
       "score": 66,
@@ -371,7 +371,7 @@
       69.831,
       74.573,
       64.428,
-      62.43
+      61.363
     ],
     "volumes": [
       25173379.85,
@@ -494,7 +494,7 @@
       21869842.56,
       18572079.19,
       32549511.44,
-      11751963.44
+      12615043.81
     ],
     "rsi": [
       null,
@@ -617,7 +617,7 @@
       69.7,
       73.4,
       57.1,
-      54.5
+      53.3
     ],
     "sma7": [
       null,
@@ -740,7 +740,7 @@
       66.76,
       69.18,
       69.6,
-      69.31
+      69.16
     ],
     "sma20": [
       null,
@@ -863,7 +863,7 @@
       57.45,
       58.97,
       59.98,
-      61.01
+      60.96
     ],
     "sma50": [
       null,
@@ -986,7 +986,7 @@
       48.1,
       48.72,
       49.11,
-      49.49
+      49.46
     ],
     "bb_upper": [
       null,
@@ -1109,7 +1109,7 @@
       76.87,
       78.77,
       78.63,
-      77.6
+      77.54
     ],
     "bb_lower": [
       null,
@@ -1232,7 +1232,7 @@
       38.02,
       39.17,
       41.33,
-      44.42
+      44.38
     ],
     "macd": [
       null,
@@ -1355,7 +1355,7 @@
       6.9758,
       7.3028,
       6.6666,
-      5.9327
+      5.8476
     ],
     "macd_signal": [
       null,
@@ -1478,19 +1478,11 @@
       5.6637,
       5.9916,
       6.1266,
-      6.0878
+      6.0708
     ]
   },
   "candles": {
     "1h": [
-      {
-        "time": 1778054400,
-        "open": 44.395,
-        "high": 44.655,
-        "low": 44.226,
-        "close": 44.329,
-        "volume": 220178.73
-      },
       {
         "time": 1778058000,
         "open": 44.33,
@@ -7246,10 +7238,18 @@
       {
         "time": 1780646400,
         "open": 62.743,
-        "high": 62.743,
-        "low": 62.417,
-        "close": 62.445,
-        "volume": 10748.14
+        "high": 62.755,
+        "low": 60.882,
+        "close": 61.331,
+        "volume": 866080.4
+      },
+      {
+        "time": 1780650000,
+        "open": 61.331,
+        "high": 61.425,
+        "low": 61.307,
+        "close": 61.419,
+        "volume": 4856.31
       }
     ],
     "4h": [
@@ -11576,10 +11576,10 @@
       {
         "time": 1780646400,
         "open": 62.743,
-        "high": 62.743,
-        "low": 62.417,
-        "close": 62.444,
-        "volume": 10754.22
+        "high": 62.755,
+        "low": 60.882,
+        "close": 61.422,
+        "volume": 870945.13
       }
     ],
     "1d": [
@@ -12548,20 +12548,20 @@
         "open": 64.428,
         "high": 66.031,
         "low": 59.0,
-        "close": 62.388,
-        "volume": 11760386.5
+        "close": 61.423,
+        "volume": 12615581.68
       }
     ]
   },
   "comparison": {
     "BTC": {
-      "price": 63048.0,
+      "price": 62480.0,
       "returns": {
         "1d": 0.0,
-        "7d": -14.63,
-        "30d": -21.18
+        "7d": -15.4,
+        "30d": -21.89
       },
-      "correlation_hype_30d": -0.775,
+      "correlation_hype_30d": -0.764,
       "normalized_30d": [
         0.0,
         0.2,
@@ -12592,7 +12592,7 @@
         -16.58,
         -19.84,
         -20.17,
-        -21.18
+        -21.89
       ],
       "dates_30d": [
         "2026-05-07",
@@ -12628,13 +12628,13 @@
       ]
     },
     "ETH": {
-      "price": 1676.4,
+      "price": 1664.6,
       "returns": {
         "1d": 0.0,
-        "7d": -17.08,
-        "30d": -26.81
+        "7d": -17.66,
+        "30d": -27.33
       },
-      "correlation_hype_30d": -0.809,
+      "correlation_hype_30d": -0.8,
       "normalized_30d": [
         0.0,
         0.71,
@@ -12665,7 +12665,7 @@
         -18.84,
         -20.88,
         -22.71,
-        -26.81
+        -27.33
       ],
       "dates_30d": [
         "2026-05-07",
@@ -12701,13 +12701,13 @@
       ]
     },
     "SOL": {
-      "price": 66.0,
+      "price": 65.42,
       "returns": {
         "1d": 0.0,
-        "7d": -20.19,
-        "30d": -25.32
+        "7d": -20.89,
+        "30d": -25.98
       },
-      "correlation_hype_30d": -0.75,
+      "correlation_hype_30d": -0.739,
       "normalized_30d": [
         0.0,
         4.13,
@@ -12738,7 +12738,7 @@
         -16.09,
         -19.0,
         -22.11,
-        -25.32
+        -25.98
       ],
       "dates_30d": [
         "2026-05-07",
@@ -12774,13 +12774,13 @@
       ]
     },
     "BNB": {
-      "price": 591.46,
+      "price": 586.82,
       "returns": {
         "1d": 0.0,
-        "7d": -17.68,
-        "30d": -7.14
+        "7d": -18.33,
+        "30d": -7.87
       },
-      "correlation_hype_30d": 0.008,
+      "correlation_hype_30d": 0.013,
       "normalized_30d": [
         0.0,
         1.98,
@@ -12811,7 +12811,7 @@
         2.09,
         -2.67,
         -5.13,
-        -7.14
+        -7.87
       ],
       "dates_30d": [
         "2026-05-07",
@@ -12850,10 +12850,10 @@
       "price": 1.13,
       "returns": {
         "1d": 0.0,
-        "7d": -15.31,
-        "30d": -18.11
+        "7d": -15.96,
+        "30d": -18.73
       },
-      "correlation_hype_30d": -0.778,
+      "correlation_hype_30d": -0.766,
       "normalized_30d": [
         0.0,
         2.29,
@@ -12884,7 +12884,7 @@
         -12.62,
         -13.37,
         -15.7,
-        -18.11
+        -18.73
       ],
       "dates_30d": [
         "2026-05-07",
@@ -12920,11 +12920,11 @@
       ]
     },
     "HYPE": {
-      "price": 62.43,
+      "price": 61.36,
       "returns": {
         "1d": 0.0,
-        "7d": -8.58,
-        "30d": 46.83
+        "7d": -10.14,
+        "30d": 44.32
       },
       "correlation_hype_30d": 1.0,
       "normalized_30d": [
@@ -12957,7 +12957,7 @@
         64.23,
         75.39,
         51.53,
-        46.83
+        44.32
       ],
       "dates_30d": [
         "2026-05-07",
@@ -13453,6 +13453,6 @@
   ],
   "ai_meta": {
     "model": "deepseek-v4-pro:cloud",
-    "timestamp": "2026-06-05T08:07:51.146755+00:00"
+    "timestamp": "2026-06-05T09:08:36.387742+00:00"
   }
 }
