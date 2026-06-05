@@ -12996,14 +12996,17 @@
   "ai_analysis": "**PROTOCOL FUNDAMENTALS:** TVL surged 16.5% to $5.86B with $4.47M in 24h fees, fueling an aggressive buyback engine that retires 97% of fee revenue into HYPE, creating constant demand pressure.\n\n**VALUATION:** Mcap/TVL of 2.38 and Price/Daily Revenue of 3117x appear stretched, but the buyback yield and dominant market share justify a premium growth multiple \u2014 fairly valued for its trajectory.\n\n**NARRATIVE THESIS:** Institutional accumulation (a16z $170M+), ETF approval, and HIP-3 tokenized stocks are transforming HYPE from a DEX token into a broad financial infrastructure play, attracting both institutional and retail flows.\n\n**WHAT CHANGED:** ETF approval and the launch of tokenized equities have fundamentally expanded HYPE\u2019s addressable market beyond crypto-native perp trading, driving the 30-day 49% rally.\n\n**TREND:** Bullish \u2014 price holds well above the SMA50 ($49.5) and SMA20 ($61.06), with the 7-day pullback looking like a healthy consolidation within an uptrend.\n\n**MOMENTUM:** Momentum is fading \u2014 RSI neutral at 55.7 and MACD histogram turning negative, signaling a potential short-term bearish crossover and cooling after the explosive move.\n\n**DECOUPLING:** HYPE\u2019s 30-day BTC correlation of -0.785 confirms strong decoupling; it\u2019s trading on its own catalysts, which is a strength if BTC chops but a risk if a macro sell-off triggers broad alt liquidations.\n\n**LIQUIDITY:** Orderbook shows a bullish bid/ask imbalance (0.2231) with a razor-thin 1.26 bps spread, but volume is running at just one-third of the 7-day average, suggesting institutional support with fading retail participation.\n\n**LEVERS:** Funding is near zero (1.06% annualized), indicating no crowded long positioning \u2014 the setup is not overleveraged, leaving room for fresh longs.\n\n**VALUE:** Price sits 3.7% above SMA20 and 8.8% below SMA7, with Bollinger %B at 58 \u2014 neither overbought nor oversold, offering a neutral entry zone after the pullback.\n\n**RISK:** The 14-day ATR of 9.98% daily volatility means a swift move to the 2x ATR stop at $50.7 is plausible; a break below SMA20 could trigger a deeper correction toward the $44\u201350 range.\n\n**Buy the dip with a stop at $50.7, targeting a breakout above $77 as ETF and stock-token narratives compound.**",
   "predictions": {
     "total": 23,
-    "win_rate_6h": 43.8,
-    "win_rate_12h": 22.2,
+    "win_rate_6h": 47.1,
+    "win_rate_12h": 27.3,
     "win_rate_24h": 55.6,
-    "target_hit_rate_6h": 18.8,
-    "target_hit_rate_12h": 11.1,
+    "dir_accuracy_6h": 47.1,
+    "dir_accuracy_12h": 27.3,
+    "dir_accuracy_24h": 55.6,
+    "target_hit_rate_6h": 17.6,
+    "target_hit_rate_12h": 18.2,
     "target_hit_rate_24h": 11.1,
-    "resolved_6h": 16,
-    "resolved_12h": 9,
+    "resolved_6h": 17,
+    "resolved_12h": 11,
     "resolved_24h": 9,
     "active": {
       "id": 68,
@@ -13138,8 +13141,7 @@
         "resolved_at_12h": null,
         "resolved_at_24h": null
       }
-    ],
-    "streak": 0
+    ]
   },
   "changelog": [
     {
