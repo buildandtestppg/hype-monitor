@@ -12996,13 +12996,16 @@
   "ai_analysis": "**PROTOCOL FUNDAMENTALS:** TVL surged 16.8% to $5.9B with $5.36M in 24h fees, feeding the aggressive 97% buyback engine that continuously retires supply.\n**VALUATION:** Mcap/TVL of 2.25 and a 2476x price/daily revenue multiple signal overvaluation relative to fee generation, even with buyback support.\n**NARRATIVE THESIS:** Institutional accumulation (a16z $170M+), ETF approval, and HIP-3 tokenized stocks anchor the blue-chip perp DEX narrative, attracting smart money over retail.\n**WHAT CHANGED:** A sharp -17.8% weekly drop on collapsing volume (5.13M vs 20.89M 7D avg) marks a violent profit-taking event after the 30D rally.\n**TREND:** Neutral-to-bearish; price sits below SMA7 and SMA20 after the pullback, though still above the rising SMA50, keeping the medium-term structure intact.\n**MOMENTUM:** Weakening \u2014 RSI is neutral at 50.8, but the MACD histogram is negative with a fresh bearish crossover, confirming fading upside thrust.\n**DECOUPLING:** HYPE\u2019s -0.69 BTC correlation shows it\u2019s trading on its own catalysts; the recent drop is idiosyncratic profit-taking, not a beta-driven selloff.\n**LIQUIDITY:** Orderbook imbalance is bearish (-0.31) with tight 0.17 bps spreads, but volume has dried up, signaling cautious retail and institutional hesitation.\n**LEVERS:** Funding is flat (-0.04% annualized), indicating no crowded longs and leaving positioning clean for a move in either direction.\n**VALUE:** Not yet oversold \u2014 RSI mid-range and price above the Bollinger lower band ($46.56) suggest the correction has room to run before reaching value.\n**RISK:** The #1 risk is a valuation de-rating if daily fees contract, exposing the extreme 2476x price/revenue multiple to sharp compression.\n\n**Sell rallies toward the $61.56 SMA20 resistance with a stop above $67.64, targeting the $46.22 2x ATR support, as momentum and orderbook tilt bearish.**",
   "predictions": {
     "total": 17,
-    "win_rate_6h": 55.6,
+    "win_rate_6h": 63.6,
     "win_rate_12h": 22.2,
     "win_rate_24h": 55.6,
-    "target_hit_rate_6h": 11.1,
+    "dir_accuracy_6h": 63.6,
+    "dir_accuracy_12h": 22.2,
+    "dir_accuracy_24h": 55.6,
+    "target_hit_rate_6h": 9.1,
     "target_hit_rate_12h": 11.1,
     "target_hit_rate_24h": 11.1,
-    "resolved_6h": 9,
+    "resolved_6h": 11,
     "resolved_12h": 9,
     "resolved_24h": 9,
     "active": {
@@ -13138,8 +13141,7 @@
         "resolved_at_12h": null,
         "resolved_at_24h": null
       }
-    ],
-    "streak": 0
+    ]
   },
   "changelog": [
     {
