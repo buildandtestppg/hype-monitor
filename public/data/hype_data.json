@@ -12996,14 +12996,17 @@
   "ai_analysis": "**PROTOCOL FUNDAMENTALS:** TVL surged 16% to $5.87B with $1.82M in 24h fees feeding the aggressive 97% buyback engine, creating constant bid-side pressure.\n**VALUATION:** Mcap/TVL of 2.21 is moderate, but Price/Daily Revenue at 7,144x signals extreme overvaluation relative to current cash flows.\n**NARRATIVE THESIS:** Institutional accumulation (a16z $170M+), ETF approval, and HIP-3 tokenized stocks are transforming HYPE from a DEX token into a broad real-world asset play.\n**WHAT CHANGED:** Price corrected sharply by -21.84% in 7 days, erasing a chunk of the 30-day rally as short-term momentum collapsed.\n**TREND:** Neutral with a bearish short-term bias \u2014 price sits below the 7- and 20-day SMAs but still holds above the 50-day SMA.\n**MOMENTUM:** Weakening \u2014 RSI at 49 is neutral but MACD histogram is negative and the MACD line is below signal, confirming a bearish crossover.\n**DECOUPLING:** HYPE\u2019s 30-day BTC correlation is -0.616, meaning it\u2019s trading on its own catalysts and ignoring broad crypto moves.\n**LIQUIDITY:** Orderbook shows a bearish bid/ask imbalance of -0.64 with volume well below 7-day average, indicating thinning retail interest and institutional caution.\n**LEVERS:** Funding is near zero (1.37% annualized), so longs are not crowded and there\u2019s no squeeze risk from over-leverage.\n**VALUE:** After the 21% drop, price is near the lower Bollinger Band, suggesting it\u2019s oversold in the short term relative to its own volatility.\n**RISK:** The #1 risk is that the bearish orderbook imbalance persists and buyback demand fails to absorb overhead supply, triggering a breakdown below $48.\n\n**Buy this dip with a stop at $44.45 (2x ATR) targeting a rebound to $65+ as buybacks and institutional narrative reassert.**",
   "predictions": {
     "total": 26,
-    "win_rate_6h": 57.9,
-    "win_rate_12h": 38.5,
+    "win_rate_6h": 60.0,
+    "win_rate_12h": 42.9,
     "win_rate_24h": 55.6,
-    "target_hit_rate_6h": 10.5,
-    "target_hit_rate_12h": 7.7,
+    "dir_accuracy_6h": 60.0,
+    "dir_accuracy_12h": 42.9,
+    "dir_accuracy_24h": 55.6,
+    "target_hit_rate_6h": 10.0,
+    "target_hit_rate_12h": 7.1,
     "target_hit_rate_24h": 11.1,
-    "resolved_6h": 19,
-    "resolved_12h": 13,
+    "resolved_6h": 20,
+    "resolved_12h": 14,
     "resolved_24h": 9,
     "active": {
       "id": 71,
@@ -13138,8 +13141,7 @@
         "resolved_at_12h": null,
         "resolved_at_24h": null
       }
-    ],
-    "streak": 0
+    ]
   },
   "changelog": [
     {
