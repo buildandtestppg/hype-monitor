@@ -12996,13 +12996,16 @@
   "ai_analysis": "**PROTOCOL FUNDAMENTALS:** TVL surged 16% in 30 days to $5.87B with $1.82M in 24h fees, feeding a 97% buyback engine that relentlessly reduces circulating supply.\n**VALUATION:** Mcap/TVL of 2.21 and Price/Daily Revenue of 7130x signal extreme overvaluation, pricing in perfection on future growth.\n**NARRATIVE THESIS:** Institutional accumulation (a16z $170M+), ETF approval, and HIP-3 tokenized stocks position Hyperliquid as the on-chain derivatives and RWA hub, driving a high-conviction institutional narrative.\n**WHAT CHANGED:** A brutal -20% weekly drop after a +37% monthly rally, likely profit-taking and a reset from overbought conditions.\n**TREND:** Bearish short-term; price sits 10% below SMA7 and 5% below SMA20, though still holding above the rising SMA50.\n**MOMENTUM:** Weakness confirmed by a bearish MACD crossover and negative histogram, while RSI at 50.5 shows no oversold bounce signal yet.\n**DECOUPLING:** HYPE is strongly decoupled from BTC (correlation -0.628), meaning idiosyncratic catalysts like ETF flows and stock tokenization now dominate price action.\n**LIQUIDITY:** Orderbook imbalance is bearish (-0.65) with tight spreads but collapsing volume (6.7M vs 20M 7D avg), indicating thinning liquidity and retail-driven selling pressure.\n**LEVERS:** Funding is near zero (1.37% annualized), showing no crowded longs and minimal leverage, which reduces systemic liquidation risk.\n**VALUE:** Price near the lower Bollinger Band after a 20% crash suggests oversold conditions, but no bullish divergence yet to confirm a floor.\n**RISK:** Narrative exhaustion\u2014if ETF hype or HIP-3 adoption disappoints, the sky-high valuation multiple could compress violently.\n\n**Accumulate cautiously near $48 support with a hard stop at $45, targeting a relief rally to $62, but only if volume returns to confirm institutional interest.**",
   "predictions": {
     "total": 21,
-    "win_rate_6h": 64.3,
+    "win_rate_6h": 66.7,
     "win_rate_12h": 22.2,
     "win_rate_24h": 55.6,
-    "target_hit_rate_6h": 14.3,
+    "dir_accuracy_6h": 66.7,
+    "dir_accuracy_12h": 22.2,
+    "dir_accuracy_24h": 55.6,
+    "target_hit_rate_6h": 13.3,
     "target_hit_rate_12h": 11.1,
     "target_hit_rate_24h": 11.1,
-    "resolved_6h": 14,
+    "resolved_6h": 15,
     "resolved_12h": 9,
     "resolved_24h": 9,
     "active": {
@@ -13138,8 +13141,7 @@
         "resolved_at_12h": null,
         "resolved_at_24h": null
       }
-    ],
-    "streak": 0
+    ]
   },
   "changelog": [
     {
