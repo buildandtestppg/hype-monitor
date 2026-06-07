@@ -12996,13 +12996,16 @@
   "ai_analysis": "**PROTOCOL FUNDAMENTALS:** TVL surged 16% in 30 days to $5.87B, with $1.82M in daily fees feeding a 97% buyback engine that relentlessly removes supply.\n**VALUATION:** Mcap/TVL of 2.19 is fair for a dominant DEX, but Price/Daily Revenue >7,000x signals a premium that demands sustained hyper-growth.\n**NARRATIVE THESIS:** Institutional accumulation (a16z $170M+), ETF approval, and HIP-3 tokenized stocks are fueling a super-cycle narrative around the leading perp DEX.\n**WHAT CHANGED:** A sharp -21% weekly drop from highs, likely profit-taking after the 30-day +35.5% rally, resetting overbought conditions.\n**TREND:** Neutral-to-bearish short-term; price sits below SMA7 and SMA20 after the correction, but holds above the rising SMA50.\n**MOMENTUM:** Weakening\u2014MACD bearish crossover with a negative histogram, while RSI at 49.8 shows no oversold bounce yet.\n**DECOUPLING:** HYPE is strongly decoupled from BTC (30d correlation -0.62), meaning its recent drop is idiosyncratic, not macro-driven.\n**LIQUIDITY:** Orderbook skew is bullish (0.2075) with a razor-thin 0.17 bps spread, but volume is just 6.15M vs a 20M weekly average, signaling fading retail participation.\n**LEVERS:** Funding is near zero (1.37% annualized), indicating no crowded longs and ample capacity for new positioning.\n**VALUE:** Not oversold; price sits mid-Bollinger Band after the correction, fairly valued within its recent volatility range.\n**RISK:** The #1 risk is a momentum breakdown below the SMA50 ($49.96) triggering stop-loss cascades into the 2x ATR level at $45.08.\n\n**Buy a sweep of the $48 lower Bollinger Band with a hard stop at $45, targeting a mean-reversion rally back to the $65 SMA7.**",
   "predictions": {
     "total": 20,
-    "win_rate_6h": 61.5,
+    "win_rate_6h": 64.3,
     "win_rate_12h": 22.2,
     "win_rate_24h": 55.6,
-    "target_hit_rate_6h": 15.4,
+    "dir_accuracy_6h": 64.3,
+    "dir_accuracy_12h": 22.2,
+    "dir_accuracy_24h": 55.6,
+    "target_hit_rate_6h": 14.3,
     "target_hit_rate_12h": 11.1,
     "target_hit_rate_24h": 11.1,
-    "resolved_6h": 13,
+    "resolved_6h": 14,
     "resolved_12h": 9,
     "resolved_24h": 9,
     "active": {
@@ -13138,8 +13141,7 @@
         "resolved_at_12h": null,
         "resolved_at_24h": null
       }
-    ],
-    "streak": 0
+    ]
   },
   "changelog": [
     {
