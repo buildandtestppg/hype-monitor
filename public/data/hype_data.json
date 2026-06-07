@@ -12996,14 +12996,17 @@
   "ai_analysis": "**PROTOCOL FUNDAMENTALS:** TVL surged 16% to $5.87B with $1.82M in 24h fees feeding the 97% buyback engine, creating relentless demand-side pressure on the token supply.\n\n**VALUATION:** Mcap/TVL of 2.21 and Price/Daily Revenue of 7121x appear stretched, but the buyback mechanism and 30d growth trajectory justify a premium relative to traditional DEX tokens.\n\n**NARRATIVE THESIS:** Institutional accumulation (a16z $170M+), ETF approval, and HIP-3 tokenized stocks are transforming HYPE from a perp DEX token into a broad institutional-grade asset platform.\n\n**WHAT CHANGED:** ETF approval triggered a sharp rally, but the subsequent -20.4% 7d pullback suggests a \u201cbuy the rumor, sell the news\u201d unwind now stabilizing.\n\n**TREND:** Neutral\u2014price is correcting within a broader uptrend, holding above the rising 50-day SMA ($49.97) but below the 7- and 20-day SMAs.\n\n**MOMENTUM:** Momentum is weak; RSI at 50.2 is neutral, while the MACD histogram is negative and the MACD line sits below the signal line, confirming bearish near-term pressure.\n\n**DECOUPLING:** HYPE\u2019s 30d BTC correlation of -0.627 confirms complete decoupling, meaning price action is driven by idiosyncratic catalysts, not macro crypto flows\u2014bullish if ETF narrative holds.\n\n**LIQUIDITY:** Orderbook shows a bullish bid/ask imbalance (0.3041) with a razor-thin 0.17 bps spread, signaling institutional depth, but declining volume (7.49M vs 20.24M 7d avg) points to fading retail heat.\n\n**LEVERS:** Funding is near zero (1.37% annualized), indicating no crowded longs and a clean positioning slate for a fresh move.\n\n**VALUE:** After a 20% correction, price sits near the middle of Bollinger Bands and just above the 50-day SMA\u2014approaching a high-probability support zone, not yet deeply oversold.\n\n**RISK:** The #1 risk is narrative exhaustion post-ETF approval; if institutional inflows don\u2019t accelerate, the high valuation multiple could compress further toward the $48 lower band.\n\n**Accumulate spot on a retest of the $50 SMA with a hard stop at $45, targeting a rebound to $65+ as buyback pressure and institutional catalysts reprice the asset.**",
   "predictions": {
     "total": 23,
-    "win_rate_6h": 68.8,
-    "win_rate_12h": 20.0,
+    "win_rate_6h": 64.7,
+    "win_rate_12h": 27.3,
     "win_rate_24h": 55.6,
-    "target_hit_rate_6h": 12.5,
-    "target_hit_rate_12h": 10.0,
+    "dir_accuracy_6h": 64.7,
+    "dir_accuracy_12h": 27.3,
+    "dir_accuracy_24h": 55.6,
+    "target_hit_rate_6h": 11.8,
+    "target_hit_rate_12h": 9.1,
     "target_hit_rate_24h": 11.1,
-    "resolved_6h": 16,
-    "resolved_12h": 10,
+    "resolved_6h": 17,
+    "resolved_12h": 11,
     "resolved_24h": 9,
     "active": {
       "id": 68,
@@ -13138,8 +13141,7 @@
         "resolved_at_12h": null,
         "resolved_at_24h": null
       }
-    ],
-    "streak": 0
+    ]
   },
   "changelog": [
     {
