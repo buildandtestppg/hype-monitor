@@ -12996,13 +12996,16 @@
   "ai_analysis": "**PROTOCOL FUNDAMENTALS:** TVL surged 16.1% to $5.88B with $1.82M in 24h fees, fueling an aggressive 97% fee-buyback engine that constantly retires supply.\n\n**VALUATION:** Mcap/TVL of 2.22 is reasonable for a dominant DEX, but the Price/Daily Revenue multiple of 7,186x signals extreme overvaluation relative to current cash flows.\n\n**NARRATIVE THESIS:** Institutional accumulation (a16z $170M+), ETF approval, and HIP-3 tokenized stocks are transforming HYPE from a perp token into a broad institutional-grade asset platform.\n\n**WHAT CHANGED:** Despite positive catalysts, price plunged 20% in 7 days, suggesting heavy profit-taking or a broader rotation out of altcoins after the 30-day 37% rally.\n\n**TREND:** Short-term bearish below SMA7 ($65.37) and SMA20 ($61.98), but the medium-term uptrend holds above the rising SMA50 ($49.97).\n\n**MOMENTUM:** RSI at 50.5 is neutral, but the MACD histogram is deeply negative (-1.45) with a bearish crossover, confirming fading momentum.\n\n**DECOUPLING:** A 30-day BTC correlation of -0.63 shows HYPE is moving independently from Bitcoin, driven by its own fundamentals rather than macro crypto flows.\n\n**LIQUIDITY:** Orderbook bid/ask imbalance is bullish (0.19) with a razor-thin 0.34 bps spread, yet volume has collapsed to 4.85M vs a 7D average of 19.86M, hinting at institutional absorption on dips amid retail exhaustion.\n\n**LEVERS:** Funding is negligible at 1.37% annualized, indicating no crowded longs and ample capacity for new positions without liquidation cascades.\n\n**VALUE:** Price sits near the lower Bollinger Band ($48.19) with %B at ~38.6, making it oversold relative to recent volatility but not at an extreme.\n\n**RISK:** The #1 risk is that the buyback engine fails to absorb accelerating sell-pressure if institutional demand stalls, given the nosebleed revenue multiple and neutral narrative score.\n\n**Accumulate cautiously near the SMA50 ($49.97) with a hard stop at the 2x ATR level ($45.79), targeting a reversion toward SMA20 once momentum stabilizes.**",
   "predictions": {
     "total": 17,
-    "win_rate_6h": 50.0,
+    "win_rate_6h": 54.5,
     "win_rate_12h": 22.2,
     "win_rate_24h": 55.6,
-    "target_hit_rate_6h": 10.0,
+    "dir_accuracy_6h": 54.5,
+    "dir_accuracy_12h": 22.2,
+    "dir_accuracy_24h": 55.6,
+    "target_hit_rate_6h": 9.1,
     "target_hit_rate_12h": 11.1,
     "target_hit_rate_24h": 11.1,
-    "resolved_6h": 10,
+    "resolved_6h": 11,
     "resolved_12h": 9,
     "resolved_24h": 9,
     "active": {
@@ -13138,8 +13141,7 @@
         "resolved_at_12h": null,
         "resolved_at_24h": null
       }
-    ],
-    "streak": 0
+    ]
   },
   "changelog": [
     {
