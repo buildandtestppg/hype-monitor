@@ -12996,13 +12996,16 @@
   "ai_analysis": "**PROTOCOL FUNDAMENTALS:** TVL surged 17% in 30 days to $5.91B, while the 97% fee-buyback engine relentlessly reduces circulating supply, amplifying per-token value as daily fees hit $2.03M.\n\n**VALUATION:** Mcap/TVL of 2.37 is fair for a dominant perp DEX, but the 6,900x price/daily-revenue multiple signals the market is pricing aggressive future growth, not current cash flows.\n\n**NARRATIVE THESIS:** Institutional accumulation (a16z $170M+), ETF approval, and HIP-3 tokenized stocks are transforming HYPE from a DEX token into a broad institutional-grade asset, driving decoupled demand.\n\n**WHAT CHANGED:** After a 43% 30-day rally, price corrected 11.9% this week\u2014profit-taking and cooling momentum despite no fundamental deterioration.\n\n**TREND:** Neutral\u2014price holds above the 50-day SMA ($50.41) but trades below the 7- and 20-day SMAs, consolidating after the surge.\n\n**MOMENTUM:** Weakening\u2014RSI at 53.4 is neutral, but the MACD histogram is negative and the MACD line is below the signal line, indicating bearish near-term momentum.\n\n**DECOUPLING:** HYPE\u2019s 30-day BTC correlation is -0.62, confirming it\u2019s trading on its own catalysts, not macro crypto sentiment\u2014a bullish idiosyncratic signal.\n\n**LIQUIDITY:** Volume has dropped to 6.5M vs. a 7-day average of 18.4M, yet the 0.16 bps spread and neutral orderbook imbalance suggest institutional market-making, not retail froth.\n\n**LEVERS:** Funding is negligible (0.98% annualized), showing no crowded longs\u2014positioning is clean, leaving room for leveraged upside if momentum returns.\n\n**VALUE:** Price sits near the lower Bollinger Band ($50.63), making it short-term oversold relative to the 30-day range\u2014a potential bounce zone.\n\n**RISK:** The #1 risk is narrative exhaustion: if ETF/stock-tokenization hype fades, the high price/revenue multiple leaves room for a sharp correction toward the $50 support.\n\n**Accumulate HYPE on dips to $50\u2013$52 with a hard stop at $48, targeting a rebound to $70+ as buyback pressure and institutional flows resume.**",
   "predictions": {
     "total": 17,
-    "win_rate_6h": 50.0,
+    "win_rate_6h": 54.5,
     "win_rate_12h": 22.2,
     "win_rate_24h": 55.6,
-    "target_hit_rate_6h": 10.0,
+    "dir_accuracy_6h": 54.5,
+    "dir_accuracy_12h": 22.2,
+    "dir_accuracy_24h": 55.6,
+    "target_hit_rate_6h": 9.1,
     "target_hit_rate_12h": 11.1,
     "target_hit_rate_24h": 11.1,
-    "resolved_6h": 10,
+    "resolved_6h": 11,
     "resolved_12h": 9,
     "resolved_24h": 9,
     "active": {
@@ -13138,8 +13141,7 @@
         "resolved_at_12h": null,
         "resolved_at_24h": null
       }
-    ],
-    "streak": 0
+    ]
   },
   "changelog": [
     {
