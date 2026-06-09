@@ -12996,15 +12996,18 @@
   "ai_analysis": "**PROTOCOL FUNDAMENTALS:** TVL surged 16.9% in 30 days to $5.92B with $2.19M in daily fees, powering a relentless buyback engine that retires 97% of fee revenue, constantly shrinking supply.\n\n**VALUATION:** Mcap/TVL of 2.21 is fair for a growth leader, but the Price/Daily Revenue of ~5965x signals extreme premium pricing that demands sustained exponential fee growth.\n\n**NARRATIVE THESIS:** Institutional accumulation (a16z $170M+), ETF approval, and HIP-3 tokenized equities are transforming HYPE from a perp DEX token into a broad financial infrastructure play, attracting both institutional and retail capital.\n\n**WHAT CHANGED:** A brutal -21% weekly correction reset the 40% monthly rally, flushing overleveraged longs and shifting sentiment from euphoria to cautious neutrality.\n\n**TREND:** Neutral-to-bearish short-term as price trades below the 7-day and 20-day SMAs, but the 50-day SMA at $50.82 remains a bullish structural anchor.\n\n**MOMENTUM:** Momentum is weak with a bearish MACD crossover and negative histogram, while RSI at 50 confirms a complete loss of directional impulse.\n\n**DECOUPLING:** HYPE\u2019s 30-day BTC correlation of -0.58 signals complete decoupling, meaning price action is driven by idiosyncratic catalysts, not macro crypto beta \u2014 a double-edged sword if ETF hype fades.\n\n**LIQUIDITY:** Orderbook shows a bearish -0.22 bid/ask imbalance with volume 44% below the 7-day average, though the ultra-tight 1.36 bps spread indicates institutional market-making depth.\n\n**LEVERS:** Funding rates are near zero (1.37% annualized), revealing no crowded long positioning and ample capacity for fresh leverage if a catalyst emerges.\n\n**VALUE:** Price sits near the lower Bollinger Band (%B ~32) after the sharp sell-off, presenting a short-term oversold condition relative to its 14-day volatility range.\n\n**RISK:** The #1 risk is a decisive breakdown below the 50-day SMA ($50.82), which would invalidate the medium-term uptrend and expose the 2x ATR stop at $45.36.\n\n**Buy the dip cautiously near $51.37 with a hard stop at $49.50, targeting a mean-reversion rally to the $63 SMA20 as buyback fundamentals and institutional bids reassert dominance.**",
   "predictions": {
     "total": 39,
-    "win_rate_6h": 56.2,
-    "win_rate_12h": 34.6,
-    "win_rate_24h": 42.9,
-    "target_hit_rate_6h": 15.6,
-    "target_hit_rate_12h": 7.7,
-    "target_hit_rate_24h": 14.3,
-    "resolved_6h": 32,
-    "resolved_12h": 26,
-    "resolved_24h": 14,
+    "win_rate_6h": 57.6,
+    "win_rate_12h": 37.0,
+    "win_rate_24h": 46.7,
+    "dir_accuracy_6h": 57.6,
+    "dir_accuracy_12h": 37.0,
+    "dir_accuracy_24h": 46.7,
+    "target_hit_rate_6h": 18.2,
+    "target_hit_rate_12h": 7.4,
+    "target_hit_rate_24h": 13.3,
+    "resolved_6h": 33,
+    "resolved_12h": 27,
+    "resolved_24h": 15,
     "active": {
       "id": 84,
       "created_at": "2026-06-09T17:01:13.695814+00:00",
@@ -13138,8 +13141,7 @@
         "resolved_at_12h": null,
         "resolved_at_24h": null
       }
-    ],
-    "streak": 0
+    ]
   },
   "changelog": [
     {
