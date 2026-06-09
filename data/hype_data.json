@@ -12996,13 +12996,16 @@
   "ai_analysis": "**PROTOCOL FUNDAMENTALS:** TVL surging to $5.94B (+17.3% 30d) and $2.19M in daily fees fuel an aggressive 97% buyback engine, creating relentless structural demand for HYPE.\n**VALUATION:** Mcap/TVL of 2.34 and Price/Daily Revenue of 6,347x signal extreme overvaluation relative to protocol cash flows, pricing in perfection.\n**NARRATIVE THESIS:** Institutional accumulation (a16z $170M+), ETF approval, and HIP-3 tokenized stocks are transforming HYPE into a blue-chip real-world asset play, dominating the perp DEX narrative.\n**WHAT CHANGED:** A sharp -16.3% weekly pullback from overheated levels reset positioning after a massive 48.6% 30-day rally.\n**TREND:** Neutral with bearish tilt \u2014 price sits below SMA7 and SMA20, but the 50-day SMA at $50.89 remains intact as key structural support.\n**MOMENTUM:** Weakening \u2014 RSI at 53.9 is neutral, but the MACD histogram is negative and the signal line is above the MACD line, confirming fading upside momentum.\n**DECOUPLING:** HYPE\u2019s 30-day BTC correlation of -0.60 shows it\u2019s trading on its own catalysts, insulating it from macro swings but leaving it vulnerable to narrative exhaustion.\n**LIQUIDITY:** Orderbook imbalance is bullish (0.4976) with a razor-thin 0.16 bps spread, yet volume is just 4.89M vs a 7-day average of 17.4M, suggesting institutional accumulation in a low-volume environment.\n**LEVERS:** Funding is negligible at 1.37% annualized \u2014 longs are not crowded, leaving ample room for leveraged upside if momentum returns.\n**VALUE:** After a 16% weekly drop, price sits below the Bollinger mid-band, making it slightly oversold relative to recent volatility, but not at an extreme.\n**RISK:** The #1 risk is a valuation compression triggered by any slowdown in perp DEX volumes, which would undermine the buyback narrative and expose the 6,347x revenue multiple.\n\n**Buy the dip cautiously with a stop at $49.32 (2x ATR), targeting a return to the upper Bollinger band near $74 as institutional flows resume.**",
   "predictions": {
     "total": 32,
-    "win_rate_6h": 52.0,
+    "win_rate_6h": 50.0,
     "win_rate_12h": 35.0,
     "win_rate_24h": 55.6,
-    "target_hit_rate_6h": 8.0,
+    "dir_accuracy_6h": 50.0,
+    "dir_accuracy_12h": 35.0,
+    "dir_accuracy_24h": 55.6,
+    "target_hit_rate_6h": 7.7,
     "target_hit_rate_12h": 10.0,
     "target_hit_rate_24h": 11.1,
-    "resolved_6h": 25,
+    "resolved_6h": 26,
     "resolved_12h": 20,
     "resolved_24h": 9,
     "active": {
@@ -13138,8 +13141,7 @@
         "resolved_at_12h": null,
         "resolved_at_24h": null
       }
-    ],
-    "streak": 0
+    ]
   },
   "changelog": [
     {
