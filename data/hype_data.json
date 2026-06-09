@@ -12996,13 +12996,16 @@
   "ai_analysis": "**PROTOCOL FUNDAMENTALS:** TVL surged 17.3% to $5.94B with $2.19M in 24h fees, fueling an aggressive 97% fee-buyback engine that continuously reduces circulating supply.\n**VALUATION:** Mcap/TVL of 2.31 and a Price/Daily Revenue multiple exceeding 6,200x signal extreme growth premium \u2014 stretched relative to current cash flows.\n**NARRATIVE THESIS:** Institutional accumulation (a16z $170M+), ETF approval, and HIP-3 tokenized stocks anchor a \u201creal-world asset + dominant perp DEX\u201d supercycle, driven by smart money, not retail.\n**WHAT CHANGED:** The ETF catalyst ignited a 49% 30-day rally, but the 16% weekly pullback suggests post-approval profit-taking and cooling momentum.\n**TREND:** Neutral with a bearish tilt \u2014 price sits below SMA7 and SMA20, while the MACD histogram is negative and the signal line is above the MACD line.\n**MOMENTUM:** Weakening \u2014 RSI at 54.1 is neutral, but the bearish MACD crossover and declining histogram confirm fading upside thrust.\n**DECOUPLING:** HYPE\u2019s 30-day BTC correlation of -0.605 confirms it\u2019s trading on its own narrative, insulating it from broad crypto swings but amplifying idiosyncratic risk.\n**LIQUIDITY:** Orderbook imbalance is neutral, spread is razor-thin at 0.64 bps, but volume has collapsed to 4.63M vs a 7-day average of 17.36M \u2014 retail participation is drying up.\n**LEVERS:** 8-hour funding at 0.0007% (4.95% annualized) shows no crowding in longs; positioning is light, leaving room for either side to build.\n**VALUE:** Not overbought or oversold \u2014 Bollinger %B at 59.07 and RSI mid-range place price in a neutral zone after the correction.\n**RISK:** The #1 risk is a valuation compression if fee growth decelerates, given the nosebleed Price/Revenue multiple and fading volume momentum.\n\n**Wait for a reclaim of SMA20 ($63.2) on rising volume before re-entering; otherwise, a sweep of the 2x ATR stop at $49.48 is a high-probability buy zone.**",
   "predictions": {
     "total": 31,
-    "win_rate_6h": 50.0,
+    "win_rate_6h": 52.0,
     "win_rate_12h": 31.6,
     "win_rate_24h": 55.6,
-    "target_hit_rate_6h": 8.3,
+    "dir_accuracy_6h": 52.0,
+    "dir_accuracy_12h": 31.6,
+    "dir_accuracy_24h": 55.6,
+    "target_hit_rate_6h": 8.0,
     "target_hit_rate_12h": 10.5,
     "target_hit_rate_24h": 11.1,
-    "resolved_6h": 24,
+    "resolved_6h": 25,
     "resolved_12h": 19,
     "resolved_24h": 9,
     "active": {
@@ -13138,8 +13141,7 @@
         "resolved_at_12h": null,
         "resolved_at_24h": null
       }
-    ],
-    "streak": 0
+    ]
   },
   "changelog": [
     {
