@@ -12996,15 +12996,18 @@
   "ai_analysis": "**PROTOCOL FUNDAMENTALS:** TVL surged 18.3% in 30 days to $5.99B with $2.19M in daily fees; the 97% fee buyback engine continuously retires supply, creating a powerful deflationary tailwind.\n**VALUATION:** Mcap/TVL of 2.22 is reasonable for a dominant DEX, but the 6060x price/daily revenue multiple prices in aggressive growth\u2014stretched on earnings, fair on assets.\n**NARRATIVE THESIS:** Institutional accumulation (a16z $170M+), recent ETF approval, and HIP-3 tokenized stocks are fusing a blue-chip DeFi narrative with real-world asset expansion, attracting both institutional and retail flows.\n**WHAT CHANGED:** A sharp 21% weekly correction reset the post-ETF euphoria, wiping out short-term gains and shifting sentiment from exuberance to cautious re-evaluation.\n**TREND:** Short-term bearish with price below the 7- and 20-day SMAs, but the 50-day SMA at $50.82 remains a strong structural support\u2014neutral overall.\n**MOMENTUM:** Momentum is weak: MACD histogram is negative and the signal line crossover is bearish, while RSI at 50.1 shows no directional conviction.\n**DECOUPLING:** HYPE\u2019s 30-day BTC correlation is -0.582, a stark decoupling that means price action is driven by internal catalysts, not macro crypto moves.\n**LIQUIDITY:** A tight 1.19 bps spread and bullish orderbook imbalance (0.2576) signal deep, institutional-grade liquidity, though volume has halved from the 7-day average, hinting at cooling retail interest.\n**LEVERS:** 8-hour funding is negligible (0.0007%, 1.37% annualized), showing no crowded long positioning and ample capacity for new leveraged bets.\n**VALUE:** After the 21% drop, price sits at the 32nd percentile of the Bollinger Bands\u2014approaching oversold but not yet at a deep-value extreme.\n**RISK:** The #1 risk is narrative exhaustion: if ETF-driven institutional demand doesn\u2019t materialize soon, the buyback alone may not halt a slide toward the $51 lower band.\n\n**Accumulate near $51\u2013$53 with a stop at $45, targeting a rebound to the $63 resistance as buybacks and institutional bids reassert.**",
   "predictions": {
     "total": 38,
-    "win_rate_6h": 54.8,
-    "win_rate_12h": 32.0,
-    "win_rate_24h": 38.5,
-    "target_hit_rate_6h": 12.9,
-    "target_hit_rate_12h": 8.0,
-    "target_hit_rate_24h": 7.7,
-    "resolved_6h": 31,
-    "resolved_12h": 25,
-    "resolved_24h": 13,
+    "win_rate_6h": 56.2,
+    "win_rate_12h": 34.6,
+    "win_rate_24h": 42.9,
+    "dir_accuracy_6h": 56.2,
+    "dir_accuracy_12h": 34.6,
+    "dir_accuracy_24h": 42.9,
+    "target_hit_rate_6h": 15.6,
+    "target_hit_rate_12h": 7.7,
+    "target_hit_rate_24h": 14.3,
+    "resolved_6h": 32,
+    "resolved_12h": 26,
+    "resolved_24h": 14,
     "active": {
       "id": 83,
       "created_at": "2026-06-09T16:01:34.440995+00:00",
@@ -13138,8 +13141,7 @@
         "resolved_at_12h": null,
         "resolved_at_24h": null
       }
-    ],
-    "streak": 0
+    ]
   },
   "changelog": [
     {
