@@ -12996,15 +12996,18 @@
   "ai_analysis": "**PROTOCOL FUNDAMENTALS:** TVL surged 17.9% to $5.97B with $2.19M in 24h fees, and the 97% fee buyback engine continuously retires supply, amplifying value per token.\n**VALUATION:** Mcap/TVL of 2.31 and a Price/Daily Revenue of ~6,298x price in aggressive growth; the token is expensive on current cash flows but justified if dominance persists.\n**NARRATIVE THESIS:** The dominant perp DEX with ETF approval, tokenized stocks (HIP-3), and a16z\u2019s $170M+ accumulation drives an institutional-led \u201chyper-financialization\u201d story that attracts both smart money and retail.\n**WHAT CHANGED:** A sharp -18.77% 7-day correction after a 44% 30-day rally, with volume collapsing to 6.58M from a 7D average of 17.64M, signaling exhaustion.\n**TREND:** Neutral \u2014 price is trapped between the 50-day SMA support at $50.85 and the 20-day SMA resistance at $63.1, with no decisive break.\n**MOMENTUM:** Weakness \u2014 MACD histogram is negative and declining, while RSI at 51.8 is neutral, confirming fading bullish thrust without being oversold.\n**DECOUPLING:** A 30-day BTC correlation of -0.595 means HYPE trades independently; it avoids BTC-driven drawdowns but lacks a macro catalyst for the next leg up.\n**LIQUIDITY:** Orderbook shows a bearish bid/ask imbalance (-0.2342) and volume well below averages, with a tight 1.82 bps spread typical of retail-dominated, shallow DEX liquidity.\n**LEVERS:** Funding is near zero (1.37% annualized), indicating no crowded longs and minimal perp-driven liquidation risk.\n**VALUE:** Price near the lower Bollinger Band ($51.57) and below short-term SMAs suggests it\u2019s oversold relative to its recent range, offering a tactical entry if support holds.\n**RISK:** The #1 risk is losing the 50-day SMA ($50.85) and the 2x ATR stop ($47.44), which could trigger a rapid drop toward $40 as momentum flips bearish.\n\n**Accumulate on a dip to $51\u2013$53 with a hard stop at $47, targeting a mean-reversion rally back to the $63\u2013$65 SMA resistance, as buyback fundamentals remain strong but momentum needs to reset.**",
   "predictions": {
     "total": 36,
-    "win_rate_6h": 51.7,
-    "win_rate_12h": 30.4,
-    "win_rate_24h": 45.5,
-    "target_hit_rate_6h": 6.9,
-    "target_hit_rate_12h": 8.7,
-    "target_hit_rate_24h": 9.1,
-    "resolved_6h": 29,
-    "resolved_12h": 23,
-    "resolved_24h": 11,
+    "win_rate_6h": 53.3,
+    "win_rate_12h": 33.3,
+    "win_rate_24h": 41.7,
+    "dir_accuracy_6h": 53.3,
+    "dir_accuracy_12h": 33.3,
+    "dir_accuracy_24h": 41.7,
+    "target_hit_rate_6h": 10.0,
+    "target_hit_rate_12h": 8.3,
+    "target_hit_rate_24h": 8.3,
+    "resolved_6h": 30,
+    "resolved_12h": 24,
+    "resolved_24h": 12,
     "active": {
       "id": 81,
       "created_at": "2026-06-09T14:01:30.565592+00:00",
@@ -13138,8 +13141,7 @@
         "resolved_at_12h": null,
         "resolved_at_24h": null
       }
-    ],
-    "streak": 0
+    ]
   },
   "changelog": [
     {
