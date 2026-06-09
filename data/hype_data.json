@@ -12996,15 +12996,18 @@
   "ai_analysis": "**PROTOCOL FUNDAMENTALS:** TVL surged 16.2% to $5.89B with $2.19M in 24h fees, fueling a 97% buyback engine that constantly retires supply; dominant 32\u201344% perp DEX market share and $1.15B all-time fees confirm product leadership.\n**VALUATION:** Mcap/TVL of 2.22 is fair for a growth protocol, but Price/Daily Revenue of 5959x is steep\u2014pricing in aggressive future fee expansion that must materialize.\n**NARRATIVE THESIS:** Institutional accumulation (a16z $170M+), ETF approval, and HIP-3 tokenized stocks are transforming HYPE into a regulated on-chain derivatives hub, drawing both institutional and retail capital.\n**WHAT CHANGED:** A 21% weekly drop despite positive fundamentals and a sharply negative BTC correlation (-0.58) signals profit-taking and idiosyncratic selling, not macro-driven weakness.\n**TREND:** Neutral\u2014price holds above the rising SMA50 ($50.82) but below SMA20 ($63.02), consolidating after a 40% monthly surge.\n**MOMENTUM:** Weakness evident; RSI at 50.1 is neutral but MACD histogram is negative with a bearish crossover, favoring sellers short-term.\n**DECOUPLING:** HYPE\u2019s -0.58 BTC correlation means it\u2019s trading on its own catalysts, insulating it from broad crypto swings but amplifying single-stock risk.\n**LIQUIDITY:** Orderbook is bearish (imbalance -0.62) with more asks, yet a 0.34 bps spread and declining volume suggest institutional market-making but defensive positioning.\n**LEVERS:** Funding is negligible (1.37% annualized), showing no crowded longs\u2014leverage is light, leaving room for directional moves without cascades.\n**VALUE:** Near the lower Bollinger Band ($51.39) and 6% below SMA20, it\u2019s short-term oversold after the 21% correction, offering a potential bounce setup.\n**RISK:** A breakdown below SMA50 ($50.82) and the 2x ATR stop ($45.48) could trigger a sharp unwind if the ETF/stock narrative stalls.\n\n**Buy cautiously at $51\u201352 support with a hard stop below $45, targeting a rebound to $63+ on ETF inflow momentum.**",
   "predictions": {
     "total": 41,
-    "win_rate_6h": 58.8,
-    "win_rate_12h": 39.3,
-    "win_rate_24h": 50.0,
-    "target_hit_rate_6h": 20.6,
-    "target_hit_rate_12h": 7.1,
-    "target_hit_rate_24h": 12.5,
-    "resolved_6h": 34,
-    "resolved_12h": 28,
-    "resolved_24h": 16,
+    "win_rate_6h": 60.0,
+    "win_rate_12h": 37.9,
+    "win_rate_24h": 47.1,
+    "dir_accuracy_6h": 60.0,
+    "dir_accuracy_12h": 37.9,
+    "dir_accuracy_24h": 47.1,
+    "target_hit_rate_6h": 22.9,
+    "target_hit_rate_12h": 6.9,
+    "target_hit_rate_24h": 11.8,
+    "resolved_6h": 35,
+    "resolved_12h": 29,
+    "resolved_24h": 17,
     "active": {
       "id": 86,
       "created_at": "2026-06-09T19:01:00.057410+00:00",
@@ -13138,8 +13141,7 @@
         "resolved_at_12h": null,
         "resolved_at_24h": null
       }
-    ],
-    "streak": 0
+    ]
   },
   "changelog": [
     {
