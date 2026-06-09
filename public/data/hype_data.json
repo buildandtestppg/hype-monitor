@@ -12996,14 +12996,17 @@
   "ai_analysis": "**PROTOCOL FUNDAMENTALS:** TVL surged 17.3% in 30 days to $5.94B, and the 97% fee-buyback engine on $1.15B all-time fees creates relentless structural demand for HYPE.\n**VALUATION:** Mcap/TVL of 2.33 is reasonable for a dominant DEX, but the 6297x price/daily revenue multiple signals extreme overvaluation relative to current fee generation.\n**NARRATIVE THESIS:** Institutional accumulation (a16z $170M+), recent ETF approval, and HIP-3 tokenized stocks are transforming HYPE into a blue-chip, real-world-asset gateway, driving a supply-squeeze narrative.\n**WHAT CHANGED:** ETF approval and the HIP-3 proposal for tokenized equities mark a fundamental expansion beyond perpetuals, attracting a new institutional bid that decoupled the token from macro.\n**TREND:** Short-term neutral-to-bearish with price below the 7- and 20-day SMAs after a 17% weekly drop, but the medium-term uptrend holds above the 50-day SMA.\n**MOMENTUM:** Momentum is weakening\u2014MACD histogram is negative and the MACD line is below signal\u2014while RSI at 53.3 shows no directional conviction.\n**DECOUPLING:** HYPE\u2019s 30-day BTC correlation of -0.60 confirms strong decoupling, meaning idiosyncratic catalysts (ETF, HIP-3) now override broad crypto beta.\n**LIQUIDITY:** Orderbook shows a bullish bid/ask imbalance (0.3076) with a razor-thin 0.16 bps spread, but volume is 77% below the 7-day average, signaling cautious, low-conviction retail flow.\n**LEVERS:** Funding rates are negligible (1.37% annualized), indicating no crowded longs and very low systemic leverage\u2014a neutral-to-bullish setup for a fresh leg higher.\n**VALUE:** After a 17% weekly decline, HYPE is neither overbought nor oversold but is approaching the lower Bollinger Band ($51.68), where value buyers may step in.\n**RISK:** The #1 risk is a narrative unwind\u2014if ETF hype fades, the 6297x revenue multiple leaves room for a sharp valuation compression, especially with declining volume.\n\n**Buy the dip cautiously near the $51.68 lower Bollinger Band with a stop at $48.76 (2x ATR), targeting a rebound to the $63\u201365 SMA cluster as the ETF and tokenized-stock narrative rebuilds.**",
   "predictions": {
     "total": 29,
-    "win_rate_6h": 50.0,
-    "win_rate_12h": 31.2,
+    "win_rate_6h": 47.8,
+    "win_rate_12h": 29.4,
     "win_rate_24h": 55.6,
-    "target_hit_rate_6h": 9.1,
-    "target_hit_rate_12h": 12.5,
+    "dir_accuracy_6h": 47.8,
+    "dir_accuracy_12h": 29.4,
+    "dir_accuracy_24h": 55.6,
+    "target_hit_rate_6h": 8.7,
+    "target_hit_rate_12h": 11.8,
     "target_hit_rate_24h": 11.1,
-    "resolved_6h": 22,
-    "resolved_12h": 16,
+    "resolved_6h": 23,
+    "resolved_12h": 17,
     "resolved_24h": 9,
     "active": {
       "id": 74,
@@ -13138,8 +13141,7 @@
         "resolved_at_12h": null,
         "resolved_at_24h": null
       }
-    ],
-    "streak": 0
+    ]
   },
   "changelog": [
     {
