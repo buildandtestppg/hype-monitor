@@ -12996,14 +12996,17 @@
   "ai_analysis": "**PROTOCOL FUNDAMENTALS:** TVL surged 16.5% to $5.87B with $2.24M in 24h fees, fueling an aggressive 97% fee buyback engine that constantly removes supply.\n**VALUATION:** Mcap/TVL of 2.1 and a sky-high Price/Daily Revenue of 5481x signal the token is richly valued, pricing in extreme growth expectations.\n**NARRATIVE THESIS:** Institutional accumulation (a16z $170M+), ETF approval, and HIP-3 tokenized stocks are transforming HYPE into a real-world asset gateway, attracting smart money.\n**WHAT CHANGED:** A sharp -12.67% 7-day pullback from overbought levels cooled the 30-day 39.77% rally, resetting positioning.\n**TREND:** Neutral with a bearish short-term bias \u2014 price sits below SMA7 and SMA20 but holds above the rising SMA50.\n**MOMENTUM:** Weakness confirmed \u2014 RSI at 47.4 is neutral but MACD histogram is deeply negative with a bearish crossover.\n**DECOUPLING:** HYPE\u2019s 30-day BTC correlation of -0.515 shows it\u2019s trading on its own catalysts, insulating it from broad crypto swings.\n**LIQUIDITY:** Orderbook imbalance is bearish (-0.26) with volume 60% below the 7-day average, indicating thin, retail-driven liquidity.\n**LEVERS:** Funding is near zero (1.37% annualized), showing no crowded longs and room for fresh positioning.\n**VALUE:** Near the lower Bollinger Band with a %B of ~22%, the token is oversold relative to its recent $50.89\u2013$74.80 range.\n**RISK:** A breakdown below the $50.89 lower band and SMA50 support could trigger a rapid slide toward the 2x ATR stop at $43.09.\n\n**Accumulate near $51\u2013$53 with a hard stop at $43, targeting a rebound to $60+ as buyback pressure and institutional narratives reprice the dip.**",
   "predictions": {
     "total": 24,
-    "win_rate_6h": 52.9,
-    "win_rate_12h": 27.3,
+    "win_rate_6h": 50.0,
+    "win_rate_12h": 33.3,
     "win_rate_24h": 55.6,
-    "target_hit_rate_6h": 11.8,
-    "target_hit_rate_12h": 9.1,
+    "dir_accuracy_6h": 50.0,
+    "dir_accuracy_12h": 33.3,
+    "dir_accuracy_24h": 55.6,
+    "target_hit_rate_6h": 11.1,
+    "target_hit_rate_12h": 8.3,
     "target_hit_rate_24h": 11.1,
-    "resolved_6h": 17,
-    "resolved_12h": 11,
+    "resolved_6h": 18,
+    "resolved_12h": 12,
     "resolved_24h": 9,
     "active": {
       "id": 69,
@@ -13138,8 +13141,7 @@
         "resolved_at_12h": null,
         "resolved_at_24h": null
       }
-    ],
-    "streak": 0
+    ]
   },
   "changelog": [
     {
