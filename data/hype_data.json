@@ -12996,13 +12996,16 @@
   "ai_analysis": "**PROTOCOL FUNDAMENTALS:** TVL surged to $5.87B (+16.5% 30d) with $2.24M daily fees fueling the 97% buyback engine, cementing Hyperliquid\u2019s dominance as the top perp DEX.\n**VALUATION:** Mcap/TVL of 2.12 and Price/Daily Revenue of 5552x reflect a premium but fair valuation given aggressive buybacks and 42% 30-day price appreciation.\n**NARRATIVE THESIS:** Institutional accumulation (a16z $170M+), ETF approval, and HIP-3 tokenized stocks drive a blue-chip convergence narrative, attracting traditional finance flows.\n**WHAT CHANGED:** Price corrected -11% in 7 days from local highs while BTC correlation flipped deeply negative (-0.52), signaling a shift to idiosyncratic, catalyst-driven moves.\n**TREND:** Neutral-to-bearish short-term as price trades below SMA7 and SMA20, but the 50-day SMA at $51.15 holds a bullish higher-low structure.\n**MOMENTUM:** Momentum is weakening with RSI neutral at 48.5 and a bearish MACD histogram (-1.76), indicating fading upside pressure.\n**DECOUPLING:** HYPE is strongly decoupled from BTC (30D correlation -0.52), meaning price action hinges on protocol-specific catalysts rather than macro crypto beta.\n**LIQUIDITY:** A tight 2.62 bps spread and bullish orderbook imbalance (0.34) signal deep institutional liquidity, though spot volume has halved from the 7-day average.\n**LEVERS:** Negligible funding rates (1.37% annualized) show no overcrowded longs, leaving ample room for leveraged positioning without squeeze risk.\n**VALUE:** After an 11% weekly drop, HYPE sits mid-Bollinger (B% 59.17) with RSI neutral\u2014neither overbought nor oversold, offering a reset entry.\n**RISK:** The #1 risk is a narrative unwind if ETF/tokenized stock hype fades, amplified by 11.5% daily volatility that can trigger stop cascades below $51.\n\n**Accumulate HYPE on dips toward the 50-day SMA ($51) with a stop below 2x ATR ($44), targeting a rebound to $63+ as institutional catalysts materialize.**",
   "predictions": {
     "total": 25,
-    "win_rate_6h": 50.0,
+    "win_rate_6h": 47.4,
     "win_rate_12h": 38.5,
     "win_rate_24h": 55.6,
-    "target_hit_rate_6h": 11.1,
+    "dir_accuracy_6h": 47.4,
+    "dir_accuracy_12h": 38.5,
+    "dir_accuracy_24h": 55.6,
+    "target_hit_rate_6h": 10.5,
     "target_hit_rate_12h": 7.7,
     "target_hit_rate_24h": 11.1,
-    "resolved_6h": 18,
+    "resolved_6h": 19,
     "resolved_12h": 13,
     "resolved_24h": 9,
     "active": {
@@ -13138,8 +13141,7 @@
         "resolved_at_12h": null,
         "resolved_at_24h": null
       }
-    ],
-    "streak": 0
+    ]
   },
   "changelog": [
     {
