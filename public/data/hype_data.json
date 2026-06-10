@@ -1,75 +1,75 @@
 {
   "meta": {
-    "timestamp": "2026-06-10T05:00:34.448047+00:00",
+    "timestamp": "2026-06-10T06:00:25.077400+00:00",
     "data_points": 121,
-    "price": 55.584,
-    "mark_price": 55.584,
-    "open_interest": "20335932.9800000116"
+    "price": 55.384,
+    "mark_price": 55.374,
+    "open_interest": "20343591.1800000109"
   },
   "returns": {
     "1d": 0.0,
-    "3d": -12.93,
-    "7d": -13.73,
-    "14d": -9.65,
-    "30d": 38.08,
-    "60d": 36.07,
-    "90d": 52.53
+    "3d": -13.24,
+    "7d": -14.04,
+    "14d": -9.97,
+    "30d": 37.58,
+    "60d": 35.58,
+    "90d": 51.98
   },
   "technical": {
-    "sma7": 59.67,
-    "sma20": 62.81,
+    "sma7": 59.64,
+    "sma20": 62.8,
     "sma50": 51.11,
-    "rsi14": 46.7,
-    "rsi7": 38.5,
+    "rsi14": 46.6,
+    "rsi7": 38.2,
     "rsi_signal": "NEUTRAL",
-    "macd_line": 2.3626,
-    "macd_signal": 4.2348,
-    "macd_hist": -1.8721,
-    "bb_upper": 74.85,
-    "bb_lower": 50.78,
-    "atr14": 6.56,
-    "atr_pct": 11.8,
+    "macd_line": 2.3467,
+    "macd_signal": 4.2316,
+    "macd_hist": -1.8849,
+    "bb_upper": 74.86,
+    "bb_lower": 50.74,
+    "atr14": 6.58,
+    "atr_pct": 11.88,
     "vol_regime": "EXPANDING",
-    "dist_sma7_pct": -6.9,
-    "dist_sma20_pct": -11.5,
-    "dist_sma50_pct": 8.7,
-    "stop_2x": 42.46,
-    "stop_3x": 35.9,
-    "poc": 59.18
+    "dist_sma7_pct": -7.1,
+    "dist_sma20_pct": -11.8,
+    "dist_sma50_pct": 8.4,
+    "stop_2x": 42.22,
+    "stop_3x": 35.64,
+    "poc": 59.17
   },
   "volume": {
-    "latest_M": 2.98,
-    "avg7d_M": 16.39,
-    "avg30d_M": 16.05,
+    "latest_M": 3.43,
+    "avg7d_M": 16.45,
+    "avg30d_M": 16.06,
     "ratio_7v30": 1.02,
-    "poc": 59.18
+    "poc": 59.17
   },
   "orderbook": {
-    "best_bid": 55.583,
-    "best_ask": 55.584,
+    "best_bid": 55.401,
+    "best_ask": 55.402,
     "spread": 0.001,
     "spread_bps": 0.18,
-    "bid_vol_20": 2600.31,
-    "ask_vol_20": 2467.56,
-    "imbalance": 0.0262,
+    "bid_vol_20": 3179.07,
+    "ask_vol_20": 2807.9,
+    "imbalance": 0.062,
     "pressure": "NEUTRAL"
   },
   "funding": {
     "count": 500,
     "avg_8h": 0.0008,
-    "latest_8h": 0.0061,
-    "annualized_pct": 6.68
+    "latest_8h": 0.0091,
+    "annualized_pct": 9.91
   },
   "correlation": {
-    "btc_30d": -0.51
+    "btc_30d": -0.508
   },
   "research": {
     "protocol_stats": {
       "tvl": 5879655799,
       "tvl_7d_change_pct": 0.34,
       "tvl_30d_change_pct": 16.74,
-      "mcap": 12488813453.921085,
-      "fdv": 52997801291,
+      "mcap": 12360445423.808516,
+      "fdv": 53022901784,
       "gecko_id": "hyperliquid",
       "description": "Hyperliquid is a Layer 1 blockchain best known for perpetual futures and spot trading. Beyond its flagship decentralized exchange (DEX), the ecosystem supports borrowing, lending, RWAs, and a full-fledged EVM.",
       "twitter": "HyperliquidX",
@@ -94,24 +94,24 @@
       "volume_30d_avg_daily": 215218424.9,
       "volume_trend_pct": null
     },
-    "btc_price": 61293.0,
+    "btc_price": 61313.0,
     "hype_perp": {
-      "oi_tokens": 20335932.98,
-      "oi_usd": 1130352498.76,
-      "mark_px": 55.584,
-      "prev_day_px": 61.935,
-      "day_notional_vol": 772617908.74,
-      "day_base_vol": 13032534.51,
+      "oi_tokens": 20343591.18,
+      "oi_usd": 1126506018.0,
+      "mark_px": 55.374,
+      "prev_day_px": 61.992,
+      "day_notional_vol": 776892810.79,
+      "day_base_vol": 13149065.46,
       "funding_rate": 1.25e-05,
-      "premium": 0.0001169612,
-      "price_change_24h_pct": -10.25
+      "premium": 0.0007586842,
+      "price_change_24h_pct": -10.68
     },
     "valuation": {
-      "mcap_tvl_ratio": 2.12,
-      "mcap_annualized_fee_ratio": 15.25,
+      "mcap_tvl_ratio": 2.1,
+      "mcap_annualized_fee_ratio": 15.09,
       "annualized_fees_estimate": 819149425,
-      "price_to_daily_revenue": 5564.82,
-      "oi_to_mcap_pct": 9.05
+      "price_to_daily_revenue": 5507.62,
+      "oi_to_mcap_pct": 9.11
     },
     "narrative_score": {
       "score": 52,
@@ -371,7 +371,7 @@
       59.747,
       63.839,
       57.765,
-      55.584
+      55.384
     ],
     "volumes": [
       7511228.02,
@@ -494,7 +494,7 @@
       10396588.36,
       16606687.81,
       13381623.83,
-      2980334.35
+      3426565.93
     ],
     "rsi": [
       null,
@@ -617,7 +617,7 @@
       51.5,
       55.7,
       48.9,
-      46.7
+      46.6
     ],
     "sma7": [
       null,
@@ -740,7 +740,7 @@
       65.5,
       64.11,
       62.38,
-      59.67
+      59.64
     ],
     "sma20": [
       null,
@@ -863,7 +863,7 @@
       62.02,
       62.81,
       62.96,
-      62.81
+      62.8
     ],
     "sma50": [
       null,
@@ -1109,7 +1109,7 @@
       75.77,
       74.88,
       74.69,
-      74.85
+      74.86
     ],
     "bb_lower": [
       null,
@@ -1232,7 +1232,7 @@
       48.28,
       50.75,
       51.23,
-      50.78
+      50.74
     ],
     "macd": [
       null,
@@ -1355,7 +1355,7 @@
       4.027,
       3.8129,
       3.1172,
-      2.3626
+      2.3467
     ],
     "macd_signal": [
       null,
@@ -1478,19 +1478,11 @@
       5.4208,
       5.0992,
       4.7028,
-      4.2348
+      4.2316
     ]
   },
   "candles": {
     "1h": [
-      {
-        "time": 1778475600,
-        "open": 42.042,
-        "high": 42.258,
-        "low": 41.977,
-        "close": 42.035,
-        "volume": 145934.42
-      },
       {
         "time": 1778479200,
         "open": 42.033,
@@ -7246,10 +7238,18 @@
       {
         "time": 1781067600,
         "open": 55.538,
-        "high": 55.616,
-        "low": 55.538,
-        "close": 55.588,
-        "volume": 4432.18
+        "high": 55.7,
+        "low": 55.055,
+        "close": 55.367,
+        "volume": 448205.92
+      },
+      {
+        "time": 1781071200,
+        "open": 55.364,
+        "high": 55.42,
+        "low": 55.364,
+        "close": 55.408,
+        "volume": 2154.97
       }
     ],
     "4h": [
@@ -11577,9 +11577,9 @@
         "time": 1781064000,
         "open": 56.595,
         "high": 56.643,
-        "low": 55.256,
-        "close": 55.602,
-        "volume": 571642.26
+        "low": 55.055,
+        "close": 55.408,
+        "volume": 1017481.86
       }
     ],
     "1d": [
@@ -12547,21 +12547,21 @@
         "time": 1781049600,
         "open": 57.781,
         "high": 58.171,
-        "low": 55.256,
-        "close": 55.623,
-        "volume": 2981304.39
+        "low": 55.055,
+        "close": 55.408,
+        "volume": 3426934.33
       }
     ]
   },
   "comparison": {
     "BTC": {
-      "price": 61287.0,
+      "price": 61313.0,
       "returns": {
         "1d": 0.0,
-        "7d": -4.02,
-        "30d": -23.83
+        "7d": -3.98,
+        "30d": -23.8
       },
-      "correlation_hype_30d": -0.51,
+      "correlation_hype_30d": -0.509,
       "normalized_30d": [
         0.0,
         -1.46,
@@ -12592,7 +12592,7 @@
         -21.32,
         -21.63,
         -23.32,
-        -23.83
+        -23.8
       ],
       "dates_30d": [
         "2026-05-12",
@@ -12628,13 +12628,13 @@
       ]
     },
     "ETH": {
-      "price": 1625.3,
+      "price": 1626.7,
       "returns": {
         "1d": 0.0,
-        "7d": -8.19,
-        "30d": -28.52
+        "7d": -8.11,
+        "30d": -28.46
       },
-      "correlation_hype_30d": -0.496,
+      "correlation_hype_30d": -0.495,
       "normalized_30d": [
         0.0,
         -0.69,
@@ -12665,7 +12665,7 @@
         -25.7,
         -25.72,
         -27.94,
-        -28.52
+        -28.46
       ],
       "dates_30d": [
         "2026-05-12",
@@ -12701,13 +12701,13 @@
       ]
     },
     "SOL": {
-      "price": 64.23,
+      "price": 64.05,
       "returns": {
         "1d": 0.0,
-        "7d": -6.7,
-        "30d": -31.85
+        "7d": -6.96,
+        "30d": -32.04
       },
-      "correlation_hype_30d": -0.464,
+      "correlation_hype_30d": -0.462,
       "normalized_30d": [
         0.0,
         -3.32,
@@ -12738,7 +12738,7 @@
         -29.47,
         -29.15,
         -31.11,
-        -31.85
+        -32.04
       ],
       "dates_30d": [
         "2026-05-12",
@@ -12774,13 +12774,13 @@
       ]
     },
     "BNB": {
-      "price": 585.29,
+      "price": 585.28,
       "returns": {
         "1d": 0.0,
-        "7d": -3.14,
+        "7d": -3.15,
         "30d": -11.93
       },
-      "correlation_hype_30d": -0.016,
+      "correlation_hype_30d": -0.015,
       "normalized_30d": [
         0.0,
         1.02,
@@ -12847,13 +12847,13 @@
       ]
     },
     "XRP": {
-      "price": 1.12,
+      "price": 1.11,
       "returns": {
         "1d": 0.0,
-        "7d": -4.49,
-        "30d": -22.32
+        "7d": -4.89,
+        "30d": -22.64
       },
-      "correlation_hype_30d": -0.521,
+      "correlation_hype_30d": -0.518,
       "normalized_30d": [
         0.0,
         -0.66,
@@ -12884,7 +12884,7 @@
         -19.59,
         -18.71,
         -20.84,
-        -22.32
+        -22.64
       ],
       "dates_30d": [
         "2026-05-12",
@@ -12920,11 +12920,11 @@
       ]
     },
     "HYPE": {
-      "price": 55.58,
+      "price": 55.38,
       "returns": {
         "1d": 0.0,
-        "7d": -13.73,
-        "30d": 38.08
+        "7d": -14.04,
+        "30d": 37.58
       },
       "correlation_hype_30d": 1.0,
       "normalized_30d": [
@@ -12957,7 +12957,7 @@
         48.42,
         58.58,
         43.49,
-        38.08
+        37.58
       ],
       "dates_30d": [
         "2026-05-12",
@@ -12993,15 +12993,12 @@
       ]
     }
   },
-  "ai_analysis": "**PROTOCOL FUNDAMENTALS:** TVL surged 16.7% to $5.88B with $2.24M in 24h fees, fueling the aggressive 97% fee-buyback engine that continuously reduces circulating supply.\n**VALUATION:** Mcap/TVL of 2.12 and a Price/Daily Revenue of 5565 signal a rich premium; the market is pricing in hypergrowth, leaving little room for execution missteps.\n**NARRATIVE THESIS:** Institutional accumulation (a16z $170M+), ETF approval, and HIP-3 tokenized stocks are transforming HYPE from a DEX token into a broad financial infrastructure play.\n**WHAT CHANGED:** The ETF catalyst triggered a sharp sell-the-news pullback, with price correcting 13.7% in 7 days after a 38% monthly surge.\n**TREND:** Neutral \u2014 price holds above the rising SMA50 but trades below the SMA7 and SMA20, consolidating after a parabolic run.\n**MOMENTUM:** Momentum is weakening; RSI at 46.7 and a bearish MACD histogram below the signal line indicate sellers are in control short-term.\n**DECOUPLING:** A 30-day BTC correlation of -0.51 confirms HYPE is trading on its own catalysts, insulating it from macro crypto swings but adding idiosyncratic risk.\n**LIQUIDITY:** Volume has collapsed to 2.98M vs a 16M average, yet the 0.18 bps spread shows efficient market-making \u2014 retail interest is fading while institutional liquidity remains.\n**LEVERS:** Funding is negligible at 0.0008% (6.68% annualized), signaling no crowded longs and a reset in speculative positioning.\n**VALUE:** Price sits near the lower Bollinger Band ($50.78) after the pullback, offering a tactical oversold bounce setup for mean-reversion traders.\n**RISK:** The #1 risk is a breakdown below the SMA50 ($51.11) if ETF hype fully unwinds, triggering a cascade to the 2x ATR stop at $42.46.\n\n**Buy the dip aggressively near $50 with a hard stop at $49, targeting a rebound to the $60 SMA cluster as the buyback engine and institutional bids reassert control.**",
+  "ai_analysis": "**PROTOCOL FUNDAMENTALS:** TVL surged 16.7% to $5.88B with $2.24M in 24h fees, fueling an aggressive buyback engine that retires 97% of fee revenue\u2014a constant bid on HYPE.\n**VALUATION:** Mcap/TVL of 2.1 is reasonable for a growth protocol, but Price/Daily Revenue at 5,507x signals extreme premium; the market is pricing in exponential fee growth, not current cash flows.\n**NARRATIVE THESIS:** Institutional accumulation (a16z $170M+), ETF approval, and HIP-3 tokenized stocks are transforming HYPE from a DEX token into a broad financial infrastructure play, attracting smart money.\n**WHAT CHANGED:** Price corrected -14% in 7 days after a +37.5% 30-day rally, likely profit-taking post-ETF announcement, erasing short-term gains.\n**TREND:** Neutral with a bearish short-term bias\u2014price sits below SMA7 and SMA20 but holds above the rising SMA50, keeping the medium-term uptrend intact.\n**MOMENTUM:** Weakness\u2014RSI at 46.6 is neutral but MACD histogram is deeply negative with a bearish crossover, confirming fading momentum.\n**DECOUPLING:** HYPE\u2019s 30-day correlation to BTC is -0.508, meaning it\u2019s trading on its own catalysts; this decoupling is a strength if the narrative holds, but leaves it vulnerable to idiosyncratic shocks.\n**LIQUIDITY:** Ultra-tight 0.18 bps spread and neutral orderbook imbalance indicate institutional market making, but volume is 80% below the 7-day average, signaling retail fatigue.\n**LEVERS:** Funding is benign at 9.91% annualized, showing no crowded long positioning\u2014leaves room for fresh longs if momentum returns.\n**VALUE:** Price is near the lower Bollinger Band ($50.74) and well below the middle band, suggesting it\u2019s oversold relative to its 14-day volatility range.\n**RISK:** A breakdown below the $50 support confluence (SMA50 + lower Bollinger Band) could trigger a swift move to the 2x ATR stop at $42.22, erasing months of gains.\n\n**Accumulate cautiously at $50\u2013$52 support with a hard stop at $42, targeting a rebound to $60+ as buyback pressure and institutional narratives reprice the asset.**",
   "predictions": {
-    "total": 16,
+    "total": 17,
     "win_rate_6h": 55.6,
     "win_rate_12h": 22.2,
     "win_rate_24h": 55.6,
-    "dir_accuracy_6h": 55.6,
-    "dir_accuracy_12h": 22.2,
-    "dir_accuracy_24h": 55.6,
     "target_hit_rate_6h": 11.1,
     "target_hit_rate_12h": 11.1,
     "target_hit_rate_24h": 11.1,
@@ -13009,17 +13006,17 @@
     "resolved_12h": 9,
     "resolved_24h": 9,
     "active": {
-      "id": 61,
-      "created_at": "2026-06-10T05:01:31.642487+00:00",
-      "price_at_prediction": 55.584,
+      "id": 62,
+      "created_at": "2026-06-10T06:01:33.019174+00:00",
+      "price_at_prediction": 55.384,
       "pred_6h_direction": "BEARISH",
-      "pred_6h_target": 53.5,
+      "pred_6h_target": 53.4,
       "pred_12h_direction": "BEARISH",
-      "pred_12h_target": 52.0,
+      "pred_12h_target": 52.1,
       "pred_24h_direction": "BEARISH",
-      "pred_24h_target": 50.1,
+      "pred_24h_target": 50.8,
       "confidence": 5,
-      "reasoning": "6h: MACD bearish (hist -1.87, line below signal) and 7d -13.7% momentum suggest 0.3\u00d7 ATR drift down to ~$53.5. 12h: Sustained bearish MACD + volume expanding amplifies move; target ~$52 (~0.55\u00d7 ATR), testing key support zone. 24h: Price approaching BB lower ($50.78) with expanding volume likely to test it; target $50.1 (~0.85\u00d7 ATR). Counter-signal: RSI 46.7 neutral and 30d +38% may cap downside via mean reversion, keeping confidence at 5.",
+      "reasoning": "MACD histogram deeply negative (-1.88) with line well below signal confirms bearish momentum; 7d return -14% within a +37% 30d uptrend signals a corrective phase, not reversal. 6h target ~$53.40 (0.3\u00d7ATR down) reflects mild continued downside as RSI 46.6 drifts toward oversold. 12h target ~$52.10 (0.5\u00d7ATR down) extends toward mid-BB range as selling exhausts. 24h target ~$50.80 (0.7\u00d7ATR down) taps BB lower ($50.74) as likely support where buyers re-engage. Confidence capped at 5 due to neutral narrative/orderbook, missing funding, and proximity to strong BB support limiting downside.",
       "resolved_6h": 0,
       "resolved_12h": 0,
       "resolved_24h": 0,
@@ -13031,6 +13028,28 @@
       "resolved_at_24h": null
     },
     "recent": [
+      {
+        "id": 62,
+        "created_at": "2026-06-10T06:01:33.019174+00:00",
+        "price_at_prediction": 55.384,
+        "pred_6h_direction": "BEARISH",
+        "pred_6h_target": 53.4,
+        "pred_12h_direction": "BEARISH",
+        "pred_12h_target": 52.1,
+        "pred_24h_direction": "BEARISH",
+        "pred_24h_target": 50.8,
+        "confidence": 5,
+        "reasoning": "MACD histogram deeply negative (-1.88) with line well below signal confirms bearish momentum; 7d return -14% within a +37% 30d uptrend signals a corrective phase, not reversal. 6h target ~$53.40 (0.3\u00d7ATR down) reflects mild continued downside as RSI 46.6 drifts toward oversold. 12h target ~$52.10 (0.5\u00d7ATR down) extends toward mid-BB range as selling exhausts. 24h target ~$50.80 (0.7\u00d7ATR down) taps BB lower ($50.74) as likely support where buyers re-engage. Confidence capped at 5 due to neutral narrative/orderbook, missing funding, and proximity to strong BB support limiting downside.",
+        "resolved_6h": 0,
+        "resolved_12h": 0,
+        "resolved_24h": 0,
+        "actual_price_6h": null,
+        "actual_price_12h": null,
+        "actual_price_24h": null,
+        "resolved_at_6h": null,
+        "resolved_at_12h": null,
+        "resolved_at_24h": null
+      },
       {
         "id": 61,
         "created_at": "2026-06-10T05:01:31.642487+00:00",
@@ -13118,30 +13137,9 @@
         "resolved_at_6h": null,
         "resolved_at_12h": null,
         "resolved_at_24h": null
-      },
-      {
-        "id": 57,
-        "created_at": "2026-06-10T01:03:22.766888+00:00",
-        "price_at_prediction": 57.158,
-        "pred_6h_direction": "BEARISH",
-        "pred_6h_target": 55.21,
-        "pred_12h_direction": "BEARISH",
-        "pred_12h_target": 53.26,
-        "pred_24h_direction": "BEARISH",
-        "pred_24h_target": 50.66,
-        "confidence": 5,
-        "reasoning": "MACD hist -1.77 bearish; RSI 48.3 neutral; ATR $6.50 guides targets (heuristic fallback \u2014 LLM unavailable)",
-        "resolved_6h": 0,
-        "resolved_12h": 0,
-        "resolved_24h": 0,
-        "actual_price_6h": null,
-        "actual_price_12h": null,
-        "actual_price_24h": null,
-        "resolved_at_6h": null,
-        "resolved_at_12h": null,
-        "resolved_at_24h": null
       }
-    ]
+    ],
+    "streak": 0
   },
   "changelog": [
     {
@@ -13453,6 +13451,6 @@
   ],
   "ai_meta": {
     "model": "deepseek-v4-pro:cloud",
-    "timestamp": "2026-06-10T05:01:31.688449+00:00"
+    "timestamp": "2026-06-10T06:01:33.065499+00:00"
   }
 }
