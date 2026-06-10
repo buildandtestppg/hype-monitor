@@ -12996,14 +12996,17 @@
   "ai_analysis": "**PROTOCOL FUNDAMENTALS:** TVL surged 17% in 30 days to $5.89B, while the 97% fee buyback engine continuously retires supply, reinforcing value per token as the dominant perp DEX.\n\n**VALUATION:** Mcap/TVL of 2.12 is reasonable, but a Price/Daily Revenue of 5,560x signals the market is pricing aggressive future growth, making it slightly overvalued on current cash flows.\n\n**NARRATIVE THESIS:** Institutional accumulation (a16z $170M+), ETF approval, and HIP-3 tokenized stocks are transforming HYPE from a pure DEX token into a broad financial infrastructure play, attracting both institutional and retail flows.\n\n**WHAT CHANGED:** The recent ETF approval and launch of tokenized equities have shifted the catalyst mix from fee-driven buybacks to real-world asset integration, broadening the investor base.\n\n**TREND:** Bearish short-term \u2014 price sits 6.9% below the 7-day SMA and 11.5% below the 20-day SMA, though the 50-day SMA at $51.11 offers nearby support.\n\n**MOMENTUM:** Momentum is weak; RSI at 46.7 and a bearish MACD histogram below the signal line confirm sellers remain in control.\n\n**DECOUPLING:** HYPE\u2019s 30-day BTC correlation of -0.513 shows it\u2019s trading on its own catalysts, insulating it from broad market swings but also risking underperformance if BTC rallies.\n\n**LIQUIDITY:** Orderbook imbalance is bearish (-0.4034) with declining volume (11.39M vs 17.59M 7-day avg), pointing to thinning retail interest while tight spreads suggest institutional market-making.\n\n**LEVERS:** Funding is negligible (1.37% annualized), indicating no crowded long positioning and leaving ample room for a squeeze in either direction.\n\n**VALUE:** Price near the lower Bollinger Band ($50.77) and well below the SMA20 suggests it\u2019s oversold relative to recent volatility, offering a potential mean-reversion setup.\n\n**RISK:** The #1 risk is a breakdown below the $50.77 Bollinger support, which could trigger a swift drop to the 2x ATR stop at $42.34 amid thinning liquidity.\n\n**Buy the dip cautiously at $50\u2013$52 support, with a hard stop at $42, targeting a mean reversion to the $63 SMA20.**",
   "predictions": {
     "total": 29,
-    "win_rate_6h": 40.9,
-    "win_rate_12h": 31.2,
+    "win_rate_6h": 43.5,
+    "win_rate_12h": 29.4,
     "win_rate_24h": 55.6,
-    "target_hit_rate_6h": 9.1,
-    "target_hit_rate_12h": 6.2,
+    "dir_accuracy_6h": 43.5,
+    "dir_accuracy_12h": 29.4,
+    "dir_accuracy_24h": 55.6,
+    "target_hit_rate_6h": 8.7,
+    "target_hit_rate_12h": 5.9,
     "target_hit_rate_24h": 11.1,
-    "resolved_6h": 22,
-    "resolved_12h": 16,
+    "resolved_6h": 23,
+    "resolved_12h": 17,
     "resolved_24h": 9,
     "active": {
       "id": 74,
@@ -13138,8 +13141,7 @@
         "resolved_at_12h": null,
         "resolved_at_24h": null
       }
-    ],
-    "streak": 0
+    ]
   },
   "changelog": [
     {
