@@ -12996,15 +12996,18 @@
   "ai_analysis": "**PROTOCOL FUNDAMENTALS:** TVL surged 16.9% in 30 days to $5.88B, generating $2.24M in daily fees that feed a 97% buyback engine, creating relentless demand pressure on HYPE.\n\n**VALUATION:** Mcap/TVL of 2.06 is reasonable for a dominant perp DEX, but the Price/Daily Revenue of 5402x signals overvaluation unless revenue scales dramatically from current levels.\n\n**NARRATIVE THESIS:** Institutional accumulation (a16z $170M+), ETF approval, and HIP-3 tokenized stocks cement HYPE as the premier on-chain derivatives hub, attracting both institutional and retail capital.\n\n**WHAT CHANGED:** Price dropped 9.4% this week despite strong fundamentals, while the 30-day BTC correlation flipped negative (-0.42), showing HYPE now trades on its own catalysts.\n\n**TREND:** Neutral\u2014price holds above the 50-day SMA ($51.33) but sits well below the 7- and 20-day SMAs, indicating a short-term corrective phase within a broader uptrend.\n\n**MOMENTUM:** Momentum is weak: RSI at 45.7 is neutral, but the MACD histogram is deeply negative (-2.16), confirming bearish near-term momentum.\n\n**DECOUPLING:** HYPE\u2019s negative BTC correlation (-0.42) means it\u2019s decoupled from macro crypto moves, potentially acting as a safe haven if BTC weakens or simply trading on its own fundamental story.\n\n**LIQUIDITY:** A razor-thin 0.18 bps spread and moderate volume signal institutional-grade liquidity, but the orderbook imbalance (-0.30) reveals persistent near-term selling pressure.\n\n**LEVERS:** Funding is negligible at 3.07% annualized, showing no crowded long positioning\u2014leverage is clean and leaves ample room for fresh longs to enter.\n\n**VALUE:** Price is neither overbought nor oversold\u2014RSI neutral, Bollinger %B at 0.59 places it just above the mid-band after the pullback, offering no clear edge.\n\n**RISK:** The #1 risk is a breakdown below the 50-day SMA ($51.33), which could trigger stop-loss cascades toward the 2x ATR level at $41.27.\n\n**Accumulate cautiously near the 50-day SMA ($51.33) with a stop below $41.27, targeting a rebound toward the SMA20 ($62.68) as buyback pressure and institutional narratives reassert.**",
   "predictions": {
     "total": 38,
-    "win_rate_6h": 54.8,
-    "win_rate_12h": 44.0,
-    "win_rate_24h": 53.8,
-    "target_hit_rate_6h": 22.6,
-    "target_hit_rate_12h": 8.0,
-    "target_hit_rate_24h": 7.7,
-    "resolved_6h": 31,
-    "resolved_12h": 25,
-    "resolved_24h": 13,
+    "win_rate_6h": 53.1,
+    "win_rate_12h": 46.2,
+    "win_rate_24h": 57.1,
+    "dir_accuracy_6h": 53.1,
+    "dir_accuracy_12h": 46.2,
+    "dir_accuracy_24h": 57.1,
+    "target_hit_rate_6h": 21.9,
+    "target_hit_rate_12h": 11.5,
+    "target_hit_rate_24h": 7.1,
+    "resolved_6h": 32,
+    "resolved_12h": 26,
+    "resolved_24h": 14,
     "active": {
       "id": 83,
       "created_at": "2026-06-11T03:01:27.686271+00:00",
@@ -13138,8 +13141,7 @@
         "resolved_at_12h": null,
         "resolved_at_24h": null
       }
-    ],
-    "streak": 0
+    ]
   },
   "changelog": [
     {
